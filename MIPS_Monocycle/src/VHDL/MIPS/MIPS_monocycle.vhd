@@ -117,6 +117,7 @@ begin
     -- Not present in datapath diagram
     -- In case of jump/branch, PC must be bypassed due to synchronous memory read
     instructionFetchAddress <= branchTarget when decodedInstruction = BEQ and zero = '1' else 
+                               branchTarget when decodedInstruction = BNE and zero = '0' else
                                jumpTarget when decodedInstruction = J or decodedInstruction = JAL else
                                ALUoperand1 when decodedInstruction = JR else
                                pc;
@@ -128,7 +129,9 @@ begin
     -------------------------------
     -- Behavioural register file --
     -------------------------------
-    readData2 <= registerFile(TO_INTEGER(UNSIGNED(instruction_rt)));
+    readData2 <=    RESIZE(UNSIGNED(instruction_shamt), readData2'length) when decodedInstruction = SSLL or 
+                                                decodedInstruction = SSRL or decodedInstruction = SSRA else
+                    registerFile(TO_INTEGER(UNSIGNED(instruction_rt)));
          
     -- Selects the data to be written in the register file
     -- In load instructions the data comes from the data memory
@@ -159,22 +162,32 @@ begin
     
        
     -- The first ALU operand always comes from the register file
-    ALUoperand1 <= registerFile(TO_INTEGER(UNSIGNED(instruction_rs)));
+    ALUoperand1 <=  registerFile(TO_INTEGER(UNSIGNED(instruction_rt))) when decodedInstruction = SSLL or 
+                                    decodedInstruction = SSRL or decodedInstruction = SSRA else
+                    registerFile(TO_INTEGER(UNSIGNED(instruction_rs)));
     
     -- Selects the second ALU operand
     -- In R-type or BEQ instructions, the second ALU operand comes from the register file
     -- In ORI instruction the second ALU operand is zeroExtended
     -- MUX at the ALU second input
-    MUX_ALU: ALUoperand2 <= readData2 when R_Type(instruction) or decodedInstruction = BEQ else 
-                            zeroExtended when decodedInstruction = ORI else
+    MUX_ALU: ALUoperand2 <= readData2 when R_Type(instruction) or decodedInstruction = BEQ or decodedInstruction = BNE else 
+                            zeroExtended when decodedInstruction = ORI or decodedInstruction = XORI or decodedInstruction = ANDI else
                             signExtended;
     
     ---------------------
     -- Behavioural ALU --
     ---------------------
-    result <=   ALUoperand1 - ALUoperand2 when decodedInstruction = SUBU or decodedInstruction = BEQ else
-                ALUoperand1 and ALUoperand2 when decodedInstruction = AAND else 
+    result <=   ALUoperand1 - ALUoperand2 when decodedInstruction = SUBU or decodedInstruction = BEQ or decodedInstruction = BNE else
+                ALUoperand1 and ALUoperand2 when decodedInstruction = AAND or decodedInstruction = ANDI else 
+                ALUoperand1 xor ALUoperand2 when decodedInstruction = XXOR or decodedInstruction = XORI else
                 ALUoperand1 or  ALUoperand2 when decodedInstruction = OOR or decodedInstruction = ORI else 
+                ALUoperand1 nor ALUoperand2 when decodedInstruction = NNOR else
+                shift_left(ALUoperand1, TO_INTEGER(ALUoperand2)) when decodedInstruction = SSLL else
+                shift_left(ALUoperand2, TO_INTEGER(ALUoperand1)) when decodedInstruction = SLLV else
+                shift_right(ALUoperand1, TO_INTEGER(ALUoperand2)) when decodedInstruction = SSRL else
+                shift_right(ALUoperand2, TO_INTEGER(ALUoperand1)) when decodedInstruction = SRLV else
+                UNSIGNED(shift_right(SIGNED(ALUoperand2), TO_INTEGER(ALUoperand1))) when decodedInstruction = SRAV else
+                UNSIGNED(shift_right(SIGNED(ALUoperand1), TO_INTEGER(ALUoperand2))) when decodedInstruction = SSRA else
                 (0=>'1', others=>'0') when decodedInstruction = SLT and SIGNED(ALUoperand1) < SIGNED(ALUoperand2) else
                 (others=>'0') when decodedInstruction = SLT and not (SIGNED(ALUoperand1) < SIGNED(ALUoperand2)) else
                 ALUoperand2(15 downto 0) & x"0000" when decodedInstruction = LUI else

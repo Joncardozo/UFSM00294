@@ -1,10 +1,10 @@
 # PSC: 2024/1
     
-    .text                           # Declaração de início do segmento de texto
-    .globl  main                    # Declaração de que o rótulo main é global
+    .text                           # Declaraï¿½ï¿½o de inï¿½cio do segmento de texto
+    .globl  main                    # Declaraï¿½ï¿½o de que o rï¿½tulo main ï¿½ global
 
 ########################################
-# testes de instruções individuais
+# testes de instruï¿½ï¿½es individuais
 ########################################
 main:   
     lui     $t0, 0xf3               #
@@ -13,13 +13,13 @@ main:
     ori     $t1, $t1, 0xe2          # $t1 <= 0x005200e2
     lui     $t2, 0x00               #
     ori     $t2, $t2, 0xff8f        # $t2 <= 0x0000ff8f
-    beq     $t1, $t2, main          # Obviamente, esta instrução não deve saltar
-    beq     $t1, $t1, equals        # Obviamente, esta instrução deve saltar
+    beq     $t1, $t2, main          # Obviamente, esta instruï¿½ï¿½o nï¿½o deve saltar
+    beq     $t1, $t1, equals        # Obviamente, esta instruï¿½ï¿½o deve saltar
     j main
 equals:
-    bne     $t2, $t2, main          # Obviamente, esta instrução não deve saltar
-    bne     $t1, $t2, next_i        # Obviamente, esta instrução deve saltar
-    j       main                    # Obviamente, esta instrução nunca deve executar
+    bne     $t2, $t2, main          # Obviamente, esta instruï¿½ï¿½o nï¿½o deve saltar
+    bne     $t1, $t2, next_i        # Obviamente, esta instruï¿½ï¿½o deve saltar
+    j       main                    # Obviamente, esta instruï¿½ï¿½o nunca deve executar
 
 next_i:    
     addu    $t3, $t0, $t1           # $t3 <= 0x00f30023 + 0x005200e2 = 0x01450105
@@ -47,3 +47,6 @@ next_i:
     li       $t1, 21
     sllv     $t0, $t0, $t1          # $t0<= 0xff200000 (deslocado 21 bits para a esquerda)
     srav     $t0, $t0, $t1          # $t0<= 0xfffffff9 (deslocado 21 bits para a direita com o sinal)
+    
+end:
+	j	end

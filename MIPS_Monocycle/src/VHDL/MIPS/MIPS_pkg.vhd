@@ -11,8 +11,9 @@ package MIPS_pkg is
     
     -- Implemented instructions
     type Instruction_type is (
-        UNIMPLEMENTED_INSTRUCTION, NOP, ADDU, SUBU, AAND, OOR, SW, LW, ADDIU, 
-        ORI, SLT, BEQ, J, JR, JAL, LUI
+        UNIMPLEMENTED_INSTRUCTION, NOP, ADDU, SUBU, AAND, ANDI, OOR, SW, LW, ADDIU, 
+        ORI, SLT, BEQ, BNE, J, JR, JAL, LUI, XXOR, XORI, NNOR, SSLL, SSRL, SSRA, SLLV,
+        SRLV, SRAV
     );
     
     -- Functions used to facilitate the processor description
@@ -47,7 +48,7 @@ package body MIPS_pkg is
         case(instruction(31 downto 26)) is
             when "000000" => -- R-Type        
                 if instruction(5 downto 0) = "100001" then
-                    decodedInstruction := ADDIU;
+                    decodedInstruction := ADDU;
                 
                 elsif instruction(5 downto 0) = "100011" then
                     decodedInstruction := SUBU;
@@ -61,8 +62,33 @@ package body MIPS_pkg is
                 elsif instruction(5 downto 0) = "101010" then
                     decodedInstruction := SLT;
                 
+                elsif instruction(5 downto 0) = "100110" then
+                    decodedInstruction := XXOR;
+
                 elsif instruction(5 downto 0) = "001000" then
                     decodedInstruction := JR;
+
+                elsif instruction(5 downto 0) = "100111" then
+                    decodedInstruction := NNOR;
+
+                elsif instruction(5 downto 0) = "000000" then
+                    decodedInstruction := SSLL;
+
+                elsif instruction(5 downto 0) = "000010" then
+                    decodedInstruction := SSRL;
+
+                elsif instruction(5 downto 0) = "000011" then
+                    decodedInstruction := SSRA;
+
+                elsif instruction(5 downto 0) = "000100" then
+                    decodedInstruction := SLLV;
+
+                elsif instruction(5 downto 0) = "000110" then
+                    decodedInstruction := SRLV;
+
+                elsif instruction(5 downto 0) = "000111" then
+                    decodedInstruction := SRAV;
+
                 end if;
         
         when "101011" =>
@@ -76,9 +102,18 @@ package body MIPS_pkg is
         
         when "001101" =>
             decodedInstruction := ORI;
+
+        when "001110" =>
+                decodedInstruction := XORI;
+
+        when "001100" =>
+                decodedInstruction := ANDI;
         
         when "000100"  =>
             decodedInstruction := BEQ;
+
+        when "000101" => 
+            decodedInstruction := BNE;
         
         when "000010" =>
             decodedInstruction := J;
@@ -107,7 +142,8 @@ package body MIPS_pkg is
     begin
         
         case (instruction) is
-            when ADDU | SUBU | AAND | OOR | SLT | LW | ADDIU | ORI | LUI | JAL =>
+            when ADDU | SUBU | AAND | OOR | SLT | LW | ADDIU | ORI | LUI | JAL | XXOR
+                | XORI | ANDI | NNOR | SSLL | SSRL | SSRA | SLLV | SRLV | SRAV =>
                 result := true;
             
             when others =>
