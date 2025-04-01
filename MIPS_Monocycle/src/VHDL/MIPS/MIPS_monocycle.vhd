@@ -177,20 +177,24 @@ begin
     ---------------------
     -- Behavioural ALU --
     ---------------------
-    result <=   ALUoperand1 - ALUoperand2 when decodedInstruction = SUBU or decodedInstruction = BEQ or decodedInstruction = BNE else
-                ALUoperand1 and ALUoperand2 when decodedInstruction = AAND or decodedInstruction = ANDI else 
-                ALUoperand1 xor ALUoperand2 when decodedInstruction = XXOR or decodedInstruction = XORI else
-                ALUoperand1 or  ALUoperand2 when decodedInstruction = OOR or decodedInstruction = ORI else 
-                ALUoperand1 nor ALUoperand2 when decodedInstruction = NNOR else
-                shift_left(ALUoperand1, TO_INTEGER(ALUoperand2)) when decodedInstruction = SSLL else
-                shift_left(ALUoperand2, TO_INTEGER(ALUoperand1)) when decodedInstruction = SLLV else
-                shift_right(ALUoperand1, TO_INTEGER(ALUoperand2)) when decodedInstruction = SSRL else
-                shift_right(ALUoperand2, TO_INTEGER(ALUoperand1)) when decodedInstruction = SRLV else
-                UNSIGNED(shift_right(SIGNED(ALUoperand2), TO_INTEGER(ALUoperand1))) when decodedInstruction = SRAV else
-                UNSIGNED(shift_right(SIGNED(ALUoperand1), TO_INTEGER(ALUoperand2))) when decodedInstruction = SSRA else
-                (0=>'1', others=>'0') when decodedInstruction = SLT and SIGNED(ALUoperand1) < SIGNED(ALUoperand2) else
-                (others=>'0') when decodedInstruction = SLT and not (SIGNED(ALUoperand1) < SIGNED(ALUoperand2)) else
-                ALUoperand2(15 downto 0) & x"0000" when decodedInstruction = LUI else
+    result <=   ALUoperand1 - ALUoperand2 when decodedInstruction = SUBU or decodedInstruction = BEQ or decodedInstruction = BNE else --SUBU, BEQ, BNE
+                ALUoperand1 and ALUoperand2 when decodedInstruction = AAND or decodedInstruction = ANDI else --AND, ANDI
+                ALUoperand1 xor ALUoperand2 when decodedInstruction = XXOR or decodedInstruction = XORI else --XOR, XORI
+                ALUoperand1 or  ALUoperand2 when decodedInstruction = OOR or decodedInstruction = ORI else --OR, ORI
+                ALUoperand1 nor ALUoperand2 when decodedInstruction = NNOR else --NOR
+                shift_left(ALUoperand1, TO_INTEGER(ALUoperand2)) when decodedInstruction = SSLL else --SSLL
+                shift_left(ALUoperand2, TO_INTEGER(ALUoperand1)) when decodedInstruction = SLLV else --SLLV
+                shift_right(ALUoperand1, TO_INTEGER(ALUoperand2)) when decodedInstruction = SSRL else --SSRL
+                shift_right(ALUoperand2, TO_INTEGER(ALUoperand1)) when decodedInstruction = SRLV else --SRLV
+                UNSIGNED(shift_right(SIGNED(ALUoperand2), TO_INTEGER(ALUoperand1))) when decodedInstruction = SRAV else --SRAV
+                UNSIGNED(shift_right(SIGNED(ALUoperand1), TO_INTEGER(ALUoperand2))) when decodedInstruction = SSRA else --SSRA
+                (0=>'1', others=>'0') when decodedInstruction = SLT and SIGNED(ALUoperand1) < SIGNED(ALUoperand2) else --SLT
+                (others=>'0') when decodedInstruction = SLT and not (SIGNED(ALUoperand1) < SIGNED(ALUoperand2)) else --SLT
+                (0=>'1', others=>'0') when decodedInstruction = SLTI and SIGNED(ALUoperand1) < SIGNED(ALUoperand2) else --SLTI
+                (others=>'0') when decodedInstruction = SLTI and not (SIGNED(ALUoperand1) < SIGNED(ALUoperand2)) else --SLTI
+                (0=>'1', others=>'0') when decodedInstruction = SLTIU and ALUoperand1 < ALUoperand2 else --SLTIU
+                (others=>'0') when decodedInstruction = SLTIU and not (ALUoperand1 < ALUoperand2) else --SLTIU
+                ALUoperand2(15 downto 0) & x"0000" when decodedInstruction = LUI else --LUI
                 ALUoperand1 + ALUoperand2;    -- default for ADDU, ADDIU, SW, LW   
 
 
