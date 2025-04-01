@@ -118,6 +118,7 @@ begin
     -- In case of jump/branch, PC must be bypassed due to synchronous memory read
     instructionFetchAddress <= branchTarget when decodedInstruction = BEQ and zero = '1' else 
                                branchTarget when decodedInstruction = BNE and zero = '0' else
+                               branchTarget when decodedInstruction = BGEZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) >= 0 else
                                jumpTarget when decodedInstruction = J or decodedInstruction = JAL else
                                ALUoperand1 when decodedInstruction = JR else
                                pc;
