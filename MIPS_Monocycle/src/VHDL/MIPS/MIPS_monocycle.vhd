@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------
 -- Design unit: MIPS_monocycle
--- Description: Behavioural processor description
+-- Description: Behavioral processor description
 -------------------------------------------------------------------------
 
 library IEEE;
@@ -36,6 +36,10 @@ architecture behavioral of MIPS_monocycle is
     signal branchOffset, branchTarget, jumpTarget: UNSIGNED(31 downto 0);
     signal writeRegister   : UNSIGNED(4 downto 0);
     signal regWrite : std_logic;
+    signal selectedByte : std_logic_vector(7 downto 0);
+    signal selectedByteExtended : UNSIGNED(31 downto 0);
+    signal selectedHalfWord : std_logic_vector(15 downto 0);
+    signal selectedHalfWordExtended : UNSIGNED(31 downto 0);
     
     -- Register file
     type RegisterArray is array (natural range <>) of UNSIGNED(31 downto 0);
@@ -66,7 +70,6 @@ begin
         report "******************* UNIMPLEMENTED INSTRUCTION *************"
         --severity error;   -- Produces only an error message in simulator
         severity failure;  -- Stops the simulation  
-    
     
     -- Register PC and adder --
     REG_PC: process(clk,rst)
@@ -99,44 +102,78 @@ begin
     -- Zero extends the low 16 bits of instruction (I-Type immediate constant)
     -- Not present in datapath diagram
     ZERO_EXT: zeroExtended <= RESIZE(UNSIGNED(instruction_imm), zeroExtended'length);
-                                
+
     -- Converts the branch offset from words to bytes (multiply by 4) 
     -- Hardware at the second Branch ADDER input (datapath diagram)
     SHIFT_L: branchOffset <= signExtended(29 downto 0) & "00";
-    
+
     -- Branch target address
     -- Branch ADDER above the ALU (datapath diagram)
     ADDER_BRANCH: branchTarget <= pc + branchOffset;
-    
+
     -- Builds the jump target address
     -- Top of datapath diagram
     jumpTarget <= (pc(31 downto 28) & UNSIGNED(instruction(25 downto 0)) & "00");
-      
-      
+
     -- MUX which selects the source address of the next instruction 
     -- Not present in datapath diagram
     -- In case of jump/branch, PC must be bypassed due to synchronous memory read
-    instructionFetchAddress <= branchTarget when decodedInstruction = BEQ and zero = '1' else 
-                               branchTarget when decodedInstruction = BNE and zero = '0' else
+    instructionFetchAddress <= branchTarget when (decodedInstruction = BEQ and zero = '1') or (decodedInstruction = BNE and zero = '0') else 
                                jumpTarget when decodedInstruction = J or decodedInstruction = JAL else
                                ALUoperand1 when decodedInstruction = JR else
                                pc;
-                    
+
     -- Instruction memory addressing
     instructionAddress <= STD_LOGIC_VECTOR(instructionFetchAddress);
-                
-    
-    -------------------------------
-    -- Behavioural register file --
-    -------------------------------
+
+    ------------------------------
+    -- Behavioral register file --
+    ------------------------------
     readData2 <=    RESIZE(UNSIGNED(instruction_shamt), readData2'length) when decodedInstruction = SSLL or 
                                                 decodedInstruction = SSRL or decodedInstruction = SSRA else
                     registerFile(TO_INTEGER(UNSIGNED(instruction_rt)));
-         
+
+    ---------------------------------------------
+    -- Select byte for LB, LBU, SB instruction --
+    ---------------------------------------------
+    selectedByte <= data_in(7 downto 0) when result(1 downto 0) = "00" and (decodedInstruction = LB or decodedInstruction = LBU) else
+                    data_in(15 downto 8) when result(1 downto 0) = "01" and (decodedInstruction = LB or decodedInstruction = LBU) else
+                    data_in(23 downto 16) when result(1 downto 0) = "10" and (decodedInstruction = LB or decodedInstruction = LBU) else
+                    data_in(31 downto 24) when result(1 downto 0) = "11" and (decodedInstruction = LB or decodedInstruction = LBU) else
+                    std_logic_vector(readData2(7 downto 0)) when decodedInstruction = SB else
+                    (others => '0');
+
+    selectedByteExtended <= UNSIGNED(RESIZE(SIGNED(selectedByte), selectedByteExtended'length)) when decodedInstruction = LB or decodedInstruction = SB else
+                            RESIZE(UNSIGNED(selectedByte), selectedByteExtended'length) when decodedInstruction = LBU;
+
+    ----------------------------------------
+    -- Select word for LH, SH instruction --
+    ----------------------------------------
+    selectedHalfWord <=     data_in(15 downto 0) when result(1 downto 0) = "00" and (decodedInstruction = LH or decodedInstruction = LHU) else
+                            data_in(31 downto 16) when result(1 downto 0) = "10" and (decodedInstruction = LH or decodedInstruction = LHU) else
+                            std_logic_vector(readData2(15 downto 0)) when decodedInstruction = SH;
+
+    selectedHalfWordExtended <= UNSIGNED(RESIZE(SIGNED(selectedHalfWord), selectedHalfWordExtended'length)) when decodedInstruction = LH or decodedInstruction = SH else
+                                RESIZE(UNSIGNED(selectedHalfWord), selectedHalfWordExtended'length) when decodedInstruction = LHU;
+    
+    -- checks if half word is aligned
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            if decodedInstruction = LH or decodedInstruction = LHU or decodedInstruction = SH then
+                assert not (result(1 downto 0) = "01" or result(1 downto 0) = "11")
+                    report "LH desalinhado, deve ser 00 ou 01"
+                    severity failure;
+            end if;
+        end if;
+    end process;
+
     -- Selects the data to be written in the register file
     -- In load instructions the data comes from the data memory
     -- MUX at the data memory output
-    MUX_DATA_MEM: writeData <= UNSIGNED(data_in) when LoadInstruction(decodedInstruction) else 
+    MUX_DATA_MEM: writeData <= UNSIGNED(data_in) when decodedInstruction = LW else
+                                selectedByteExtended when decodedInstruction = LB or decodedInstruction = LBU else
+                                selectedHalfWordExtended when decodedInstruction = LH or decodedInstruction = LHU else
                                pc when decodedInstruction = JAL else
                                result;
     
@@ -159,13 +196,12 @@ begin
             end if;
         end if;
     end process;
-    
-       
+
     -- The first ALU operand always comes from the register file
     ALUoperand1 <=  registerFile(TO_INTEGER(UNSIGNED(instruction_rt))) when decodedInstruction = SSLL or 
                                     decodedInstruction = SSRL or decodedInstruction = SSRA else
                     registerFile(TO_INTEGER(UNSIGNED(instruction_rs)));
-    
+
     -- Selects the second ALU operand
     -- In R-type or BEQ instructions, the second ALU operand comes from the register file
     -- In ORI instruction the second ALU operand is zeroExtended
@@ -173,7 +209,7 @@ begin
     MUX_ALU: ALUoperand2 <= readData2 when R_Type(instruction) or decodedInstruction = BEQ or decodedInstruction = BNE else 
                             zeroExtended when decodedInstruction = ORI or decodedInstruction = XORI or decodedInstruction = ANDI else
                             signExtended;
-    
+
     ---------------------
     -- Behavioural ALU --
     ---------------------
@@ -191,27 +227,32 @@ begin
                 (0=>'1', others=>'0') when decodedInstruction = SLT and SIGNED(ALUoperand1) < SIGNED(ALUoperand2) else
                 (others=>'0') when decodedInstruction = SLT and not (SIGNED(ALUoperand1) < SIGNED(ALUoperand2)) else
                 ALUoperand2(15 downto 0) & x"0000" when decodedInstruction = LUI else
-                ALUoperand1 + ALUoperand2;    -- default for ADDU, ADDIU, SW, LW   
-
+                ALUoperand1 + ALUoperand2;    -- default for ADDU, ADDIU, SW, LW, LB   
 
     -- Generates the zero flag
     zero <= '1' when result = 0 else '0';
-      
 
-
-      
     ---------------------------
     -- Data memory interface --
     ---------------------------
-    
+
     -- ALU output address the data memory
     dataAddress <= STD_LOGIC_VECTOR(result);
-    
+
     -- Data to data memory comes from the second read register at register file
-    data_out <= STD_LOGIC_VECTOR(readData2);
-    
-    wbe <= "1111" when decodedInstruction = SW else "0000";
-    
+    data_out <= STD_LOGIC_VECTOR(shift_left(selectedByteExtended, TO_INTEGER(result(1 downto 0))*8)) when decodedInstruction = SB else 
+                STD_LOGIC_VECTOR(shift_left(selectedHalfWordExtended, TO_INTEGER(result(1 downto 0))*8)) when decodedInstruction = SH else
+                STD_LOGIC_VECTOR(readData2);
+
+    wbe <=  "1111" when decodedInstruction = SW else
+            "0001" when result(1 downto 0) = "00" and decodedInstruction = SB else
+            "0010" when result(1 downto 0) = "01" and decodedInstruction = SB else
+            "0100" when result(1 downto 0) = "10" and decodedInstruction = SB else
+            "1000" when result(1 downto 0) = "11" and decodedInstruction = SB else
+            "0011" when result(1 downto 0) = "00" and decodedInstruction = SH else
+            "1100" when result(1 downto 0) = "10" and decodedInstruction = SH else
+            "0000";
+
     ce <= '1' when LoadInstruction(decodedInstruction) or StoreInstruction(decodedInstruction) else '0';
-    
+
 end behavioral;

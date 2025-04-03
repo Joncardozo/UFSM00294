@@ -53,12 +53,13 @@ begin
     
     INSTRUCTION_MEMORY: entity work.Memory(behavioral)
         generic map (
-            SIZE            => 64,  -- Memory depth in words
+            SIZE            => 1024,  -- Memory depth in words
             ADDR_WIDTH      => 30,
             COL_WIDTH       => 8,
             NB_COL          => 4,
             OFFSET          => MARS_INSTRUCTION_OFFSET,   -- MARS initial address (mapped to memory address 0x00000000)
             imageFileName   => "code.txt"
+
         )
         port map (
             clk             => clk,

@@ -13,7 +13,7 @@ package MIPS_pkg is
     type Instruction_type is (
         UNIMPLEMENTED_INSTRUCTION, NOP, ADDU, SUBU, AAND, ANDI, OOR, SW, LW, ADDIU, 
         ORI, SLT, BEQ, BNE, J, JR, JAL, LUI, XXOR, XORI, NNOR, SSLL, SSRL, SSRA, SLLV,
-        SRLV, SRAV
+        SRLV, SRAV, LB, LBU, LH, LHU, SB, SH, JALR
     );
     
     -- Functions used to facilitate the processor description
@@ -68,6 +68,9 @@ package body MIPS_pkg is
                 elsif instruction(5 downto 0) = "001000" then
                     decodedInstruction := JR;
 
+                elsif instruction(5 downto 0) = "001001" then
+                    decodedInstruction := JALR;
+
                 elsif instruction(5 downto 0) = "100111" then
                     decodedInstruction := NNOR;
 
@@ -96,6 +99,18 @@ package body MIPS_pkg is
         
         when "100011" =>
             decodedInstruction := LW;
+
+        when "100000" =>
+            decodedInstruction := LB;
+
+        when "100100" =>
+            decodedInstruction := LBU;
+        
+        when "100001" =>
+            decodedInstruction := LH;
+
+        when "100101" =>
+            decodedInstruction := LHU;
         
         when "001001" =>
             decodedInstruction := ADDIU;
@@ -104,10 +119,10 @@ package body MIPS_pkg is
             decodedInstruction := ORI;
 
         when "001110" =>
-                decodedInstruction := XORI;
+            decodedInstruction := XORI;
 
         when "001100" =>
-                decodedInstruction := ANDI;
+            decodedInstruction := ANDI;
         
         when "000100"  =>
             decodedInstruction := BEQ;
@@ -120,6 +135,12 @@ package body MIPS_pkg is
         
         when "000011" =>
             decodedInstruction := JAL;
+
+        when "101000" =>
+            decodedInstruction := SB;
+
+        when "101001" =>
+            decodedInstruction := SH;
         
         when "001111" => 
             if instruction(25 downto 21) = "00000" then
@@ -143,7 +164,8 @@ package body MIPS_pkg is
         
         case (instruction) is
             when ADDU | SUBU | AAND | OOR | SLT | LW | ADDIU | ORI | LUI | JAL | XXOR
-                | XORI | ANDI | NNOR | SSLL | SSRL | SSRA | SLLV | SRLV | SRAV =>
+                | XORI | ANDI | NNOR | SSLL | SSRL | SSRA | SLLV | SRLV | SRAV | LB 
+                | LBU | LH | LHU =>
                 result := true;
             
             when others =>
@@ -162,7 +184,7 @@ package body MIPS_pkg is
     begin
         
         case (instruction) is
-            when LW => -- LB, LBU, LH, LHU
+            when LW | LB | LBU | LH | LHU => -- LB, LBU, LH, LHU
                 result := true;
             
             when others =>
@@ -181,7 +203,7 @@ package body MIPS_pkg is
     begin
         
         case (instruction) is
-            when SW => -- SB, SH
+            when SW | SB | SH => -- SB, SH
                 result := true;
             
             when others =>
