@@ -58,7 +58,7 @@ begin
             COL_WIDTH       => 8,
             NB_COL          => 4,
             OFFSET          => MARS_INSTRUCTION_OFFSET,   -- MARS initial address (mapped to memory address 0x00000000)
-            imageFileName   => "tarefa1_programa.txt"
+            imageFileName   => "teste_code.txt"
         )
         port map (
             clk             => clk,
@@ -73,12 +73,12 @@ begin
     -- in order to support monocycle execution by MIPS
     DATA_MEMORY: entity work.Memory(behavioral)
         generic map (
-            SIZE            => 1024,  -- Memory depth in words
+            SIZE            => 11,  -- Memory depth in words
             ADDR_WIDTH      => 30,
             COL_WIDTH       => 8,
             NB_COL          => 4,
             OFFSET          => MARS_DATA_OFFSET,  -- MARS initial address (mapped to memory address 0x00000000)
-            imageFileName   => "tarefa1_dados.txt"
+            imageFileName   => "teste_data.txt"
         )
         port map (
             clk             => clk_n,

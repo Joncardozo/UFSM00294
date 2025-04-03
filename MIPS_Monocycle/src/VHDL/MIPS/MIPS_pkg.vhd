@@ -1,3 +1,4 @@
+
 -------------------------------------------------------------------------
 -- Design unit: MIPS package
 -- Description: Types and functions used in the processor description
@@ -13,7 +14,7 @@ package MIPS_pkg is
     type Instruction_type is (
         UNIMPLEMENTED_INSTRUCTION, NOP, ADDU, SUBU, AAND, ANDI, OOR, SW, LW, ADDIU, 
         ORI, SLT, BEQ, BNE, J, JR, JAL, LUI, XXOR, XORI, NNOR, SSLL, SSRL, SSRA, SLLV,
-        SRLV, SRAV, LB, LBU, LH, LHU, SB, SH, JALR
+        SRLV, SRAV, SLTI, SLTIU, BGEZ, BLEZ, LB, LBU, LH, LHU, SB, SH, JALR
     );
     
     -- Functions used to facilitate the processor description
@@ -93,10 +94,18 @@ package body MIPS_pkg is
                     decodedInstruction := SRAV;
 
                 end if;
-        
+
+        when "000001" => --REGIMM GROUP
+            if instruction(20 downto 16) = "00001" then
+                decodedInstruction := BGEZ; 
+            end if;
+
         when "101011" =>
             decodedInstruction := SW;
         
+        when "000110" =>
+            decodedInstruction := BLEZ;
+
         when "100011" =>
             decodedInstruction := LW;
 
@@ -117,6 +126,12 @@ package body MIPS_pkg is
         
         when "001101" =>
             decodedInstruction := ORI;
+
+        when "001011" =>
+            decodedInstruction := SLTIU;
+
+        when "001010" =>
+            decodedInstruction := SLTI;
 
         when "001110" =>
             decodedInstruction := XORI;
@@ -164,7 +179,8 @@ package body MIPS_pkg is
         
         case (instruction) is
             when ADDU | SUBU | AAND | OOR | SLT | LW | ADDIU | ORI | LUI | JAL | XXOR
-                | XORI | ANDI | NNOR | SSLL | SSRL | SSRA | SLLV | SRLV | SRAV | LB 
+                | XORI | ANDI | NNOR | SSLL | SSRL | SSRA | SLLV | SRLV | SRAV | SLTI 
+                | SLTIU | LB 
                 | LBU | LH | LHU =>
                 result := true;
             
