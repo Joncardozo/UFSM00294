@@ -93,6 +93,7 @@ begin
     -- MUX at the register file input (datapath diagram)
     MUX_RF: writeRegister <= UNSIGNED(instruction_rd) when R_Type(instruction) else -- R-type instructions
                              "11111" when decodedInstruction = JAL else    -- $ra ($31)
+                             UNSIGNED(instruction_rd) when decodedInstruction = JALR else
                              UNSIGNED(instruction_rt); -- Load instructions
       
     -- Sign extends the low 16 bits of instruction (I-Type immediate constant)
@@ -122,7 +123,7 @@ begin
                                branchTarget when decodedInstruction = BGEZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) >= 0 else
                                branchTarget when decodedInstruction = BLEZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) <= 0 else
                                jumpTarget when decodedInstruction = J or decodedInstruction = JAL else
-                               ALUoperand1 when decodedInstruction = JR else
+                               ALUoperand1 when decodedInstruction = JR or decodedInstruction = JALR else
                                pc;
 
     -- Instruction memory addressing
@@ -176,7 +177,7 @@ begin
     MUX_DATA_MEM: writeData <= UNSIGNED(data_in) when decodedInstruction = LW else
                                 selectedByteExtended when decodedInstruction = LB or decodedInstruction = LBU else
                                 selectedHalfWordExtended when decodedInstruction = LH or decodedInstruction = LHU else
-                               pc when decodedInstruction = JAL else
+                               pc when decodedInstruction = JAL or decodedInstruction = JALR else
                                result;
     
     -- R-type, ADDIU, ORI and load instructions, store the result in the register file
