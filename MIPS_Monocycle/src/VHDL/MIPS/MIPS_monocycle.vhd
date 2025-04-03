@@ -119,6 +119,7 @@ begin
     instructionFetchAddress <= branchTarget when decodedInstruction = BEQ and zero = '1' else 
                                branchTarget when decodedInstruction = BNE and zero = '0' else
                                branchTarget when decodedInstruction = BGEZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) >= 0 else
+                               branchTarget when decodedInstruction = BLEZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) <= 0 else
                                jumpTarget when decodedInstruction = J or decodedInstruction = JAL else
                                ALUoperand1 when decodedInstruction = JR else
                                pc;
