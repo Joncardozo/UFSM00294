@@ -232,6 +232,8 @@ begin
                 (others=>'0') when decodedInstruction = SLTI and not (SIGNED(ALUoperand1) < SIGNED(ALUoperand2)) else --SLTI
                 (0=>'1', others=>'0') when decodedInstruction = SLTIU and ALUoperand1 < ALUoperand2 else --SLTIU
                 (others=>'0') when decodedInstruction = SLTIU and not (ALUoperand1 < ALUoperand2) else --SLTIU
+                (0=>'1', others=>'0') when decodedInstruction = SLTU and (ALUoperand1 < ALUoperand2) else --SLTU
+                (others=>'0') when decodedInstruction = SLTU and not (ALUoperand1 < ALUoperand2) else
                 ALUoperand2(15 downto 0) & x"0000" when decodedInstruction = LUI else --LUI
                 ALUoperand1 + ALUoperand2;    -- default for ADDU, ADDIU, SW, LW, LB   
 
