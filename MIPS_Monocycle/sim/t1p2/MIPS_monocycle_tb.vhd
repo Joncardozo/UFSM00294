@@ -58,7 +58,7 @@ begin
             COL_WIDTH       => 8,
             NB_COL          => 4,
             OFFSET          => MARS_INSTRUCTION_OFFSET,   -- MARS initial address (mapped to memory address 0x00000000)
-            imageFileName   => "code.txt"
+            imageFileName   => "t1_p2_program.txt"
 
         )
         port map (
@@ -79,7 +79,7 @@ begin
             COL_WIDTH       => 8,
             NB_COL          => 4,
             OFFSET          => MARS_DATA_OFFSET,  -- MARS initial address (mapped to memory address 0x00000000)
-            imageFileName   => "data.txt"
+            imageFileName   => "t1p2_data.txt"
         )
         port map (
             clk             => clk_n,
