@@ -1,0 +1,58 @@
+Running: /home/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/dede/MIPS_MONO/MIPS_FPGA_TEST_isim_beh.exe -prj /home/dede/MIPS_MONO/MIPS_FPGA_TEST_beh.prj work.MIPS_FPGA_TEST work.glbl 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "/home/dede/MIPS_MONO/RegDisp.v" into library work
+Analyzing Verilog file "/home/dede/MIPS_MONO/BCD7Seg.v" into library work
+Analyzing Verilog file "/home/dede/MIPS_MONO/MIPS_MONOCYCLE_TEST.v" into library work
+Analyzing Verilog file "/home/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Parsing VHDL file "/home/dede/MIPS_MONO/Util_pkg.vhd" into library work
+Parsing VHDL file "/home/dede/MIPS_MONO/MIPS_pkg.vhd" into library work
+Parsing VHDL file "/home/dede/MIPS_MONO/ResetSynchonizer.vhd" into library work
+Parsing VHDL file "/home/dede/MIPS_MONO/MIPS_monocycle.vhd" into library work
+Parsing VHDL file "/home/dede/MIPS_MONO/Memory.vhd" into library work
+Parsing VHDL file "/home/dede/MIPS_MONO/DisplayController.vhd" into library work
+Parsing VHDL file "/home/dede/MIPS_MONO/ClockManager.vhd" into library work
+Starting static elaboration
+WARNING:HDLCompiler:919 - "/home/dede/MIPS_MONO/MIPS_MONOCYCLE_TEST.v" Line 60: Size mismatch in mixed language port association, vhdl port display0
+WARNING:HDLCompiler:919 - "/home/dede/MIPS_MONO/MIPS_MONOCYCLE_TEST.v" Line 73: Size mismatch in mixed language port association, vhdl port wbe
+WARNING:HDLCompiler:919 - "/home/dede/MIPS_MONO/MIPS_MONOCYCLE_TEST.v" Line 115: Size mismatch in mixed language port association, vhdl port wbe
+Completed static elaboration
+Fuse Memory Usage: 108936 KB
+Fuse CPU Usage: 1140 ms
+Compiling module RegDisp
+Compiling module BCD7Seg
+Compiling module MIPS_FPGA_TEST
+Compiling module glbl
+Compiling package standard
+Compiling package std_logic_1164
+Compiling architecture behavioral of entity ResetSynchonizer [resetsynchonizer_default]
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling package vcomponents
+Compiling package std_logic_signed
+Compiling package textio
+Compiling package vital_timing
+Compiling package vital_primitives
+Compiling package vpkg
+Compiling architecture ibufg_v of entity IBUFG [\IBUFG("DONT_CARE","0",true,"DEF...]
+Compiling architecture pll_adv_v of entity PLL_ADV [\PLL_ADV("OPTIMIZED","CLKFBOUT",...]
+Compiling architecture pll_base_v of entity PLL_BASE [\PLL_BASE("OPTIMIZED",4,0.0,10.0...]
+Compiling architecture bufg_v of entity BUFG [bufg_default]
+Compiling architecture xilinx of entity ClockManager [clockmanager_default]
+Compiling architecture arch1 of entity DisplayCtrl [displayctrl_default]
+Compiling package mips_pkg
+Compiling architecture behavioral of entity MIPS_monocycle [\MIPS_monocycle(('0','0','0','0'...]
+Compiling package util_pkg
+Compiling architecture behavioral of entity Memory [\Memory(64,30,8,4,"code.txt",('0...]
+Compiling architecture behavioral of entity Memory [\Memory(1024,30,8,4,"data.txt",(...]
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 33 VHDL Units
+Compiled 4 Verilog Units
+Built simulation executable /home/dede/MIPS_MONO/MIPS_FPGA_TEST_isim_beh.exe
+Fuse Memory Usage: 1231088 KB
+Fuse CPU Usage: 1620 ms
+GCC CPU Usage: 9050 ms

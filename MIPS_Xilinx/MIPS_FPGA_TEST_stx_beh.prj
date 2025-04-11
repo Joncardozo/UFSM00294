@@ -1,0 +1,4 @@
+verilog isim_temp "RegDisp.v"
+verilog isim_temp "BCD7Seg.v"
+verilog isim_temp "MIPS_MONOCYCLE_TEST.v"
+verilog isim_temp "/home/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
