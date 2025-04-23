@@ -38,6 +38,11 @@ module mips_uC(
 	wire sys_clk_n;
 	assign sys_clk_n = ~sys_clk;
 	
+	wire [15:0] data_in_port;
+	wire [31:0] data_in_mem;
+	
+	assign data_in = data_address[31] == 1 ? data_in_port : data_in_mem;
+	
 	ResetSynchonizer rst_sync(
 		.rst_in(rst),
 		.rst_out(rst_out),
@@ -52,15 +57,15 @@ module mips_uC(
 	// I/O port
 	BidirectionalPort #(
 		.DATA_WIDTH(16),
-		.PORT_DATA_ADDR(0'b0010),
-		.PORT_CONFIG_ADDR(0'b0001),
-		.PORT_ENABLE_ADDR(0'b0000)
+		.PORT_DATA_ADDR(2'b10),
+		.PORT_CONFIG_ADDR(2'b01),
+		.PORT_ENABLE_ADDR(2'b00)
 	) PORT_IO (
 		.clk(sys_clk),
         .rst(rst_out),
         // Processor interface
         .data_in(data_out),
-        .data_out(data_in),
+        .data_out(data_in_port),
         .address(data_address[7:4]),
         .rw(instruction[29]),
         .ce(ce_port_io),
@@ -118,7 +123,7 @@ module mips_uC(
 		.ce(ce),
 		.wbe(wbe),
 		.data_in(data_out),
-		.data_out(data_in),
+		.data_out(data_in_mem),
 		.address(data_address[31:2]) // Converts byte address to word address
 	);
 

@@ -1,0 +1,8 @@
+vhdl work "Util_pkg.vhd"
+vhdl work "MIPS_pkg.vhd"
+vhdl work "ResetSynchonizer.vhd"
+vhdl work "MIPS_monocycle.vhd"
+vhdl work "Memory.vhd"
+vhdl work "ClockManager.vhd"
+vhdl work "BidirectionalPort.vhd"
+verilog work "mips_uC.v"
