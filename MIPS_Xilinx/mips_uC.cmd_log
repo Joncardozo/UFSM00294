@@ -1,3 +1,4 @@
 xst -intstyle ise -ifn "/home/jon/code/MIPS_jonathan/mips_uC.xst" -ofn "/home/jon/code/MIPS_jonathan/mips_uC.syr" 
 xst -intstyle ise -ifn "/home/jon/code/MIPS_jonathan/mips_uC.xst" -ofn "/home/jon/code/MIPS_jonathan/mips_uC.syr" 
 xst -intstyle ise -ifn "/home/jon/code/MIPS_jonathan/mips_uC.xst" -ofn "/home/jon/code/MIPS_jonathan/mips_uC.syr" 
+xst -intstyle ise -ifn "/home/jon/code/MIPS_jonathan/mips_uC.xst" -ofn "/home/jon/code/MIPS_jonathan/mips_uC.syr" 

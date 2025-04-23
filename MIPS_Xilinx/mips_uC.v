@@ -30,10 +30,9 @@ module mips_uC(
 	wire [31:0] data_address, instruction_address, instruction, data_in, data_out;
 	wire [15:0] q;
 	wire [3:0] wbe_MIPS;
-	wire [15:0] port_io;
 
 	assign ce_data = ce_MIPS && ~data_address[31];
-	assign ce_port_io = data_address[31] && (|wbe_MIPS) && ce_MIPS && data_address[11:8] == 4'b0000; 
+	assign ce_port_io = data_address[31] && (|wbe_MIPS) && ce_MIPS && data_address[9:8] == 4'b0000; 
 
 	wire sys_clk_n;
 	assign sys_clk_n = ~sys_clk;
@@ -64,7 +63,7 @@ module mips_uC(
 		.clk(sys_clk),
         .rst(rst_out),
         // Processor interface
-        .data_in(data_out),
+        .data_in(data_out[15:0]),
         .data_out(data_in_port),
         .address(data_address[7:4]),
         .rw(instruction[29]),
@@ -120,8 +119,8 @@ module mips_uC(
 		.imageFileName("data.txt")         
 	) DATA_MEMORY (
 		.clk(sys_clk_n),        
-		.ce(ce),
-		.wbe(wbe),
+		.ce(ce_data),
+		.wbe(wbe_MIPS),
 		.data_in(data_out),
 		.data_out(data_in_mem),
 		.address(data_address[31:2]) // Converts byte address to word address
