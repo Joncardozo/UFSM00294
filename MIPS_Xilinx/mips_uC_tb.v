@@ -22,5 +22,10 @@ module mips_uC_tb(
 	input clk, rst
     );
 
+	mips_uC controlador(
+		.clk(clk),
+		.rst(rst)
+	);
+
 
 endmodule

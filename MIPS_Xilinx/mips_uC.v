@@ -24,16 +24,16 @@ module mips_uC(
 );
 
 	localparam [31:0] MARS_INSTRUCTION_OFFSET = 32'h00400000;
-   localparam [31:0] MARS_DATA_OFFSET = 32'h10010000;
+	localparam [31:0] MARS_DATA_OFFSET = 32'h10010000;
 
 	wire ce_data, ce_regdisp, rst_out, sys_clk, ce_MIPS, rst_n;
 	wire [31:0] data_address, instruction_address, instruction, data_in, data_out;
 	wire [15:0] q;
 	wire [3:0] wbe_MIPS;
-	wire [7:0] disp0_out, disp1_out, disp2_out, disp3_out;
+	wire [15:0] port_io;
 
 	assign ce_data = ce_MIPS && ~data_address[31];
-	assign ce_regdisp = data_address[31] && (|wbe_MIPS) && ce_MIPS; 
+	assign ce_port_io = data_address[31] && (|wbe_MIPS) && ce_MIPS && data_address[11:8] == 4'b0000; 
 
 	wire sys_clk_n;
 	assign sys_clk_n = ~sys_clk;
@@ -49,43 +49,25 @@ module mips_uC(
 		.clk_25MHz(sys_clk)
 	);
 	
-	RegDisp reg_disp(
-		.ce(ce_regdisp),
-		.d(data_out[15:0]),
-		.q(q), 
-		.clk(sys_clk)
-	);
-
-	BCD7Seg disp0 (
-		.num(q[3:0]),
-		.code(disp0_out)
-	);
-
-	BCD7Seg disp1 (
-		.num(q[7:4]),
-		.code(disp1_out)
-	);
-
-	BCD7Seg disp2 (
-		.num(q[11:8]),
-		.code(disp2_out)
-	);
-
-	BCD7Seg disp3 (
-		.num(q[15:12]),
-		.code(disp3_out)
-	);
-
-	DisplayCtrl display (
+	// I/O port
+	BidirectionalPort #(
+		.DATA_WIDTH(16),
+		.PORT_DATA_ADDR(0'b0010),
+		.PORT_CONFIG_ADDR(0'b0001),
+		.PORT_ENABLE_ADDR(0'b0000)
+	) PORT_IO (
 		.clk(sys_clk),
-		.rst(rst_out),
-		.display0(disp0_out),
-		.display1(disp1_out),
-		.display2(disp2_out),
-		.display3(disp3_out),
-		.segments(seg),
-		.display_en_n(an)
+        .rst(rst_out),
+        // Processor interface
+        .data_in(data_out),
+        .data_out(data_in),
+        .address(data_address[7:4]),
+        .rw(instruction[29]),
+        .ce(ce_port_io),
+        // External interface
+        .port_io(port_io)
 	);
+
 
 	MIPS_monocycle #(
 		.PC_START_ADDRESS(MARS_INSTRUCTION_OFFSET)
@@ -139,7 +121,5 @@ module mips_uC(
 		.data_out(data_in),
 		.address(data_address[31:2]) // Converts byte address to word address
 	);
-
-endmodule
 
 endmodule
