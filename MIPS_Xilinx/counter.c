@@ -1,7 +1,8 @@
-#define IO_PORT_ADDR 0x80000000
-#define IO_PORT_CONFIG_ADDR IO_PORT_ADDR + 0b01
-#define IO_PORT_ENABLE_ADDR  IO_PORT_ADDR + 0x00
-#define IO_PORT_DATA_ADDR IO_PORT_ADDR + 0b10
+#define PERIPH_BASE 0x80000000
+#define IO_PORT_ADDR (PERIPH_BASE + 0x0000)
+#define IO_PORT_CONFIG_ADDR (IO_PORT_ADDR + 0b01)
+#define IO_PORT_ENABLE_ADDR  (IO_PORT_ADDR + 0x00)
+#define IO_PORT_DATA_ADDR (IO_PORT_ADDR + 0b10)
 
 #define IO_PORT_ENABLE 0b0111111111111111
 #define IO_PORT_CONFIG 0b0000000000000111
@@ -33,12 +34,13 @@ void setup_io() {
     *data = 0;
 }
 
-int up_mask = 0b100;
-int down_mask = 0b010;
-int reset_mask = 0b001;
-int disp_mask = 0b11111111000;
+const int up_mask = 0b100;
+const int down_mask = 0b010;
+const int reset_mask = 0b001;
+const int disp_mask = 0b11111111000;
 int disp_en_mask = 0b0000100000000000;
-int disp_en_mask_inversor = 0b0001100000000000;
+const int disp_en_mask_inversor = 0b0001100000000000;
+const int input_mask = 0b111;
 
 int counter = 0;
 volatile char display_hex[2];
@@ -71,7 +73,17 @@ void counter2seg() {
 }
 
 void write_display() {
-	*data = ((((display_hex[0] << 3) & 0b11111111000)) | ((0b11 << 10) & disp_en_mask));
+	int which_enable = (disp_en_mask >> 10);
+	int display_index = 0;
+	if (which_enable == 1){
+		display_index = 0;
+	}
+	else {
+		display_index = 1;
+	}
+	*data = ((((display_hex[display_index] << 3) & 0b11111111000)) | 
+			((0b11 << 10) & disp_en_mask)) |
+			(*data & input_mask);
 	disp_en_mask ^= disp_en_mask_inversor; 
 }
 
@@ -79,16 +91,16 @@ void read_button() {
 	volatile int up_pool = (*data & up_mask) >> 2;
 	volatile int down_pool = (*data & down_mask) >> 1;
 	volatile int reset_pool = *data & reset_mask;
-	volatile int up = 0;
-	volatile int down = 0;
-	volatile int reset = 0;
+	int up = 0;
+	int down = 0;
+	int reset = 0;
 
 	if (up_pool == 1 || down_pool == 1 || reset_pool == 1)
 	{
 		int flag = 1;
 		for(int i = 0; i <= 50; i++)
 		{
-			flag &= up || down || reset;
+			flag &= (up || down || reset);
 			if (!flag)
 			{
 				break;
