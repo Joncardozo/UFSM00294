@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.ncd
+OUTFILE=/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=/home/jon/code/novo_MIPS/MIPS_Xilinx
+LICENSE=WebPack
+USER_INFO=212544372_0_0_676

@@ -92,7 +92,7 @@ int read_button() {
 
 	if (up_pool == 1 || down_pool == 1 || reset_pool == 1)
 	{
-		for(int i = 0; i <= 500; i++)
+		for(int i = 0; i <= 20; i++)
 		{
             volatile int up_pool = (*data & up_mask) >> 2;
             volatile int down_pool = (*data & down_mask) >> 1;
@@ -125,6 +125,7 @@ int read_button() {
 void print_display(int disp_index, char disp_num) {
     if (disp_index == 0) {
         *data = (0b0000 << 11) | (*data & input_mask);
+        delay(1, 0);
         *data = (0b0001 << 11) | (disp_num << 3) | (*data & input_mask);
     }
     else if (disp_index == 1) {
@@ -133,6 +134,7 @@ void print_display(int disp_index, char disp_num) {
             }
             else {
                 *data = (0b0000 << 11) | (*data & input_mask);
+                delay(1, 0);
                 *data = (0b0010 << 11) | (disp_num << 3) | (*data & input_mask);
             }
             
@@ -151,12 +153,12 @@ int main()
         for (int i = 0; i < 4096 && !was_pressed; i++){
             was_pressed = read_button();
         }
-        for (int i = 0; i < 24; i++) {
+        for (int i = 0; i < 4; i++) {
             counter2seg(counter, num);
             print_display(display_enable, num[display_enable]);
             display_enable ^= (char) 0b1;
         }
-        if (was_pressed > 512) {
+        if (was_pressed > 1024) {
             was_pressed = 0;
         }
         else if (was_pressed) {

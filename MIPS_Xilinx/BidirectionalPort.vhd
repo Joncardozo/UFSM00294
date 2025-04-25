@@ -25,45 +25,67 @@ entity BidirectionalPort  is
 end BidirectionalPort ;
 
 
-
 architecture Behavioral of BidirectionalPort  is
 
 	signal io_config : std_logic_vector (DATA_WIDTH-1 downto 0);
 	signal io_enable : std_logic_vector (DATA_WIDTH-1 downto 0);
 	signal reg_data : std_logic_vector (DATA_WIDTH-1 downto 0);
-	signal port_io_in  : std_logic_vector(DATA_WIDTH-1 downto 0);
-	signal port_io_out : std_logic_vector(DATA_WIDTH-1 downto 0);
-	signal data_out_reg : std_logic_vector(DATA_WIDTH-1 downto 0);
-	
+ 
 begin
 
 	process(clk, rst)
 	begin
-		if ce = '1' then
-			if address = PORT_CONFIG_ADDR and rw = '1' then
-				io_config <= data_in;
-			elsif address = PORT_ENABLE_ADDR and rw = '1' then
-				io_enable <= data_in;
-			elsif address = PORT_DATA_ADDR and rw = '1' then
-				for i in 0 to DATA_WIDTH-1 loop
-					if io_config(i) = '1' and io_enable(i) = '1' then
-						reg_data(i) <= data_in(i);
+		 if rst = '1' then
+			  reg_data  <= (others => '0');
+			  io_config <= (others => '0');
+			  io_enable <= (others => '0');
+		 elsif falling_edge(clk) then
+			  if ce = '1' then
+					if rw = '1' then
+						 if address = PORT_CONFIG_ADDR then
+							  io_config <= data_in;
+						 elsif address = PORT_ENABLE_ADDR then
+							  io_enable <= data_in;
+						 elsif address = PORT_DATA_ADDR then
+							  for i in 0 to DATA_WIDTH-1 loop
+									if io_enable(i) = '1' and io_config(i) = '0' then
+										 reg_data(i) <= data_in(i);
+									end if;
+							  end loop;
+						 end if;
+--					else -- ACHO QUE NAO IMPORTA O CHIP ENABLE AQUI
+--						 if address = PORT_DATA_ADDR then
+--							  for i in 0 to DATA_WIDTH-1 loop
+--									if io_enable(i) = '1' and io_config(i) = '1' then
+--										 reg_data(i) <= port_io(i);
+--									end if;
+--							  end loop;
+--						 end if;
 					end if;
-				end loop;
-			elsif address = PORT_DATA_ADDR and rw = '0' then
-				for i in 0 to DATA_WIDTH-1 loop
-					if io_enable(i) = '1' and io_config(i) = '0' then
-						reg_data(i) <= port_io(i);
-					end if;
-				end loop;
-			end if;
-		end if;
+				else
+						 if address = PORT_DATA_ADDR then
+							  for i in 0 to DATA_WIDTH-1 loop
+									if io_enable(i) = '1' and io_config(i) = '1' then
+										 reg_data(i) <= port_io(i);
+									end if;
+							  end loop;
+						 end if;
+			  end if;
+
+		 end if;
 	end process;
-	
+
+	-- porta para registrador
 	gen_io: for i in 0 to DATA_WIDTH-1 generate
-		port_io(i) <= reg_data(i) when io_enable(i) = '1' and io_config(i) = '1' else 'Z';
+		 port_io(i) <= not reg_data(i) when io_enable(i) = '1' and io_config(i) = '0' else 'Z';
 	end generate;
-	
-	data_out <= reg_data;
+ 
+	-- data out para processador
+	with address select
+		 data_out <=  reg_data  when PORT_DATA_ADDR,
+						  io_config when PORT_CONFIG_ADDR,
+						  io_enable when PORT_ENABLE_ADDR,
+						  (others => '0') when others;
+
 
 end Behavioral;

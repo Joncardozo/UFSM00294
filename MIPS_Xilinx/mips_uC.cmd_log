@@ -2,3 +2,354 @@ xst -intstyle ise -ifn "/home/jon/code/MIPS_jonathan/mips_uC.xst" -ofn "/home/jo
 xst -intstyle ise -ifn "/home/jon/code/MIPS_jonathan/mips_uC.xst" -ofn "/home/jon/code/MIPS_jonathan/mips_uC.syr" 
 xst -intstyle ise -ifn "/home/jon/code/MIPS_jonathan/mips_uC.xst" -ofn "/home/jon/code/MIPS_jonathan/mips_uC.syr" 
 xst -intstyle ise -ifn "/home/jon/code/MIPS_jonathan/mips_uC.xst" -ofn "/home/jon/code/MIPS_jonathan/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+xst -intstyle ise -ifn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.xst" -ofn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.xst" -ofn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.xst" -ofn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.xst" -ofn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.xst" -ofn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.xst" -ofn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.xst" -ofn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.syr" 
+xst -intstyle ise -ifn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.xst" -ofn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.syr" 
+xst -intstyle ise -ifn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.xst" -ofn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.syr" 
+xst -intstyle ise -ifn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.xst" -ofn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.xst" -ofn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.xst" -ofn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.xst" -ofn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.xst" -ofn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.xst" -ofn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.xst" -ofn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.xst" -ofn "/home/dede/Documents/UFSM00294-jonathan/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+xst -intstyle ise -ifn "/home/jonathan/code/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jonathan/code/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jonathan/code/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jonathan/code/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jonathan/code/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jonathan/code/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jonathan/code/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jonathan/code/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jonathan/code/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jonathan/code/MIPS_Xilinx/mips_uC.syr" 
+xst -intstyle ise -ifn "/home/jonathan/code/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jonathan/code/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jonathan/code/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jonathan/code/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jonathan/code/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jonathan/code/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jonathan/code/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jonathan/code/MIPS_Xilinx/mips_uC.syr" 
+xst -intstyle ise -ifn "/home/jonathan/code/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jonathan/code/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+xst -intstyle ise -ifn "/home/jonathan/code/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jonathan/code/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jonathan/code/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jonathan/code/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jonathan/code/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jonathan/code/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jonathan/code/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jonathan/code/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 
+xst -intstyle ise -ifn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.xst" -ofn "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc6slx16-csg324-3 mips_uC.ngc mips_uC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_uC_map.ncd mips_uC.ngd mips_uC.pcf 
+par -w -intstyle ise -ol high -mt off mips_uC_map.ncd mips_uC.ncd mips_uC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips_uC.twx mips_uC.ncd -o mips_uC.twr mips_uC.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f mips_uC.ut mips_uC.ncd 

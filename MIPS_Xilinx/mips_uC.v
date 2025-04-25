@@ -17,31 +17,31 @@
 // Revision 0.01 - File Created
 // Additional Comments: 
 //
-//////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////// 
 module mips_uC(
-	input clk, rst,
-	output [15:0] port_io
+	input clk, rst, 
+	inout [15:0] port_io
 );
 
 	localparam [31:0] MARS_INSTRUCTION_OFFSET = 32'h00400000;
 	localparam [31:0] MARS_DATA_OFFSET = 32'h10010000;
 
-	wire ce_data, ce_regdisp, rst_out, sys_clk, ce_MIPS, rst_n;
+	wire ce_data, ce_port_io, rst_out, sys_clk, ce_MIPS, rst_n;
 	wire [31:0] data_address, instruction_address, instruction, data_in, data_out;
-	wire [15:0] q;
 	wire [3:0] wbe_MIPS;
 
-	assign ce_data = ce_MIPS && ~data_address[31];
-	assign ce_port_io = data_address[31] && (|wbe_MIPS) && ce_MIPS && data_address[9:8] == 4'b0000; 
-
+	assign ce_data = ce_MIPS && ~data_address[31]; 
+	assign ce_port_io = (data_address[31] && ce_MIPS && data_address[9:8] == 4'b0000);
+ 
 	wire sys_clk_n;
 	assign sys_clk_n = ~sys_clk;
-	
+	 
 	wire [15:0] data_in_port;
 	wire [31:0] data_in_mem;
 	
-	assign data_in = data_address[31] == 1 ? data_in_port : data_in_mem;
-	
+	// multiplexador para a entrada de dados do processador
+	assign data_in = data_address[31] ? {16'b0, data_in_port} : data_in_mem;
+
 	ResetSynchonizer rst_sync(
 		.rst_in(rst),
 		.rst_out(rst_out),
@@ -53,7 +53,7 @@ module mips_uC(
 		.clk_25MHz(sys_clk)
 	);
 	
-	// I/O port
+	// porta io
 	BidirectionalPort #(
 		.DATA_WIDTH(16),
 		.PORT_DATA_ADDR(2'b10),
@@ -61,15 +61,15 @@ module mips_uC(
 		.PORT_ENABLE_ADDR(2'b00)
 	) PORT_IO (
 		.clk(sys_clk),
-        .rst(rst_out),
-        // Processor interface
-        .data_in(data_out[15:0]),
-        .data_out(data_in_port),
-        .address(data_address[7:4]),
-        .rw(instruction[29]),
-        .ce(ce_port_io),
-        // External interface
-        .port_io(port_io)
+      .rst(rst_out),
+      // interface processador
+      .data_in(data_out[15:0]),
+      .data_out(data_in_port),
+      .address(data_address[5:4]),
+      .rw(instruction[29]),
+      .ce(ce_port_io),
+      // interface externa
+      .port_io(port_io)
 	);
 
 
@@ -93,7 +93,7 @@ module mips_uC(
 
 	// Instruction memory
 	Memory #(
-		.SIZE(64),  // Memory depth in words
+		.SIZE(1024),  // Memory depth in words
 		.ADDR_WIDTH(30),
 		.COL_WIDTH(8),
 		.NB_COL(4),
@@ -116,7 +116,7 @@ module mips_uC(
 		.COL_WIDTH(8),
 		.NB_COL(4),
 		.OFFSET(MARS_DATA_OFFSET),
-		.imageFileName("data.txt")         
+		.imageFileName("data.txt")          
 	) DATA_MEMORY (
 		.clk(sys_clk_n),        
 		.ce(ce_data),
@@ -126,4 +126,4 @@ module mips_uC(
 		.address(data_address[31:2]) // Converts byte address to word address
 	);
 
-endmodule
+endmodule 

@@ -108,27 +108,27 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "/home/jon/code/MIPS_jonathan/mips_uC.v" into library work
+Analyzing Verilog file "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.v" into library work
 Parsing module <mips_uC>.
-Parsing VHDL file "/home/jon/code/MIPS_jonathan/Util_pkg.vhd" into library work
+Parsing VHDL file "/home/jon/code/novo_MIPS/MIPS_Xilinx/Util_pkg.vhd" into library work
 Parsing package <Util_pkg>.
 Parsing package body <Util_pkg>.
-Parsing VHDL file "/home/jon/code/MIPS_jonathan/MIPS_pkg.vhd" into library work
+Parsing VHDL file "/home/jon/code/novo_MIPS/MIPS_Xilinx/MIPS_pkg.vhd" into library work
 Parsing package <MIPS_pkg>.
 Parsing package body <MIPS_pkg>.
-Parsing VHDL file "/home/jon/code/MIPS_jonathan/ResetSynchonizer.vhd" into library work
+Parsing VHDL file "/home/jon/code/novo_MIPS/MIPS_Xilinx/ResetSynchonizer.vhd" into library work
 Parsing entity <ResetSynchonizer>.
 Parsing architecture <behavioral> of entity <resetsynchonizer>.
-Parsing VHDL file "/home/jon/code/MIPS_jonathan/MIPS_monocycle.vhd" into library work
+Parsing VHDL file "/home/jon/code/novo_MIPS/MIPS_Xilinx/MIPS_monocycle.vhd" into library work
 Parsing entity <MIPS_monocycle>.
 Parsing architecture <behavioral> of entity <mips_monocycle>.
-Parsing VHDL file "/home/jon/code/MIPS_jonathan/Memory.vhd" into library work
+Parsing VHDL file "/home/jon/code/novo_MIPS/MIPS_Xilinx/Memory.vhd" into library work
 Parsing entity <Memory>.
 Parsing architecture <behavioral> of entity <memory>.
-Parsing VHDL file "/home/jon/code/MIPS_jonathan/ClockManager.vhd" into library work
+Parsing VHDL file "/home/jon/code/novo_MIPS/MIPS_Xilinx/ClockManager.vhd" into library work
 Parsing entity <ClockManager>.
 Parsing architecture <xilinx> of entity <clockmanager>.
-Parsing VHDL file "/home/jon/code/MIPS_jonathan/BidirectionalPort.vhd" into library work
+Parsing VHDL file "/home/jon/code/novo_MIPS/MIPS_Xilinx/BidirectionalPort.vhd" into library work
 Parsing entity <BidirectionalPort>.
 Parsing architecture <Behavioral> of entity <bidirectionalport>.
 
@@ -148,19 +148,7 @@ Back to verilog to continue elaboration
 Going to vhdl side to elaborate module BidirectionalPort
 
 Elaborating entity <BidirectionalPort> (architecture <Behavioral>) with generics from library <work>.
-WARNING:HDLCompiler:92 - "/home/jon/code/MIPS_jonathan/BidirectionalPort.vhd" Line 42: ce should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/jon/code/MIPS_jonathan/BidirectionalPort.vhd" Line 43: address should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/jon/code/MIPS_jonathan/BidirectionalPort.vhd" Line 44: data_in should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/jon/code/MIPS_jonathan/BidirectionalPort.vhd" Line 45: address should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/jon/code/MIPS_jonathan/BidirectionalPort.vhd" Line 46: data_in should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/jon/code/MIPS_jonathan/BidirectionalPort.vhd" Line 47: address should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/jon/code/MIPS_jonathan/BidirectionalPort.vhd" Line 49: io_config should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/jon/code/MIPS_jonathan/BidirectionalPort.vhd" Line 50: data_in should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/jon/code/MIPS_jonathan/BidirectionalPort.vhd" Line 53: address should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/jon/code/MIPS_jonathan/BidirectionalPort.vhd" Line 55: io_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/jon/code/MIPS_jonathan/BidirectionalPort.vhd" Line 56: port_io should be on the sensitivity list of the process
 Back to verilog to continue elaboration
-WARNING:HDLCompiler:189 - "/home/jon/code/MIPS_jonathan/mips_uC.v" Line 68: Size mismatch in connection of port <address>. Formal port size is 2-bit while actual signal size is 4-bit.
 Going to vhdl side to elaborate module MIPS_monocycle
 
 Elaborating entity <MIPS_monocycle> (architecture <behavioral>) with generics from library <work>.
@@ -173,24 +161,24 @@ Going to vhdl side to elaborate module Memory
 
 Elaborating entity <Memory> (architecture <behavioral>) with generics from library <work>.
 Back to verilog to continue elaboration
-WARNING:HDLCompiler:552 - "/home/jon/code/MIPS_jonathan/mips_uC.v" Line 102: Input port data_in[31] is not connected on this instance
+WARNING:HDLCompiler:552 - "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.v" Line 102: Input port data_in[31] is not connected on this instance
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <mips_uC>.
-    Related source file is "/home/jon/code/MIPS_jonathan/mips_uC.v".
+    Related source file is "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.v".
 WARNING:Xst:2898 - Port 'data_in', unconnected in block instance 'INSTRUCTION_MEMORY', is tied to GND.
-INFO:Xst:3210 - "/home/jon/code/MIPS_jonathan/mips_uC.v" line 51: Output port <clk_50MHz> of the instance <clk_mgr> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/jon/code/MIPS_jonathan/mips_uC.v" line 51: Output port <clk_10MHz> of the instance <clk_mgr> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/jon/code/MIPS_jonathan/mips_uC.v" line 51: Output port <clk_5MHz> of the instance <clk_mgr> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.v" line 51: Output port <clk_50MHz> of the instance <clk_mgr> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.v" line 51: Output port <clk_10MHz> of the instance <clk_mgr> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/jon/code/novo_MIPS/MIPS_Xilinx/mips_uC.v" line 51: Output port <clk_5MHz> of the instance <clk_mgr> is unconnected or connected to loadless signal.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <mips_uC> synthesized.
 
 Synthesizing Unit <ResetSynchonizer>.
-    Related source file is "/home/jon/code/MIPS_jonathan/ResetSynchonizer.vhd".
+    Related source file is "/home/jon/code/novo_MIPS/MIPS_Xilinx/ResetSynchonizer.vhd".
     Found 1-bit register for signal <ff2_q>.
     Found 1-bit register for signal <ff1_q>.
     Summary:
@@ -198,66 +186,21 @@ Synthesizing Unit <ResetSynchonizer>.
 Unit <ResetSynchonizer> synthesized.
 
 Synthesizing Unit <ClockManager>.
-    Related source file is "/home/jon/code/MIPS_jonathan/ClockManager.vhd".
+    Related source file is "/home/jon/code/novo_MIPS/MIPS_Xilinx/ClockManager.vhd".
     Summary:
 	no macro.
 Unit <ClockManager> synthesized.
 
 Synthesizing Unit <BidirectionalPort>.
-    Related source file is "/home/jon/code/MIPS_jonathan/BidirectionalPort.vhd".
+    Related source file is "/home/jon/code/novo_MIPS/MIPS_Xilinx/BidirectionalPort.vhd".
         DATA_WIDTH = 16
         PORT_DATA_ADDR = "10"
         PORT_CONFIG_ADDR = "01"
         PORT_ENABLE_ADDR = "00"
-WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_config<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_config<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_config<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_config<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_config<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_config<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_config<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_config<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_config<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_config<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_config<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_config<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_config<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_config<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_config<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_enable<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_enable<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_enable<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_enable<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_enable<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_enable<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_enable<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_enable<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_enable<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_enable<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_enable<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_enable<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_enable<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_enable<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_enable<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <io_enable<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <reg_data<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <reg_data<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <reg_data<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <reg_data<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <reg_data<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <reg_data<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <reg_data<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <reg_data<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <reg_data<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <reg_data<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <reg_data<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <reg_data<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <reg_data<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <reg_data<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <reg_data<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <reg_data<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 16-bit register for signal <io_config>.
+    Found 16-bit register for signal <io_enable>.
+    Found 16-bit register for signal <reg_data>.
+    Found 16-bit 4-to-1 multiplexer for signal <data_out> created at line 84.
     Found 1-bit tristate buffer for signal <port_io<0>> created at line 23
     Found 1-bit tristate buffer for signal <port_io<1>> created at line 23
     Found 1-bit tristate buffer for signal <port_io<2>> created at line 23
@@ -274,15 +217,14 @@ WARNING:Xst:737 - Found 1-bit latch for signal <reg_data<0>>. Latches may be gen
     Found 1-bit tristate buffer for signal <port_io<13>> created at line 23
     Found 1-bit tristate buffer for signal <port_io<14>> created at line 23
     Found 1-bit tristate buffer for signal <port_io<15>> created at line 23
-WARNING:Xst:737 - Found 1-bit latch for signal <io_config<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
-	inferred  48 Latch(s).
-	inferred  48 Multiplexer(s).
+	inferred  48 D-type flip-flop(s).
+	inferred  34 Multiplexer(s).
 	inferred  16 Tristate(s).
 Unit <BidirectionalPort> synthesized.
 
 Synthesizing Unit <MIPS_monocycle>.
-    Related source file is "/home/jon/code/MIPS_jonathan/MIPS_monocycle.vhd".
+    Related source file is "/home/jon/code/novo_MIPS/MIPS_Xilinx/MIPS_monocycle.vhd".
         PC_START_ADDRESS = "00000000010000000000000000000000"
     Found 1-bit register for signal <lock>.
     Found 32-bit register for signal <registerFile<0>>.
@@ -318,10 +260,10 @@ Synthesizing Unit <MIPS_monocycle>.
     Found 32-bit register for signal <registerFile<29>>.
     Found 32-bit register for signal <registerFile<30>>.
     Found 32-bit register for signal <registerFile<31>>.
-    Found 32-bit adder for signal <instructionFetchAddress[31]_GND_78_o_add_39_OUT> created at line 1241.
+    Found 32-bit adder for signal <instructionFetchAddress[31]_GND_30_o_add_39_OUT> created at line 1241.
     Found 32-bit adder for signal <branchTarget> created at line 112.
     Found 32-bit adder for signal <ALUoperand1[31]_ALUoperand2[31]_add_302_OUT> created at line 238.
-    Found 32-bit subtractor for signal <GND_78_o_GND_78_o_sub_333_OUT<31:0>> created at line 218.
+    Found 32-bit subtractor for signal <GND_30_o_GND_30_o_sub_333_OUT<31:0>> created at line 218.
     Found 32-bit shifter arithmetic right for signal <ALUoperand1[31]_ALUoperand2[30]_shift_right_312_OUT> created at line 2982
     Found 32-bit shifter arithmetic right for signal <ALUoperand2[31]_ALUoperand1[30]_shift_right_314_OUT> created at line 2982
     Found 32-bit shifter logical right for signal <ALUoperand2[31]_ALUoperand1[30]_shift_right_316_OUT> created at line 2964
@@ -390,14 +332,14 @@ WARNING:Xst:737 - Found 1-bit latch for signal <selectedHalfWordExtended<0>>. La
 Unit <MIPS_monocycle> synthesized.
 
 Synthesizing Unit <Memory_1>.
-    Related source file is "/home/jon/code/MIPS_jonathan/Memory.vhd".
-        SIZE = 64
+    Related source file is "/home/jon/code/novo_MIPS/MIPS_Xilinx/Memory.vhd".
+        SIZE = 1024
         ADDR_WIDTH = 30
         COL_WIDTH = 8
         NB_COL = 4
         imageFileName = "code.txt"
         OFFSET = "00000000010000000000000000000000"
-    Found 64x32-bit single-port RAM <Mram_memoryArray> for signal <memoryArray>.
+    Found 1024x32-bit single-port RAM <Mram_memoryArray> for signal <memoryArray>.
     Found 32-bit register for signal <data_out>.
     Summary:
 	inferred   1 RAM(s).
@@ -405,7 +347,7 @@ Synthesizing Unit <Memory_1>.
 Unit <Memory_1> synthesized.
 
 Synthesizing Unit <Memory_2>.
-    Related source file is "/home/jon/code/MIPS_jonathan/Memory.vhd".
+    Related source file is "/home/jon/code/novo_MIPS/MIPS_Xilinx/Memory.vhd".
         SIZE = 1024
         ADDR_WIDTH = 30
         COL_WIDTH = 8
@@ -425,21 +367,23 @@ HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 2
- 1024x32-bit single-port RAM                           : 1
- 64x32-bit single-port RAM                             : 1
+ 1024x32-bit single-port RAM                           : 2
 # Adders/Subtractors                                   : 4
  32-bit adder                                          : 3
  32-bit subtractor                                     : 1
-# Registers                                            : 38
+# Registers                                            : 41
  1-bit register                                        : 3
+ 16-bit register                                       : 3
  32-bit register                                       : 35
-# Latches                                              : 90
- 1-bit latch                                           : 90
+# Latches                                              : 42
+ 1-bit latch                                           : 42
 # Comparators                                          : 4
  32-bit comparator greater                             : 2
  32-bit comparator lessequal                           : 2
-# Multiplexers                                         : 205
- 1-bit 2-to-1 multiplexer                              : 122
+# Multiplexers                                         : 191
+ 1-bit 2-to-1 multiplexer                              : 106
+ 16-bit 2-to-1 multiplexer                             : 1
+ 16-bit 4-to-1 multiplexer                             : 1
  32-bit 2-to-1 multiplexer                             : 46
  32-bit 32-to-1 multiplexer                            : 2
  4-bit 2-to-1 multiplexer                              : 6
@@ -468,7 +412,7 @@ INFO:Xst:3226 - The RAM <Mram_memoryArray> will be implemented as a BLOCK RAM, a
     | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 64-word x 32-bit                    |          |
+    |     aspect ratio   | 1024-word x 32-bit                  |          |
     |     mode           | write-first                         |          |
     |     clkA           | connected to signal <clk>           | rise     |
     |     weA            | connected to signal <GND>           | high     |
@@ -507,19 +451,20 @@ Advanced HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 2
- 1024x32-bit single-port block RAM                     : 1
- 64x32-bit single-port block RAM                       : 1
+ 1024x32-bit single-port block RAM                     : 2
 # Adders/Subtractors                                   : 4
  32-bit adder                                          : 3
  32-bit subtractor                                     : 1
-# Registers                                            : 1059
- Flip-Flops                                            : 1059
+# Registers                                            : 1107
+ Flip-Flops                                            : 1107
 # Comparators                                          : 4
  32-bit comparator greater                             : 2
  32-bit comparator lessequal                           : 2
-# Multiplexers                                         : 263
- 1-bit 2-to-1 multiplexer                              : 122
+# Multiplexers                                         : 249
+ 1-bit 2-to-1 multiplexer                              : 106
  1-bit 32-to-1 multiplexer                             : 64
+ 16-bit 2-to-1 multiplexer                             : 1
+ 16-bit 4-to-1 multiplexer                             : 1
  32-bit 2-to-1 multiplexer                             : 46
  4-bit 2-to-1 multiplexer                              : 6
  5-bit 2-to-1 multiplexer                              : 2
@@ -562,7 +507,6 @@ WARNING:Xst:3002 - This design contains one or more registers/latches that are d
   List of register instances with asynchronous set or reset and opposite initialization value:
     lock in unit <MIPS_monocycle>
 
-WARNING:Xst:2042 - Unit mips_uC: 16 internal tristates are replaced by logic (pull-up yes): N133, N134, N135, N136, N137, N138, N139, N140, N141, N142, N143, N144, N145, N146, N147, N148.
 
 Optimizing unit <mips_uC> ...
 
@@ -634,7 +578,7 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_0> (
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block mips_uC, actual ratio is 30.
+Found area constraint ratio of 100 (+ 5) on block mips_uC, actual ratio is 31.
 WARNING:Xst:387 - The KEEP property attached to the net <DATA_MEMORY/wbe<3>> may hinder timing optimization.
    You may achieve better results by removing this property
 WARNING:Xst:387 - The KEEP property attached to the net <DATA_MEMORY/wbe<2>> may hinder timing optimization.
@@ -652,8 +596,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 1028
- Flip-Flops                                            : 1028
+# Registers                                            : 1076
+ Flip-Flops                                            : 1076
 
 =========================================================================
 
@@ -676,32 +620,32 @@ Top Level Output File Name         : mips_uC.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2436
+# BELS                             : 2748
 #      GND                         : 1
-#      INV                         : 1
-#      LUT2                        : 67
-#      LUT3                        : 133
-#      LUT4                        : 154
-#      LUT5                        : 362
-#      LUT6                        : 1347
+#      INV                         : 17
+#      LUT2                        : 65
+#      LUT3                        : 138
+#      LUT4                        : 159
+#      LUT5                        : 447
+#      LUT6                        : 1527
 #      MUXCY                       : 159
-#      MUXF7                       : 87
+#      MUXF7                       : 110
 #      VCC                         : 1
 #      XORCY                       : 124
 # FlipFlops/Latches                : 1119
 #      FDC                         : 31
+#      FDCE_1                      : 48
 #      FDE                         : 993
 #      FDP                         : 4
-#      LD                          : 75
-#      LDE                         : 16
-# RAMS                             : 3
-#      RAMB16BWER                  : 3
+#      LD                          : 43
+# RAMS                             : 4
+#      RAMB16BWER                  : 4
 # Clock Buffers                    : 5
 #      BUFG                        : 5
 # IO Buffers                       : 18
 #      IBUF                        : 1
 #      IBUFG                       : 1
-#      OBUFT                       : 16
+#      IOBUF                       : 16
 # Others                           : 1
 #      PLL_ADV                     : 1
 
@@ -713,23 +657,23 @@ Selected Device : 6slx16csg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:            1119  out of  18224     6%  
- Number of Slice LUTs:                 2064  out of   9112    22%  
-    Number used as Logic:              2064  out of   9112    22%  
+ Number of Slice LUTs:                 2353  out of   9112    25%  
+    Number used as Logic:              2353  out of   9112    25%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   3058
-   Number with an unused Flip Flop:    1939  out of   3058    63%  
-   Number with an unused LUT:           994  out of   3058    32%  
-   Number of fully used LUT-FF pairs:   125  out of   3058     4%  
-   Number of unique control sets:        56
+ Number of LUT Flip Flop pairs used:   3338
+   Number with an unused Flip Flop:    2219  out of   3338    66%  
+   Number with an unused LUT:           985  out of   3338    29%  
+   Number of fully used LUT-FF pairs:   134  out of   3338     4%  
+   Number of unique control sets:        43
 
 IO Utilization: 
  Number of IOs:                          18
  Number of bonded IOBs:                  18  out of    232     7%  
 
 Specific Feature Utilization:
- Number of Block RAM/FIFO:                3  out of     32     9%  
-    Number using Block RAM only:          3
+ Number of Block RAM/FIFO:                4  out of     32    12%  
+    Number using Block RAM only:          4
  Number of BUFG/BUFGCTRLs:                5  out of     16    31%  
  Number of PLL_ADVs:                      1  out of      2    50%  
 
@@ -754,31 +698,13 @@ Clock Information:
 -------------------------------------------------------------------------------+-----------------------------------------------+-------+
 Clock Signal                                                                   | Clock buffer(FF name)                         | Load  |
 -------------------------------------------------------------------------------+-----------------------------------------------+-------+
-clk_mgr/pll_base_inst/CLKOUT1                                                  | BUFG                                          | 1031  |
-PORT_IO/ce_GND_12_o_AND_153_o(PORT_IO/ce_GND_12_o_AND_153_o1:O)                | NONE(*)(PORT_IO/reg_data_0)                   | 1     |
-PORT_IO/ce_GND_12_o_AND_149_o(PORT_IO/ce_GND_12_o_AND_149_o1:O)                | NONE(*)(PORT_IO/reg_data_1)                   | 1     |
-PORT_IO/ce_GND_12_o_AND_145_o(PORT_IO/ce_GND_12_o_AND_145_o1:O)                | NONE(*)(PORT_IO/reg_data_2)                   | 1     |
-PORT_IO/ce_GND_12_o_AND_141_o(PORT_IO/ce_GND_12_o_AND_141_o1:O)                | NONE(*)(PORT_IO/reg_data_3)                   | 1     |
-PORT_IO/ce_GND_12_o_AND_137_o(PORT_IO/ce_GND_12_o_AND_137_o1:O)                | NONE(*)(PORT_IO/reg_data_4)                   | 1     |
-PORT_IO/ce_GND_12_o_AND_129_o(PORT_IO/ce_GND_12_o_AND_129_o1:O)                | NONE(*)(PORT_IO/reg_data_6)                   | 1     |
-PORT_IO/ce_GND_12_o_AND_125_o(PORT_IO/ce_GND_12_o_AND_125_o1:O)                | NONE(*)(PORT_IO/reg_data_7)                   | 1     |
-PORT_IO/ce_GND_12_o_AND_133_o(PORT_IO/ce_GND_12_o_AND_133_o1:O)                | NONE(*)(PORT_IO/reg_data_5)                   | 1     |
-PORT_IO/ce_GND_12_o_AND_121_o(PORT_IO/ce_GND_12_o_AND_121_o1:O)                | NONE(*)(PORT_IO/reg_data_8)                   | 1     |
-PORT_IO/ce_GND_12_o_AND_117_o(PORT_IO/ce_GND_12_o_AND_117_o1:O)                | NONE(*)(PORT_IO/reg_data_9)                   | 1     |
-PORT_IO/ce_GND_12_o_AND_113_o(PORT_IO/ce_GND_12_o_AND_113_o1:O)                | NONE(*)(PORT_IO/reg_data_10)                  | 1     |
-PORT_IO/ce_GND_12_o_AND_109_o(PORT_IO/ce_GND_12_o_AND_109_o1:O)                | NONE(*)(PORT_IO/reg_data_11)                  | 1     |
-PORT_IO/ce_GND_12_o_AND_101_o(PORT_IO/ce_GND_12_o_AND_101_o1:O)                | NONE(*)(PORT_IO/reg_data_13)                  | 1     |
-PORT_IO/ce_GND_12_o_AND_97_o(PORT_IO/ce_GND_12_o_AND_97_o1:O)                  | NONE(*)(PORT_IO/reg_data_14)                  | 1     |
-PORT_IO/ce_GND_12_o_AND_105_o(PORT_IO/ce_GND_12_o_AND_105_o1:O)                | NONE(*)(PORT_IO/reg_data_12)                  | 1     |
-PORT_IO/ce_GND_12_o_AND_93_o(PORT_IO/ce_GND_12_o_AND_93_o1:O)                  | NONE(*)(PORT_IO/reg_data_15)                  | 1     |
-PORT_IO/ce_GND_12_o_AND_59_o(PORT_IO/ce_GND_12_o_AND_59_o1:O)                  | NONE(*)(PORT_IO/io_enable_15)                 | 16    |
-ce_port_io(ce_port_io:O)                                                       | NONE(*)(PORT_IO/io_config_15)                 | 16    |
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o(PROCESSOR/GND_78_o_PWR_12_o_OR_57_o1:O)    | NONE(*)(PROCESSOR/selectedByteExtended_31)    | 9     |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o(PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o1:O)  | NONE(*)(PROCESSOR/selectedHalfWordExtended_31)| 17    |
-PROCESSOR/result[1]_result[1]_OR_92_o(PROCESSOR/result[1]_result[1]_OR_92_o1:O)| NONE(*)(PROCESSOR/selectedHalfWord_0)         | 16    |
+clk_mgr/pll_base_inst/CLKOUT1                                                  | BUFG                                          | 1080  |
+PROCESSOR/GND_30_o_PWR_12_o_OR_23_o(PROCESSOR/GND_30_o_PWR_12_o_OR_23_o1:O)    | NONE(*)(PROCESSOR/selectedByteExtended_31)    | 9     |
+PROCESSOR/PWR_12_o_PWR_12_o_OR_90_o(PROCESSOR/PWR_12_o_PWR_12_o_OR_90_o1:O)    | NONE(*)(PROCESSOR/selectedHalfWordExtended_31)| 17    |
+PROCESSOR/result[1]_result[1]_OR_58_o(PROCESSOR/result[1]_result[1]_OR_58_o1:O)| NONE(*)(PROCESSOR/selectedHalfWord_0)         | 16    |
 rst_sync/ff2_q                                                                 | NONE(PROCESSOR/lock_LD)                       | 1     |
 -------------------------------------------------------------------------------+-----------------------------------------------+-------+
-(*) These 21 clock signal(s) are generated by combinatorial logic,
+(*) These 3 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -791,9 +717,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 33.621ns (Maximum Frequency: 29.743MHz)
-   Minimum input arrival time before clock: 2.268ns
-   Maximum output required time after clock: 4.606ns
+   Minimum period: 33.976ns (Maximum Frequency: 29.433MHz)
+   Minimum input arrival time before clock: 4.021ns
+   Maximum output required time after clock: 4.787ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -802,1102 +728,136 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_mgr/pll_base_inst/CLKOUT1'
-  Clock period: 33.621ns (frequency: 29.743MHz)
-  Total number of paths / destination ports: 2100351961 / 2150
+  Clock period: 33.976ns (frequency: 29.433MHz)
+  Total number of paths / destination ports: 2112145393 / 2308
 -------------------------------------------------------------------------
-Delay:               16.810ns (Levels of Logic = 12)
-  Source:            INSTRUCTION_MEMORY/Mram_memoryArray (RAM)
-  Destination:       DATA_MEMORY/Mram_memoryArray1 (RAM)
+Delay:               16.988ns (Levels of Logic = 13)
+  Source:            INSTRUCTION_MEMORY/Mram_memoryArray1 (RAM)
+  Destination:       PORT_IO/reg_data_15 (FF)
   Source Clock:      clk_mgr/pll_base_inst/CLKOUT1 rising
   Destination Clock: clk_mgr/pll_base_inst/CLKOUT1 falling
 
-  Data Path: INSTRUCTION_MEMORY/Mram_memoryArray to DATA_MEMORY/Mram_memoryArray1
+  Data Path: INSTRUCTION_MEMORY/Mram_memoryArray1 to PORT_IO/reg_data_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     RAMB16BWER:CLKA->DOA17  259   1.850   2.171  INSTRUCTION_MEMORY/Mram_memoryArray (instruction<17>)
-     LUT5:I3->O            4   0.203   0.684  PROCESSOR/GND_78_o_instruction[20]_equal_33_o<20>1 (PROCESSOR/GND_78_o_instruction[20]_equal_33_o)
-     LUT5:I4->O            4   0.205   0.684  PROCESSOR/Mmux_decodedInstruction33 (PROCESSOR/Mmux_decodedInstruction32)
-     LUT6:I5->O            1   0.205   0.924  PROCESSOR/GND_78_o_GND_78_o_OR_170_o1_SW3 (N251)
-     LUT6:I1->O           18   0.203   1.278  PROCESSOR/GND_78_o_GND_78_o_OR_170_o1 (PROCESSOR/GND_78_o_GND_78_o_OR_170_o_mmx_out)
-     LUT5:I2->O           17   0.205   1.275  PROCESSOR/Mmux_ALUoperand2201 (PROCESSOR/ALUoperand2<27>)
-     LUT6:I2->O            5   0.203   0.962  PROCESSOR/Sh3131 (PROCESSOR/Sh313)
-     LUT6:I2->O            2   0.203   0.721  PROCESSOR/Sh3371 (PROCESSOR/Sh337)
-     LUT6:I4->O            1   0.203   0.580  PROCESSOR/Mmux_result604 (PROCESSOR/Mmux_result603)
-     LUT6:I5->O            3   0.205   0.651  PROCESSOR/Mmux_result607 (PROCESSOR/Mmux_result606)
-     LUT6:I5->O           10   0.205   0.857  PROCESSOR/Mmux_result6014_2 (PROCESSOR/Mmux_result60141)
-     LUT6:I5->O            1   0.205   0.808  PROCESSOR/Mmux_data_out253_SW1 (N382)
-     LUT4:I1->O            2   0.205   0.616  PROCESSOR/Mmux_data_out253 (data_out<31>)
-     RAMB16BWER:DIA31          0.300          DATA_MEMORY/Mram_memoryArray1
+     RAMB16BWER:CLKA->DOPA1  259   1.850   2.171  INSTRUCTION_MEMORY/Mram_memoryArray1 (instruction<17>)
+     LUT5:I3->O            4   0.203   0.684  PROCESSOR/GND_30_o_instruction[20]_equal_33_o<20>1 (PROCESSOR/GND_30_o_instruction[20]_equal_33_o)
+     LUT6:I5->O            3   0.205   0.651  PROCESSOR/Mmux_decodedInstruction41 (PROCESSOR/Mmux_decodedInstruction4)
+     LUT5:I4->O           12   0.205   1.137  PROCESSOR/Mmux_decodedInstruction44_1 (PROCESSOR/Mmux_decodedInstruction44)
+     LUT4:I1->O            5   0.205   0.819  PROCESSOR/GND_30_o_GND_30_o_OR_132_o11_4 (PROCESSOR/GND_30_o_GND_30_o_OR_132_o11_3)
+     LUT6:I4->O           18   0.203   1.394  PROCESSOR/Mmux_ALUoperand261 (PROCESSOR/ALUoperand2<14>)
+     LUT6:I1->O           12   0.203   0.909  PROCESSOR/out16_SW0_SW0_SW0 (N408)
+     LUT6:I5->O           16   0.205   1.005  PROCESSOR/Mmux_result10521 (PROCESSOR/Mmux_result1052)
+     LUT6:I5->O            1   0.205   0.580  PROCESSOR/Mmux_result1609 (PROCESSOR/Mmux_result1608)
+     LUT5:I4->O            2   0.205   0.617  PROCESSOR/Mmux_result16010 (PROCESSOR/Mmux_result1609)
+     LUT6:I5->O           17   0.205   1.028  PROCESSOR/Mmux_result16011_1 (PROCESSOR/Mmux_result16011)
+     LUT4:I3->O            8   0.205   0.803  ce_port_io1_3 (ce_port_io12)
+     LUT5:I4->O            1   0.205   0.580  PORT_IO/Mmux_reg_data[15]_reg_data[15]_mux_16_OUT151 (PORT_IO/reg_data[15]_reg_data[15]_mux_16_OUT<8>)
+     LUT3:I2->O            1   0.205   0.000  PORT_IO/reg_data_8_dpot (PORT_IO/reg_data_8_dpot)
+     FDCE_1:D                  0.102          PORT_IO/reg_data_8
     ----------------------------------------
-    Total                     16.810ns (4.600ns logic, 12.210ns route)
-                                       (27.4% logic, 72.6% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'PORT_IO/ce_GND_12_o_AND_153_o'
-  Clock period: 1.733ns (frequency: 576.951MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               1.733ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_0 (LATCH)
-  Destination:       PORT_IO/reg_data_0 (LATCH)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_153_o falling
-  Destination Clock: PORT_IO/ce_GND_12_o_AND_153_o falling
-
-  Data Path: PORT_IO/reg_data_0 to PORT_IO/reg_data_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.995  PORT_IO/reg_data_0 (PORT_IO/reg_data_0)
-     LUT5:I0->O            1   0.203   0.000  PORT_IO/Mmux_reg_data[15]_reg_data[0]_MUX_284_o11 (PORT_IO/reg_data[15]_reg_data[0]_MUX_284_o)
-     LD:D                      0.037          PORT_IO/reg_data_0
-    ----------------------------------------
-    Total                      1.733ns (0.738ns logic, 0.995ns route)
-                                       (42.6% logic, 57.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'PORT_IO/ce_GND_12_o_AND_149_o'
-  Clock period: 1.733ns (frequency: 576.951MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               1.733ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_1 (LATCH)
-  Destination:       PORT_IO/reg_data_1 (LATCH)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_149_o falling
-  Destination Clock: PORT_IO/ce_GND_12_o_AND_149_o falling
-
-  Data Path: PORT_IO/reg_data_1 to PORT_IO/reg_data_1
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.995  PORT_IO/reg_data_1 (PORT_IO/reg_data_1)
-     LUT5:I0->O            1   0.203   0.000  PORT_IO/Mmux_reg_data[15]_reg_data[1]_MUX_276_o11 (PORT_IO/reg_data[15]_reg_data[1]_MUX_276_o)
-     LD:D                      0.037          PORT_IO/reg_data_1
-    ----------------------------------------
-    Total                      1.733ns (0.738ns logic, 0.995ns route)
-                                       (42.6% logic, 57.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'PORT_IO/ce_GND_12_o_AND_145_o'
-  Clock period: 1.733ns (frequency: 576.951MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               1.733ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_2 (LATCH)
-  Destination:       PORT_IO/reg_data_2 (LATCH)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_145_o falling
-  Destination Clock: PORT_IO/ce_GND_12_o_AND_145_o falling
-
-  Data Path: PORT_IO/reg_data_2 to PORT_IO/reg_data_2
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.995  PORT_IO/reg_data_2 (PORT_IO/reg_data_2)
-     LUT5:I0->O            1   0.203   0.000  PORT_IO/Mmux_reg_data[15]_reg_data[2]_MUX_268_o11 (PORT_IO/reg_data[15]_reg_data[2]_MUX_268_o)
-     LD:D                      0.037          PORT_IO/reg_data_2
-    ----------------------------------------
-    Total                      1.733ns (0.738ns logic, 0.995ns route)
-                                       (42.6% logic, 57.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'PORT_IO/ce_GND_12_o_AND_141_o'
-  Clock period: 1.733ns (frequency: 576.951MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               1.733ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_3 (LATCH)
-  Destination:       PORT_IO/reg_data_3 (LATCH)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_141_o falling
-  Destination Clock: PORT_IO/ce_GND_12_o_AND_141_o falling
-
-  Data Path: PORT_IO/reg_data_3 to PORT_IO/reg_data_3
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.995  PORT_IO/reg_data_3 (PORT_IO/reg_data_3)
-     LUT5:I0->O            1   0.203   0.000  PORT_IO/Mmux_reg_data[15]_reg_data[3]_MUX_260_o11 (PORT_IO/reg_data[15]_reg_data[3]_MUX_260_o)
-     LD:D                      0.037          PORT_IO/reg_data_3
-    ----------------------------------------
-    Total                      1.733ns (0.738ns logic, 0.995ns route)
-                                       (42.6% logic, 57.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'PORT_IO/ce_GND_12_o_AND_137_o'
-  Clock period: 1.733ns (frequency: 576.951MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               1.733ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_4 (LATCH)
-  Destination:       PORT_IO/reg_data_4 (LATCH)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_137_o falling
-  Destination Clock: PORT_IO/ce_GND_12_o_AND_137_o falling
-
-  Data Path: PORT_IO/reg_data_4 to PORT_IO/reg_data_4
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.995  PORT_IO/reg_data_4 (PORT_IO/reg_data_4)
-     LUT5:I0->O            1   0.203   0.000  PORT_IO/Mmux_reg_data[15]_reg_data[4]_MUX_252_o11 (PORT_IO/reg_data[15]_reg_data[4]_MUX_252_o)
-     LD:D                      0.037          PORT_IO/reg_data_4
-    ----------------------------------------
-    Total                      1.733ns (0.738ns logic, 0.995ns route)
-                                       (42.6% logic, 57.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'PORT_IO/ce_GND_12_o_AND_129_o'
-  Clock period: 1.733ns (frequency: 576.951MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               1.733ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_6 (LATCH)
-  Destination:       PORT_IO/reg_data_6 (LATCH)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_129_o falling
-  Destination Clock: PORT_IO/ce_GND_12_o_AND_129_o falling
-
-  Data Path: PORT_IO/reg_data_6 to PORT_IO/reg_data_6
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.995  PORT_IO/reg_data_6 (PORT_IO/reg_data_6)
-     LUT5:I0->O            1   0.203   0.000  PORT_IO/Mmux_reg_data[15]_reg_data[6]_MUX_236_o11 (PORT_IO/reg_data[15]_reg_data[6]_MUX_236_o)
-     LD:D                      0.037          PORT_IO/reg_data_6
-    ----------------------------------------
-    Total                      1.733ns (0.738ns logic, 0.995ns route)
-                                       (42.6% logic, 57.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'PORT_IO/ce_GND_12_o_AND_125_o'
-  Clock period: 1.733ns (frequency: 576.951MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               1.733ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_7 (LATCH)
-  Destination:       PORT_IO/reg_data_7 (LATCH)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_125_o falling
-  Destination Clock: PORT_IO/ce_GND_12_o_AND_125_o falling
-
-  Data Path: PORT_IO/reg_data_7 to PORT_IO/reg_data_7
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.995  PORT_IO/reg_data_7 (PORT_IO/reg_data_7)
-     LUT5:I0->O            1   0.203   0.000  PORT_IO/Mmux_reg_data[15]_reg_data[7]_MUX_228_o11 (PORT_IO/reg_data[15]_reg_data[7]_MUX_228_o)
-     LD:D                      0.037          PORT_IO/reg_data_7
-    ----------------------------------------
-    Total                      1.733ns (0.738ns logic, 0.995ns route)
-                                       (42.6% logic, 57.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'PORT_IO/ce_GND_12_o_AND_133_o'
-  Clock period: 1.733ns (frequency: 576.951MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               1.733ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_5 (LATCH)
-  Destination:       PORT_IO/reg_data_5 (LATCH)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_133_o falling
-  Destination Clock: PORT_IO/ce_GND_12_o_AND_133_o falling
-
-  Data Path: PORT_IO/reg_data_5 to PORT_IO/reg_data_5
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.995  PORT_IO/reg_data_5 (PORT_IO/reg_data_5)
-     LUT5:I0->O            1   0.203   0.000  PORT_IO/Mmux_reg_data[15]_reg_data[5]_MUX_244_o11 (PORT_IO/reg_data[15]_reg_data[5]_MUX_244_o)
-     LD:D                      0.037          PORT_IO/reg_data_5
-    ----------------------------------------
-    Total                      1.733ns (0.738ns logic, 0.995ns route)
-                                       (42.6% logic, 57.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'PORT_IO/ce_GND_12_o_AND_121_o'
-  Clock period: 1.733ns (frequency: 576.951MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               1.733ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_8 (LATCH)
-  Destination:       PORT_IO/reg_data_8 (LATCH)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_121_o falling
-  Destination Clock: PORT_IO/ce_GND_12_o_AND_121_o falling
-
-  Data Path: PORT_IO/reg_data_8 to PORT_IO/reg_data_8
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.995  PORT_IO/reg_data_8 (PORT_IO/reg_data_8)
-     LUT5:I0->O            1   0.203   0.000  PORT_IO/Mmux_reg_data[15]_reg_data[8]_MUX_220_o11 (PORT_IO/reg_data[15]_reg_data[8]_MUX_220_o)
-     LD:D                      0.037          PORT_IO/reg_data_8
-    ----------------------------------------
-    Total                      1.733ns (0.738ns logic, 0.995ns route)
-                                       (42.6% logic, 57.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'PORT_IO/ce_GND_12_o_AND_117_o'
-  Clock period: 1.733ns (frequency: 576.951MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               1.733ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_9 (LATCH)
-  Destination:       PORT_IO/reg_data_9 (LATCH)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_117_o falling
-  Destination Clock: PORT_IO/ce_GND_12_o_AND_117_o falling
-
-  Data Path: PORT_IO/reg_data_9 to PORT_IO/reg_data_9
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.995  PORT_IO/reg_data_9 (PORT_IO/reg_data_9)
-     LUT5:I0->O            1   0.203   0.000  PORT_IO/Mmux_reg_data[15]_reg_data[9]_MUX_212_o11 (PORT_IO/reg_data[15]_reg_data[9]_MUX_212_o)
-     LD:D                      0.037          PORT_IO/reg_data_9
-    ----------------------------------------
-    Total                      1.733ns (0.738ns logic, 0.995ns route)
-                                       (42.6% logic, 57.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'PORT_IO/ce_GND_12_o_AND_113_o'
-  Clock period: 1.733ns (frequency: 576.951MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               1.733ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_10 (LATCH)
-  Destination:       PORT_IO/reg_data_10 (LATCH)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_113_o falling
-  Destination Clock: PORT_IO/ce_GND_12_o_AND_113_o falling
-
-  Data Path: PORT_IO/reg_data_10 to PORT_IO/reg_data_10
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.995  PORT_IO/reg_data_10 (PORT_IO/reg_data_10)
-     LUT5:I0->O            1   0.203   0.000  PORT_IO/Mmux_reg_data[15]_reg_data[10]_MUX_204_o11 (PORT_IO/reg_data[15]_reg_data[10]_MUX_204_o)
-     LD:D                      0.037          PORT_IO/reg_data_10
-    ----------------------------------------
-    Total                      1.733ns (0.738ns logic, 0.995ns route)
-                                       (42.6% logic, 57.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'PORT_IO/ce_GND_12_o_AND_109_o'
-  Clock period: 1.733ns (frequency: 576.951MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               1.733ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_11 (LATCH)
-  Destination:       PORT_IO/reg_data_11 (LATCH)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_109_o falling
-  Destination Clock: PORT_IO/ce_GND_12_o_AND_109_o falling
-
-  Data Path: PORT_IO/reg_data_11 to PORT_IO/reg_data_11
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.995  PORT_IO/reg_data_11 (PORT_IO/reg_data_11)
-     LUT5:I0->O            1   0.203   0.000  PORT_IO/Mmux_reg_data[15]_reg_data[11]_MUX_196_o11 (PORT_IO/reg_data[15]_reg_data[11]_MUX_196_o)
-     LD:D                      0.037          PORT_IO/reg_data_11
-    ----------------------------------------
-    Total                      1.733ns (0.738ns logic, 0.995ns route)
-                                       (42.6% logic, 57.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'PORT_IO/ce_GND_12_o_AND_101_o'
-  Clock period: 1.733ns (frequency: 576.951MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               1.733ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_13 (LATCH)
-  Destination:       PORT_IO/reg_data_13 (LATCH)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_101_o falling
-  Destination Clock: PORT_IO/ce_GND_12_o_AND_101_o falling
-
-  Data Path: PORT_IO/reg_data_13 to PORT_IO/reg_data_13
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.995  PORT_IO/reg_data_13 (PORT_IO/reg_data_13)
-     LUT5:I0->O            1   0.203   0.000  PORT_IO/Mmux_reg_data[15]_reg_data[13]_MUX_180_o11 (PORT_IO/reg_data[15]_reg_data[13]_MUX_180_o)
-     LD:D                      0.037          PORT_IO/reg_data_13
-    ----------------------------------------
-    Total                      1.733ns (0.738ns logic, 0.995ns route)
-                                       (42.6% logic, 57.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'PORT_IO/ce_GND_12_o_AND_97_o'
-  Clock period: 1.733ns (frequency: 576.951MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               1.733ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_14 (LATCH)
-  Destination:       PORT_IO/reg_data_14 (LATCH)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_97_o falling
-  Destination Clock: PORT_IO/ce_GND_12_o_AND_97_o falling
-
-  Data Path: PORT_IO/reg_data_14 to PORT_IO/reg_data_14
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.995  PORT_IO/reg_data_14 (PORT_IO/reg_data_14)
-     LUT5:I0->O            1   0.203   0.000  PORT_IO/Mmux_reg_data[15]_reg_data[14]_MUX_172_o11 (PORT_IO/reg_data[15]_reg_data[14]_MUX_172_o)
-     LD:D                      0.037          PORT_IO/reg_data_14
-    ----------------------------------------
-    Total                      1.733ns (0.738ns logic, 0.995ns route)
-                                       (42.6% logic, 57.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'PORT_IO/ce_GND_12_o_AND_105_o'
-  Clock period: 1.733ns (frequency: 576.951MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               1.733ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_12 (LATCH)
-  Destination:       PORT_IO/reg_data_12 (LATCH)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_105_o falling
-  Destination Clock: PORT_IO/ce_GND_12_o_AND_105_o falling
-
-  Data Path: PORT_IO/reg_data_12 to PORT_IO/reg_data_12
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.995  PORT_IO/reg_data_12 (PORT_IO/reg_data_12)
-     LUT5:I0->O            1   0.203   0.000  PORT_IO/Mmux_reg_data[15]_reg_data[12]_MUX_188_o11 (PORT_IO/reg_data[15]_reg_data[12]_MUX_188_o)
-     LD:D                      0.037          PORT_IO/reg_data_12
-    ----------------------------------------
-    Total                      1.733ns (0.738ns logic, 0.995ns route)
-                                       (42.6% logic, 57.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'PORT_IO/ce_GND_12_o_AND_93_o'
-  Clock period: 1.733ns (frequency: 576.951MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               1.733ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_15 (LATCH)
-  Destination:       PORT_IO/reg_data_15 (LATCH)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_93_o falling
-  Destination Clock: PORT_IO/ce_GND_12_o_AND_93_o falling
-
-  Data Path: PORT_IO/reg_data_15 to PORT_IO/reg_data_15
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.995  PORT_IO/reg_data_15 (PORT_IO/reg_data_15)
-     LUT5:I0->O            1   0.203   0.000  PORT_IO/Mmux_reg_data[15]_reg_data[15]_MUX_164_o11 (PORT_IO/reg_data[15]_reg_data[15]_MUX_164_o)
-     LD:D                      0.037          PORT_IO/reg_data_15
-    ----------------------------------------
-    Total                      1.733ns (0.738ns logic, 0.995ns route)
-                                       (42.6% logic, 57.4% route)
+    Total                     16.988ns (4.611ns logic, 12.377ns route)
+                                       (27.1% logic, 72.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_mgr/pll_base_inst/CLKOUT1'
-  Total number of paths / destination ports: 2 / 2
+  Total number of paths / destination ports: 18 / 18
 -------------------------------------------------------------------------
-Offset:              2.268ns (Levels of Logic = 1)
-  Source:            rst (PAD)
-  Destination:       rst_sync/ff2_q (FF)
-  Destination Clock: clk_mgr/pll_base_inst/CLKOUT1 rising
+Offset:              4.021ns (Levels of Logic = 4)
+  Source:            port_io<15> (PAD)
+  Destination:       PORT_IO/reg_data_15 (FF)
+  Destination Clock: clk_mgr/pll_base_inst/CLKOUT1 falling
 
-  Data Path: rst to rst_sync/ff2_q
+  Data Path: port_io<15> to PORT_IO/reg_data_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             2   1.222   0.616  rst_IBUF (rst_IBUF)
-     FDP:PRE                   0.430          rst_sync/ff1_q
+     IOBUF:IO->O           1   1.222   0.580  port_io_15_IOBUF (N263)
+     LUT4:I3->O            1   0.205   0.924  PROCESSOR/Mmux_data_out7_SW4 (N564)
+     LUT5:I0->O            1   0.203   0.580  PORT_IO/Mmux_reg_data[15]_reg_data[15]_mux_16_OUT71 (PORT_IO/reg_data[15]_reg_data[15]_mux_16_OUT<15>)
+     LUT3:I2->O            1   0.205   0.000  PORT_IO/reg_data_15_dpot (PORT_IO/reg_data_15_dpot)
+     FDCE_1:D                  0.102          PORT_IO/reg_data_15
     ----------------------------------------
-    Total                      2.268ns (1.652ns logic, 0.616ns route)
-                                       (72.8% logic, 27.2% route)
+    Total                      4.021ns (1.937ns logic, 2.084ns route)
+                                       (48.2% logic, 51.8% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'PORT_IO/ce_GND_12_o_AND_93_o'
-  Total number of paths / destination ports: 1 / 1
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_mgr/pll_base_inst/CLKOUT1'
+  Total number of paths / destination ports: 48 / 16
 -------------------------------------------------------------------------
-Offset:              3.719ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_15 (LATCH)
-  Destination:       port_io<15> (PAD)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_93_o falling
-
-  Data Path: PORT_IO/reg_data_15 to port_io<15>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.650  PORT_IO/reg_data_15 (PORT_IO/reg_data_15)
-     OBUFT:I->O                2.571          port_io_15_OBUFT (port_io<15>)
-    ----------------------------------------
-    Total                      3.719ns (3.069ns logic, 0.650ns route)
-                                       (82.5% logic, 17.5% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'ce_port_io'
-  Total number of paths / destination ports: 16 / 16
--------------------------------------------------------------------------
-Offset:              4.606ns (Levels of Logic = 2)
-  Source:            PORT_IO/io_config_15 (LATCH)
-  Destination:       port_io<15> (PAD)
-  Source Clock:      ce_port_io falling
-
-  Data Path: PORT_IO/io_config_15 to port_io<15>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LDE:G->Q              3   0.498   0.755  PORT_IO/io_config_15 (PORT_IO/io_config_15)
-     LUT2:I0->O            1   0.203   0.579  PORT_IO/io_enable[15]_io_config[15]_AND_169_o_inv1 (PORT_IO/io_enable[15]_io_config[15]_AND_169_o_inv)
-     OBUFT:T->O                2.571          port_io_15_OBUFT (port_io<15>)
-    ----------------------------------------
-    Total                      4.606ns (3.272ns logic, 1.334ns route)
-                                       (71.0% logic, 29.0% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'PORT_IO/ce_GND_12_o_AND_59_o'
-  Total number of paths / destination ports: 16 / 16
--------------------------------------------------------------------------
-Offset:              4.504ns (Levels of Logic = 2)
-  Source:            PORT_IO/io_enable_15 (LATCH)
-  Destination:       port_io<15> (PAD)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_59_o falling
-
-  Data Path: PORT_IO/io_enable_15 to port_io<15>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.651  PORT_IO/io_enable_15 (PORT_IO/io_enable_15)
-     LUT2:I1->O            1   0.205   0.579  PORT_IO/io_enable[15]_io_config[15]_AND_169_o_inv1 (PORT_IO/io_enable[15]_io_config[15]_AND_169_o_inv)
-     OBUFT:T->O                2.571          port_io_15_OBUFT (port_io<15>)
-    ----------------------------------------
-    Total                      4.504ns (3.274ns logic, 1.230ns route)
-                                       (72.7% logic, 27.3% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'PORT_IO/ce_GND_12_o_AND_97_o'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              3.719ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_14 (LATCH)
-  Destination:       port_io<14> (PAD)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_97_o falling
-
-  Data Path: PORT_IO/reg_data_14 to port_io<14>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.650  PORT_IO/reg_data_14 (PORT_IO/reg_data_14)
-     OBUFT:I->O                2.571          port_io_14_OBUFT (port_io<14>)
-    ----------------------------------------
-    Total                      3.719ns (3.069ns logic, 0.650ns route)
-                                       (82.5% logic, 17.5% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'PORT_IO/ce_GND_12_o_AND_101_o'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              3.719ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_13 (LATCH)
-  Destination:       port_io<13> (PAD)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_101_o falling
-
-  Data Path: PORT_IO/reg_data_13 to port_io<13>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.650  PORT_IO/reg_data_13 (PORT_IO/reg_data_13)
-     OBUFT:I->O                2.571          port_io_13_OBUFT (port_io<13>)
-    ----------------------------------------
-    Total                      3.719ns (3.069ns logic, 0.650ns route)
-                                       (82.5% logic, 17.5% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'PORT_IO/ce_GND_12_o_AND_105_o'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              3.719ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_12 (LATCH)
-  Destination:       port_io<12> (PAD)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_105_o falling
-
-  Data Path: PORT_IO/reg_data_12 to port_io<12>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.650  PORT_IO/reg_data_12 (PORT_IO/reg_data_12)
-     OBUFT:I->O                2.571          port_io_12_OBUFT (port_io<12>)
-    ----------------------------------------
-    Total                      3.719ns (3.069ns logic, 0.650ns route)
-                                       (82.5% logic, 17.5% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'PORT_IO/ce_GND_12_o_AND_109_o'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              3.719ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_11 (LATCH)
-  Destination:       port_io<11> (PAD)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_109_o falling
-
-  Data Path: PORT_IO/reg_data_11 to port_io<11>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.650  PORT_IO/reg_data_11 (PORT_IO/reg_data_11)
-     OBUFT:I->O                2.571          port_io_11_OBUFT (port_io<11>)
-    ----------------------------------------
-    Total                      3.719ns (3.069ns logic, 0.650ns route)
-                                       (82.5% logic, 17.5% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'PORT_IO/ce_GND_12_o_AND_113_o'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              3.719ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_10 (LATCH)
-  Destination:       port_io<10> (PAD)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_113_o falling
-
-  Data Path: PORT_IO/reg_data_10 to port_io<10>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.650  PORT_IO/reg_data_10 (PORT_IO/reg_data_10)
-     OBUFT:I->O                2.571          port_io_10_OBUFT (port_io<10>)
-    ----------------------------------------
-    Total                      3.719ns (3.069ns logic, 0.650ns route)
-                                       (82.5% logic, 17.5% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'PORT_IO/ce_GND_12_o_AND_117_o'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              3.719ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_9 (LATCH)
-  Destination:       port_io<9> (PAD)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_117_o falling
-
-  Data Path: PORT_IO/reg_data_9 to port_io<9>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.650  PORT_IO/reg_data_9 (PORT_IO/reg_data_9)
-     OBUFT:I->O                2.571          port_io_9_OBUFT (port_io<9>)
-    ----------------------------------------
-    Total                      3.719ns (3.069ns logic, 0.650ns route)
-                                       (82.5% logic, 17.5% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'PORT_IO/ce_GND_12_o_AND_121_o'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              3.719ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_8 (LATCH)
-  Destination:       port_io<8> (PAD)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_121_o falling
-
-  Data Path: PORT_IO/reg_data_8 to port_io<8>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.650  PORT_IO/reg_data_8 (PORT_IO/reg_data_8)
-     OBUFT:I->O                2.571          port_io_8_OBUFT (port_io<8>)
-    ----------------------------------------
-    Total                      3.719ns (3.069ns logic, 0.650ns route)
-                                       (82.5% logic, 17.5% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'PORT_IO/ce_GND_12_o_AND_125_o'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              3.719ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_7 (LATCH)
+Offset:              4.787ns (Levels of Logic = 2)
+  Source:            PORT_IO/io_config_7 (FF)
   Destination:       port_io<7> (PAD)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_125_o falling
+  Source Clock:      clk_mgr/pll_base_inst/CLKOUT1 falling
 
-  Data Path: PORT_IO/reg_data_7 to port_io<7>
+  Data Path: PORT_IO/io_config_7 to port_io<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.650  PORT_IO/reg_data_7 (PORT_IO/reg_data_7)
-     OBUFT:I->O                2.571          port_io_7_OBUFT (port_io<7>)
+     FDCE_1:C->Q          11   0.447   0.987  PORT_IO/io_config_7 (PORT_IO/io_config_7)
+     LUT2:I0->O            1   0.203   0.579  PORT_IO/io_enable[7]_io_config[7]_AND_45_o_inv1 (PORT_IO/io_enable[7]_io_config[7]_AND_45_o_inv)
+     IOBUF:T->IO               2.571          port_io_7_IOBUF (port_io<7>)
     ----------------------------------------
-    Total                      3.719ns (3.069ns logic, 0.650ns route)
-                                       (82.5% logic, 17.5% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'PORT_IO/ce_GND_12_o_AND_129_o'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              3.719ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_6 (LATCH)
-  Destination:       port_io<6> (PAD)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_129_o falling
-
-  Data Path: PORT_IO/reg_data_6 to port_io<6>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.650  PORT_IO/reg_data_6 (PORT_IO/reg_data_6)
-     OBUFT:I->O                2.571          port_io_6_OBUFT (port_io<6>)
-    ----------------------------------------
-    Total                      3.719ns (3.069ns logic, 0.650ns route)
-                                       (82.5% logic, 17.5% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'PORT_IO/ce_GND_12_o_AND_133_o'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              3.719ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_5 (LATCH)
-  Destination:       port_io<5> (PAD)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_133_o falling
-
-  Data Path: PORT_IO/reg_data_5 to port_io<5>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.650  PORT_IO/reg_data_5 (PORT_IO/reg_data_5)
-     OBUFT:I->O                2.571          port_io_5_OBUFT (port_io<5>)
-    ----------------------------------------
-    Total                      3.719ns (3.069ns logic, 0.650ns route)
-                                       (82.5% logic, 17.5% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'PORT_IO/ce_GND_12_o_AND_137_o'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              3.719ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_4 (LATCH)
-  Destination:       port_io<4> (PAD)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_137_o falling
-
-  Data Path: PORT_IO/reg_data_4 to port_io<4>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.650  PORT_IO/reg_data_4 (PORT_IO/reg_data_4)
-     OBUFT:I->O                2.571          port_io_4_OBUFT (port_io<4>)
-    ----------------------------------------
-    Total                      3.719ns (3.069ns logic, 0.650ns route)
-                                       (82.5% logic, 17.5% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'PORT_IO/ce_GND_12_o_AND_141_o'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              3.719ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_3 (LATCH)
-  Destination:       port_io<3> (PAD)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_141_o falling
-
-  Data Path: PORT_IO/reg_data_3 to port_io<3>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.650  PORT_IO/reg_data_3 (PORT_IO/reg_data_3)
-     OBUFT:I->O                2.571          port_io_3_OBUFT (port_io<3>)
-    ----------------------------------------
-    Total                      3.719ns (3.069ns logic, 0.650ns route)
-                                       (82.5% logic, 17.5% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'PORT_IO/ce_GND_12_o_AND_145_o'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              3.719ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_2 (LATCH)
-  Destination:       port_io<2> (PAD)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_145_o falling
-
-  Data Path: PORT_IO/reg_data_2 to port_io<2>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.650  PORT_IO/reg_data_2 (PORT_IO/reg_data_2)
-     OBUFT:I->O                2.571          port_io_2_OBUFT (port_io<2>)
-    ----------------------------------------
-    Total                      3.719ns (3.069ns logic, 0.650ns route)
-                                       (82.5% logic, 17.5% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'PORT_IO/ce_GND_12_o_AND_149_o'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              3.719ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_1 (LATCH)
-  Destination:       port_io<1> (PAD)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_149_o falling
-
-  Data Path: PORT_IO/reg_data_1 to port_io<1>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.650  PORT_IO/reg_data_1 (PORT_IO/reg_data_1)
-     OBUFT:I->O                2.571          port_io_1_OBUFT (port_io<1>)
-    ----------------------------------------
-    Total                      3.719ns (3.069ns logic, 0.650ns route)
-                                       (82.5% logic, 17.5% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'PORT_IO/ce_GND_12_o_AND_153_o'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              3.719ns (Levels of Logic = 1)
-  Source:            PORT_IO/reg_data_0 (LATCH)
-  Destination:       port_io<0> (PAD)
-  Source Clock:      PORT_IO/ce_GND_12_o_AND_153_o falling
-
-  Data Path: PORT_IO/reg_data_0 to port_io<0>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               3   0.498   0.650  PORT_IO/reg_data_0 (PORT_IO/reg_data_0)
-     OBUFT:I->O                2.571          port_io_0_OBUFT (port_io<0>)
-    ----------------------------------------
-    Total                      3.719ns (3.069ns logic, 0.650ns route)
-                                       (82.5% logic, 17.5% route)
+    Total                      4.787ns (3.221ns logic, 1.566ns route)
+                                       (67.3% logic, 32.7% route)
 
 =========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock PORT_IO/ce_GND_12_o_AND_101_o
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-PORT_IO/ce_GND_12_o_AND_101_o       |         |         |    1.733|         |
-PORT_IO/ce_GND_12_o_AND_59_o        |         |         |    1.391|         |
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o |         |         |    4.352|         |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o|         |         |    3.703|         |
-ce_port_io                          |         |         |    1.493|         |
-clk_mgr/pll_base_inst/CLKOUT1       |         |         |   17.942|         |
-rst_sync/ff2_q                      |         |         |   16.287|         |
-------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock PORT_IO/ce_GND_12_o_AND_105_o
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-PORT_IO/ce_GND_12_o_AND_105_o       |         |         |    1.733|         |
-PORT_IO/ce_GND_12_o_AND_59_o        |         |         |    1.391|         |
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o |         |         |    4.352|         |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o|         |         |    3.703|         |
-ce_port_io                          |         |         |    1.493|         |
-clk_mgr/pll_base_inst/CLKOUT1       |         |         |   17.942|         |
-rst_sync/ff2_q                      |         |         |   16.287|         |
-------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock PORT_IO/ce_GND_12_o_AND_109_o
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-PORT_IO/ce_GND_12_o_AND_109_o       |         |         |    1.733|         |
-PORT_IO/ce_GND_12_o_AND_59_o        |         |         |    1.391|         |
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o |         |         |    4.352|         |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o|         |         |    3.703|         |
-ce_port_io                          |         |         |    1.493|         |
-clk_mgr/pll_base_inst/CLKOUT1       |         |         |   17.942|         |
-rst_sync/ff2_q                      |         |         |   16.287|         |
-------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock PORT_IO/ce_GND_12_o_AND_113_o
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-PORT_IO/ce_GND_12_o_AND_113_o       |         |         |    1.733|         |
-PORT_IO/ce_GND_12_o_AND_59_o        |         |         |    1.391|         |
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o |         |         |    4.352|         |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o|         |         |    3.703|         |
-ce_port_io                          |         |         |    1.493|         |
-clk_mgr/pll_base_inst/CLKOUT1       |         |         |   17.942|         |
-rst_sync/ff2_q                      |         |         |   16.287|         |
-------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock PORT_IO/ce_GND_12_o_AND_117_o
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-PORT_IO/ce_GND_12_o_AND_117_o       |         |         |    1.733|         |
-PORT_IO/ce_GND_12_o_AND_59_o        |         |         |    1.391|         |
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o |         |         |    4.352|         |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o|         |         |    3.703|         |
-ce_port_io                          |         |         |    1.493|         |
-clk_mgr/pll_base_inst/CLKOUT1       |         |         |   17.942|         |
-rst_sync/ff2_q                      |         |         |   16.287|         |
-------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock PORT_IO/ce_GND_12_o_AND_121_o
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-PORT_IO/ce_GND_12_o_AND_121_o       |         |         |    1.733|         |
-PORT_IO/ce_GND_12_o_AND_59_o        |         |         |    1.391|         |
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o |         |         |    4.352|         |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o|         |         |    3.703|         |
-ce_port_io                          |         |         |    1.493|         |
-clk_mgr/pll_base_inst/CLKOUT1       |         |         |   17.942|         |
-rst_sync/ff2_q                      |         |         |   16.287|         |
-------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock PORT_IO/ce_GND_12_o_AND_125_o
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-PORT_IO/ce_GND_12_o_AND_125_o       |         |         |    1.733|         |
-PORT_IO/ce_GND_12_o_AND_59_o        |         |         |    1.391|         |
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o |         |         |    3.622|         |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o|         |         |    3.984|         |
-ce_port_io                          |         |         |    1.493|         |
-clk_mgr/pll_base_inst/CLKOUT1       |         |         |   17.942|         |
-rst_sync/ff2_q                      |         |         |   16.287|         |
-------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock PORT_IO/ce_GND_12_o_AND_129_o
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-PORT_IO/ce_GND_12_o_AND_129_o       |         |         |    1.733|         |
-PORT_IO/ce_GND_12_o_AND_59_o        |         |         |    1.391|         |
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o |         |         |    3.622|         |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o|         |         |    3.984|         |
-ce_port_io                          |         |         |    1.493|         |
-clk_mgr/pll_base_inst/CLKOUT1       |         |         |   17.942|         |
-rst_sync/ff2_q                      |         |         |   16.287|         |
-------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock PORT_IO/ce_GND_12_o_AND_133_o
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-PORT_IO/ce_GND_12_o_AND_133_o       |         |         |    1.733|         |
-PORT_IO/ce_GND_12_o_AND_59_o        |         |         |    1.391|         |
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o |         |         |    3.622|         |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o|         |         |    3.984|         |
-ce_port_io                          |         |         |    1.493|         |
-clk_mgr/pll_base_inst/CLKOUT1       |         |         |   17.942|         |
-rst_sync/ff2_q                      |         |         |   16.287|         |
-------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock PORT_IO/ce_GND_12_o_AND_137_o
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-PORT_IO/ce_GND_12_o_AND_137_o       |         |         |    1.733|         |
-PORT_IO/ce_GND_12_o_AND_59_o        |         |         |    1.391|         |
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o |         |         |    3.622|         |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o|         |         |    3.984|         |
-ce_port_io                          |         |         |    1.493|         |
-clk_mgr/pll_base_inst/CLKOUT1       |         |         |   17.942|         |
-rst_sync/ff2_q                      |         |         |   16.287|         |
-------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock PORT_IO/ce_GND_12_o_AND_141_o
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-PORT_IO/ce_GND_12_o_AND_141_o       |         |         |    1.733|         |
-PORT_IO/ce_GND_12_o_AND_59_o        |         |         |    1.391|         |
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o |         |         |    3.622|         |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o|         |         |    3.984|         |
-ce_port_io                          |         |         |    1.493|         |
-clk_mgr/pll_base_inst/CLKOUT1       |         |         |   17.942|         |
-rst_sync/ff2_q                      |         |         |   16.287|         |
-------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock PORT_IO/ce_GND_12_o_AND_145_o
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-PORT_IO/ce_GND_12_o_AND_145_o       |         |         |    1.733|         |
-PORT_IO/ce_GND_12_o_AND_59_o        |         |         |    1.391|         |
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o |         |         |    3.622|         |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o|         |         |    3.984|         |
-ce_port_io                          |         |         |    1.493|         |
-clk_mgr/pll_base_inst/CLKOUT1       |         |         |   17.942|         |
-rst_sync/ff2_q                      |         |         |   16.287|         |
-------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock PORT_IO/ce_GND_12_o_AND_149_o
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-PORT_IO/ce_GND_12_o_AND_149_o       |         |         |    1.733|         |
-PORT_IO/ce_GND_12_o_AND_59_o        |         |         |    1.391|         |
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o |         |         |    3.622|         |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o|         |         |    3.984|         |
-ce_port_io                          |         |         |    1.493|         |
-clk_mgr/pll_base_inst/CLKOUT1       |         |         |   17.942|         |
-rst_sync/ff2_q                      |         |         |   16.287|         |
-------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock PORT_IO/ce_GND_12_o_AND_153_o
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-PORT_IO/ce_GND_12_o_AND_153_o       |         |         |    1.733|         |
-PORT_IO/ce_GND_12_o_AND_59_o        |         |         |    1.391|         |
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o |         |         |    3.622|         |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o|         |         |    3.984|         |
-ce_port_io                          |         |         |    1.493|         |
-clk_mgr/pll_base_inst/CLKOUT1       |         |         |   17.942|         |
-rst_sync/ff2_q                      |         |         |   16.287|         |
-------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock PORT_IO/ce_GND_12_o_AND_59_o
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o |         |         |    3.204|         |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o|         |         |    2.836|         |
-clk_mgr/pll_base_inst/CLKOUT1       |         |         |   15.553|         |
-rst_sync/ff2_q                      |         |         |   13.945|         |
-------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock PORT_IO/ce_GND_12_o_AND_93_o
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-PORT_IO/ce_GND_12_o_AND_59_o        |         |         |    1.391|         |
-PORT_IO/ce_GND_12_o_AND_93_o        |         |         |    1.733|         |
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o |         |         |    4.352|         |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o|         |         |    3.703|         |
-ce_port_io                          |         |         |    1.493|         |
-clk_mgr/pll_base_inst/CLKOUT1       |         |         |   17.942|         |
-rst_sync/ff2_q                      |         |         |   16.287|         |
-------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock PORT_IO/ce_GND_12_o_AND_97_o
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-PORT_IO/ce_GND_12_o_AND_59_o        |         |         |    1.391|         |
-PORT_IO/ce_GND_12_o_AND_97_o        |         |         |    1.733|         |
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o |         |         |    4.352|         |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o|         |         |    3.703|         |
-ce_port_io                          |         |         |    1.493|         |
-clk_mgr/pll_base_inst/CLKOUT1       |         |         |   17.942|         |
-rst_sync/ff2_q                      |         |         |   16.287|         |
-------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock PROCESSOR/GND_78_o_PWR_12_o_OR_57_o
+Clock to Setup on destination clock PROCESSOR/GND_30_o_PWR_12_o_OR_23_o
 -----------------------------+---------+---------+---------+---------+
                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------+---------+---------+---------+---------+
-PORT_IO/ce_GND_12_o_AND_101_o|         |         |    3.505|         |
-PORT_IO/ce_GND_12_o_AND_105_o|         |         |    3.505|         |
-PORT_IO/ce_GND_12_o_AND_109_o|         |         |    3.505|         |
-PORT_IO/ce_GND_12_o_AND_113_o|         |         |    3.505|         |
-PORT_IO/ce_GND_12_o_AND_117_o|         |         |    3.505|         |
-PORT_IO/ce_GND_12_o_AND_121_o|         |         |    3.505|         |
-PORT_IO/ce_GND_12_o_AND_125_o|         |         |    3.298|         |
-PORT_IO/ce_GND_12_o_AND_129_o|         |         |    3.260|         |
-PORT_IO/ce_GND_12_o_AND_133_o|         |         |    3.260|         |
-PORT_IO/ce_GND_12_o_AND_137_o|         |         |    3.260|         |
-PORT_IO/ce_GND_12_o_AND_141_o|         |         |    3.260|         |
-PORT_IO/ce_GND_12_o_AND_145_o|         |         |    3.260|         |
-PORT_IO/ce_GND_12_o_AND_149_o|         |         |    3.260|         |
-PORT_IO/ce_GND_12_o_AND_153_o|         |         |    3.260|         |
-PORT_IO/ce_GND_12_o_AND_93_o |         |         |    3.543|         |
-PORT_IO/ce_GND_12_o_AND_97_o |         |         |    3.505|         |
-clk_mgr/pll_base_inst/CLKOUT1|         |         |   19.024|         |
-rst_sync/ff2_q               |         |         |   16.840|         |
+clk_mgr/pll_base_inst/CLKOUT1|         |         |   18.769|         |
+rst_sync/ff2_q               |         |         |   16.833|         |
 -----------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o
+Clock to Setup on destination clock PROCESSOR/PWR_12_o_PWR_12_o_OR_90_o
 -------------------------------------+---------+---------+---------+---------+
                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -------------------------------------+---------+---------+---------+---------+
-PROCESSOR/result[1]_result[1]_OR_92_o|         |         |    1.699|         |
-clk_mgr/pll_base_inst/CLKOUT1        |         |         |   10.446|         |
-rst_sync/ff2_q                       |         |         |    7.448|         |
+PROCESSOR/result[1]_result[1]_OR_58_o|         |         |    1.699|         |
+clk_mgr/pll_base_inst/CLKOUT1        |         |         |   10.679|         |
+rst_sync/ff2_q                       |         |         |    7.572|         |
 -------------------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock PROCESSOR/result[1]_result[1]_OR_92_o
+Clock to Setup on destination clock PROCESSOR/result[1]_result[1]_OR_58_o
 -----------------------------+---------+---------+---------+---------+
                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------+---------+---------+---------+---------+
-PORT_IO/ce_GND_12_o_AND_101_o|         |         |    2.247|         |
-PORT_IO/ce_GND_12_o_AND_105_o|         |         |    2.247|         |
-PORT_IO/ce_GND_12_o_AND_109_o|         |         |    2.247|         |
-PORT_IO/ce_GND_12_o_AND_113_o|         |         |    2.247|         |
-PORT_IO/ce_GND_12_o_AND_117_o|         |         |    2.247|         |
-PORT_IO/ce_GND_12_o_AND_121_o|         |         |    2.247|         |
-PORT_IO/ce_GND_12_o_AND_125_o|         |         |    2.247|         |
-PORT_IO/ce_GND_12_o_AND_129_o|         |         |    2.247|         |
-PORT_IO/ce_GND_12_o_AND_133_o|         |         |    2.247|         |
-PORT_IO/ce_GND_12_o_AND_137_o|         |         |    2.247|         |
-PORT_IO/ce_GND_12_o_AND_141_o|         |         |    2.247|         |
-PORT_IO/ce_GND_12_o_AND_145_o|         |         |    2.247|         |
-PORT_IO/ce_GND_12_o_AND_149_o|         |         |    2.247|         |
-PORT_IO/ce_GND_12_o_AND_153_o|         |         |    2.247|         |
-PORT_IO/ce_GND_12_o_AND_93_o |         |         |    2.247|         |
-PORT_IO/ce_GND_12_o_AND_97_o |         |         |    2.247|         |
-clk_mgr/pll_base_inst/CLKOUT1|         |         |   17.974|         |
-rst_sync/ff2_q               |         |         |   15.790|         |
+clk_mgr/pll_base_inst/CLKOUT1|         |         |   17.474|         |
+rst_sync/ff2_q               |         |         |   15.538|         |
 -----------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock ce_port_io
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o |         |         |    3.204|         |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o|         |         |    2.836|         |
-clk_mgr/pll_base_inst/CLKOUT1       |         |         |   17.919|         |
-rst_sync/ff2_q                      |         |         |   16.264|         |
-------------------------------------+---------+---------+---------+---------+
-
 Clock to Setup on destination clock clk_mgr/pll_base_inst/CLKOUT1
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-PORT_IO/ce_GND_12_o_AND_101_o       |         |    2.312|         |         |
-PORT_IO/ce_GND_12_o_AND_105_o       |         |    2.312|         |         |
-PORT_IO/ce_GND_12_o_AND_109_o       |         |    2.312|         |         |
-PORT_IO/ce_GND_12_o_AND_113_o       |         |    2.312|         |         |
-PORT_IO/ce_GND_12_o_AND_117_o       |         |    2.312|         |         |
-PORT_IO/ce_GND_12_o_AND_121_o       |         |    2.312|         |         |
-PORT_IO/ce_GND_12_o_AND_125_o       |         |    2.312|         |         |
-PORT_IO/ce_GND_12_o_AND_129_o       |         |    2.312|         |         |
-PORT_IO/ce_GND_12_o_AND_133_o       |         |    2.312|         |         |
-PORT_IO/ce_GND_12_o_AND_137_o       |         |    2.312|         |         |
-PORT_IO/ce_GND_12_o_AND_141_o       |         |    2.312|         |         |
-PORT_IO/ce_GND_12_o_AND_145_o       |         |    2.312|         |         |
-PORT_IO/ce_GND_12_o_AND_149_o       |         |    2.312|         |         |
-PORT_IO/ce_GND_12_o_AND_153_o       |         |    2.312|         |         |
-PORT_IO/ce_GND_12_o_AND_93_o        |         |    2.312|         |         |
-PORT_IO/ce_GND_12_o_AND_97_o        |         |    2.312|         |         |
-PROCESSOR/GND_78_o_PWR_12_o_OR_57_o |         |    4.336|    4.403|         |
-PROCESSOR/PWR_12_o_PWR_12_o_OR_124_o|         |    3.885|    3.945|         |
-clk_mgr/pll_base_inst/CLKOUT1       |   23.603|    3.838|   16.810|         |
-rst_sync/ff2_q                      |         |   21.948|   15.228|         |
-------------------------------------+---------+---------+---------+---------+
+-----------------------------------+---------+---------+---------+---------+
+                                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------------+---------+---------+---------+---------+
+PROCESSOR/GND_30_o_PWR_12_o_OR_23_o|         |    4.336|    5.407|         |
+PROCESSOR/PWR_12_o_PWR_12_o_OR_90_o|         |    3.885|    4.636|         |
+clk_mgr/pll_base_inst/CLKOUT1      |   23.457|    3.838|   16.988|         |
+rst_sync/ff2_q                     |         |   21.141|   15.052|         |
+-----------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 46.00 secs
-Total CPU time to Xst completion: 45.08 secs
+Total REAL time to Xst completion: 45.00 secs
+Total CPU time to Xst completion: 44.72 secs
  
 --> 
 
 
-Total memory usage is 678800 kilobytes
+Total memory usage is 679456 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  177 (   0 filtered)
+Number of warnings :  114 (   0 filtered)
 Number of infos    :    9 (   0 filtered)
 
