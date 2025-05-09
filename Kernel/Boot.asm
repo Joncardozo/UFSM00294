@@ -37,4 +37,4 @@ main:
     jal     BubbleSort
 
 end_boot:
-    j end_boot     # Loop infinito após retorno do programa (só segurança)
+    j end_boot     # Loop 
