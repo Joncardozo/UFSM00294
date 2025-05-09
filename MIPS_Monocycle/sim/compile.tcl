@@ -19,6 +19,7 @@ if { ![file exist work] } {
 #########################
 ### Source files list ###
 #########################
+#########################
 
 # Source files listed in hierarchical order: botton -> top
 set sourceFiles {  
@@ -26,6 +27,7 @@ set sourceFiles {
     ../src/VHDL/MIPS/MIPS_monocycle.vhd
     ../src/VHDL/Memory/Util_pkg.vhd
     ../src/VHDL/Memory/Memory.vhd
+	BidirectionalPort.vhd
     MIPS_monocycle_tb.vhd
 }
 

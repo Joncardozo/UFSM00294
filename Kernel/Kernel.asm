@@ -1,4 +1,6 @@
 .text
+
+
 .globl InterruptionServiceRoutine
 InterruptionServiceRoutine:
 
@@ -38,7 +40,7 @@ InterruptionServiceRoutine:
     la      $k1, kernel_sp
     lw      $sp, 0($k1)
 
-    # Verifica  periférico
+    # Verifica periférico
     li      $k1, 0xffff0000        
     lw      $t0, 8($k1)           
     
@@ -47,7 +49,7 @@ InterruptionServiceRoutine:
     bne     $t1, $zero, Peripheral1Handler
 
     # Default
-    jal RestoreContext
+    j RestoreContext
 
 # Handler do Periférico 1: incrementa contador de 8 bits
 Peripheral1Handler:
@@ -55,7 +57,7 @@ Peripheral1Handler:
     lw      $t2, 0($k1)            # Lê porta de saída
     addiu   $t2, $t2, 1            # Incrementa contador
     sw      $t2, 0($k1)            # Escreve de volta
-    jr      $ra
+    j       RestoreContext         # Corrige retorno com restauração do contexto
 
 
 # Restauração do contexto
@@ -91,12 +93,8 @@ RestoreContext:
     lw      $sp, 108($k0)
     lw      $ra, 112($k0)
 
-    eret                       # Retorna 
+    eret                       # Retorna da interrupção
 
 
 .data
-	PCB:	.space	116
-	
-	msg:	.asciiz	"Interrupcao de teclado detectada!\n"
-
-
+    PCB:    .space 116

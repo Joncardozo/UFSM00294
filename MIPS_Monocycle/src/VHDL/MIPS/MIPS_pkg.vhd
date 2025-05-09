@@ -14,7 +14,8 @@ package MIPS_pkg is
     type Instruction_type is (
         UNIMPLEMENTED_INSTRUCTION, NOP, ADDU, SUBU, AAND, ANDI, OOR, SW, LW, ADDIU, 
         ORI, SLT, BEQ, BNE, J, JR, JAL, LUI, XXOR, XORI, NNOR, SSLL, SSRL, SSRA, SLLV,
-        SRLV, SRAV, SLTI, SLTIU, BGEZ, BLEZ, LB, LBU, LH, LHU, SB, SH, JALR, SLTU
+        SRLV, SRAV, SLTI, SLTIU, BGEZ, BLEZ, LB, LBU, LH, LHU, SB, SH, JALR, SLTU, 
+        ERET
     );
     
     -- Functions used to facilitate the processor description
@@ -159,6 +160,10 @@ package body MIPS_pkg is
 
         when "101001" =>
             decodedInstruction := SH;
+	when "010000" => -- COP0 group
+	    if instruction(25 downto 21) = "10000" and instruction(5 downto 0) = "011000" then
+		decodedInstruction := ERET;
+	    end if;
         
         when "001111" => 
             if instruction(25 downto 21) = "00000" then

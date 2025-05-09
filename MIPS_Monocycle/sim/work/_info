@@ -8,206 +8,245 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Projetos/Joncardozo/UFSM00294/MIPS_Monocycle/sim
-Ememory
-Z1 w1743076377
-Z2 DPx4 work 8 util_pkg 0 22 :_9Z0OS_9hSb02edAI2cO0
-Z3 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
-Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Ebidirectionalport
+Z1 w1746761085
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R0
-Z6 8../src/VHDL/Memory/Memory.vhd
-Z7 F../src/VHDL/Memory/Memory.vhd
+Z4 8BidirectionalPort.vhd
+Z5 FBidirectionalPort.vhd
+l0
+L4
+V@N;9>cF`7@CCGcDLgZBQX3
+!s100 >eN<SG:FRS<g[X?ZTUBb03
+Z6 OV;C;10.5c;63
+32
+Z7 !s110 1746771498
+!i10b 1
+Z8 !s108 1746771498.000000
+Z9 !s90 -reportprogress|300|BidirectionalPort.vhd|
+Z10 !s107 BidirectionalPort.vhd|
+!i113 1
+Z11 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+Z12 DEx4 work 17 bidirectionalport 0 22 @N;9>cF`7@CCGcDLgZBQX3
+l37
+L30
+VY]PliJ__AaM4Da?ITSUjm1
+!s100 ZbXBVdfIz9h`]o=@09zH?2
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+Ememory
+Z13 w1746739898
+Z14 DPx4 work 8 util_pkg 0 22 :_9Z0OS_9hSb02edAI2cO0
+Z15 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+R0
+Z16 8../src/VHDL/Memory/Memory.vhd
+Z17 F../src/VHDL/Memory/Memory.vhd
 l0
 L19
 V0kOEE3jOK0QHVPegSK9T?1
 !s100 _ZQ]zZSA^aBIk76_W@7la2
-Z8 OV;C;10.5c;63
+R6
 32
-Z9 !s110 1743684375
+R7
 !i10b 1
-Z10 !s108 1743684375.000000
-Z11 !s90 -reportprogress|300|../src/VHDL/Memory/Memory.vhd|
-Z12 !s107 ../src/VHDL/Memory/Memory.vhd|
+R8
+Z18 !s90 -reportprogress|300|../src/VHDL/Memory/Memory.vhd|
+Z19 !s107 ../src/VHDL/Memory/Memory.vhd|
 !i113 1
-Z13 tExplicit 1 CvgOpt 0
+R11
 Abehavioral
+R14
+R15
 R2
 R3
-R4
-R5
-Z14 DEx4 work 6 memory 0 22 0kOEE3jOK0QHVPegSK9T?1
+Z20 DEx4 work 6 memory 0 22 0kOEE3jOK0QHVPegSK9T?1
 l69
 L38
 V8zekXIzc5@;KkOP:i^]?42
 !s100 ce0TP;Z]5ohnW5z3hAn9@3
-R8
+R6
 32
-R9
+R7
 !i10b 1
-R10
-R11
-R12
+R8
+R18
+R19
 !i113 1
-R13
+R11
 Emips_monocycle
-Z15 w1743683674
-Z16 DPx4 work 8 mips_pkg 0 22 h]<;fA5H_ZnCD>W=?5:oN3
+Z21 w1746771483
+Z22 DPx4 work 8 mips_pkg 0 22 Z40j3O4=mQ2EL5O;P09T50
+R15
+R2
 R3
-R4
-R5
 R0
-Z17 8../src/VHDL/MIPS/MIPS_monocycle.vhd
-Z18 F../src/VHDL/MIPS/MIPS_monocycle.vhd
+Z23 8../src/VHDL/MIPS/MIPS_monocycle.vhd
+Z24 F../src/VHDL/MIPS/MIPS_monocycle.vhd
 l0
 L11
-V005C`[2;8A02cai69oS>91
-!s100 ZjUo=^1fESRgIT[<H=4hd1
-R8
+VA<VQZP7O`l4B?4`R3MAP[0
+!s100 M[YfYQeDlb^iUQZJAaKK33
+R6
 32
-R9
+R7
 !i10b 1
-R10
-Z19 !s90 -reportprogress|300|../src/VHDL/MIPS/MIPS_monocycle.vhd|
-Z20 !s107 ../src/VHDL/MIPS/MIPS_monocycle.vhd|
+R8
+Z25 !s90 -reportprogress|300|../src/VHDL/MIPS/MIPS_monocycle.vhd|
+Z26 !s107 ../src/VHDL/MIPS/MIPS_monocycle.vhd|
 !i113 1
-R13
+R11
 Abehavioral
-R16
+R22
+R15
+R2
 R3
-R4
-R5
-Z21 DEx4 work 14 mips_monocycle 0 22 005C`[2;8A02cai69oS>91
-l59
-L31
-V5D46K>mN6ZgXNH6In3IZ83
-!s100 K>D^]e6N9Inm^V_[?XWM>2
-R8
+Z27 DEx4 work 14 mips_monocycle 0 22 A<VQZP7O`l4B?4`R3MAP[0
+l71
+L34
+V@N0LTa68Ye2oSbg185[M<0
+!s100 ^F]NXSh7Xm]65jb8:5??E1
+R6
 32
-R9
+R7
 !i10b 1
-R10
-R19
-R20
+R8
+R25
+R26
 !i113 1
-R13
+R11
 Emips_monocycle_tb
-Z22 w1743367869
+w1746762302
+R15
+R2
 R3
-R4
-R5
 R0
-Z23 8MIPS_monocycle_tb.vhd
-Z24 FMIPS_monocycle_tb.vhd
+Z28 8MIPS_monocycle_tb.vhd
+Z29 FMIPS_monocycle_tb.vhd
 l0
 L11
 V`_]C1l`79NA@bHQLa^@OM1
 !s100 SW<^k_YZKYk7zjOm>]=aa0
-R8
+R6
 32
-R9
+!s110 1746762307
 !i10b 1
-R10
-Z25 !s90 -reportprogress|300|MIPS_monocycle_tb.vhd|
-Z26 !s107 MIPS_monocycle_tb.vhd|
+!s108 1746762307.000000
+Z30 !s90 -reportprogress|300|MIPS_monocycle_tb.vhd|
+Z31 !s107 MIPS_monocycle_tb.vhd|
 !i113 1
-R13
+R11
 Astructural
-R2
+Z32 w1746770582
+R12
 R14
-R16
-R21
+R20
+R22
+R27
+R15
+R2
 R3
-R4
-R5
-Z27 DEx4 work 17 mips_monocycle_tb 0 22 `_]C1l`79NA@bHQLa^@OM1
-l24
-L14
-Z28 VFC22mh0:jKhM2<]:C95S23
-Z29 !s100 Q3i3li5eYnfgM;ZYM:=022
-R8
+Z33 DEx4 work 17 mips_monocycle_tb 0 22 `_]C1l`79NA@bHQLa^@OM1
+l26
+L1
+Z34 VBS1>_oRc9Fg7@`zQFLO`50
+Z35 !s100 R9WGTV@GO[m2J0_]c9^m81
+R6
 32
-R9
+R7
 !i10b 1
-R10
-R25
-R26
+R8
+R30
+R31
 !i113 1
-R13
+R11
 Pmips_pkg
+R15
+R2
 R3
-R4
-R5
-Z30 w1743683611
+Z36 w1746757472
 R0
-Z31 8../src/VHDL/MIPS/MIPS_pkg.vhd
-Z32 F../src/VHDL/MIPS/MIPS_pkg.vhd
+Z37 8../src/VHDL/MIPS/MIPS_pkg.vhd
+Z38 F../src/VHDL/MIPS/MIPS_pkg.vhd
 l0
 L11
-Vh]<;fA5H_ZnCD>W=?5:oN3
-!s100 7ehOU;ohX3b?n;>D<R@`Q1
-R8
+VZ40j3O4=mQ2EL5O;P09T50
+!s100 agmWTXmXn1RMFilAYV4H;0
+R6
 32
 b1
-R9
+R7
 !i10b 1
-R10
-Z33 !s90 -reportprogress|300|../src/VHDL/MIPS/MIPS_pkg.vhd|
-Z34 !s107 ../src/VHDL/MIPS/MIPS_pkg.vhd|
-!i113 1
-R13
-Bbody
-R16
-R3
-R4
-R5
-l0
-L30
-VBd=9@19051:hDgz43=iXj0
-!s100 l^a`T88@k>ZCXc<N]mDOF1
 R8
-32
-R9
-!i10b 1
-R10
-R33
-R34
+Z39 !s90 -reportprogress|300|../src/VHDL/MIPS/MIPS_pkg.vhd|
+Z40 !s107 ../src/VHDL/MIPS/MIPS_pkg.vhd|
 !i113 1
-R13
+R11
+Bbody
+R22
+R15
+R2
+R3
+l0
+L31
+VV`zhP0NNe[5R[ne_N;nO`1
+!s100 h9:k4<Z7i45kJ5GT[QHO71
+R6
+32
+R7
+!i10b 1
+R8
+R39
+R40
+!i113 1
+R11
 Putil_pkg
-R4
-R5
-R1
+R2
+R3
+R13
 R0
-Z35 8../src/VHDL/Memory/Util_pkg.vhd
-Z36 F../src/VHDL/Memory/Util_pkg.vhd
+Z41 8../src/VHDL/Memory/Util_pkg.vhd
+Z42 F../src/VHDL/Memory/Util_pkg.vhd
 l0
 L9
 V:_9Z0OS_9hSb02edAI2cO0
 !s100 Ade5EQLCc<_<QgP7N:P8c3
-R8
+R6
 32
 b1
-R9
+R7
 !i10b 1
-R10
-Z37 !s90 -reportprogress|300|../src/VHDL/Memory/Util_pkg.vhd|
-Z38 !s107 ../src/VHDL/Memory/Util_pkg.vhd|
+R8
+Z43 !s90 -reportprogress|300|../src/VHDL/Memory/Util_pkg.vhd|
+Z44 !s107 ../src/VHDL/Memory/Util_pkg.vhd|
 !i113 1
-R13
+R11
 Bbody
+R14
 R2
-R4
-R5
+R3
 l0
 L26
 VA^IRioT::nHO0Y68oiccl1
 !s100 a_aWB]U9aKjMF1O75Ahcf3
-R8
+R6
 32
-R9
+R7
 !i10b 1
-R10
-R37
-R38
+R8
+R43
+R44
 !i113 1
-R13
+R11

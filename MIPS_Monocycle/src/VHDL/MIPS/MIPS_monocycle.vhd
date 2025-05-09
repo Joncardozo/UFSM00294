@@ -15,6 +15,9 @@ entity MIPS_monocycle is
     port ( 
         clk, rst            : in std_logic;
         
+        -- Interupt interface
+        intr 		    : in std_logic;
+        
         -- Instruction memory interface
         instructionAddress  : out std_logic_vector(31 downto 0);
         instruction         : in  std_logic_vector(31 downto 0);
@@ -40,6 +43,11 @@ architecture behavioral of MIPS_monocycle is
     signal selectedByteExtended : UNSIGNED(31 downto 0);
     signal selectedHalfWord : std_logic_vector(15 downto 0);
     signal selectedHalfWordExtended : UNSIGNED(31 downto 0);
+    
+    -- Suporte a interrupção 
+    signal tratandoInterrupcao : std_logic := '0';
+    signal EPC : UNSIGNED(31 downto 0);  -- Exception Program Counter
+    constant ISR_ADDR : UNSIGNED(31 downto 0) := x"00400050";  
     
     -- Register file
     type RegisterArray is array (natural range <>) of UNSIGNED(31 downto 0);
@@ -72,21 +80,29 @@ begin
         severity failure;  -- Stops the simulation  
     
     -- Register PC and adder --
-    REG_PC: process(clk,rst)
-    begin
-        if rst = '1' then
-            pc <= PC_START_ADDRESS;
-            lock <= true; -- Locks the processor until the first clk rising edge
-        
-        elsif rising_edge(clk) then
-            pc <= instructionFetchAddress + 4;
-            
-            if lock then -- Unlocks the processor
-                lock <= false;
-            end if;
-            
-        end if;
-    end process;
+	REG_PC: process(clk, rst)
+	begin
+		if rst = '1' then
+			pc <= PC_START_ADDRESS;
+			lock <= true;
+			tratandoInterrupcao <= '0';
+		elsif rising_edge(clk) then
+			if lock = true then
+				lock <= false;
+			elsif decodedInstruction = ERET then
+				pc <= EPC;  -- Retorna para o PC original após a interrupção
+				tratandoInterrupcao <= '0';  -- Reseta o estado de interrupção
+			elsif intr = '1' and tratandoInterrupcao = '0' then  -- Se interrupção e não está tratando
+				EPC <= instructionFetchAddress;  -- Salva o endereço atual
+				pc <= ISR_ADDR;  -- Salta para a rotina de interrupção
+				tratandoInterrupcao <= '1';  -- Marca que está tratando a interrupção
+			else
+				pc <= instructionFetchAddress + 4;  -- Execução normal
+			end if;
+		end if;
+	end process;
+
+
         
     -- Selects the instruction field which contains the register to be written
     -- In R-type instructions the destination register is in the 'instruction_rd' field
@@ -182,6 +198,8 @@ begin
     -- R-type, ADDIU, ORI and load instructions, store the result in the register file
     regWrite <= '1' when WriteRegisterFile(decodedInstruction) else '0';
     
+
+    
     -- Register $0 is read-only (constant 0)
     REGISTER_FILE: process(clk, rst)
     begin
@@ -262,5 +280,6 @@ begin
             "0000";
 
     ce <= '1' when LoadInstruction(decodedInstruction) or StoreInstruction(decodedInstruction) else '0';
+	
 
 end behavioral;
