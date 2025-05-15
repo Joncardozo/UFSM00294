@@ -43,10 +43,10 @@ architecture behavioral of MIPS_monocycle is
     signal selectedByteExtended : UNSIGNED(31 downto 0);
     signal selectedHalfWord : std_logic_vector(15 downto 0);
     signal selectedHalfWordExtended : UNSIGNED(31 downto 0);
-    
     -- Suporte a interrupção 
-    signal tratandoInterrupcao : std_logic := '0';
+    signal interruptionTreatment : std_logic := '0';
     signal EPC : UNSIGNED(31 downto 0);  -- Exception Program Counter
+    signal nextPc : UNSIGNED(31 downto 0);
     constant ISR_ADDR : UNSIGNED(31 downto 0) := x"00400050";  
     
     -- Register file
@@ -81,26 +81,30 @@ begin
     
     -- Register PC and adder --
 	REG_PC: process(clk, rst)
-	begin
-		if rst = '1' then
-			pc <= PC_START_ADDRESS;
-			lock <= true;
-			tratandoInterrupcao <= '0';
-		elsif rising_edge(clk) then
-			if lock = true then
-				lock <= false;
-			elsif decodedInstruction = ERET then
-				pc <= EPC;  -- Retorna para o PC original após a interrupção
-				tratandoInterrupcao <= '0';  -- Reseta o estado de interrupção
-			elsif intr = '1' and tratandoInterrupcao = '0' then  -- Se interrupção e não está tratando
-				EPC <= instructionFetchAddress;  -- Salva o endereço atual
-				pc <= ISR_ADDR;  -- Salta para a rotina de interrupção
-				tratandoInterrupcao <= '1';  -- Marca que está tratando a interrupção
-			else
-				pc <= instructionFetchAddress + 4;  -- Execução normal
-			end if;
-		end if;
-	end process;
+begin
+    if rst = '1' then
+        pc                    <= PC_START_ADDRESS;
+        lock                  <= true;
+        interruptionTreatment <= '0';
+        EPC                   <= (others=>'0');
+    elsif rising_edge(clk) then
+        if lock = true then
+            lock <= false;
+        else
+            -- sincroniza o salvamento do EPC apenas quando a interrupção realmente dispara
+            if intr = '1' and interruptionTreatment = '0' then
+                EPC <= nextPc;                       -- salva PC atual
+                interruptionTreatment <= '1';    -- marca tratamento em andamento
+            elsif decodedInstruction = ERET then
+                interruptionTreatment <= '0';    -- libera tratamento ao ERET
+
+            end if;
+            pc <= instructionFetchAddress + 4;      -- atualiza PC com o valor já decidido acima
+        end if;
+    end if;
+end process;
+
+
 
 
         
@@ -134,12 +138,19 @@ begin
     -- MUX which selects the source address of the next instruction 
     -- Not present in datapath diagram
     -- In case of jump/branch, PC must be bypassed due to synchronous memory read
-    instructionFetchAddress <= branchTarget when (decodedInstruction = BEQ and zero = '1') or (decodedInstruction = BNE and zero = '0') else 
+
+
+    nextPc               <=    branchTarget when (decodedInstruction = BEQ and zero = '1') or (decodedInstruction = BNE and zero = '0') else 
                                branchTarget when decodedInstruction = BGEZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) >= 0 else
                                branchTarget when decodedInstruction = BLEZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) <= 0 else
                                jumpTarget when decodedInstruction = J or decodedInstruction = JAL else
                                ALUoperand1 when decodedInstruction = JR else
                                pc;
+    instructionFetchAddress <= ISR_ADDR when (intr = '1' and interruptionTreatment = '0') else
+                           EPC when decodedInstruction = ERET else
+                           nextPc;
+
+    
 
     -- Instruction memory addressing
     instructionAddress <= STD_LOGIC_VECTOR(instructionFetchAddress);

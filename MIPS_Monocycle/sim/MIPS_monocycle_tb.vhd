@@ -116,19 +116,27 @@ begin
     -- Seleção do dado de entrada
     data_in <= data_io_out when sel_io = '1' else data_mem_out;
 
-    -- Processo para gerar a interrupção manualmente
-    interrupt_process: process(clk)
-    begin
-        if rising_edge(clk) then
-            if now >= 750 ns and now < 800 ns then
-                intr <= '1';
+    -- -- Processo para gerar a interrupção manualmente
+    -- interrupt_process: process(clk)
+    -- begin
+    --     if rising_edge(clk) then
+    --         if now >= 748 ns and now < 758 ns then
+    --             intr <= '1';
 			
-            elsif now >= 800 ns then
-                intr <= '0';
-            end if;
-        end if;
-    end process;
+    --         elsif now >= 758 ns then
+    --             intr <= '0';
+    --         end if;
+    --     end if;
+    -- end process;
+    
+    intr <= '1' after 750 ns, 
+            '0' after 770 ns, 
+            '1' after 1267 ns, 
+            '0' after 1277 ns, 
+            '1' after 2083 ns, 
+            '0' after 2093 ns,
+            '1' after 2400 ns,
+            '0' after 2410 ns;
 
-	
 
 end structural;
