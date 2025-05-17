@@ -1,0 +1,86 @@
+
+Discarded input sections
+
+ .reginfo       0x0000000000000000       0x18 main.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 main.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+INSTRUCTION_MEMORY 0x0000000000400000 0x0000000000001000
+DATA_MEMORY      0x0000000010010000 0x0000000000001000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+
+.text           0x0000000000400000      0x268
+ *(.text)
+ .text          0x0000000000400000       0x10 boot.o
+                0x0000000000400000                entry_point
+ .text          0x0000000000400010      0x1d0 main.o
+                0x0000000000400010                setup_io
+                0x0000000000400040                delay
+                0x00000000004000b8                counter2led
+ *(.text.*)
+ .text.startup  0x00000000004001e0       0x88 main.o
+                0x00000000004001e0                main
+
+.MIPS.abiflags  0x0000000000400268       0x18
+ .MIPS.abiflags
+                0x0000000000400268       0x18 boot.o
+
+.data           0x0000000010010000       0x50 load address 0x0000000000400280
+ *(.sdata)
+ .sdata         0x0000000010010000       0x10 main.o
+                0x0000000010010000                counter
+                0x0000000010010004                enable
+                0x0000000010010008                config
+                0x000000001001000c                data
+ *(.sdata.*)
+ *(.data)
+ .data          0x0000000010010010        0x0 boot.o
+ .data          0x0000000010010010        0x0 main.o
+ *(.data.*)
+ *(.rdata)
+ *(.rodata)
+ .rodata        0x0000000010010010       0x40 main.o
+ *(.rodata.*)
+
+.bss            0x0000000010010050        0x0 load address 0x00000000004002d0
+ *(.sbss)
+ *(.sbss.*)
+ *(.bss)
+ .bss           0x0000000010010050        0x0 boot.o
+ .bss           0x0000000010010050        0x0 main.o
+ *(.bss.*)
+ *(.scommon)
+ *(COMMON)
+                0x0000000010010ffc                . = ((ORIGIN (DATA_MEMORY) + LENGTH (DATA_MEMORY)) - 0x4)
+                0x0000000010010ffc                . = ALIGN (0x4)
+                0x0000000010010ffc                _stack_ptr = .
+LOAD boot.o
+LOAD main.o
+OUTPUT(main.elf elf32-tradlittlemips)
+
+.reginfo        0x0000000000000000       0x18
+ .reginfo       0x0000000000000000       0x18 boot.o
+
+.pdr            0x0000000000000000       0xa0
+ .pdr           0x0000000000000000       0x20 boot.o
+ .pdr           0x0000000000000020       0x80 main.o
+
+.gnu.attributes
+                0x0000000000000000       0x10
+ .gnu.attributes
+                0x0000000000000000       0x10 boot.o
+ .gnu.attributes
+                0x0000000000000010       0x10 main.o
+
+.mdebug.abi32   0x0000000000000000        0x0
+ .mdebug.abi32  0x0000000000000000        0x0 main.o
+
+.comment        0x0000000000000000       0x44
+ .comment       0x0000000000000000       0x44 main.o
+                                         0x45 (size before relaxing)

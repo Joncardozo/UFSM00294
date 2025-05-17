@@ -1,3 +1,11 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+use work.MIPS_pkg.all;
+
+entity MIPS_monocycle_tb is
+end MIPS_monocycle_tb;
+
 architecture structural of MIPS_monocycle_tb is
 
     -- Sinais do testbench
@@ -9,8 +17,23 @@ architecture structural of MIPS_monocycle_tb is
     signal data_mem_out, data_io_out: std_logic_vector(31 downto 0);
     signal sel_io: std_logic;
 	signal irq_from_io : std_logic_vector(31 downto 0);
-	signal port_io_int : std_logic_vector(31 downto 0);
+	signal port_io_int : std_logic_vector(15 downto 0);
 
+    signal ce_data_mem : std_logic;
+    signal rw_decoder : std_logic;
+    signal ce_decoder : std_logic;
+    signal data_timer : std_logic_vector(31 downto 0);
+    signal data_portio : std_logic_vector(15 downto 0);
+    signal data_decoder : std_logic_vector(3 downto 0);
+    signal data_in_periph : std_logic_vector(31 downto 0);
+    signal data_in_mips : std_logic_vector(31 downto 0);
+
+    -- interface do decoder
+    signal ack : std_logic;
+    signal irq_dec : std_logic;
+    signal ce_out : std_logic_vector(3 downto 0);
+    signal irq_source : std_logic_vector(3 downto 0);
+    signal rw_out : std_logic_vector(3 downto 0);
 
     constant MARS_INSTRUCTION_OFFSET : UNSIGNED(31 downto 0) := x"00400000";
     constant MARS_DATA_OFFSET        : UNSIGNED(31 downto 0) := x"10010000";
@@ -30,10 +53,15 @@ begin
     clk_n <= not clk;
     rst <= '1', '0' after 2 ns;
 
-    -- Seleção de I/O
-    sel_io <= '1' when unsigned(dataAddress) >= IO_OFFSET else '0';
-    ce_mem <= ce and not sel_io;
-    ce_io  <= ce and sel_io;
+    -- sinais intermediários
+    ce_data_mem <= not dataAddress(31) and ce;
+    -- rw_decoder <= or wbe;
+    rw_decoder <= '1' when unsigned(wbe) /= to_unsigned(0, wbe'length) else '0'; 
+    ce_decoder <= ce and dataAddress(31);
+    data_in_periph <= (31 downto 4 => '0') & data_decoder when ce = '1' else
+                        (31 downto 16 => '0') & data_portio;
+    data_in_mips <= data_in_periph when dataAddress(31) = '1' else data_mem_out;
+    data_timer <= data_out when rw_out(1) = '1' else (others => 'Z');
 
     -- Instância do MIPS monocycle
     MIPS_MONOCYCLE: entity work.MIPS_monocycle(behavioral) 
@@ -43,11 +71,11 @@ begin
         port map (
             clk                 => clk,
             rst                 => rst,
-            intr                => intr,  -- Interrupção controlada
+            intr                => irq_dec,  -- Interrupção controlada
             instructionAddress  => instructionAddress,    
             instruction         => instruction,        
             dataAddress         => dataAddress,
-            data_in             => data_in,
+            data_in             => data_in_mips,
             data_out            => data_out,
             ce                  => ce,
             wbe                 => wbe
@@ -85,7 +113,7 @@ begin
         port map (
             clk         => clk_n,
             wbe         => wbe,
-            ce          => ce_mem,
+            ce          => ce_data_mem,
             address     => dataAddress(31 downto 2),
             data_in     => data_out,
             data_out    => data_mem_out
@@ -94,7 +122,7 @@ begin
     -- Instância do BidirectionalPort
     IO_DEVICE: entity work.BidirectionalPort
         generic map (
-            DATA_WIDTH         => 32,
+            DATA_WIDTH         => 16,
             PORT_DATA_ADDR     => PORT_DATA_ADDR,
             PORT_CONFIG_ADDR   => PORT_CONFIG_ADDR,
             PORT_ENABLE_ADDR   => PORT_ENABLE_ADDR,
@@ -103,18 +131,46 @@ begin
         port map (
             clk             => clk_n,
             rst             => rst,
-            data_in         => data_out,
-            data_out        => data_io_out,
-            address         => dataAddress(3 downto 2),
-            rw              => '1',
-            ce              => ce_io,
-            irq             => irq_from_io,     -- Conectado a um sinal
-            port_io         => port_io_int      -- Conectado a um sinal intermediário
+            data_in         => data_out(15 downto 0),
+            data_out        => data_portio,
+            address         => dataAddress(5 downto 4),
+            rw              => rw_out(0),
+            ce              => ce_out(0),
+            irq             => irq_source(0),   
+            port_io         => port_io_int
         );
 
+    DECODIFICADOR: entity work.Decoder
+        generic map (
+            DATA_WIDTH => 16,
+            DATA_WIDTH_MIPS => 32
+        )
+        port map (
+            clk => clk_n,
+            rst => rst,
+            address => dataAddress(11 downto 8),
+            data_out => data_decoder,
+            rw => rw_decoder,
+            ce => ce_decoder,
+            ce_out => ce_out,
+            rw_out => rw_out,
+            irq => irq_dec,
+            irq_source => irq_source,
+            ack => ack
+        );
 
-    -- Seleção do dado de entrada
-    data_in <= data_io_out when sel_io = '1' else data_mem_out;
+    TIMER: entity work.Timer
+        generic map (
+            DATA_WIDTH => 32
+        )
+        port map (
+            clk => clk_n,
+            rst => rst,
+            data => data_timer,
+            rw => rw_out(1),
+            ce => ce_out(1),
+            time_out => irq_source(1)
+        );
 
     -- -- Processo para gerar a interrupção manualmente
     -- interrupt_process: process(clk)
@@ -129,14 +185,10 @@ begin
     --     end if;
     -- end process;
     
-    intr <= '1' after 750 ns, 
-            '0' after 770 ns, 
-            '1' after 1267 ns, 
-            '0' after 1277 ns, 
-            '1' after 2083 ns, 
-            '0' after 2093 ns,
-            '1' after 2400 ns,
-            '0' after 2410 ns;
+    port_io_int <= x"0000" after 0 ns,
+                    x"0001" after 750 ns;
+
+    irq_source <= x"0" after 0 ns;
 
 
 end structural;

@@ -17,6 +17,7 @@ entity MIPS_monocycle is
         
         -- Interupt interface
         intr 		    : in std_logic;
+		ack				: out std_logic;
         
         -- Instruction memory interface
         instructionAddress  : out std_logic_vector(31 downto 0);

@@ -38,26 +38,24 @@ InterruptionServiceRoutine:
 
     # Salta para pilha do kernel
     la      $k1, kernel_sp
-    lw      $sp, 0($k1)
-
-    # Verifica periférico
-    li      $k1, 0xffff0000        
-    lw      $t0, 8($k1)           
+    lw      $sp, 0($k1)       
     
     # Verifica se o bit 0 está setado → periférico 1
     andi    $t1, $t0, 0x1
-    bne     $t1, $zero, Peripheral1Handler
+    beq     $t1, $zero, Peripheral1Handler
 
     # Default
     j RestoreContext
 
 # Handler do Periférico 1: incrementa contador de 8 bits
 Peripheral1Handler:
-    li      $k1, 0xffff0000
-    lw      $t2, 0($k1)            # Lê porta de saída
-    addiu   $t2, $t2, 1            # Incrementa contador
-    sw      $t2, 0($k1)            # Escreve de volta
-    j       RestoreContext         # Corrige retorno com restauração do contexto
+    li      $k1, 0x80000000
+    li      $t2, 0x100
+    sw      $t2, 0($k1)
+    li      $k1, 0x80000020
+    li      $t2, 0b0000001111111000
+    sw      $t2, 0($k1)
+    j       RestoreContext         
 
 
 # Restauração do contexto

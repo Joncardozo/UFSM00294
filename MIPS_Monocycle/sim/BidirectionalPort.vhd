@@ -1,5 +1,6 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
 
 entity BidirectionalPort  is
     generic (
@@ -19,7 +20,7 @@ entity BidirectionalPort  is
         address     : in std_logic_vector (1 downto 0);     -- NÃO ALTERAR!
         rw          : in std_logic; -- 0: read; 1: write
         ce          : in std_logic;
-		irq			: out std_logic_vector (DATA_WIDTH-1 downto 0);
+		  irq			: out std_logic;
         
         -- External interface
         port_io     : inout std_logic_vector (DATA_WIDTH-1 downto 0)
@@ -33,6 +34,7 @@ architecture Behavioral of BidirectionalPort  is
 	signal io_enable 	: std_logic_vector (DATA_WIDTH-1 downto 0);
 	signal reg_data 	: std_logic_vector (DATA_WIDTH-1 downto 0);
 	signal irq_config 	: std_logic_vector (DATA_WIDTH-1 downto 0);
+	signal irq_i		: std_logic_vector (DATA_WIDTH-1 downto 0);
  
 begin
 
@@ -59,14 +61,6 @@ begin
 									end if;
 							  end loop;
 						end if;
---					else -- ACHO QUE NAO IMPORTA O CHIP ENABLE AQUI
---						 if address = PORT_DATA_ADDR then
---							  for i in 0 to DATA_WIDTH-1 loop
---									if io_enable(i) = '1' and io_config(i) = '1' then
---										 reg_data(i) <= port_io(i);
---									end if;
---							  end loop;
---						 end if;
 					end if;
 				else
 						 if address = PORT_DATA_ADDR then
@@ -87,15 +81,21 @@ begin
 	end generate;
 
 	-- data out para processador
-	with address select
-		 data_out <=  reg_data when PORT_DATA_ADDR,
-						  io_config when PORT_CONFIG_ADDR,
-						  io_enable when PORT_ENABLE_ADDR,
-						  (others => '0') when others;
+	process(address, reg_data, io_config, io_enable)
+	begin
+		case address is
+			when "00" => data_out <= reg_data;
+			when "01" => data_out <= io_config;
+			when "10" => data_out <= io_enable;
+			when others => data_out <= (others => '0');
+		end case;
+	end process;
 
 	-- pedido de interrupção para o processador
 	gen_irq: for i in 0 to DATA_WIDTH-1 generate
-		irq(i) <= not reg_data(i) when irq_config(i) = '1' and io_enable(i) = '1' else '0';
+		irq_i(i) <= not reg_data(i) when irq_config(i) = '1' and io_enable(i) = '1' else '0';
 	end generate;
+
+	irq <= '1' when unsigned(irq_i) /= to_unsigned(0, irq_i'length) else '0'; 
 
 end Behavioral;
