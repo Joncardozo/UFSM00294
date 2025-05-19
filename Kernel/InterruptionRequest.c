@@ -1,10 +1,13 @@
 #include "Handler1.h"
-#include "Handler2.h"
 
 // periferico 0 : porta de entrada e saida
 // periferico 1 : timer
 
 #define START_COUNTER_TIMER 0x61A80
+
+#define PERIPH_BASE 0x80000000
+#define TIMER_ADDR (PERIPH_BASE + 0b000100000000)
+
 
 void Periferico1Handler();
 void Periferico2Handler();
@@ -25,8 +28,6 @@ void InterruptionRequest(int per) {
 
 void Periferico1Handler() {
     char num[2];
-    setup_io();
-    char display_enable = 0;
     int was_pressed = 0;
 	while(1)
 	{
@@ -54,5 +55,6 @@ void Periferico2Handler() {
 	print_display(display_enable, num[display_enable]);
     display_enable ^= (char) 0b1;
     // restart the counter
-    reset_timer_counter(START_COUNTER_TIMER);
+    unsigned int* data_timer = TIMER_ADDR;
+    *data_timer = START_COUNTER_TIMER;
 }

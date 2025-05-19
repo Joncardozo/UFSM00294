@@ -57,12 +57,15 @@ begin
         elsif rising_edge(clk) then
             ce_out <= (others => '0');
             rw_out <= (others => '0');
-            data_out <= irq_addr;
+            if handling = '0' then 
+                data_out <= irq_addr;
+            end if;
             if ce = '1' and address = "1111" then
                 rw_out(15) <= '1';
             end if;
 
-            if handling = '0' and irq_in = '0' and ce = '1' then
+            -- if handling = '0' and irq_in = '0' and ce = '1' then
+            if ce = '1' then
                 case to_integer(unsigned(address)) is
                     when 0 =>
                         ce_out(0) <= '1';

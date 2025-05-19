@@ -103,7 +103,7 @@ begin
                 interruptionTreatment <= '0';    -- libera tratamento ao ERET
                 ack <= '1';
                 ack_internal <= '1';
-            elsif ack_internal = '1' and decodedInstruction /= ERET then
+            elsif ack_internal = '1' and interruptionTreatment = '0' and decodedInstruction /= ERET then
                 ack <= '0';
                 ack_internal <= '0';
             end if;

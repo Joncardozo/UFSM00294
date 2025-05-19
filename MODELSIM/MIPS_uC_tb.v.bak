@@ -6,28 +6,38 @@ module MIPS_uC_tb;
   reg rst;
   reg clk;
   wire [31:0] port_io;
+  reg [2:0] botao;
 
-  // Instantiate the top module
+  // instancia controlador
   MIPS_uC uut (
-    .rst(rst),
-    .clk(clk),
+    .rst_sync(rst),
+    .sys_clk(clk),
     .port_io(port_io)
   );
 
-  // Clock generation
+  // gera clock
   initial begin
     clk = 0;
-    forever #10 clk = ~clk; // 100MHz clock
+    forever #10 clk = ~clk;
   end
 
-  // Reset sequence
+  // reset
   initial begin
     rst = 1;
     #50;
     rst = 0;
   end
 
-  // Simulation run time
+  initial begin
+    #2000;
+    botao[1] = 1;
+    #3000;
+    botao[1] = 0;
+  end
+
+  assign port_io = botao;
+  
+  // tempo simulacao
   initial begin
     #10000;
     $finish;

@@ -5,10 +5,11 @@
 #define IO_PORT_CONFIG_ADDR (IO_PORT_ADDR + 0b010000)
 #define IO_PORT_ENABLE_ADDR  (IO_PORT_ADDR + 0x000000)
 #define IO_PORT_DATA_ADDR (IO_PORT_ADDR + 0b100000)
-#define PORT_INTERRUPT_ADDR (IO_PORT_ADDR + 0b110000)
+#define IO_PORT_INTERRUPT_ADDR (IO_PORT_ADDR + 0b110000)
 
-#define IO_PORT_ENABLE 0b11111111
-#define IO_PORT_CONFIG 0b00000000
+#define IO_PORT_ENABLE 0b11111111111111111111111
+#define IO_PORT_CONFIG 0b00000000000000000000111
+#define IO_PORT_INTERR 0b00000000000000000000111
 
 #define DISP_0 0b10000000
 #define DISP_1 0b11000000
@@ -27,16 +28,22 @@
 #define DISP_E 0b00000001
 #define DISP_F 0b00000000
 
-#define START_COUNTER_TIMER 0x61A80
+// #define START_COUNTER_TIMER 0x61A80
+#define START_COUNTER_TIMER 0xA
 
 volatile int counter = 0;
+
+int data_disp_mask = 0b00000000111111111111111;
+int data_led_mask = 0b11111111000000000000000;
 
 void setup_io(int* port_io_data) {
 	unsigned int* config = (volatile unsigned int*) IO_PORT_CONFIG_ADDR;
 	unsigned int* enable = (volatile unsigned int*) IO_PORT_ENABLE_ADDR;
+	unsigned int* interr = (volatile unsigned int*) IO_PORT_INTERRUPT_ADDR;
     *enable = (volatile unsigned int) IO_PORT_ENABLE;
     *config = (volatile unsigned int) IO_PORT_CONFIG;
-    *port_io_data = 0;
+	*port_io_data = 0;
+	*interr = (volatile unsigned int) IO_PORT_INTERR;
 }
 
 void set_timer(int time) {
@@ -44,7 +51,7 @@ void set_timer(int time) {
 	*data_timer = time;
 }
 
-void counter2led(int number, char* display) {
+void counter2led(int number, int* display) {
 	switch (number) {
 		case 0: *display = (char) DISP_0; break;
 		case 1: *display = (char) DISP_1; break;
@@ -69,13 +76,13 @@ void counter2led(int number, char* display) {
 int main() {
 	unsigned int* data = (volatile unsigned int*) IO_PORT_DATA_ADDR;
 	setup_io(data);
-	set_timer(10);
-	char display = 0;
+	set_timer(START_COUNTER_TIMER);
+	int display = 0;
 	while(1) {
 		counter2led(counter, &display);
-		*data = display;
-		// delay(0xFFFF, 0x200);
-		delay(0x1, 0x1);
+		*data = (display << 15) | (*data & data_disp_mask);
+		delay(0xFFFF, 0x200);
+		// delay(0x1, 0x1);
 		counter++;
 		if (counter == 16) {
 			counter = 0;

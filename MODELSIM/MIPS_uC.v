@@ -71,7 +71,7 @@ module MIPS_uC(
 	assign data_in_periph 	= (rw_out[15] == 1'b0) ? data_out_portio : data_out_decoder;
 	assign data_in 			= (data_address[31] == 1'b1) ? data_in_periph : data_out_mem;
 	// data_in TIMER
-	assign data_in_timer 	= (rw_out[1] == 1'b1 && ce_out[1] == 1'b1) ? data_out : 32'bz;
+	assign data_in_timer 	= data_out;
 	// data memory
 	assign ce_mem 			= ce && ~data_address[31];
 	// clock

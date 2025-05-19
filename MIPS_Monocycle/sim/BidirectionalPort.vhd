@@ -77,7 +77,7 @@ begin
 
 	-- porta para registrador
 	gen_io: for i in 0 to DATA_WIDTH-1 generate
-		 port_io(i) <= not reg_data(i) when io_enable(i) = '1' and io_config(i) = '0' else 'Z';
+		 port_io(i) <= reg_data(i) when io_enable(i) = '1' and io_config(i) = '0' else 'Z';
 	end generate;
 
 	-- data out para processador
@@ -93,9 +93,9 @@ begin
 
 	-- pedido de interrupção para o processador
 	gen_irq: for i in 0 to DATA_WIDTH-1 generate
-		irq_i(i) <= not reg_data(i) when irq_config(i) = '1' and io_enable(i) = '1' else '0';
+		irq_i(i) <= reg_data(i) when irq_config(i) = '1' and io_enable(i) = '1' else '0';
 	end generate;
 
-	irq <= '1' when unsigned(irq_i) /= to_unsigned(0, irq_i'length) else '0'; 
+	irq <= '1' when irq_i /= "00000000000000000000000000000000" else '0'; 
 
 end Behavioral;
