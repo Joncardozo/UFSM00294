@@ -38,19 +38,43 @@ ASMFLAGS = -EL -msoft-float -mips32
 	@echo
 	@echo "******************************************************************************"
 	@echo Assembling boot.asm...
-	$(AS_MIPS) $(ASMFLAGS) boot.asm -o boot.o
+	$(AS_MIPS) $(ASMFLAGS) ../Kernel/Boot.asm -o boot.o
+	@echo "******************************************************************************"
+
+	@echo
+	@echo "******************************************************************************"
+	@echo Assembling Kernel.asm...
+	$(AS_MIPS) $(ASMFLAGS) ../Kernel/Kernel.asm -o Kernel.o
+	@echo "******************************************************************************"
+
+	@echo
+	@echo "******************************************************************************"
+	@echo Compiling Handler1.c...
+	$(CC_MIPS) $(CFLAGS) -c ../Kernel/Handler1.c -o Handler1.o
+	@echo "******************************************************************************"
+
+	@echo
+	@echo "******************************************************************************"
+	@echo Compiling Handler2.c...
+	$(CC_MIPS) $(CFLAGS) -c ../Kernel/Handler2.c -o Handler2.o
+	@echo "******************************************************************************"
+
+	@echo
+	@echo "******************************************************************************"
+	@echo Compiling InterruptionRequest.c...
+	$(CC_MIPS) $(CFLAGS) -c ../Kernel/InterruptionRequest.c -o InterruptionRequest.o
 	@echo "******************************************************************************"
 
 	@echo
 	@echo "******************************************************************************"
 	@echo Compiling $(addsuffix .c, $@)...
-	$(CC_MIPS) $(CFLAGS) -c $(addsuffix .c, $@) -o $(addsuffix .o, $@)
+	$(CC_MIPS) $(CFLAGS) -c ../Kernel/$(addsuffix .c, $@) -o $(addsuffix .o, $@)
 	@echo "******************************************************************************"
 
 	@echo
 	@echo "******************************************************************************"
 	@echo Linking executable...
-	$(LD_MIPS) -e entry_point -EL -T ld_script.ld -o $(addsuffix .elf, $@) boot.o $(addsuffix .o, $@) -M > $(addsuffix .map, $@)
+	$(LD_MIPS) -e entry_point -EL -T ld_script.ld -o $(addsuffix .elf, $@) boot.o Kernel.o Handler1.o Handler2.o InterruptionRequest.o $(addsuffix .o, $@) -M > $(addsuffix .map, $@)
 	$(SIZE_MIPS) -A -x $(addsuffix .elf, $@)
 	$(NM_MIPS) -t x -S --size-sort $(addsuffix .elf, $@)
 	@echo "******************************************************************************"
@@ -79,7 +103,6 @@ ASMFLAGS = -EL -msoft-float -mips32
 	@echo "******************************************************************************"
 
 
-
 .PHONY: clean
 clean:
-	del -f *.elf *.o *.lst *.map *.bin *.txt
+	rm -f *.elf *.o *.lst *.map *.bin *.txt

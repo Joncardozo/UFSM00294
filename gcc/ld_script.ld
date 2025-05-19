@@ -1,7 +1,7 @@
 MEMORY
 {
-  INSTRUCTION_MEMORY : ORIGIN = 0x00400000, LENGTH = 1024 * 4   /* LENGTH in bytes */
-  DATA_MEMORY        : ORIGIN = 0x10010000, LENGTH = 1024 * 4
+  INSTRUCTION_MEMORY : ORIGIN = 0x00000000, LENGTH = 2048 * 4   /* LENGTH in bytes */
+  DATA_MEMORY        : ORIGIN = 0x00000000, LENGTH = 2048 * 4
 }
 
 
@@ -9,10 +9,12 @@ MEMORY
 SECTIONS 
 {    
     .text : {               /* Output elf section */        
-        *(.text)           /* The code order depends on the objects order passed to linker */
+        boot.o(.text)           /* The code order depends on the objects order passed to linker */
+        . = 0xFF;
+        Kernel.o(.text)
         *(.text.*)
     } > INSTRUCTION_MEMORY
-       
+
     .data : {               /* Output elf section */
         *(.sdata)          /* This section holds initialized small data that contribute to the program memory image */
         *(.sdata.*)

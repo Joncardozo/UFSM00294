@@ -1,0 +1,345 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/jon/code/FINAL
+Ebidirectionalport
+Z0 w1747635295
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 d/home/jon/code/trabalho4/UFSM00294/MODELSIM
+Z5 8/home/jon/code/trabalho4/UFSM00294/MODELSIM/BidirectionalPort.vhd
+Z6 F/home/jon/code/trabalho4/UFSM00294/MODELSIM/BidirectionalPort.vhd
+l0
+L5
+ViV>Sn3<X5T0Onb5i5B]5=0
+!s100 L[HDz:Q3Sa1Gd<g<AAeQY2
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1747635299
+!i10b 1
+Z9 !s108 1747635299.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/jon/code/trabalho4/UFSM00294/MODELSIM/BidirectionalPort.vhd|
+Z11 !s107 /home/jon/code/trabalho4/UFSM00294/MODELSIM/BidirectionalPort.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Abehavioral
+R1
+R2
+R3
+DEx4 work 17 bidirectionalport 0 22 iV>Sn3<X5T0Onb5i5B]5=0
+l39
+L31
+ViHmi_DI4>i4OIfkYbom7o3
+!s100 Q<iCFZnhc4zZK;FoXo7AP3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Edecoder
+R0
+R1
+R2
+R3
+R4
+Z14 8/home/jon/code/trabalho4/UFSM00294/MODELSIM/Decoder.vhd
+Z15 F/home/jon/code/trabalho4/UFSM00294/MODELSIM/Decoder.vhd
+l0
+L5
+VeSTHKeYlHo4Y?PKHWPIMm1
+!s100 7>nD2CABcc=O3IO<>^@JV3
+R7
+32
+R8
+!i10b 1
+R9
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/jon/code/trabalho4/UFSM00294/MODELSIM/Decoder.vhd|
+Z17 !s107 /home/jon/code/trabalho4/UFSM00294/MODELSIM/Decoder.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R1
+R2
+R3
+DEx4 work 7 decoder 0 22 eSTHKeYlHo4Y?PKHWPIMm1
+l29
+L25
+V:IL2HX]F`nCC@iVCOJOWf1
+!s100 B6M=8diXS@nJhnj67BUaf2
+R7
+32
+R8
+!i10b 1
+R9
+R16
+R17
+!i113 1
+R12
+R13
+Ememory
+R0
+Z18 DPx4 work 8 util_pkg 0 22 z?YfF_cEQL3@V7VJoKi3Y2
+R1
+R2
+R3
+R4
+Z19 8/home/jon/code/trabalho4/UFSM00294/MODELSIM/Memory.vhd
+Z20 F/home/jon/code/trabalho4/UFSM00294/MODELSIM/Memory.vhd
+l0
+L19
+V5mH]bNlVV6_Qa^fd[iDVn1
+!s100 _ZQ]zZSA^aBIk76_W@7la2
+R7
+32
+R8
+!i10b 1
+R9
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/jon/code/trabalho4/UFSM00294/MODELSIM/Memory.vhd|
+Z22 !s107 /home/jon/code/trabalho4/UFSM00294/MODELSIM/Memory.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R18
+R1
+R2
+R3
+DEx4 work 6 memory 0 22 5mH]bNlVV6_Qa^fd[iDVn1
+l69
+L38
+Vc?2R5E2hU;iJ3D22n7]EY2
+!s100 ce0TP;Z]5ohnW5z3hAn9@3
+R7
+32
+R8
+!i10b 1
+R9
+R21
+R22
+!i113 1
+R12
+R13
+Emips_monocycle
+R0
+Z23 DPx4 work 8 mips_pkg 0 22 ]zInNY>YC5Z@^ohNRe6Bh3
+R1
+R2
+R3
+R4
+Z24 8/home/jon/code/trabalho4/UFSM00294/MODELSIM/MIPS_monocycle.vhd
+Z25 F/home/jon/code/trabalho4/UFSM00294/MODELSIM/MIPS_monocycle.vhd
+l0
+L11
+VQEMoaeRU7M8mcQC30BCMc1
+!s100 Sf?BW3E?nk;aJ:bY0TQ7O1
+R7
+32
+R8
+!i10b 1
+R9
+Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/jon/code/trabalho4/UFSM00294/MODELSIM/MIPS_monocycle.vhd|
+Z27 !s107 /home/jon/code/trabalho4/UFSM00294/MODELSIM/MIPS_monocycle.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R23
+R1
+R2
+R3
+DEx4 work 14 mips_monocycle 0 22 QEMoaeRU7M8mcQC30BCMc1
+l73
+L35
+V3hCMO9B^TkWSFj;W;ne3R3
+!s100 ]IX]bFPPM;eF08<1V?Zbd1
+R7
+32
+R8
+!i10b 1
+R9
+R26
+R27
+!i113 1
+R12
+R13
+Pmips_pkg
+R1
+R2
+R3
+R0
+R4
+Z28 8/home/jon/code/trabalho4/UFSM00294/MODELSIM/MIPS_pkg.vhd
+Z29 F/home/jon/code/trabalho4/UFSM00294/MODELSIM/MIPS_pkg.vhd
+l0
+L11
+V]zInNY>YC5Z@^ohNRe6Bh3
+!s100 K^G2Nh4e==S_^^FO49WCm2
+R7
+32
+b1
+R8
+!i10b 1
+R9
+Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/jon/code/trabalho4/UFSM00294/MODELSIM/MIPS_pkg.vhd|
+Z31 !s107 /home/jon/code/trabalho4/UFSM00294/MODELSIM/MIPS_pkg.vhd|
+!i113 1
+R12
+R13
+Bbody
+R23
+R1
+R2
+R3
+l0
+L31
+V_i_OfT@CF`CYI:YU0M?R20
+!s100 ]kT]GZFk6<SYbGmOgcZW41
+R7
+32
+R8
+!i10b 1
+R9
+R30
+R31
+!i113 1
+R12
+R13
+vMIPS_uC
+R8
+!i10b 1
+!s100 :J<oQeJT^HiW:mznUYVCC0
+IcSzGBe3R>VI>_oQDFF`4k1
+Z32 VDg1SIo80bB@j0V0VzS_@n1
+R4
+R0
+8/home/jon/code/trabalho4/UFSM00294/MODELSIM/MIPS_uC.v
+F/home/jon/code/trabalho4/UFSM00294/MODELSIM/MIPS_uC.v
+L0 1
+Z33 OV;L;10.5b;63
+r1
+!s85 0
+31
+R9
+!s107 /home/jon/code/trabalho4/UFSM00294/MODELSIM/MIPS_uC.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/jon/code/trabalho4/UFSM00294/MODELSIM/MIPS_uC.v|
+!i113 1
+Z34 o-work work
+Z35 tCvgOpt 0
+n@m@i@p@s_u@c
+vMIPS_uC_tb
+R8
+!i10b 1
+!s100 iNQg:[YDN3a6d:J8za7al0
+IEJG?cbSY5<z>6VXJ]>4?R2
+R32
+R4
+R0
+8/home/jon/code/trabalho4/UFSM00294/MODELSIM/MIPS_uC_tb.v
+F/home/jon/code/trabalho4/UFSM00294/MODELSIM/MIPS_uC_tb.v
+L0 4
+R33
+r1
+!s85 0
+31
+R9
+!s107 /home/jon/code/trabalho4/UFSM00294/MODELSIM/MIPS_uC_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/jon/code/trabalho4/UFSM00294/MODELSIM/MIPS_uC_tb.v|
+!i113 1
+R34
+R35
+n@m@i@p@s_u@c_tb
+Etimer
+R0
+R1
+R2
+R3
+R4
+Z36 8/home/jon/code/trabalho4/UFSM00294/MODELSIM/Timer.vhd
+Z37 F/home/jon/code/trabalho4/UFSM00294/MODELSIM/Timer.vhd
+l0
+L18
+VGUOc8SIMDG;;YDQnSo5mS2
+!s100 VI6S9J=f725;ZJACOj87_3
+R7
+32
+R8
+!i10b 1
+R9
+Z38 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/jon/code/trabalho4/UFSM00294/MODELSIM/Timer.vhd|
+Z39 !s107 /home/jon/code/trabalho4/UFSM00294/MODELSIM/Timer.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R1
+R2
+R3
+DEx4 work 5 timer 0 22 GUOc8SIMDG;;YDQnSo5mS2
+l38
+L33
+Va54`L;JR^=BNJ3@^;ngTK0
+!s100 kWl<9bX5:cA;_NN>6n6=n1
+R7
+32
+R8
+!i10b 1
+R9
+R38
+R39
+!i113 1
+R12
+R13
+Putil_pkg
+R2
+R3
+R0
+R4
+Z40 8/home/jon/code/trabalho4/UFSM00294/MODELSIM/Util_pkg.vhd
+Z41 F/home/jon/code/trabalho4/UFSM00294/MODELSIM/Util_pkg.vhd
+l0
+L9
+Vz?YfF_cEQL3@V7VJoKi3Y2
+!s100 Ade5EQLCc<_<QgP7N:P8c3
+R7
+32
+b1
+R8
+!i10b 1
+R9
+Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/jon/code/trabalho4/UFSM00294/MODELSIM/Util_pkg.vhd|
+Z43 !s107 /home/jon/code/trabalho4/UFSM00294/MODELSIM/Util_pkg.vhd|
+!i113 1
+R12
+R13
+Bbody
+R18
+R2
+R3
+l0
+L26
+VL[[?73M=gPGX8VLe:bI4O3
+!s100 a_aWB]U9aKjMF1O75Ahcf3
+R7
+32
+R8
+!i10b 1
+R9
+R42
+R43
+!i113 1
+R12
+R13

@@ -100,7 +100,7 @@ begin
             data_out            => data_out,
             ce                  => ce,
             wbe                 => wbe,
-				ack						=> ack
+			ack					=> ack
         );
 
     -- Instância da memória de instrução

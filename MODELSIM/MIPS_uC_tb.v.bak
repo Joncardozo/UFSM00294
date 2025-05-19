@@ -1,0 +1,36 @@
+`timescale 1ns / 1ps
+
+
+module MIPS_uC_tb;
+
+  reg rst;
+  reg clk;
+  wire [31:0] port_io;
+
+  // Instantiate the top module
+  MIPS_uC uut (
+    .rst(rst),
+    .clk(clk),
+    .port_io(port_io)
+  );
+
+  // Clock generation
+  initial begin
+    clk = 0;
+    forever #10 clk = ~clk; // 100MHz clock
+  end
+
+  // Reset sequence
+  initial begin
+    rst = 1;
+    #50;
+    rst = 0;
+  end
+
+  // Simulation run time
+  initial begin
+    #10000;
+    $finish;
+  end
+
+endmodule

@@ -1,0 +1,31 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri May 16 02:09:04 2025
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "port_io<0>" LOCATE = SITE "B8" LEVEL 1;
+COMP "port_io<1>" LOCATE = SITE "C9" LEVEL 1;
+COMP "port_io<2>" LOCATE = SITE "A8" LEVEL 1;
+COMP "port_io<3>" LOCATE = SITE "T17" LEVEL 1;
+COMP "port_io<4>" LOCATE = SITE "T18" LEVEL 1;
+COMP "port_io<5>" LOCATE = SITE "U17" LEVEL 1;
+COMP "port_io<6>" LOCATE = SITE "U18" LEVEL 1;
+COMP "port_io<7>" LOCATE = SITE "M14" LEVEL 1;
+COMP "port_io<8>" LOCATE = SITE "N14" LEVEL 1;
+COMP "port_io<9>" LOCATE = SITE "L14" LEVEL 1;
+COMP "Led<0>" LOCATE = SITE "U16" LEVEL 1;
+COMP "Led<1>" LOCATE = SITE "V16" LEVEL 1;
+COMP "Led<2>" LOCATE = SITE "U15" LEVEL 1;
+COMP "Led<3>" LOCATE = SITE "V15" LEVEL 1;
+COMP "Led<4>" LOCATE = SITE "M11" LEVEL 1;
+COMP "Led<5>" LOCATE = SITE "N11" LEVEL 1;
+COMP "Led<6>" LOCATE = SITE "R11" LEVEL 1;
+COMP "Led<7>" LOCATE = SITE "T11" LEVEL 1;
+COMP "port_io<10>" LOCATE = SITE "M13" LEVEL 1;
+COMP "port_io<11>" LOCATE = SITE "N16" LEVEL 1;
+COMP "port_io<12>" LOCATE = SITE "N15" LEVEL 1;
+COMP "port_io<13>" LOCATE = SITE "P18" LEVEL 1;
+COMP "port_io<14>" LOCATE = SITE "P17" LEVEL 1;
+SCHEMATIC END;
+

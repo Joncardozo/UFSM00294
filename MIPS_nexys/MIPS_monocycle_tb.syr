@@ -1,0 +1,169 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: MIPS_monocycle_tb.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "MIPS_monocycle_tb.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "MIPS_monocycle_tb"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : MIPS_monocycle_tb
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/src/VHDL/MIPS/MIPS_pkg.vhd" into library work
+Parsing package <MIPS_pkg>.
+Parsing package body <MIPS_pkg>.
+Parsing VHDL file "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/src/VHDL/Memory/Util_pkg.vhd" into library work
+Parsing package <Util_pkg>.
+Parsing package body <Util_pkg>.
+Parsing VHDL file "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/src/VHDL/MIPS/MIPS_monocycle.vhd" into library work
+Parsing entity <MIPS_monocycle>.
+Parsing architecture <behavioral> of entity <mips_monocycle>.
+Parsing VHDL file "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/src/VHDL/Memory/Memory.vhd" into library work
+Parsing entity <Memory>.
+Parsing architecture <behavioral> of entity <memory>.
+Parsing VHDL file "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/Timer.vhd" into library work
+Parsing entity <Timer>.
+Parsing architecture <Behavioral> of entity <timer>.
+Parsing VHDL file "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/ResetSynchonizer.vhd" into library work
+Parsing entity <ResetSynchonizer>.
+Parsing architecture <behavioral> of entity <resetsynchonizer>.
+Parsing VHDL file "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/Decoder.vhd" into library work
+Parsing entity <Decoder>.
+Parsing architecture <Behavioral> of entity <decoder>.
+Parsing VHDL file "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/ClockManager.vhd" into library work
+Parsing entity <ClockManager>.
+Parsing architecture <xilinx> of entity <clockmanager>.
+Parsing VHDL file "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/BidirectionalPort.vhd" into library work
+Parsing entity <BidirectionalPort>.
+Parsing architecture <Behavioral> of entity <bidirectionalport>.
+Parsing VHDL file "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" into library work
+Parsing entity <MIPS_uC>.
+Parsing architecture <structural> of entity <mips_monocycle_tb>.
+ERROR:HDLCompiler:374 - "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" Line 14: Entity <mips_monocycle_tb> is not yet compiled.
+ERROR:HDLCompiler:69 - "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" Line 17: <std_logic> is not declared.
+ERROR:HDLCompiler:69 - "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" Line 18: <std_logic> is not declared.
+ERROR:HDLCompiler:69 - "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" Line 19: <std_logic> is not declared.
+ERROR:HDLCompiler:69 - "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" Line 20: <std_logic_vector> is not declared.
+ERROR:HDLCompiler:69 - "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" Line 21: <std_logic_vector> is not declared.
+ERROR:HDLCompiler:69 - "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" Line 22: <std_logic_vector> is not declared.
+ERROR:HDLCompiler:69 - "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" Line 24: <std_logic> is not declared.
+ERROR:HDLCompiler:69 - "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" Line 25: <std_logic> is not declared.
+ERROR:HDLCompiler:69 - "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" Line 26: <std_logic> is not declared.
+ERROR:HDLCompiler:69 - "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" Line 27: <std_logic_vector> is not declared.
+ERROR:HDLCompiler:69 - "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" Line 28: <std_logic_vector> is not declared.
+ERROR:HDLCompiler:69 - "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" Line 29: <std_logic_vector> is not declared.
+ERROR:HDLCompiler:69 - "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" Line 30: <std_logic_vector> is not declared.
+ERROR:HDLCompiler:69 - "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" Line 31: <std_logic_vector> is not declared.
+ERROR:HDLCompiler:69 - "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" Line 32: <std_logic_vector> is not declared.
+ERROR:HDLCompiler:69 - "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" Line 35: <std_logic> is not declared.
+ERROR:HDLCompiler:69 - "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" Line 36: <std_logic> is not declared.
+ERROR:HDLCompiler:69 - "/home/jon/code/trabalho4/UFSM00294/MIPS_Monocycle/sim/MIPS_uC.vhd" Line 37: <std_logic_vector> is not declared.
+Sorry, too many errors..
+--> 
+
+
+Total memory usage is 541940 kilobytes
+
+Number of errors   :   19 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

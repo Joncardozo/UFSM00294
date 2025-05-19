@@ -1,6 +1,5 @@
 .text
 
-
 .globl InterruptionServiceRoutine
 InterruptionServiceRoutine:
 
@@ -38,24 +37,16 @@ InterruptionServiceRoutine:
 
     # Salta para pilha do kernel
     la      $k1, kernel_sp
-    lw      $sp, 0($k1)       
-    
-    # Verifica se o bit 0 está setado → periférico 1
-    andi    $t1, $t0, 0x1
-    beq     $t1, $zero, Peripheral1Handler
+    lw      $sp, 0($k1)
+
+    # Carrega endereço do interruptor e salta para InterruptionRequest
+    li      $t0, 0x80000F00
+    lw      $a0, 0($t0)
+    nop
+    jal     InterruptionRequest
 
     # Default
-    j RestoreContext
-
-# Handler do Periférico 1: incrementa contador de 8 bits
-Peripheral1Handler:
-    li      $k1, 0x80000000
-    li      $t2, 0x100
-    sw      $t2, 0($k1)
-    li      $k1, 0x80000020
-    li      $t2, 0b0000001111111000
-    sw      $t2, 0($k1)
-    j       RestoreContext         
+    j RestoreContext     
 
 
 # Restauração do contexto

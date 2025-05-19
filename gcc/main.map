@@ -1,6 +1,18 @@
 
 Discarded input sections
 
+ .reginfo       0x0000000000000000       0x18 Kernel.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 Kernel.o
+ .reginfo       0x0000000000000000       0x18 Handler1.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 Handler1.o
+ .reginfo       0x0000000000000000       0x18 Handler2.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 Handler2.o
+ .reginfo       0x0000000000000000       0x18 InterruptionRequest.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 InterruptionRequest.o
  .reginfo       0x0000000000000000       0x18 main.o
  .MIPS.abiflags
                 0x0000000000000000       0x18 main.o
@@ -8,79 +20,142 @@ Discarded input sections
 Memory Configuration
 
 Name             Origin             Length             Attributes
-INSTRUCTION_MEMORY 0x0000000000400000 0x0000000000001000
-DATA_MEMORY      0x0000000010010000 0x0000000000001000
+INSTRUCTION_MEMORY 0x0000000000000000 0x0000000000002000
+DATA_MEMORY      0x0000000000000000 0x0000000000002000
 *default*        0x0000000000000000 0xffffffffffffffff
 
 Linker script and memory map
 
 
-.text           0x0000000000400000      0x268
- *(.text)
- .text          0x0000000000400000       0x10 boot.o
-                0x0000000000400000                entry_point
- .text          0x0000000000400010      0x1d0 main.o
-                0x0000000000400010                setup_io
-                0x0000000000400040                delay
-                0x00000000004000b8                counter2led
+.text           0x0000000000000000      0xa34
+ boot.o(.text)
+ .text          0x0000000000000000       0x34 boot.o
+                0x0000000000000000                boot_start
+                0x00000000000000ff                . = 0xff
+ *fill*         0x0000000000000034       0xcb 
+ Kernel.o(.text)
+ *fill*         0x00000000000000ff        0x1 
+ .text          0x0000000000000100      0x124 Kernel.o
+                0x0000000000000100                InterruptionServiceRoutine
  *(.text.*)
- .text.startup  0x00000000004001e0       0x88 main.o
-                0x00000000004001e0                main
+ .text.startup  0x0000000000000224       0x94 main.o
+                0x0000000000000224                main
+ .text          0x00000000000002b8      0x4c8 Handler1.o
+                0x00000000000002b8                setup_io_display
+                0x00000000000002ec                counter2seg
+                0x00000000000004c0                delay
+                0x0000000000000538                read_button
+                0x00000000000006cc                print_display
+ .text          0x0000000000000780       0x10 Handler2.o
+                0x0000000000000780                reset_timer_counter
+ .text          0x0000000000000790      0x150 InterruptionRequest.o
+                0x0000000000000790                Periferico1Handler
+                0x0000000000000858                Periferico2Handler
+                0x00000000000008ac                InterruptionRequest
+ .text          0x00000000000008e0      0x154 main.o
+                0x00000000000008e0                setup_io
+                0x00000000000008fc                set_timer
+                0x000000000000090c                counter2led
 
-.MIPS.abiflags  0x0000000000400268       0x18
+.MIPS.abiflags  0x0000000000000a38       0x18
  .MIPS.abiflags
-                0x0000000000400268       0x18 boot.o
+                0x0000000000000a38       0x18 boot.o
 
-.data           0x0000000010010000       0x50 load address 0x0000000000400280
+.data           0x0000000000000000      0x334 load address 0x0000000000000a50
  *(.sdata)
- .sdata         0x0000000010010000       0x10 main.o
-                0x0000000010010000                counter
-                0x0000000010010004                enable
-                0x0000000010010008                config
-                0x000000001001000c                data
+ .sdata         0x0000000000000000       0x2c Handler1.o
+                0x0000000000000000                input_mask
+                0x0000000000000004                disp_en_mask_inversor
+                0x0000000000000008                disp_en_mask
+                0x000000000000000c                disp_mask
+                0x0000000000000010                reset_mask
+                0x0000000000000014                down_mask
+                0x0000000000000018                up_mask
+                0x000000000000001c                counter_display
+                0x0000000000000020                enable_display
+                0x0000000000000024                config_display
+                0x0000000000000028                data_display
+ .sdata         0x000000000000002c        0x4 main.o
+                0x000000000000002c                counter
  *(.sdata.*)
  *(.data)
- .data          0x0000000010010010        0x0 boot.o
- .data          0x0000000010010010        0x0 main.o
+ .data          0x0000000000000030      0x208 boot.o
+                0x0000000000000230                kernel_sp
+                0x0000000000000234                user_sp
+ .data          0x0000000000000238       0x74 Kernel.o
+ .data          0x00000000000002ac        0x0 Handler1.o
+ .data          0x00000000000002ac        0x0 Handler2.o
+ .data          0x00000000000002ac        0x1 InterruptionRequest.o
+ .data          0x00000000000002ad        0x0 main.o
  *(.data.*)
  *(.rdata)
  *(.rodata)
- .rodata        0x0000000010010010       0x40 main.o
+ *fill*         0x00000000000002ad        0x3 
+ .rodata        0x00000000000002b0       0x40 Handler1.o
+ .rodata        0x00000000000002f0        0x2 InterruptionRequest.o
+ *fill*         0x00000000000002f2        0x2 
+ .rodata        0x00000000000002f4       0x40 main.o
  *(.rodata.*)
 
-.bss            0x0000000010010050        0x0 load address 0x00000000004002d0
+.bss            0x0000000000000334        0x0 load address 0x0000000000000d84
  *(.sbss)
  *(.sbss.*)
  *(.bss)
- .bss           0x0000000010010050        0x0 boot.o
- .bss           0x0000000010010050        0x0 main.o
+ .bss           0x0000000000000334        0x0 boot.o
+ .bss           0x0000000000000334        0x0 Kernel.o
+ .bss           0x0000000000000334        0x0 Handler1.o
+ .bss           0x0000000000000334        0x0 Handler2.o
+ .bss           0x0000000000000334        0x0 InterruptionRequest.o
+ .bss           0x0000000000000334        0x0 main.o
  *(.bss.*)
  *(.scommon)
  *(COMMON)
-                0x0000000010010ffc                . = ((ORIGIN (DATA_MEMORY) + LENGTH (DATA_MEMORY)) - 0x4)
-                0x0000000010010ffc                . = ALIGN (0x4)
-                0x0000000010010ffc                _stack_ptr = .
+                0x0000000000001ffc                . = ((ORIGIN (DATA_MEMORY) + LENGTH (DATA_MEMORY)) - 0x4)
+                0x0000000000001ffc                . = ALIGN (0x4)
+                0x0000000000001ffc                _stack_ptr = .
 LOAD boot.o
+LOAD Kernel.o
+LOAD Handler1.o
+LOAD Handler2.o
+LOAD InterruptionRequest.o
 LOAD main.o
 OUTPUT(main.elf elf32-tradlittlemips)
 
 .reginfo        0x0000000000000000       0x18
  .reginfo       0x0000000000000000       0x18 boot.o
 
-.pdr            0x0000000000000000       0xa0
- .pdr           0x0000000000000000       0x20 boot.o
- .pdr           0x0000000000000020       0x80 main.o
+.pdr            0x0000000000000000      0x1a0
+ .pdr           0x0000000000000000        0x0 boot.o
+ .pdr           0x0000000000000000        0x0 Kernel.o
+ .pdr           0x0000000000000000       0xa0 Handler1.o
+ .pdr           0x00000000000000a0       0x20 Handler2.o
+ .pdr           0x00000000000000c0       0x60 InterruptionRequest.o
+ .pdr           0x0000000000000120       0x80 main.o
 
 .gnu.attributes
                 0x0000000000000000       0x10
  .gnu.attributes
                 0x0000000000000000       0x10 boot.o
  .gnu.attributes
-                0x0000000000000010       0x10 main.o
+                0x0000000000000010       0x10 Kernel.o
+ .gnu.attributes
+                0x0000000000000020       0x10 Handler1.o
+ .gnu.attributes
+                0x0000000000000030       0x10 Handler2.o
+ .gnu.attributes
+                0x0000000000000040       0x10 InterruptionRequest.o
+ .gnu.attributes
+                0x0000000000000050       0x10 main.o
 
 .mdebug.abi32   0x0000000000000000        0x0
+ .mdebug.abi32  0x0000000000000000        0x0 Handler1.o
+ .mdebug.abi32  0x0000000000000000        0x0 Handler2.o
+ .mdebug.abi32  0x0000000000000000        0x0 InterruptionRequest.o
  .mdebug.abi32  0x0000000000000000        0x0 main.o
 
 .comment        0x0000000000000000       0x44
- .comment       0x0000000000000000       0x44 main.o
+ .comment       0x0000000000000000       0x44 Handler1.o
                                          0x45 (size before relaxing)
+ .comment       0x0000000000000044       0x45 Handler2.o
+ .comment       0x0000000000000044       0x45 InterruptionRequest.o
+ .comment       0x0000000000000044       0x45 main.o

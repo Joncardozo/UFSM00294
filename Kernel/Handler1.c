@@ -1,10 +1,10 @@
 #include "Handler1.h"
 
-volatile unsigned int* data = (volatile unsigned int*) IO_PORT_DATA_ADDR;
-volatile unsigned int* config = (volatile unsigned int*) IO_PORT_CONFIG_ADDR;
-volatile unsigned int* enable = (volatile unsigned int*) IO_PORT_ENABLE_ADDR;
+volatile unsigned int* data_display = (volatile unsigned int*) IO_PORT_DATA_ADDR;
+volatile unsigned int* config_display = (volatile unsigned int*) IO_PORT_CONFIG_ADDR;
+volatile unsigned int* enable_display = (volatile unsigned int*) IO_PORT_ENABLE_ADDR;
 
-extern volatile int counter = 0;
+extern volatile int counter_display = 0;
 
 const int up_mask = 0b100;
 const int down_mask = 0b010;
@@ -14,17 +14,17 @@ int disp_en_mask = 0b0000100000000000;
 const int disp_en_mask_inversor = 0b0001100000000000;
 const int input_mask = 0b111;
 
-void setup_io() {
-    *enable = (volatile unsigned int) IO_PORT_ENABLE;
-    *config = (volatile unsigned int) IO_PORT_CONFIG;
-    *data = 0;
+void setup_io_display() {
+    *enable_display = (volatile unsigned int) IO_PORT_ENABLE;
+    *config_display = (volatile unsigned int) IO_PORT_CONFIG;
+    *data_display = 0;
 }
 
 void counter2seg(int number, char* display_hex) {
     char num[2];
 	num[0] = (number & 0xF);
 	num[1] = ((number >> 4) & 0xF);
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i <= 1; i++)
 	{
 		switch (num[i]) {
 			case 0: display_hex[i] = (char) DISP_0; break;
@@ -57,9 +57,9 @@ void delay(int delay_1, int delay_2) {
 
 int read_button() {
 
-    volatile int up_pool = (*data & up_mask) >> 2;
-	volatile int down_pool = (*data & down_mask) >> 1;
-	volatile int reset_pool = *data & reset_mask;
+    volatile int up_pool = (*data_display & up_mask) >> 2;
+	volatile int down_pool = (*data_display & down_mask) >> 1;
+	volatile int reset_pool = *data_display & reset_mask;
 	int up = 0;
 	int down = 0;
 	int reset = 0;
@@ -70,9 +70,9 @@ int read_button() {
 	{
 		for(int i = 0; i <= 500; i++)
 		{
-            volatile int up_pool = (*data & up_mask) >> 2;
-            volatile int down_pool = (*data & down_mask) >> 1;
-            volatile int reset_pool = *data & reset_mask;
+            volatile int up_pool = (*data_display & up_mask) >> 2;
+            volatile int down_pool = (*data_display & down_mask) >> 1;
+            volatile int reset_pool = *data_display & reset_mask;
 			flag &= (up_pool || down_pool || reset_pool);
 			if (!flag)
 			{
@@ -86,30 +86,30 @@ int read_button() {
 			reset = reset_pool;
 		}
 	}
-	counter += (up - down);
+	counter_display += (up - down);
 	if (reset)
 	{
-		counter = 0;
+		counter_display = 0;
 	}
-	if (counter > 0xFF || counter < 0x00)
+	if (counter_display > 0xFF || counter_display < 0x00)
 	{
-		counter = 0;
+		counter_display = 0;
 	}
     return flag;
 }
 
 void print_display(int disp_index, char disp_num) {
     if (disp_index == 0) {
-        *data = (0b0000 << 11) | (*data & input_mask);
-        *data = (0b0001 << 11) | (disp_num << 3) | (*data & input_mask);
+        *data_display = (0b0000 << 11) | (*data_display & input_mask);
+        *data_display = (0b0001 << 11) | (disp_num << 3) | (*data_display & input_mask);
     }
     else if (disp_index == 1) {
             if (disp_num == DISP_0) {
-                *data = (0b0000 << 11) | (*data & input_mask);
+                *data_display = (0b0000 << 11) | (*data_display & input_mask);
             }
             else {
-                *data = (0b0000 << 11) | (*data & input_mask);
-                *data = (0b0010 << 11) | (disp_num << 3) | (*data & input_mask);
+                *data_display = (0b0000 << 11) | (*data_display & input_mask);
+                *data_display = (0b0010 << 11) | (disp_num << 3) | (*data_display & input_mask);
             }
             
     }
