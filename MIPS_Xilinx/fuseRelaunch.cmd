@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/dede/MIPS_MONO/MIPS_FPGA_TEST_isim_beh.exe" -prj "/home/dede/MIPS_MONO/MIPS_FPGA_TEST_beh.prj" "work.MIPS_FPGA_TEST" "work.glbl" 

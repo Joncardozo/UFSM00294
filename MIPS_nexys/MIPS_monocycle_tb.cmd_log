@@ -1,1 +1,0 @@
-xst -intstyle ise -ifn "/home/jon/code/trabalho4/UFSM00294/MIPS_nexys/MIPS_monocycle_tb.xst" -ofn "/home/jon/code/trabalho4/UFSM00294/MIPS_nexys/MIPS_monocycle_tb.syr" 

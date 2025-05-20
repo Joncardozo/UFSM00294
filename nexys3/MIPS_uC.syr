@@ -1,0 +1,914 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Reading design: MIPS_uC.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "MIPS_uC.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "MIPS_uC"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : MIPS_uC
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/jonathan/code/UFSM00294/nexys3/src/MIPS_uC.v" into library work
+Parsing module <MIPS_uC>.
+Parsing VHDL file "/home/jonathan/code/UFSM00294/nexys3/src/Util_pkg.vhd" into library work
+Parsing package <Util_pkg>.
+Parsing package body <Util_pkg>.
+Parsing VHDL file "/home/jonathan/code/UFSM00294/nexys3/src/MIPS_pkg.vhd" into library work
+Parsing package <MIPS_pkg>.
+Parsing package body <MIPS_pkg>.
+Parsing VHDL file "/home/jonathan/code/UFSM00294/nexys3/src/Timer.vhd" into library work
+Parsing entity <Timer>.
+Parsing architecture <Behavioral> of entity <timer>.
+Parsing VHDL file "/home/jonathan/code/UFSM00294/nexys3/src/ResetSynchonizer.vhd" into library work
+Parsing entity <ResetSynchonizer>.
+Parsing architecture <behavioral> of entity <resetsynchonizer>.
+Parsing VHDL file "/home/jonathan/code/UFSM00294/nexys3/src/MIPS_monocycle.vhd" into library work
+Parsing entity <MIPS_monocycle>.
+Parsing architecture <behavioral> of entity <mips_monocycle>.
+Parsing VHDL file "/home/jonathan/code/UFSM00294/nexys3/src/Memory.vhd" into library work
+Parsing entity <Memory>.
+Parsing architecture <behavioral> of entity <memory>.
+Parsing VHDL file "/home/jonathan/code/UFSM00294/nexys3/src/Decoder.vhd" into library work
+Parsing entity <Decoder>.
+Parsing architecture <Behavioral> of entity <decoder>.
+Parsing VHDL file "/home/jonathan/code/UFSM00294/nexys3/src/ClockManager.vhd" into library work
+Parsing entity <ClockManager>.
+Parsing architecture <xilinx> of entity <clockmanager>.
+Parsing VHDL file "/home/jonathan/code/UFSM00294/nexys3/src/BidirectionalPort.vhd" into library work
+Parsing entity <BidirectionalPort>.
+Parsing architecture <Behavioral> of entity <bidirectionalport>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <MIPS_uC>.
+Going to vhdl side to elaborate module MIPS_monocycle
+
+Elaborating entity <MIPS_monocycle> (architecture <behavioral>) with generics from library <work>.
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module Memory
+
+Elaborating entity <Memory> (architecture <behavioral>) with generics from library <work>.
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module Memory
+
+Elaborating entity <Memory> (architecture <behavioral>) with generics from library <work>.
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module Decoder
+
+Elaborating entity <Decoder> (architecture <Behavioral>) with generics from library <work>.
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module BidirectionalPort
+
+Elaborating entity <BidirectionalPort> (architecture <Behavioral>) with generics from library <work>.
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module Timer
+
+Elaborating entity <Timer> (architecture <Behavioral>) with generics from library <work>.
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module ClockManager
+
+Elaborating entity <ClockManager> (architecture <xilinx>) from library <work>.
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module ResetSynchonizer
+
+Elaborating entity <ResetSynchonizer> (architecture <behavioral>) from library <work>.
+Back to verilog to continue elaboration
+WARNING:HDLCompiler:634 - "/home/jonathan/code/UFSM00294/nexys3/src/MIPS_uC.v" Line 41: Net <irq_source[15]> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <MIPS_uC>.
+    Related source file is "/home/jonathan/code/UFSM00294/nexys3/src/MIPS_uC.v".
+        MARS_INSTRUCTION_OFFSET = 32'b00000000000000000000000000000000
+        MARS_DATA_OFFSET = 32'b00000000000000000000000000000000
+        PORT_ENABLE_ADDR = 4'b0000
+        PORT_CONFIG_ADDR = 4'b0001
+        PORT_DATA_ADDR = 4'b0010
+        PORT_INTERRUPT_ADDR = 4'b0011
+        PORT_COUNTER_ADDR = 4'b0100
+INFO:Xst:3210 - "/home/jonathan/code/UFSM00294/nexys3/src/MIPS_uC.v" line 183: Output port <clk_50MHz> of the instance <clk_mgr> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/jonathan/code/UFSM00294/nexys3/src/MIPS_uC.v" line 183: Output port <clk_25MHz> of the instance <clk_mgr> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/jonathan/code/UFSM00294/nexys3/src/MIPS_uC.v" line 183: Output port <clk_5MHz> of the instance <clk_mgr> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <irq_source<15:2>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	inferred   2 Multiplexer(s).
+Unit <MIPS_uC> synthesized.
+
+Synthesizing Unit <MIPS_monocycle>.
+    Related source file is "/home/jonathan/code/UFSM00294/nexys3/src/MIPS_monocycle.vhd".
+        PC_START_ADDRESS = "00000000000000000000000000000000"
+    Found 1-bit register for signal <lock>.
+    Found 32-bit register for signal <EPC>.
+    Found 32-bit register for signal <registerFile<0>>.
+    Found 32-bit register for signal <pc>.
+    Found 1-bit register for signal <interruptionTreatment>.
+    Found 1-bit register for signal <ack>.
+    Found 1-bit register for signal <ack_internal>.
+    Found 32-bit register for signal <registerFile<1>>.
+    Found 32-bit register for signal <registerFile<2>>.
+    Found 32-bit register for signal <registerFile<3>>.
+    Found 32-bit register for signal <registerFile<4>>.
+    Found 32-bit register for signal <registerFile<5>>.
+    Found 32-bit register for signal <registerFile<6>>.
+    Found 32-bit register for signal <registerFile<7>>.
+    Found 32-bit register for signal <registerFile<8>>.
+    Found 32-bit register for signal <registerFile<9>>.
+    Found 32-bit register for signal <registerFile<10>>.
+    Found 32-bit register for signal <registerFile<11>>.
+    Found 32-bit register for signal <registerFile<12>>.
+    Found 32-bit register for signal <registerFile<13>>.
+    Found 32-bit register for signal <registerFile<14>>.
+    Found 32-bit register for signal <registerFile<15>>.
+    Found 32-bit register for signal <registerFile<16>>.
+    Found 32-bit register for signal <registerFile<17>>.
+    Found 32-bit register for signal <registerFile<18>>.
+    Found 32-bit register for signal <registerFile<19>>.
+    Found 32-bit register for signal <registerFile<20>>.
+    Found 32-bit register for signal <registerFile<21>>.
+    Found 32-bit register for signal <registerFile<22>>.
+    Found 32-bit register for signal <registerFile<23>>.
+    Found 32-bit register for signal <registerFile<24>>.
+    Found 32-bit register for signal <registerFile<25>>.
+    Found 32-bit register for signal <registerFile<26>>.
+    Found 32-bit register for signal <registerFile<27>>.
+    Found 32-bit register for signal <registerFile<28>>.
+    Found 32-bit register for signal <registerFile<29>>.
+    Found 32-bit register for signal <registerFile<30>>.
+    Found 32-bit register for signal <registerFile<31>>.
+    Found 32-bit adder for signal <instructionFetchAddress[31]_GND_6_o_add_44_OUT> created at line 1241.
+    Found 32-bit adder for signal <branchTarget> created at line 139.
+    Found 32-bit adder for signal <ALUoperand1[31]_ALUoperand2[31]_add_323_OUT> created at line 282.
+    Found 32-bit subtractor for signal <GND_6_o_GND_6_o_sub_354_OUT<31:0>> created at line 262.
+    Found 32-bit shifter arithmetic right for signal <ALUoperand1[31]_ALUoperand2[30]_shift_right_333_OUT> created at line 2982
+    Found 32-bit shifter arithmetic right for signal <ALUoperand2[31]_ALUoperand1[30]_shift_right_335_OUT> created at line 2982
+    Found 32-bit shifter logical right for signal <ALUoperand2[31]_ALUoperand1[30]_shift_right_337_OUT> created at line 2964
+    Found 32-bit shifter logical right for signal <ALUoperand1[31]_ALUoperand2[30]_shift_right_339_OUT> created at line 2964
+    Found 32-bit shifter logical left for signal <ALUoperand2[31]_ALUoperand1[30]_shift_left_341_OUT> created at line 2955
+    Found 32-bit shifter logical left for signal <ALUoperand1[31]_ALUoperand2[30]_shift_left_343_OUT> created at line 2955
+    Found 32-bit shifter logical left for signal <selectedHalfWordExtended[31]_result[1]_shift_left_359_OUT> created at line 2955
+    Found 32-bit shifter logical left for signal <selectedByteExtended[31]_result[1]_shift_left_361_OUT> created at line 2955
+INFO:Xst:3019 - HDL ADVISOR - 1024 flip-flops were inferred for signal <registerFile>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+INFO:Xst:3019 - HDL ADVISOR - 1024 flip-flops were inferred for signal <registerFile>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Found 32-bit 32-to-1 multiplexer for signal <instruction[25]_registerFile[31][31]_wide_mux_279_OUT> created at line 249.
+    Found 32-bit 32-to-1 multiplexer for signal <instruction[20]_registerFile[31][31]_wide_mux_280_OUT> created at line 247.
+    Found 32-bit comparator greater for signal <instruction[25]_GND_6_o_LessThan_66_o> created at line 153
+    Found 32-bit comparator greater for signal <n0087> created at line 154
+    Found 32-bit comparator greater for signal <ALUoperand2[31]_ALUoperand1[31]_LessThan_314_o> created at line 276
+    Found 32-bit comparator greater for signal <ALUoperand1[31]_ALUoperand2[31]_LessThan_322_o> created at line 280
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred 1092 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+	inferred  97 Multiplexer(s).
+	inferred   8 Combinational logic shifter(s).
+Unit <MIPS_monocycle> synthesized.
+
+Synthesizing Unit <Memory_1>.
+    Related source file is "/home/jonathan/code/UFSM00294/nexys3/src/Memory.vhd".
+        SIZE = 2048
+        ADDR_WIDTH = 30
+        COL_WIDTH = 8
+        NB_COL = 4
+        imageFileName = "code.txt"
+        OFFSET = "00000000000000000000000000000000"
+    Found 2048x32-bit single-port RAM <Mram_memoryArray> for signal <memoryArray>.
+    Found 32-bit register for signal <data_out>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  32 D-type flip-flop(s).
+Unit <Memory_1> synthesized.
+
+Synthesizing Unit <Memory_2>.
+    Related source file is "/home/jonathan/code/UFSM00294/nexys3/src/Memory.vhd".
+        SIZE = 2048
+        ADDR_WIDTH = 30
+        COL_WIDTH = 8
+        NB_COL = 4
+        imageFileName = "data.txt"
+        OFFSET = "00000000000000000000000000000000"
+    Found 2048x32-bit single-port RAM <Mram_memoryArray> for signal <memoryArray>.
+    Found 32-bit register for signal <data_out>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  32 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+Unit <Memory_2> synthesized.
+
+Synthesizing Unit <Decoder>.
+    Related source file is "/home/jonathan/code/UFSM00294/nexys3/src/Decoder.vhd".
+        DATA_WIDTH = 32
+        DATA_WIDTH_MIPS = 32
+    Found 16-bit register for signal <ce_out>.
+    Found 16-bit register for signal <rw_out>.
+    Found 4-bit register for signal <data_out>.
+    Found 1-bit register for signal <handling>.
+    Found 1-bit register for signal <irq>.
+    Summary:
+	inferred  38 D-type flip-flop(s).
+	inferred   9 Multiplexer(s).
+Unit <Decoder> synthesized.
+
+Synthesizing Unit <BidirectionalPort>.
+    Related source file is "/home/jonathan/code/UFSM00294/nexys3/src/BidirectionalPort.vhd".
+        DATA_WIDTH = 32
+        PORT_DATA_ADDR = "0010"
+        PORT_CONFIG_ADDR = "0001"
+        PORT_ENABLE_ADDR = "0000"
+        PORT_INTERRUPT_ADDR = "0011"
+        PORT_COUNTER_ADDR = "0100"
+    Found 32-bit register for signal <io_config>.
+    Found 32-bit register for signal <io_enable>.
+    Found 32-bit register for signal <irq_config>.
+    Found 32-bit register for signal <counter>.
+    Found 32-bit register for signal <reg_data>.
+    Found 32-bit 7-to-1 multiplexer for signal <_n0354> created at line 20.
+    Found 1-bit tristate buffer for signal <port_io<0>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<1>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<2>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<3>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<4>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<5>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<6>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<7>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<8>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<9>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<10>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<11>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<12>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<13>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<14>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<15>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<16>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<17>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<18>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<19>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<20>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<21>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<22>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<23>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<24>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<25>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<26>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<27>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<28>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<29>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<30>> created at line 27
+    Found 1-bit tristate buffer for signal <port_io<31>> created at line 27
+    Summary:
+	inferred 160 D-type flip-flop(s).
+	inferred  98 Multiplexer(s).
+	inferred  32 Tristate(s).
+Unit <BidirectionalPort> synthesized.
+
+Synthesizing Unit <Timer>.
+    Related source file is "/home/jonathan/code/UFSM00294/nexys3/src/Timer.vhd".
+        DATA_WIDTH = 32
+    Found 32-bit register for signal <counter>.
+    Found 1-bit register for signal <initialized>.
+    Found 32-bit subtractor for signal <GND_52_o_GND_52_o_sub_3_OUT<31:0>> created at line 1308.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Timer> synthesized.
+
+Synthesizing Unit <ClockManager>.
+    Related source file is "/home/jonathan/code/UFSM00294/nexys3/src/ClockManager.vhd".
+    Summary:
+	no macro.
+Unit <ClockManager> synthesized.
+
+Synthesizing Unit <ResetSynchonizer>.
+    Related source file is "/home/jonathan/code/UFSM00294/nexys3/src/ResetSynchonizer.vhd".
+    Found 1-bit register for signal <ff2_q>.
+    Found 1-bit register for signal <ff1_q>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <ResetSynchonizer> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 2048x32-bit single-port RAM                           : 2
+# Adders/Subtractors                                   : 5
+ 32-bit adder                                          : 3
+ 32-bit subtractor                                     : 2
+# Registers                                            : 54
+ 1-bit register                                        : 9
+ 16-bit register                                       : 2
+ 32-bit register                                       : 42
+ 4-bit register                                        : 1
+# Comparators                                          : 4
+ 32-bit comparator greater                             : 4
+# Multiplexers                                         : 211
+ 1-bit 2-to-1 multiplexer                              : 96
+ 16-bit 2-to-1 multiplexer                             : 11
+ 32-bit 2-to-1 multiplexer                             : 57
+ 32-bit 32-to-1 multiplexer                            : 2
+ 32-bit 7-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 7
+ 5-bit 2-to-1 multiplexer                              : 2
+ 6-bit 2-to-1 multiplexer                              : 26
+ 8-bit 2-to-1 multiplexer                              : 9
+# Logic shifters                                       : 8
+ 32-bit shifter arithmetic right                       : 2
+ 32-bit shifter logical left                           : 4
+ 32-bit shifter logical right                          : 2
+# Tristates                                            : 32
+ 1-bit tristate buffer                                 : 32
+# Xors                                                 : 15
+ 1-bit xor2                                            : 14
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <handling> in Unit <decoder_instance> is equivalent to the following FF/Latch, which will be removed : <irq> 
+WARNING:Xst:2677 - Node <ce_out_2> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <ce_out_3> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <ce_out_4> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <ce_out_5> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <ce_out_6> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <ce_out_7> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <ce_out_8> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <ce_out_9> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <ce_out_10> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <ce_out_11> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <ce_out_12> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <ce_out_13> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <ce_out_14> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <ce_out_15> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <rw_out_2> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <rw_out_3> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <rw_out_4> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <rw_out_5> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <rw_out_6> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <rw_out_7> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <rw_out_8> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <rw_out_9> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <rw_out_10> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <rw_out_11> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <rw_out_12> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <rw_out_13> of sequential type is unconnected in block <decoder_instance>.
+WARNING:Xst:2677 - Node <rw_out_14> of sequential type is unconnected in block <decoder_instance>.
+
+Synthesizing (advanced) Unit <Memory_1>.
+INFO:Xst:3226 - The RAM <Mram_memoryArray> will be implemented as a BLOCK RAM, absorbing the following register(s): <data_out>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 2048-word x 32-bit                  |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <address>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <data_out>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <Memory_1> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Memory_2>.
+INFO:Xst:3226 - The RAM <Mram_memoryArray> will be implemented as a BLOCK RAM, absorbing the following register(s): <data_out>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 2048-word x 32-bit                  |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     enA            | connected to signal <ce>            | high     |
+    |     weA<3>         | connected to signal <wbe<3>>        | high     |
+    |     weA<2>         | connected to signal <wbe<2>>        | high     |
+    |     weA<1>         | connected to signal <wbe<1>>        | high     |
+    |     weA<0>         | connected to signal <wbe<0>>        | high     |
+    |     addrA          | connected to signal <address>       |          |
+    |     diA            | connected to signal <data_in>       |          |
+    |     doA            | connected to signal <data_out>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <Memory_2> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Timer>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <Timer> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 2048x32-bit single-port block RAM                     : 2
+# Adders/Subtractors                                   : 4
+ 32-bit adder                                          : 3
+ 32-bit subtractor                                     : 1
+# Counters                                             : 1
+ 32-bit down counter                                   : 1
+# Registers                                            : 1293
+ Flip-Flops                                            : 1293
+# Comparators                                          : 4
+ 32-bit comparator greater                             : 4
+# Multiplexers                                         : 299
+ 1-bit 2-to-1 multiplexer                              : 96
+ 1-bit 32-to-1 multiplexer                             : 64
+ 1-bit 7-to-1 multiplexer                              : 32
+ 16-bit 2-to-1 multiplexer                             : 11
+ 32-bit 2-to-1 multiplexer                             : 56
+ 4-bit 2-to-1 multiplexer                              : 7
+ 5-bit 2-to-1 multiplexer                              : 2
+ 6-bit 2-to-1 multiplexer                              : 26
+ 8-bit 2-to-1 multiplexer                              : 5
+# Logic shifters                                       : 8
+ 32-bit shifter arithmetic right                       : 2
+ 32-bit shifter logical left                           : 4
+ 32-bit shifter logical right                          : 2
+# Xors                                                 : 15
+ 1-bit xor2                                            : 14
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <handling> in Unit <Decoder> is equivalent to the following FF/Latch, which will be removed : <irq> 
+INFO:Xst:2261 - The FF/Latch <ack_internal> in Unit <MIPS_monocycle> is equivalent to the following FF/Latch, which will be removed : <ack> 
+WARNING:Xst:1710 - FF/Latch <rw_out_14> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rw_out_13> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rw_out_12> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rw_out_11> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rw_out_10> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rw_out_9> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rw_out_8> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rw_out_7> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rw_out_6> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rw_out_5> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rw_out_4> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rw_out_3> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rw_out_2> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ce_out_15> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ce_out_14> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ce_out_13> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ce_out_12> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ce_out_11> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ce_out_10> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ce_out_9> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ce_out_8> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ce_out_7> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ce_out_6> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ce_out_5> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ce_out_4> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ce_out_3> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ce_out_2> (without init value) has a constant value of 0 in block <Decoder>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:1901 - Instance clk_mgr/pll_base_inst in unit clk_mgr/pll_base_inst of type PLL_BASE has been replaced by PLL_ADV
+INFO:Xst:2261 - The FF/Latch <data_out_1> in Unit <Decoder> is equivalent to the following 2 FFs/Latches, which will be removed : <data_out_2> <data_out_3> 
+WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
+   incompatible with the Spartan6 architecture. The two primary causes of this is
+   either a register or latch described with both an asynchronous set and
+   asynchronous reset, or a register or latch described with an asynchronous
+   set or reset which however has an initialization value of the opposite 
+   polarity (i.e. asynchronous reset with an initialization value of 1).
+    While this circuit can be built, it creates a sub-optimal implementation
+   in terms of area, power and performance. For a more optimal implementation
+   Xilinx highly recommends one of the following:
+
+          1) Remove either the set or reset from all registers and latches
+             if not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Ensure all registers have the same initialization value as the
+             described asynchronous set or reset polarity
+          4) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set or reset and opposite initialization value:
+    lock in unit <MIPS_monocycle>
+
+
+Optimizing unit <MIPS_uC> ...
+
+Optimizing unit <MIPS_monocycle> ...
+WARNING:Xst:1710 - FF/Latch <registerFile_0_31> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_30> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_29> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_28> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_27> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_26> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_25> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_24> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_23> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_22> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_21> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_20> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_19> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_18> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_17> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_16> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_15> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_14> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_13> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_12> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_11> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_10> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_9> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_8> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_7> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_6> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_5> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_4> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_3> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_2> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_1> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_0> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <registerFile_0_31> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_30> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_29> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_28> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_27> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_26> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_25> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_24> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_23> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_22> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_21> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_20> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_19> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_18> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_17> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_16> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_15> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_14> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_13> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_12> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_11> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_10> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_9> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_8> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_7> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_6> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_5> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_4> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_3> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_2> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_1> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <registerFile_0_0> (without init value) has a constant value of 0 in block <MIPS_monocycle>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <Decoder> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block MIPS_uC, actual ratio is 34.
+WARNING:Xst:1426 - The value init of the FF/Latch mips_instance/lock_LD hinder the constant cleaning in the block MIPS_uC.
+   You should achieve better results by setting this init to 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1264
+ Flip-Flops                                            : 1264
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : MIPS_uC.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 3114
+#      GND                         : 1
+#      INV                         : 2
+#      LUT2                        : 97
+#      LUT3                        : 139
+#      LUT4                        : 210
+#      LUT5                        : 331
+#      LUT6                        : 1846
+#      MUXCY                       : 193
+#      MUXF7                       : 138
+#      VCC                         : 1
+#      XORCY                       : 156
+# FlipFlops/Latches                : 1265
+#      FDC                         : 41
+#      FDCE                        : 226
+#      FDE                         : 994
+#      FDP                         : 3
+#      LD                          : 1
+# RAMS                             : 8
+#      RAMB16BWER                  : 8
+# Clock Buffers                    : 5
+#      BUFG                        : 5
+# IO Buffers                       : 34
+#      IBUF                        : 1
+#      IBUFG                       : 1
+#      IOBUF                       : 32
+# Others                           : 1
+#      PLL_ADV                     : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1265  out of  18224     6%  
+ Number of Slice LUTs:                 2625  out of   9112    28%  
+    Number used as Logic:              2625  out of   9112    28%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   3712
+   Number with an unused Flip Flop:    2447  out of   3712    65%  
+   Number with an unused LUT:          1087  out of   3712    29%  
+   Number of fully used LUT-FF pairs:   178  out of   3712     4%  
+   Number of unique control sets:        44
+
+IO Utilization: 
+ Number of IOs:                          34
+ Number of bonded IOBs:                  34  out of    232    14%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                8  out of     32    25%  
+    Number using Block RAM only:          8
+ Number of BUFG/BUFGCTRLs:                5  out of     16    31%  
+ Number of PLL_ADVs:                      1  out of      2    50%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+----------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)      | Load  |
+-----------------------------------+----------------------------+-------+
+clk_mgr/pll_base_inst/CLKOUT2      | BUFG                       | 1272  |
+rst_synchronizer/ff2_q             | NONE(mips_instance/lock_LD)| 1     |
+-----------------------------------+----------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 42.558ns (Maximum Frequency: 23.497MHz)
+   Minimum input arrival time before clock: 2.268ns
+   Maximum output required time after clock: 4.587ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_mgr/pll_base_inst/CLKOUT2'
+  Clock period: 42.558ns (frequency: 23.497MHz)
+  Total number of paths / destination ports: 40936306330 / 2978
+-------------------------------------------------------------------------
+Delay:               21.279ns (Levels of Logic = 17)
+  Source:            instruction_memory/Mram_memoryArray3 (RAM)
+  Destination:       data_memory/Mram_memoryArray1 (RAM)
+  Source Clock:      clk_mgr/pll_base_inst/CLKOUT2 rising
+  Destination Clock: clk_mgr/pll_base_inst/CLKOUT2 falling
+
+  Data Path: instruction_memory/Mram_memoryArray3 to data_memory/Mram_memoryArray1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16BWER:CLKA->DOA4  258   1.850   2.171  instruction_memory/Mram_memoryArray3 (instruction<22>)
+     LUT4:I2->O            3   0.203   0.651  mips_instance/PWR_6_o_GND_6_o_AND_3_o21 (mips_instance/PWR_6_o_GND_6_o_AND_3_o2)
+     LUT6:I5->O           19   0.205   1.072  mips_instance/PWR_6_o_GND_6_o_AND_3_o (mips_instance/PWR_6_o_GND_6_o_AND_3_o)
+     LUT6:I5->O            7   0.205   0.774  mips_instance/Mmux_decodedInstruction510_1 (mips_instance/Mmux_decodedInstruction510)
+     LUT6:I5->O            6   0.205   0.745  mips_instance/GND_6_o_GND_6_o_OR_43_o1_SW0 (N718)
+     LUT6:I5->O           10   0.205   0.857  mips_instance/GND_6_o_GND_6_o_OR_43_o1_1 (mips_instance/GND_6_o_GND_6_o_OR_43_o1)
+     LUT6:I5->O           17   0.205   1.028  mips_instance/Mmux_ALUoperand2110_2 (mips_instance/Mmux_ALUoperand21101)
+     LUT6:I5->O            4   0.205   0.912  mips_instance/Sh111 (mips_instance/Sh11)
+     LUT6:I3->O            2   0.205   0.617  mips_instance/Sh472 (mips_instance/Sh47)
+     LUT6:I5->O            1   0.205   0.580  mips_instance/Mmux_result1255 (mips_instance/Mmux_result1254)
+     LUT6:I5->O           11   0.205   0.883  mips_instance/Mmux_result12514_SW0_SW0 (N1094)
+     LUT6:I5->O            2   0.205   0.617  mips_instance/Mmux_result12514_1 (mips_instance/Mmux_result12514)
+     LUT6:I5->O            4   0.205   0.912  Mmux_data_in1021_1 (Mmux_data_in1021)
+     LUT6:I3->O            3   0.205   0.898  Mmux_data_in254 (data_in<31>)
+     LUT6:I2->O            1   0.203   0.000  mips_instance/result[1]_GND_6_o_AND_16_o1142_G (N1243)
+     MUXF7:I1->O          26   0.140   1.207  mips_instance/result[1]_GND_6_o_AND_16_o1142 (mips_instance/result[1]_GND_6_o_AND_16_o_mmx_out7)
+     LUT5:I4->O           13   0.205   0.933  mips_instance/Sh5841 (mips_instance/Sh584)
+     LUT6:I5->O           10   0.205   0.856  mips_instance/Mmux_data_out172 (data_out<24>)
+     RAMB16BWER:DIA24          0.300          data_memory/Mram_memoryArray1
+    ----------------------------------------
+    Total                     21.279ns (5.566ns logic, 15.713ns route)
+                                       (26.2% logic, 73.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_mgr/pll_base_inst/CLKOUT2'
+  Total number of paths / destination ports: 34 / 34
+-------------------------------------------------------------------------
+Offset:              2.268ns (Levels of Logic = 1)
+  Source:            rst (PAD)
+  Destination:       rst_synchronizer/ff2_q (FF)
+  Destination Clock: clk_mgr/pll_base_inst/CLKOUT2 rising
+
+  Data Path: rst to rst_synchronizer/ff2_q
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.222   0.616  rst_IBUF (rst_IBUF)
+     FDP:PRE                   0.430          rst_synchronizer/ff1_q
+    ----------------------------------------
+    Total                      2.268ns (1.652ns logic, 0.616ns route)
+                                       (72.8% logic, 27.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_mgr/pll_base_inst/CLKOUT2'
+  Total number of paths / destination ports: 96 / 32
+-------------------------------------------------------------------------
+Offset:              4.587ns (Levels of Logic = 2)
+  Source:            gp_port_io/io_enable_31 (FF)
+  Destination:       port_io<31> (PAD)
+  Source Clock:      clk_mgr/pll_base_inst/CLKOUT2 rising
+
+  Data Path: gp_port_io/io_enable_31 to port_io<31>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             4   0.447   0.788  gp_port_io/io_enable_31 (gp_port_io/io_enable_31)
+     LUT2:I0->O            1   0.203   0.579  gp_port_io/io_enable[31]_io_config[31]_AND_235_o_inv1 (gp_port_io/io_enable[31]_io_config[31]_AND_235_o_inv)
+     IOBUF:T->IO               2.571          port_io_31_IOBUF (port_io<31>)
+    ----------------------------------------
+    Total                      4.587ns (3.221ns logic, 1.366ns route)
+                                       (70.2% logic, 29.8% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk_mgr/pll_base_inst/CLKOUT2
+-----------------------------+---------+---------+---------+---------+
+                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------+---------+---------+---------+---------+
+clk_mgr/pll_base_inst/CLKOUT2|   25.397|   11.127|   21.279|         |
+rst_synchronizer/ff2_q       |         |   23.085|   18.967|         |
+-----------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 43.00 secs
+Total CPU time to Xst completion: 42.85 secs
+ 
+--> 
+
+
+Total memory usage is 686180 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  122 (   0 filtered)
+Number of infos    :   13 (   0 filtered)
+

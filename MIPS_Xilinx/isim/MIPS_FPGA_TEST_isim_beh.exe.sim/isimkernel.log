@@ -1,6 +1,0 @@
-Command line:
-   MIPS_FPGA_TEST_isim_beh.exe
-     -simmode  gui
-     -simrunnum  0
-     -socket  33741
-
