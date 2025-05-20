@@ -36,39 +36,39 @@ Setup/Hold to clock clk
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-port_io<0>  |    5.400(R)|      SLOW  |   -3.252(R)|      FAST  |sys_clk           |   0.000|
-port_io<1>  |    6.186(R)|      SLOW  |   -3.848(R)|      FAST  |sys_clk           |   0.000|
-port_io<2>  |    4.876(R)|      SLOW  |   -3.033(R)|      FAST  |sys_clk           |   0.000|
-port_io<3>  |    4.000(R)|      SLOW  |   -2.550(R)|      FAST  |sys_clk           |   0.000|
-port_io<4>  |    2.111(R)|      SLOW  |   -1.279(R)|      FAST  |sys_clk           |   0.000|
-port_io<5>  |    2.874(R)|      SLOW  |   -1.820(R)|      FAST  |sys_clk           |   0.000|
-port_io<6>  |    2.954(R)|      SLOW  |   -1.881(R)|      FAST  |sys_clk           |   0.000|
-port_io<7>  |    2.773(R)|      SLOW  |   -1.690(R)|      FAST  |sys_clk           |   0.000|
-port_io<8>  |    2.968(R)|      SLOW  |   -1.785(R)|      FAST  |sys_clk           |   0.000|
-port_io<9>  |    3.052(R)|      SLOW  |   -1.916(R)|      FAST  |sys_clk           |   0.000|
-port_io<10> |    4.057(R)|      SLOW  |   -2.579(R)|      FAST  |sys_clk           |   0.000|
-port_io<11> |    3.084(R)|      SLOW  |   -1.946(R)|      FAST  |sys_clk           |   0.000|
-port_io<12> |    3.612(R)|      SLOW  |   -2.309(R)|      FAST  |sys_clk           |   0.000|
-port_io<13> |    2.572(R)|      SLOW  |   -1.601(R)|      FAST  |sys_clk           |   0.000|
-port_io<14> |    2.047(R)|      SLOW  |   -1.252(R)|      FAST  |sys_clk           |   0.000|
-port_io<15> |    3.451(R)|      SLOW  |   -2.136(R)|      FAST  |sys_clk           |   0.000|
-port_io<16> |    3.648(R)|      SLOW  |   -2.288(R)|      FAST  |sys_clk           |   0.000|
-port_io<17> |    2.988(R)|      SLOW  |   -1.893(R)|      FAST  |sys_clk           |   0.000|
-port_io<18> |    3.110(R)|      SLOW  |   -1.954(R)|      FAST  |sys_clk           |   0.000|
-port_io<19> |    3.169(R)|      SLOW  |   -1.960(R)|      FAST  |sys_clk           |   0.000|
-port_io<20> |    2.938(R)|      SLOW  |   -1.842(R)|      FAST  |sys_clk           |   0.000|
-port_io<21> |    3.679(R)|      SLOW  |   -2.227(R)|      FAST  |sys_clk           |   0.000|
-port_io<22> |    3.089(R)|      SLOW  |   -1.929(R)|      FAST  |sys_clk           |   0.000|
-port_io<23> |    3.338(R)|      SLOW  |   -2.055(R)|      FAST  |sys_clk           |   0.000|
-port_io<24> |    2.970(R)|      SLOW  |   -1.749(R)|      FAST  |sys_clk           |   0.000|
-port_io<25> |    2.956(R)|      SLOW  |   -1.734(R)|      FAST  |sys_clk           |   0.000|
-port_io<26> |    2.647(R)|      SLOW  |   -1.552(R)|      FAST  |sys_clk           |   0.000|
-port_io<27> |    2.293(R)|      SLOW  |   -1.332(R)|      FAST  |sys_clk           |   0.000|
-port_io<28> |    1.580(R)|      SLOW  |   -0.882(R)|      FAST  |sys_clk           |   0.000|
-port_io<29> |    3.242(R)|      SLOW  |   -1.917(R)|      FAST  |sys_clk           |   0.000|
-port_io<30> |    2.926(R)|      SLOW  |   -1.748(R)|      FAST  |sys_clk           |   0.000|
-port_io<31> |    2.194(R)|      SLOW  |   -1.284(R)|      FAST  |sys_clk           |   0.000|
-rst         |    1.963(R)|      SLOW  |   -1.136(R)|      FAST  |sys_clk           |   0.000|
+port_io<0>  |    5.386(R)|      SLOW  |   -3.399(R)|      FAST  |sys_clk           |   0.000|
+port_io<1>  |    5.282(R)|      SLOW  |   -3.399(R)|      FAST  |sys_clk           |   0.000|
+port_io<2>  |    5.441(R)|      SLOW  |   -3.413(R)|      FAST  |sys_clk           |   0.000|
+port_io<3>  |    3.729(R)|      SLOW  |   -2.343(R)|      FAST  |sys_clk           |   0.000|
+port_io<4>  |    5.001(R)|      SLOW  |   -3.164(R)|      FAST  |sys_clk           |   0.000|
+port_io<5>  |    4.378(R)|      SLOW  |   -2.843(R)|      FAST  |sys_clk           |   0.000|
+port_io<6>  |    4.335(R)|      SLOW  |   -2.787(R)|      FAST  |sys_clk           |   0.000|
+port_io<7>  |    3.889(R)|      SLOW  |   -2.428(R)|      FAST  |sys_clk           |   0.000|
+port_io<8>  |    3.764(R)|      SLOW  |   -2.354(R)|      FAST  |sys_clk           |   0.000|
+port_io<9>  |    3.449(R)|      SLOW  |   -2.136(R)|      FAST  |sys_clk           |   0.000|
+port_io<10> |    4.257(R)|      SLOW  |   -2.676(R)|      FAST  |sys_clk           |   0.000|
+port_io<11> |    3.843(R)|      SLOW  |   -2.449(R)|      FAST  |sys_clk           |   0.000|
+port_io<12> |    3.584(R)|      SLOW  |   -2.304(R)|      FAST  |sys_clk           |   0.000|
+port_io<13> |    4.114(R)|      SLOW  |   -2.560(R)|      FAST  |sys_clk           |   0.000|
+port_io<14> |    3.090(R)|      SLOW  |   -1.994(R)|      FAST  |sys_clk           |   0.000|
+port_io<15> |    4.007(R)|      SLOW  |   -2.497(R)|      FAST  |sys_clk           |   0.000|
+port_io<16> |    3.733(R)|      SLOW  |   -2.355(R)|      FAST  |sys_clk           |   0.000|
+port_io<17> |    4.382(R)|      SLOW  |   -2.751(R)|      FAST  |sys_clk           |   0.000|
+port_io<18> |    4.070(R)|      SLOW  |   -2.563(R)|      FAST  |sys_clk           |   0.000|
+port_io<19> |    3.855(R)|      SLOW  |   -2.476(R)|      FAST  |sys_clk           |   0.000|
+port_io<20> |    3.646(R)|      SLOW  |   -2.247(R)|      FAST  |sys_clk           |   0.000|
+port_io<21> |    3.938(R)|      SLOW  |   -2.493(R)|      FAST  |sys_clk           |   0.000|
+port_io<22> |    4.099(R)|      SLOW  |   -2.601(R)|      FAST  |sys_clk           |   0.000|
+port_io<23> |    2.178(R)|      SLOW  |   -1.282(R)|      FAST  |sys_clk           |   0.000|
+port_io<24> |    1.959(R)|      SLOW  |   -1.077(R)|      FAST  |sys_clk           |   0.000|
+port_io<25> |    2.610(R)|      SLOW  |   -1.491(R)|      FAST  |sys_clk           |   0.000|
+port_io<26> |    2.784(R)|      SLOW  |   -1.586(R)|      FAST  |sys_clk           |   0.000|
+port_io<27> |    2.481(R)|      SLOW  |   -1.465(R)|      FAST  |sys_clk           |   0.000|
+port_io<28> |    2.073(R)|      SLOW  |   -1.206(R)|      FAST  |sys_clk           |   0.000|
+port_io<29> |    2.058(R)|      SLOW  |   -1.196(R)|      FAST  |sys_clk           |   0.000|
+port_io<30> |    2.494(R)|      SLOW  |   -1.482(R)|      FAST  |sys_clk           |   0.000|
+port_io<31> |    1.926(R)|      SLOW  |   -1.132(R)|      FAST  |sys_clk           |   0.000|
+rst         |    2.011(R)|      SLOW  |   -1.165(R)|      FAST  |sys_clk           |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -76,38 +76,38 @@ Clock clk to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-port_io<0>  |         9.958(R)|      SLOW  |         5.197(R)|      FAST  |sys_clk           |   0.000|
-port_io<1>  |         9.854(R)|      SLOW  |         5.586(R)|      FAST  |sys_clk           |   0.000|
-port_io<2>  |         9.531(R)|      SLOW  |         5.071(R)|      FAST  |sys_clk           |   0.000|
-port_io<3>  |         8.449(R)|      SLOW  |         4.658(R)|      FAST  |sys_clk           |   0.000|
-port_io<4>  |         8.333(R)|      SLOW  |         3.611(R)|      FAST  |sys_clk           |   0.000|
-port_io<5>  |         7.641(R)|      SLOW  |         3.769(R)|      FAST  |sys_clk           |   0.000|
-port_io<6>  |         7.657(R)|      SLOW  |         3.996(R)|      FAST  |sys_clk           |   0.000|
-port_io<7>  |         8.171(R)|      SLOW  |         3.642(R)|      FAST  |sys_clk           |   0.000|
-port_io<8>  |         8.506(R)|      SLOW  |         4.028(R)|      FAST  |sys_clk           |   0.000|
-port_io<9>  |         8.412(R)|      SLOW  |         3.913(R)|      FAST  |sys_clk           |   0.000|
-port_io<10> |         8.164(R)|      SLOW  |         4.744(R)|      FAST  |sys_clk           |   0.000|
-port_io<11> |         8.484(R)|      SLOW  |         3.977(R)|      FAST  |sys_clk           |   0.000|
-port_io<12> |         7.302(R)|      SLOW  |         4.091(R)|      FAST  |sys_clk           |   0.000|
-port_io<13> |         7.106(R)|      SLOW  |         3.935(R)|      FAST  |sys_clk           |   0.000|
-port_io<14> |         7.368(R)|      SLOW  |         3.545(R)|      FAST  |sys_clk           |   0.000|
-port_io<15> |         8.204(R)|      SLOW  |         4.522(R)|      FAST  |sys_clk           |   0.000|
-port_io<16> |         7.844(R)|      SLOW  |         4.414(R)|      FAST  |sys_clk           |   0.000|
-port_io<17> |         8.402(R)|      SLOW  |         4.175(R)|      FAST  |sys_clk           |   0.000|
-port_io<18> |         8.112(R)|      SLOW  |         4.214(R)|      FAST  |sys_clk           |   0.000|
-port_io<19> |         7.746(R)|      SLOW  |         4.194(R)|      FAST  |sys_clk           |   0.000|
-port_io<20> |         8.515(R)|      SLOW  |         4.043(R)|      FAST  |sys_clk           |   0.000|
-port_io<21> |         7.699(R)|      SLOW  |         4.203(R)|      FAST  |sys_clk           |   0.000|
-port_io<22> |         7.562(R)|      SLOW  |         4.157(R)|      FAST  |sys_clk           |   0.000|
-port_io<23> |         6.916(R)|      SLOW  |         3.802(R)|      FAST  |sys_clk           |   0.000|
-port_io<24> |         7.749(R)|      SLOW  |         3.580(R)|      FAST  |sys_clk           |   0.000|
-port_io<25> |         6.780(R)|      SLOW  |         3.599(R)|      FAST  |sys_clk           |   0.000|
-port_io<26> |         6.774(R)|      SLOW  |         3.646(R)|      FAST  |sys_clk           |   0.000|
-port_io<27> |         7.138(R)|      SLOW  |         3.441(R)|      FAST  |sys_clk           |   0.000|
-port_io<28> |         7.233(R)|      SLOW  |         3.157(R)|      FAST  |sys_clk           |   0.000|
-port_io<29> |         7.567(R)|      SLOW  |         3.843(R)|      FAST  |sys_clk           |   0.000|
-port_io<30> |         7.588(R)|      SLOW  |         3.934(R)|      FAST  |sys_clk           |   0.000|
-port_io<31> |         7.684(R)|      SLOW  |         3.404(R)|      FAST  |sys_clk           |   0.000|
+port_io<0>  |         9.909(R)|      SLOW  |         5.013(R)|      FAST  |sys_clk           |   0.000|
+port_io<1>  |        10.997(R)|      SLOW  |         5.152(R)|      FAST  |sys_clk           |   0.000|
+port_io<2>  |         9.811(R)|      SLOW  |         5.003(R)|      FAST  |sys_clk           |   0.000|
+port_io<3>  |         8.954(R)|      SLOW  |         4.441(R)|      FAST  |sys_clk           |   0.000|
+port_io<4>  |         8.296(R)|      SLOW  |         4.843(R)|      FAST  |sys_clk           |   0.000|
+port_io<5>  |         7.878(R)|      SLOW  |         4.362(R)|      FAST  |sys_clk           |   0.000|
+port_io<6>  |         8.076(R)|      SLOW  |         4.319(R)|      FAST  |sys_clk           |   0.000|
+port_io<7>  |         7.547(R)|      SLOW  |         4.354(R)|      FAST  |sys_clk           |   0.000|
+port_io<8>  |         7.637(R)|      SLOW  |         4.141(R)|      FAST  |sys_clk           |   0.000|
+port_io<9>  |         7.499(R)|      SLOW  |         4.481(R)|      FAST  |sys_clk           |   0.000|
+port_io<10> |         8.012(R)|      SLOW  |         4.744(R)|      FAST  |sys_clk           |   0.000|
+port_io<11> |         7.203(R)|      SLOW  |         4.231(R)|      FAST  |sys_clk           |   0.000|
+port_io<12> |         7.928(R)|      SLOW  |         4.278(R)|      FAST  |sys_clk           |   0.000|
+port_io<13> |         8.605(R)|      SLOW  |         4.515(R)|      FAST  |sys_clk           |   0.000|
+port_io<14> |         7.368(R)|      SLOW  |         4.323(R)|      FAST  |sys_clk           |   0.000|
+port_io<15> |         8.220(R)|      SLOW  |         4.966(R)|      FAST  |sys_clk           |   0.000|
+port_io<16> |         7.985(R)|      SLOW  |         4.439(R)|      FAST  |sys_clk           |   0.000|
+port_io<17> |         7.817(R)|      SLOW  |         4.671(R)|      FAST  |sys_clk           |   0.000|
+port_io<18> |         8.131(R)|      SLOW  |         4.462(R)|      FAST  |sys_clk           |   0.000|
+port_io<19> |         7.550(R)|      SLOW  |         4.132(R)|      FAST  |sys_clk           |   0.000|
+port_io<20> |         9.340(R)|      SLOW  |         4.554(R)|      FAST  |sys_clk           |   0.000|
+port_io<21> |         8.621(R)|      SLOW  |         4.644(R)|      FAST  |sys_clk           |   0.000|
+port_io<22> |         8.004(R)|      SLOW  |         4.477(R)|      FAST  |sys_clk           |   0.000|
+port_io<23> |         6.959(R)|      SLOW  |         3.284(R)|      FAST  |sys_clk           |   0.000|
+port_io<24> |         7.302(R)|      SLOW  |         3.294(R)|      FAST  |sys_clk           |   0.000|
+port_io<25> |         7.123(R)|      SLOW  |         3.580(R)|      FAST  |sys_clk           |   0.000|
+port_io<26> |         7.530(R)|      SLOW  |         3.696(R)|      FAST  |sys_clk           |   0.000|
+port_io<27> |         6.918(R)|      SLOW  |         3.455(R)|      FAST  |sys_clk           |   0.000|
+port_io<28> |         6.728(R)|      SLOW  |         3.440(R)|      FAST  |sys_clk           |   0.000|
+port_io<29> |         7.297(R)|      SLOW  |         3.164(R)|      FAST  |sys_clk           |   0.000|
+port_io<30> |         7.443(R)|      SLOW  |         3.841(R)|      FAST  |sys_clk           |   0.000|
+port_io<31> |         6.708(R)|      SLOW  |         3.355(R)|      FAST  |sys_clk           |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -115,18 +115,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   32.503|   16.053|   24.516|   13.486|
+clk            |   30.773|   14.382|   24.258|   12.317|
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Tue May 20 09:28:51 2025 
+Analysis completed Tue May 20 10:45:01 2025 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 430 MB
+Peak Memory Usage: 429 MB
 
 
 

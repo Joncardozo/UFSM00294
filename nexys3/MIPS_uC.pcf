@@ -1,12 +1,12 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue May 20 09:27:00 2025
+// Written by: Map P.20131013 on Tue May 20 10:43:17 2025
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "clk" LOCATE = SITE "V10" LEVEL 1;
 COMP "rst" LOCATE = SITE "D9" LEVEL 1;
 COMP "port_io<0>" LOCATE = SITE "B8" LEVEL 1;
-COMP "port_io<1>" LOCATE = SITE "C4" LEVEL 1;
+COMP "port_io<1>" LOCATE = SITE "C9" LEVEL 1;
 COMP "port_io<2>" LOCATE = SITE "A8" LEVEL 1;
 COMP "port_io<3>" LOCATE = SITE "T17" LEVEL 1;
 COMP "port_io<4>" LOCATE = SITE "T18" LEVEL 1;

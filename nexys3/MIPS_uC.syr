@@ -900,13 +900,13 @@ rst_synchronizer/ff2_q       |         |   23.085|   18.967|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 43.00 secs
-Total CPU time to Xst completion: 42.85 secs
+Total REAL time to Xst completion: 44.00 secs
+Total CPU time to Xst completion: 43.02 secs
  
 --> 
 
 
-Total memory usage is 686180 kilobytes
+Total memory usage is 686036 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  122 (   0 filtered)
