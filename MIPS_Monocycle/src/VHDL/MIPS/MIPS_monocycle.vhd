@@ -185,17 +185,20 @@ end process;
                     (others => '0');
 
     selectedByteExtended <= UNSIGNED(RESIZE(SIGNED(selectedByte), selectedByteExtended'length)) when decodedInstruction = LB or decodedInstruction = SB else
-                            RESIZE(UNSIGNED(selectedByte), selectedByteExtended'length) when decodedInstruction = LBU;
+                            RESIZE(UNSIGNED(selectedByte), selectedByteExtended'length) when decodedInstruction = LBU else
+									 (others => '0');
 
     ----------------------------------------
     -- Select word for LH, SH instruction --
     ----------------------------------------
     selectedHalfWord <=     data_in(15 downto 0) when result(1 downto 0) = "00" and (decodedInstruction = LH or decodedInstruction = LHU) else
                             data_in(31 downto 16) when result(1 downto 0) = "10" and (decodedInstruction = LH or decodedInstruction = LHU) else
-                            std_logic_vector(readData2(15 downto 0)) when decodedInstruction = SH;
+                            std_logic_vector(readData2(15 downto 0)) when decodedInstruction = SH else
+									 (others => '0');
 
     selectedHalfWordExtended <= UNSIGNED(RESIZE(SIGNED(selectedHalfWord), selectedHalfWordExtended'length)) when decodedInstruction = LH or decodedInstruction = SH else
-                                RESIZE(UNSIGNED(selectedHalfWord), selectedHalfWordExtended'length) when decodedInstruction = LHU;
+                                RESIZE(UNSIGNED(selectedHalfWord), selectedHalfWordExtended'length) when decodedInstruction = LHU else
+										  (others => '0');
     
     -- checks if half word is aligned
     process(clk)
