@@ -31,6 +31,20 @@ module MIPS_uC_tb;
   // estimulo de botoes
   initial begin
     buttons = 3'b0;
+    #4000
+    buttons = 3'b100;
+    #10000
+    buttons = 3'b0;
+    #20000
+    buttons = 3'b100;
+    #10000
+    buttons = 3'b010;
+    #10000
+    buttons = 3'b0;
+    #10000
+    buttons = 3'b1;
+    #10000
+    buttons = 3'b0;
   end
 
   assign port_io[2:0] = buttons;
@@ -39,7 +53,7 @@ module MIPS_uC_tb;
   // tempo total de simulacao
   initial begin
     #10000;
-    $finish;
+    //$finish;
   end
 
 endmodule

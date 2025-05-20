@@ -3,18 +3,14 @@
 // periferico 0 : porta de entrada e saida
 // periferico 1 : timer
 
-#define START_COUNTER_TIMER 0x61A80
+#define START_COUNTER_TIMER_A 0x61A80
+// #define START_COUNTER_TIMER_A 0x200
 
 #define PERIPH_BASE 0x80000000
 #define TIMER_ADDR (PERIPH_BASE + 0b000100000000)
 
-
 void Periferico1Handler();
 void Periferico2Handler();
-
-static char display_enable = 0;
-static char num[2] = {0, 0};
-
 
 void InterruptionRequest(int per) {
 	if (per == 0) {
@@ -27,34 +23,60 @@ void InterruptionRequest(int per) {
 
 
 void Periferico1Handler() {
-    char num[2];
-    int was_pressed = 0;
-	while(1)
-	{
-        // programa completo
-        for (int i = 0; i < 4096 && !was_pressed; i++){
-            was_pressed = read_button();
-        }
-        for (int i = 0; i < 40; i++) {
-            counter2seg(counter, num);
-            print_display(display_enable, num[display_enable]);
-            display_enable ^= (char) 0b1;
-        }
-        if (was_pressed > 512) {
-            was_pressed = 0;
-        }
-        else if (was_pressed) {
-            was_pressed++;
-        }
-	}
+    // set counter
+    read_button();
+    // get counter
+    volatile unsigned int* counter_display = (volatile unsigned int*) IO_PORT_COUNTER_ADDR;
+    unsigned int local_counter = (unsigned int) *counter_display;
+    // get which segment
+    volatile unsigned int* data_display = (volatile unsigned int*) IO_PORT_DATA_ADDR;
+    const int disp_en_mask = 0b00000000000000000001100000000000;
+    int segment = (*data_display & disp_en_mask) >> 11;
+    int disp_index;
+    int set_segment = 0;
+    switch (segment) {
+        case 0: disp_index = 0; set_segment = 1; break;
+        case 1: disp_index = 0; break;
+        case 2: disp_index = 1; break;
+    }
+    if (set_segment) {
+        segment = 0b01;
+        const int disp_keep_mask = 0b11111111111111111110011111111111;
+        *data_display = ((segment << 11) & disp_en_mask) | (*data_display & disp_keep_mask);
+    }
+    // get characters
+    char characters[2];
+    counter2seg(local_counter, characters);
+    // print segment
+    print_display(disp_index, characters[disp_index]);
 }
 
 
 void Periferico2Handler() {
-    // refresh 7 segment display
-	print_display(display_enable, num[display_enable]);
-    display_enable ^= (char) 0b1;
+    // get counter
+    volatile unsigned int* counter_display = (volatile unsigned int*) IO_PORT_COUNTER_ADDR;
+    unsigned int local_counter = (unsigned int) *counter_display;
+    // get which segment
+    volatile unsigned int* data_display = (volatile unsigned int*) IO_PORT_DATA_ADDR;
+    const int disp_en_mask = 0b00000000000000000001100000000000;
+    int segment = (*data_display & disp_en_mask) >> 11;
+    // get characters
+    char characters[2];
+    counter2seg(local_counter, characters);
+    // change segment
+    segment ^= (char) 0b11;
+    int disp_index;
+    switch (segment) {
+        case 1: disp_index = 0; break;
+        case 2: disp_index = 1; break;
+        case 3: disp_index = 0; segment = 0b01; break;
+    }
+    // print segment
+    print_display(disp_index, characters[disp_index]);
+    // set new segment
+    const int disp_keep_mask = 0b11111111111111111110011111111111;
+    *data_display = ((segment << 11) & disp_en_mask) | (*data_display & disp_keep_mask);
     // restart the counter
     unsigned int* data_timer = TIMER_ADDR;
-    *data_timer = START_COUNTER_TIMER;
+    *data_timer = START_COUNTER_TIMER_A;
 }

@@ -5,10 +5,11 @@ use IEEE.numeric_std.all;
 entity BidirectionalPort  is
     generic (
         DATA_WIDTH          : integer;    -- Port width in bits
-        PORT_DATA_ADDR      : std_logic_vector(1 downto 0);     -- NÃO ALTERAR!
-        PORT_CONFIG_ADDR    : std_logic_vector(1 downto 0);     -- NÃO ALTERAR! 
-        PORT_ENABLE_ADDR    : std_logic_vector(1 downto 0);     -- NÃO ALTERAR!
-		PORT_INTERRUPT_ADDR	: std_logic_vector(1 downto 0)
+        PORT_DATA_ADDR      : std_logic_vector(3 downto 0);     -- NÃO ALTERAR!
+        PORT_CONFIG_ADDR    : std_logic_vector(3 downto 0);     -- NÃO ALTERAR! 
+        PORT_ENABLE_ADDR    : std_logic_vector(3 downto 0);     -- NÃO ALTERAR!
+		PORT_INTERRUPT_ADDR	: std_logic_vector(3 downto 0);
+		PORT_COUNTER_ADDR	: std_logic_vector(3 downto 0)
     );
     port (
         clk         : in std_logic;
@@ -17,10 +18,10 @@ entity BidirectionalPort  is
         -- Processor interface
         data_in     : in std_logic_vector (DATA_WIDTH-1 downto 0);
         data_out    : out std_logic_vector (DATA_WIDTH-1 downto 0);
-        address     : in std_logic_vector (1 downto 0);     -- NÃO ALTERAR!
+        address     : in std_logic_vector (3 downto 0);     -- NÃO ALTERAR!
         rw          : in std_logic; -- 0: read; 1: write
         ce          : in std_logic;
-		  irq			: out std_logic;
+		irq			: out std_logic;
         
         -- External interface
         port_io     : inout std_logic_vector (DATA_WIDTH-1 downto 0)
@@ -35,6 +36,7 @@ architecture Behavioral of BidirectionalPort  is
 	signal reg_data 	: std_logic_vector (DATA_WIDTH-1 downto 0);
 	signal irq_config 	: std_logic_vector (DATA_WIDTH-1 downto 0);
 	signal irq_i		: std_logic_vector (DATA_WIDTH-1 downto 0);
+	signal counter		: std_logic_vector (DATA_WIDTH-1 downto 0);
  
 begin
 
@@ -45,7 +47,8 @@ begin
 			  io_config <= (others => '0');
 			  io_enable <= (others => '0');
 			  irq_config <= (others => '0');
-		 elsif falling_edge(clk) then
+			  counter   <= (others => '0');
+		 elsif rising_edge(clk) then
 			  if ce = '1' then
 					if rw = '1' then
 						if address = PORT_CONFIG_ADDR then
@@ -54,6 +57,8 @@ begin
 							io_enable <= data_in;
 						elsif address = PORT_INTERRUPT_ADDR then
 							irq_config <= data_in;
+						elsif address = PORT_COUNTER_ADDR then
+							counter <= data_in;
 						elsif address = PORT_DATA_ADDR then
 							  for i in 0 to DATA_WIDTH-1 loop
 									if io_enable(i) = '1' and io_config(i) = '0' then
@@ -63,13 +68,13 @@ begin
 						end if;
 					end if;
 				else
-						 if address = PORT_DATA_ADDR then
-							  for i in 0 to DATA_WIDTH-1 loop
-									if io_enable(i) = '1' and io_config(i) = '1' then
-										 reg_data(i) <= port_io(i);
-									end if;
-							  end loop;
-						 end if;
+				-- if address = PORT_DATA_ADDR then
+				for i in 0 to DATA_WIDTH-1 loop
+					if io_enable(i) = '1' and io_config(i) = '1' then
+							reg_data(i) <= port_io(i);
+					end if;
+				end loop;
+				-- end if;
 			  end if;
 
 		 end if;
@@ -81,14 +86,21 @@ begin
 	end generate;
 
 	-- data out para processador
-	process(address, reg_data, io_config, io_enable)
+	process(address, reg_data, io_config, io_enable, irq_config, counter)
 	begin
-		case address is
-			when "00" => data_out <= reg_data;
-			when "01" => data_out <= io_config;
-			when "10" => data_out <= io_enable;
-			when others => data_out <= (others => '0');
-		end case;
+		if address = PORT_DATA_ADDR then
+			data_out <= reg_data;
+		elsif address = PORT_CONFIG_ADDR then
+			data_out <= io_config;
+		elsif address = PORT_ENABLE_ADDR then
+			data_out <= io_enable;
+		elsif address = PORT_INTERRUPT_ADDR then
+			data_out <= irq_config;
+		elsif address = PORT_COUNTER_ADDR then
+			data_out <= counter;
+		else
+			data_out <= (others => '0');
+		end if;
 	end process;
 
 	-- pedido de interrupção para o processador

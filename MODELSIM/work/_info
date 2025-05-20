@@ -9,7 +9,7 @@ z2
 cModel Technology
 d/home/jon/code/FINAL
 Ebidirectionalport
-Z0 w1747684257
+Z0 w1747710059
 Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
@@ -18,13 +18,13 @@ Z5 8/home/jon/code/trabalho4/UFSM00294/MODELSIM/BidirectionalPort.vhd
 Z6 F/home/jon/code/trabalho4/UFSM00294/MODELSIM/BidirectionalPort.vhd
 l0
 L5
-ViV>Sn3<X5T0Onb5i5B]5=0
-!s100 L[HDz:Q3Sa1Gd<g<AAeQY2
+V]7YFbRPB<H1NnOVA6CP2F2
+!s100 8:U7_WSAZDbgA2OUUhX_V0
 Z7 OV;C;10.5b;63
 32
-Z8 !s110 1747684263
+Z8 !s110 1747710063
 !i10b 1
-Z9 !s108 1747684263.000000
+Z9 !s108 1747710063.000000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/jon/code/trabalho4/UFSM00294/MODELSIM/BidirectionalPort.vhd|
 Z11 !s107 /home/jon/code/trabalho4/UFSM00294/MODELSIM/BidirectionalPort.vhd|
 !i113 1
@@ -34,11 +34,11 @@ Abehavioral
 R1
 R2
 R3
-DEx4 work 17 bidirectionalport 0 22 iV>Sn3<X5T0Onb5i5B]5=0
-l39
-L31
-V87KO`iJ7Cdj5b6diRfZj02
-!s100 N08:_dkl>d^ge4K4M84^61
+DEx4 work 17 bidirectionalport 0 22 ]7YFbRPB<H1NnOVA6CP2F2
+l41
+L32
+VAN@Rj1YQ5S[AQC<B[ALZa0
+!s100 cgOE`>dDFWT;:`]4^XAH?2
 R7
 32
 R8
@@ -78,8 +78,8 @@ R3
 DEx4 work 7 decoder 0 22 eSTHKeYlHo4Y?PKHWPIMm1
 l29
 L25
-V1K=OjZOCzTS6_X_oGLYD=3
-!s100 4C=a4kf6_2DMb:ne^LG7J3
+VRK;3WcZVGbkLF^Q:1[K3i3
+!s100 _0[AIA?G59MS_?^@Q<OP92
 R7
 32
 R8
@@ -221,8 +221,8 @@ R13
 vMIPS_uC
 R8
 !i10b 1
-!s100 =nVknMPzR?91B3[gk6oN:1
-IP]7Y2P9f3>ZM@JH30]GbP0
+!s100 ?lbBSB04WI2X^_[bViENl2
+I^SA_IeajVAKDJ^2z4lB4X0
 Z32 VDg1SIo80bB@j0V0VzS_@n1
 R4
 R0
@@ -243,8 +243,8 @@ n@m@i@p@s_u@c
 vMIPS_uC_tb
 R8
 !i10b 1
-!s100 L7TNaJzV>YdK>BF0@AK:T0
-IneRmg[VdiRmFmj[U@XGc71
+!s100 =^fogEoXRCi^[Mei4292?3
+IdT5id9ZUM^e`Td7FCa6>D0
 R32
 R4
 R0

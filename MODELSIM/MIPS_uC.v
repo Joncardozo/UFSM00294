@@ -9,10 +9,12 @@ module MIPS_uC(
 	// constants
 	parameter MARS_INSTRUCTION_OFFSET	= 32'h00000000;
 	parameter MARS_DATA_OFFSET			= 32'h00000000;
-	parameter PORT_ENABLE_ADDR			= 2'b00;
-	parameter PORT_CONFIG_ADDR			= 2'b01;
-	parameter PORT_DATA_ADDR			= 2'b10;
-	parameter PORT_INTERRUPT_ADDR		= 2'b11;
+	parameter PORT_ENABLE_ADDR			= 4'b0000;
+	parameter PORT_CONFIG_ADDR			= 4'b0001;
+	parameter PORT_DATA_ADDR			= 4'b0010;
+	parameter PORT_INTERRUPT_ADDR		= 4'b0011;
+	parameter PORT_COUNTER_ADDR			= 4'b0100;
+
 
 	// CPU interface
 	wire [31:0] 	data_address;
@@ -45,7 +47,7 @@ module MIPS_uC(
 	// portio interface
 	wire [31:0]		data_in_portio;
 	wire [31:0]		data_out_portio;
-	wire [1:0]		address_portio;
+	wire [3:0]		address_portio;
 
 	// clock manager interface
 	// wire			sys_clk;
@@ -66,7 +68,7 @@ module MIPS_uC(
 	assign address_decoder 	= data_address[11:8];
 	// portio
 	// assign data_in_portio 	= data_out;
-	assign address_portio 	= data_address[5:4];
+	assign address_portio 	= data_address[7:4];
 	// data_in CPU
 	assign data_in_periph 	= (rw_out[15] == 1'b0) ? data_out_portio : data_out_decoder;
 	assign data_in 			= (data_address[31] == 1'b1) ? data_in_periph : data_out_mem;
@@ -150,9 +152,10 @@ module MIPS_uC(
         .PORT_DATA_ADDR     (PORT_DATA_ADDR),
         .PORT_CONFIG_ADDR   (PORT_CONFIG_ADDR),
         .PORT_ENABLE_ADDR   (PORT_ENABLE_ADDR),
-        .PORT_INTERRUPT_ADDR(PORT_INTERRUPT_ADDR)
+        .PORT_INTERRUPT_ADDR(PORT_INTERRUPT_ADDR),
+		.PORT_COUNTER_ADDR	(PORT_COUNTER_ADDR)
 	) gp_port_io (
-        .clk				(sys_clk_n),
+        .clk				(sys_clk),
         .rst             	(rst_sync),
         .data_in			(data_out),
         .data_out			(data_out_portio),

@@ -37,14 +37,34 @@ begin
             irq_addr <= "0000";
         elsif irq_source(1) = '1' then
             irq_addr <= "0001";
-        elsif irq_source(2) = '1' then
-            irq_addr <= "0010";
-        elsif irq_source(3) = '1' then
-            irq_addr <= "0011";
         else
             irq_addr <= "1111";
         end if;
     end process;
+
+    -- process(address)
+    -- begin
+    --     if ce = '1' then
+    --         case to_integer(unsigned(address)) is
+    --             when 0 =>
+    --                 ce_out(0) <= '1';
+    --                 rw_out(0) <= rw;
+    --                 rw_out(15) <= '0';
+    --             when 1 =>
+    --                 ce_out(1) <= '1';
+    --                 rw_out(1) <= rw;
+    --                 rw_out(15) <= '0';
+    --             when 2 =>
+    --                 ce_out(2) <= '1';
+    --                 rw_out(2) <= rw;
+    --                 rw_out(15) <= '0';
+    --             when 15 =>
+    --                 rw_out(15) <= '1';
+    --             when others =>
+    --                 null;
+    --         end case;
+    --     end if;
+    -- end process;
 
     process(clk, rst)
     begin
@@ -60,29 +80,25 @@ begin
             if handling = '0' then 
                 data_out <= irq_addr;
             end if;
-            if ce = '1' and address = "1111" then
-                rw_out(15) <= '1';
-            end if;
 
-            -- if handling = '0' and irq_in = '0' and ce = '1' then
             if ce = '1' then
                 case to_integer(unsigned(address)) is
                     when 0 =>
                         ce_out(0) <= '1';
                         rw_out(0) <= rw;
+                        rw_out(15) <= '0';
                     when 1 =>
                         ce_out(1) <= '1';
                         rw_out(1) <= rw;
-					when 2 =>
-                        ce_out(2) <= '1';
-                        rw_out(2) <= rw;
+                        rw_out(15) <= '0';
                     when 15 =>
                         rw_out(15) <= '1';
                     when others =>
                         null;
                 end case;
+            end if;
 
-            elsif irq_in = '1' and ce = '0' and handling = '0' then
+            if irq_in = '1' and ce = '0' and handling = '0' then
                 irq <= '1';
                 handling <= '1';
 

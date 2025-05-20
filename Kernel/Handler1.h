@@ -6,6 +6,7 @@
 #define IO_PORT_CONFIG_ADDR (IO_PORT_ADDR + 0b010000)
 #define IO_PORT_ENABLE_ADDR  (IO_PORT_ADDR + 0x000000)
 #define IO_PORT_DATA_ADDR (IO_PORT_ADDR + 0b100000)
+#define IO_PORT_COUNTER_ADDR (IO_PORT_ADDR + 0b01000000)
 
 #define IO_PORT_ENABLE 0b0111111111111111
 #define IO_PORT_CONFIG 0b0000000000000111
@@ -26,8 +27,6 @@
 #define DISP_D ~0b01011110
 #define DISP_E ~0b01111001
 #define DISP_F ~0b01110001
-
-extern volatile int counter;
 
 void setup_io();
 void counter2seg(int number, char* display_hex);
