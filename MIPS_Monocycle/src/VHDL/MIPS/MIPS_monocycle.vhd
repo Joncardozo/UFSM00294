@@ -17,7 +17,6 @@ entity MIPS_monocycle is
         
         -- Interupt interface
         intr 		    : in std_logic;
-		ack				: out std_logic;
         
         -- Instruction memory interface
         instructionAddress  : out std_logic_vector(31 downto 0);
@@ -49,7 +48,6 @@ architecture behavioral of MIPS_monocycle is
     signal EPC : UNSIGNED(31 downto 0);  -- Exception Program Counter
     -- signal nextPc : UNSIGNED(31 downto 0);
     constant ISR_ADDR : UNSIGNED(31 downto 0) := x"000000FF";  
-    signal ack_internal : std_logic;
     
     -- Register file
     type RegisterArray is array (natural range <>) of UNSIGNED(31 downto 0);
@@ -89,8 +87,6 @@ begin
         lock                  <= true;
         interruptionTreatment <= '0';
         EPC                   <= (others=>'0');
-        ack                   <= '0';
-        ack_internal          <= '0';
     elsif rising_edge(clk) then
         pc <= instructionFetchAddress + 4;
         if lock = true then
@@ -101,17 +97,10 @@ begin
                 interruptionTreatment <= '1';    -- marca tratamento em andamento
             elsif decodedInstruction = ERET then
                 interruptionTreatment <= '0';    -- libera tratamento ao ERET
-                ack <= '1';
-                ack_internal <= '1';
-            elsif ack_internal = '1' and interruptionTreatment = '0' and decodedInstruction /= ERET then
-                ack <= '0';
-                ack_internal <= '0';
             end if;
         end if;
     end if;
 end process;
-
-
 
 
         

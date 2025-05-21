@@ -57,7 +57,7 @@ begin
         end if;
     end process;
     
-    -- data <= STD_LOGIC_VECTOR(counter) when ce = '1' and rw = '0' else (others=>'Z');
+    data <= STD_LOGIC_VECTOR(counter) when ce = '1' and rw = '0' else (others=>'Z');
         
         
 end Behavioral;

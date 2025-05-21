@@ -16,12 +16,11 @@ entity BidirectionalPort  is
         rst         : in std_logic;
         
         -- Processor interface
-        data_in     : in std_logic_vector (DATA_WIDTH-1 downto 0);
-        data_out    : out std_logic_vector (DATA_WIDTH-1 downto 0);
         address     : in std_logic_vector (3 downto 0);     -- NÃO ALTERAR!
         rw          : in std_logic; -- 0: read; 1: write
         ce          : in std_logic;
-		irq			: out std_logic;
+		irq			: out std_logic_vector (3 downto 0);
+		data		: inout std_logic_vector (DATA_WIDTH-1 downto 0);
         
         -- External interface
         port_io     : inout std_logic_vector (DATA_WIDTH-1 downto 0)
@@ -31,25 +30,29 @@ end BidirectionalPort ;
 
 architecture Behavioral of BidirectionalPort  is
 
+	signal data_out     : std_logic_vector (DATA_WIDTH-1 downto 0);
+	signal data_in      : std_logic_vector (DATA_WIDTH-1 downto 0);
 	signal io_config 	: std_logic_vector (DATA_WIDTH-1 downto 0);
 	signal io_enable 	: std_logic_vector (DATA_WIDTH-1 downto 0);
 	signal reg_data 	: std_logic_vector (DATA_WIDTH-1 downto 0);
 	signal irq_config 	: std_logic_vector (DATA_WIDTH-1 downto 0);
-	signal irq_i		: std_logic_vector (DATA_WIDTH-1 downto 0);
 	signal counter		: std_logic_vector (DATA_WIDTH-1 downto 0);
+	signal stability_reg_1 : std_logic_vector (DATA_WIDTH-1 downto 0);
+	signal stability_reg_2 : std_logic_vector (DATA_WIDTH-1 downto 0);
  
 begin
 
 	process(clk, rst)
 	begin
-		 if rst = '1' then
-			  reg_data  <= (others => '0');
-			  io_config <= (others => '0');
-			  io_enable <= (others => '0');
-			  irq_config <= (others => '0');
-			  counter   <= (others => '0');
-		 elsif rising_edge(clk) then
-			  if ce = '1' then
+		if rst = '1' then
+			reg_data  <= (others => '0');
+			io_config <= (others => '0');
+			io_enable <= (others => '0');
+			irq_config <= (others => '0');
+			counter   <= (others => '0');
+			elsif rising_edge(clk) then
+				if ce = '1' then
+			  		-- escreve nos registradores
 					if rw = '1' then
 						if address = PORT_CONFIG_ADDR then
 							io_config <= data_in;
@@ -68,24 +71,24 @@ begin
 						end if;
 					end if;
 				else
-				-- if address = PORT_DATA_ADDR then
+				-- recebe sinal da porta para registradores de estabilidade e escreve no registrador de dados
 				for i in 0 to DATA_WIDTH-1 loop
 					if io_enable(i) = '1' and io_config(i) = '1' then
-							reg_data(i) <= port_io(i);
+						stability_reg_1(i) <= port_io(i);
+						stability_reg_2(i) <= stability_reg_1(i);
+						reg_data(i) <= stability_reg_2(i);
 					end if;
 				end loop;
-				-- end if;
-			  end if;
-
-		 end if;
+			end if;
+		end if;
 	end process;
 
-	-- porta para registrador
+	-- registrador para porta e porta para registrador
 	gen_io: for i in 0 to DATA_WIDTH-1 generate
-		 port_io(i) <= reg_data(i) when io_enable(i) = '1' and io_config(i) = '0' else 'Z';
+		port_io(i) <= reg_data(i) when io_enable(i) = '1' and io_config(i) = '0' else 'Z';
 	end generate;
 
-	-- data out para processador
+	-- registrador data out
 	process(address, reg_data, io_config, io_enable, irq_config, counter)
 	begin
 		if address = PORT_DATA_ADDR then
@@ -103,11 +106,15 @@ begin
 		end if;
 	end process;
 
-	-- pedido de interrupção para o processador
-	gen_irq: for i in 0 to DATA_WIDTH-1 generate
-		irq_i(i) <= reg_data(i) when irq_config(i) = '1' and io_enable(i) = '1' else '0';
+	-- pedido de interrupção para o PIC
+	gen_irq: for i in 0 to 3 generate
+		irq(i) <= reg_data(i) when irq_config(i) = '1' and io_enable(i) = '1' else '0';
 	end generate;
 
-	irq <= '1' when irq_i /= "00000000000000000000000000000000" else '0'; 
+	-- data out para bus do controlador de perifericos
+	data <= data_out when ((rw = '0') and (ce = '1')) else 'Z';
+
+	-- data in do controlador de perifericos
+	data_in <= data;
 
 end Behavioral;

@@ -1,5 +1,5 @@
-#ifndef HANDLER1_H
-#define HANDLER1_H
+#ifndef DISPLAY_7_SEG_H
+#define DISPLAY_7_SEG_H
 
 #define PERIPH_BASE 0x80000000
 #define IO_PORT_ADDR (PERIPH_BASE + 0b000000000000)
@@ -32,8 +32,9 @@ void setup_io();
 void counter2seg(int number, char* display_hex);
 void delay(int delay_1, int delay_2);
 int read_button();
+int debounce();
 void print_display(int disp_index, char disp_num);
 
-#endif // HANDLER1_H
+#endif // DISPLAY_7_SEG_H
 
 

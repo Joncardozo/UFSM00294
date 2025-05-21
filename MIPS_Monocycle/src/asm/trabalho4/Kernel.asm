@@ -1,5 +1,7 @@
 .text
 
+.set noreorder
+
 .globl InterruptionServiceRoutine
 InterruptionServiceRoutine:
 
