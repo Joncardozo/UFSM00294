@@ -1,0 +1,18 @@
+#ifndef INTERRUPT_CONTROLLER_DRIVER_H
+#define INTERRUPT_CONTROLLER_DRIVER_H
+
+#ifndef PERIPH_BASE_H
+#define PERIPH_BASE 0x80000000
+#endif
+
+#define INTR_CTRL_ADDR (PERIPH_BASE + 0b00100000)
+#define INTR_CTRL_IRQ_ID_ADDR (INTR_CTRL_ADDR + 0b000000)
+#define INTR_CTRL_MASK_ADDR (INTR_CTRL_ADDR + 0b010000)
+#define INTR_CTRL_INT_ACK_ADDR (INTR_CTRL_ADDR + 0b100000)
+
+const char 
+
+void set_mask_irq(char irq_id);
+void unset_mask_id(char irq_id);
+
+#endif

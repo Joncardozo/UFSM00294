@@ -19,7 +19,7 @@ entity BidirectionalPort  is
         address     : in std_logic_vector (3 downto 0);     -- NÃO ALTERAR!
         rw          : in std_logic; -- 0: read; 1: write
         ce          : in std_logic;
-		irq			: out std_logic_vector (3 downto 0);
+		irq			: out std_logic_vector (2 downto 0);
 		data		: inout std_logic_vector (DATA_WIDTH-1 downto 0);
         
         -- External interface
@@ -107,7 +107,7 @@ begin
 	end process;
 
 	-- pedido de interrupção para o PIC
-	gen_irq: for i in 0 to 3 generate
+	gen_irq: for i in 0 to 2 generate
 		irq(i) <= reg_data(i) when irq_config(i) = '1' and io_enable(i) = '1' else '0';
 	end generate;
 

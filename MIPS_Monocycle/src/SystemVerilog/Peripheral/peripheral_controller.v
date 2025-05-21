@@ -46,7 +46,8 @@ module peripheral_controller #(
 					rw_out = (rw) ? 16'b0100 : 16'b0;
 				end
 				default: begin
-					default_case
+					ce_out = 16'b0;
+					rw_out = 16'b0;
 				end
 			endcase
 		end

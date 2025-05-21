@@ -168,7 +168,7 @@ module MIPS_uC(
         .address			(address_reg),
         .rw					(rw_out[0]),
         .ce					(ce_out[0]),
-        .irq				(irq[15:12]),
+        .irq				(irq[7:5]),
         .port_io			(port_io)
     );
 

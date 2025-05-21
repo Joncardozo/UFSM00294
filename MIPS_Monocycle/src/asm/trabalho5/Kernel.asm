@@ -41,11 +41,11 @@ InterruptionServiceRoutine:
     la      $k1, kernel_sp
     lw      $sp, 0($k1)
 
+    #### jump table
     # Carrega endereço do interruptor e salta para InterruptionRequest
-    li      $t0, 0x80000F00
-    lw      $a0, 0($t0)
-    nop
-    jal     InterruptionRequest
+    #li      $t0, 0x80000F00
+    #lw      $a0, 0($t0)
+    #jal     InterruptionRequest
 
     # Default
     j RestoreContext     
