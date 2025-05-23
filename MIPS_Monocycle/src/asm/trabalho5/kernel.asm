@@ -55,7 +55,7 @@ InterruptionServiceRoutine:
     addu    $t4, $t0, $t3
     lw      $t5, 0($t4)
     # salta para handler
-    jr      $t5
+    jalr      $t5
     nop
 
     # Default

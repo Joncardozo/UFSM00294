@@ -95,7 +95,7 @@ Disassembly of section .text:
  19c:	000a5880 	sll	t3,t2,0x2
  1a0:	010b6021 	addu	t4,t0,t3
  1a4:	8d8d0000 	lw	t5,0(t4)
- 1a8:	01a00008 	jr	t5
+ 1a8:	01a0f809 	jalr	t5
  1ac:	00000000 	nop
  1b0:	0800006d 	j	1b4 <RestoreContext>
 
