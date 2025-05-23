@@ -210,7 +210,7 @@ end process;
     MUX_DATA_MEM: writeData <= UNSIGNED(data_in) when decodedInstruction = LW else
                                 selectedByteExtended when decodedInstruction = LB or decodedInstruction = LBU else
                                 selectedHalfWordExtended when decodedInstruction = LH or decodedInstruction = LHU else
-                               pc when decodedInstruction = JAL else
+                               pc when decodedInstruction = JAL  or decodedInstruction = JALR else
                                result;
     
     -- R-type, ADDIU, ORI and load instructions, store the result in the register file

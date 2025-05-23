@@ -27,7 +27,7 @@ DATA_MEMORY      0x0000000000000000 0x0000000000002000
 Linker script and memory map
 
 
-.text           0x0000000000000000      0x774
+.text           0x0000000000000000      0x780
  boot.o(.text)
  .text          0x0000000000000000       0xa8 boot.o
                 0x0000000000000000                boot_start
@@ -35,43 +35,43 @@ Linker script and memory map
  *fill*         0x00000000000000a8       0x57 
  kernel.o(.text)
  *fill*         0x00000000000000ff        0x1 
- .text          0x0000000000000100      0x134 kernel.o
+ .text          0x0000000000000100      0x140 kernel.o
                 0x0000000000000100                InterruptionServiceRoutine
  *(.text.*)
- .text.startup  0x0000000000000234       0xb4 main.o
-                0x0000000000000234                main
- .text          0x00000000000002e8      0x2c0 display_7_seg.o
-                0x00000000000002e8                setup_io_display
-                0x000000000000031c                counter2seg
-                0x0000000000000330                delay
-                0x00000000000003a8                debounce
-                0x0000000000000440                read_button
-                0x0000000000000474                print_display
-                0x0000000000000500                refresh
- .text          0x00000000000005a8       0x74 interrupt_controller_driver.o
-                0x00000000000005a8                set_mask
-                0x00000000000005e0                unset_mask
- .text          0x000000000000061c       0xbc handlers.o
-                0x000000000000061c                irq1_handler
-                0x0000000000000624                irq0_handler
-                0x0000000000000684                irq5_handler
-                0x00000000000006b0                irq6_handler
-                0x00000000000006b8                irq7_handler
-                0x00000000000006c0                irq4_handler
-                0x00000000000006c8                irq2_handler
-                0x00000000000006d0                irq3_handler
- .text          0x00000000000006d8       0x9c main.o
-                0x00000000000006d8                counter2led
-                0x00000000000006fc                delay_led
+ .text.startup  0x0000000000000240       0xb4 main.o
+                0x0000000000000240                main
+ .text          0x00000000000002f4      0x2c0 display_7_seg.o
+                0x00000000000002f4                setup_io_display
+                0x0000000000000328                counter2seg
+                0x000000000000033c                delay
+                0x00000000000003b4                debounce
+                0x000000000000044c                read_button
+                0x0000000000000480                print_display
+                0x000000000000050c                refresh
+ .text          0x00000000000005b4       0x74 interrupt_controller_driver.o
+                0x00000000000005b4                set_mask
+                0x00000000000005ec                unset_mask
+ .text          0x0000000000000628       0xbc handlers.o
+                0x0000000000000628                irq1_handler
+                0x0000000000000630                irq0_handler
+                0x0000000000000690                irq5_handler
+                0x00000000000006bc                irq6_handler
+                0x00000000000006c4                irq7_handler
+                0x00000000000006cc                irq4_handler
+                0x00000000000006d4                irq2_handler
+                0x00000000000006dc                irq3_handler
+ .text          0x00000000000006e4       0x9c main.o
+                0x00000000000006e4                counter2led
+                0x0000000000000708                delay_led
 
-.MIPS.abiflags  0x0000000000000778       0x18
+.MIPS.abiflags  0x0000000000000780       0x18
  .MIPS.abiflags
-                0x0000000000000778       0x18 boot.o
+                0x0000000000000780       0x18 boot.o
 
-.rel.dyn        0x0000000000000790        0x0
- .rel.dyn       0x0000000000000790        0x0 handlers.o
+.rel.dyn        0x0000000000000798        0x0
+ .rel.dyn       0x0000000000000798        0x0 handlers.o
 
-.data           0x0000000000000000      0x334 load address 0x0000000000000790
+.data           0x0000000000000000      0x334 load address 0x0000000000000798
  *(.sdata)
  .sdata         0x0000000000000000       0x28 display_7_seg.o
                 0x0000000000000000                data_en_keep
@@ -112,7 +112,7 @@ Linker script and memory map
                 0x00000000000002f4                led_pattern
  *(.rodata.*)
 
-.bss            0x0000000000000334        0x0 load address 0x0000000000000ac4
+.bss            0x0000000000000334        0x0 load address 0x0000000000000acc
  *(.sbss)
  *(.sbss.*)
  *(.bss)

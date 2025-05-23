@@ -195,7 +195,7 @@ package body MIPS_pkg is
         case (instruction) is
             when ADDU | SUBU | AAND | OOR | SLT | LW | ADDIU | ORI | LUI | JAL | XXOR
                 | XORI | ANDI | NNOR | SSLL | SSRL | SSRA | SLLV | SRLV | SRAV | SLTI 
-                | SLTIU | LB  | LBU | LH | LHU | SLTU =>
+                | SLTIU | LB  | LBU | LH | LHU | SLTU | JALR =>
                 result := true;
             
             when others =>

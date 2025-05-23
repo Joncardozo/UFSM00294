@@ -50,12 +50,12 @@ InterruptionServiceRoutine:
     # le o id de interrupcao para indexar os handlers
     lw      $t2, 0($t1)
     # multiplica por 4 o id
-    sll     $t2, $t2, 2
+    sll     $t3, $t2, 2
     # indexa o handler correspondente ao periferico que gerou interrupcao
-    addu    $t3, $t0, $t2
-    lw      $t4, 0($t3)
+    addu    $t4, $t0, $t3
+    lw      $t5, 0($t4)
     # salta para handler
-    jal     $t4
+    jr      $t5
     nop
 
     # Default
@@ -64,6 +64,9 @@ InterruptionServiceRoutine:
 
 # Restauração do contexto
 RestoreContext:
+    # ACK para o PIC
+    la      $t0, 0x80000220
+    sw      $t2, 0($t0)
     la      $k0, PCB
     lw      $at,   0($k0)
     lw      $v0,   4($k0)
