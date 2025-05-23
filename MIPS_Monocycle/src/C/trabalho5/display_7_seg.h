@@ -28,6 +28,8 @@
 #define DISP_E ~0b01111001
 #define DISP_F ~0b01110001
 
+static int counter = 0;
+
 void setup_io();
 void counter2seg(char* display_hex);
 void delay(int delay_1, int delay_2);

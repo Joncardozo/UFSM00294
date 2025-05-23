@@ -54,7 +54,8 @@ boot_start:
 
     # configura timer
     la      $t0, 0x80000100
-    li      $t1, 0xF
+    #li      $t1, 0x6FFF
+    li      $t1, 0x200
     sw      $t1, 0($t0)
 
     # Salta para o programa do usuário (leds)

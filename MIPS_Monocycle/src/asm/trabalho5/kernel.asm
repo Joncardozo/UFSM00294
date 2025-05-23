@@ -66,6 +66,8 @@ InterruptionServiceRoutine:
 RestoreContext:
     # ACK para o PIC
     la      $t0, 0x80000220
+    la      $t1, 0x80000200
+    lw      $t2, 0($t1)
     sw      $t2, 0($t0)
     la      $k0, PCB
     lw      $at,   0($k0)

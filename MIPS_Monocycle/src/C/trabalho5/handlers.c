@@ -4,13 +4,13 @@
 // periferico 0 : porta de entrada e saida
 // periferico 1 : timer
 
+// #define START_COUNTER_TIMER_A 0x6FFF
 #define START_COUNTER_TIMER_A 0xFFF
-// #define START_COUNTER_TIMER_A 0x200
 
 #define PERIPH_BASE 0x80000000
 #define TIMER_ADDR (PERIPH_BASE + 0b000100000000)
 
-const char mask_buttons = 0b000 << 5;
+const char mask_buttons = 0b111 << 5;
 
 
 void irq0_handler();
@@ -26,11 +26,11 @@ void irq7_handler();
 
 void irq0_handler() {
     // unset mask button if 0x6FF timer interruptions have ocurred
-    static int mask_button_counter = 0x6FF;
+    static int mask_button_counter = 0xF;
     mask_button_counter--;
     if (mask_button_counter == 0) {
         unset_mask(mask_buttons);
-        mask_button_counter = 0x6FF;
+        mask_button_counter = 0xF;
     }
     // refreshes display
     refresh();
@@ -61,7 +61,7 @@ void irq5_handler() {
     // set counter
     read_button();
     // print segment
-    refresh();
+    // refresh();
     // mask the button pressing
     set_mask(mask_buttons);
 }
@@ -70,7 +70,7 @@ void irq6_handler() {
     // set counter
     read_button();
     // print segment
-    refresh();
+    // refresh();
     // mask the button pressing
     set_mask(mask_buttons);
 }
@@ -79,7 +79,7 @@ void irq7_handler() {
     // set counter
     read_button();
     // print segment
-    refresh();
+    // refresh();
     // mask the button pressing
     set_mask(mask_buttons);
 }

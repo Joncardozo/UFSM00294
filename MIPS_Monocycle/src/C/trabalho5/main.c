@@ -42,15 +42,15 @@ void delay_led(int delay_1, int delay_2) {
 int main() {
 	unsigned int* data = (volatile unsigned int*) IO_PORT_DATA_ADDR;
 	int leds = 0;
-	int counter = 0;
+	static int counter_led = 0;
 	while(1) {
-		counter2led(counter, &leds);
+		counter2led(counter_led, &leds);
 		*data = (leds << 15) | (*data & data_keep_mask);
-		// delay_led(0xFFFF, 0x20);
-		delay(0x1, 0x1);
-		counter++;
-		if (counter == 16) {
-			counter = 0;
+		delay_led(0xFF, 0x1);
+		// delay_led(0x1, 0x1);
+		counter_led++;
+		if (counter_led == 16) {
+			counter_led = 0;
 		}
 	}
 	return 0;
