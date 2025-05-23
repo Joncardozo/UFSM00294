@@ -29,7 +29,7 @@
 #define DISP_F ~0b01110001
 
 void setup_io();
-void counter2seg(int number, char* display_hex);
+void counter2seg(char* display_hex);
 void delay(int delay_1, int delay_2);
 int read_button();
 int debounce();

@@ -22,7 +22,7 @@ entity Timer  is
     port (  
         clk         : in std_logic;
         rst         : in std_logic; 
-        data        : in std_logic_vector (DATA_WIDTH-1 downto 0);
+        data        : inout std_logic_vector (DATA_WIDTH-1 downto 0);
         rw          : in std_logic; -- Read = 0; Write = 1
         ce          : in std_logic;
         time_out    : out std_logic

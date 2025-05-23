@@ -11,8 +11,10 @@ static int counter = 0;
 const int up_mask = 0b100;
 const int down_mask = 0b010;
 const int reset_mask = 0b001;
-const int disp_en_mask_inversor = 0b0001100000000000;
-const int data_keep_mask = 0b11111111110000000000111;
+const int disp_en_mask = 0x00001800;
+const int data_disp_keep = 0xffffe007;
+const int data_disp_mask = 0x000007f8;
+const int data_en_keep = 0xffffe7ff;
 
 
 void setup_io_display() {
@@ -59,6 +61,7 @@ int debounce() {
 
 
 int read_button() {
+	char button_value = 0;
 	for (int i = 0; i < 32; i++) {
 		char button_value = debounce();
 	}
@@ -84,25 +87,25 @@ int read_button() {
 }
 
 void print_display(int disp_index, char disp_num) {
-	int display_enable_seg = ((int)*data_display & disp_en_mask_inversor) >> 11;
+	int display_enable_seg = ((int)*data_display & disp_en_mask) >> 11;
     if (disp_index == 0) {
-        *data_display = (0b1111 << 11) | (*data_display & data_keep_mask);
-        *data_display = (0b1110 << 11) | (disp_num << 3) | (*data_display & data_keep_mask);
+        *data_display = (0b1111 << 11) | (*data_display & data_en_keep);
+        *data_display = (0b1110 << 11) | (disp_num << 3) | (*data_display & (data_en_keep & data_disp_keep));
     }
     else if (disp_index == 1) {
 		if (disp_num == DISP_0) {
-			*data_display = (0b1111 << 11) | (*data_display & data_keep_mask);
+			*data_display = (0b1111 << 11) | (*data_display & data_en_keep);
 		}
 		else {
-			*data_display = (0b1111 << 11) | (*data_display & data_keep_mask);
-			*data_display = (0b1101 << 11) | (disp_num << 3) | (*data_display & data_keep_mask);
+			*data_display = (0b1111 << 11) | (*data_display & data_en_keep);
+			*data_display = (0b1101 << 11) | (disp_num << 3) | (*data_display & (data_en_keep & data_disp_keep));
 		}
     }
 }
 
 void refresh() {
 	// get which segment
-    int segment = (*data_display & disp_en_mask_inversor) >> 11;
+    int segment = (*data_display & disp_en_mask) >> 11;
 	//change segment
 	segment ^= 0b11;
 	int disp_index;
@@ -111,7 +114,7 @@ void refresh() {
         case 2: disp_index = 0; break;
     }
 	// save current segment
-	*data_display = (segment << 11) | (*data_display & data_keep_mask);
+	*data_display = (segment << 11) | (*data_display & data_en_keep);
 	// integer to display pattern
 	char seg_pattern[2];
 	counter2seg(seg_pattern);

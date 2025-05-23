@@ -15,7 +15,7 @@ package MIPS_pkg is
         UNIMPLEMENTED_INSTRUCTION, NOP, ADDU, SUBU, AAND, ANDI, OOR, SW, LW, ADDIU, 
         ORI, SLT, BEQ, BNE, J, JR, JAL, LUI, XXOR, XORI, NNOR, SSLL, SSRL, SSRA, SLLV,
         SRLV, SRAV, SLTI, SLTIU, BGEZ, BLEZ, LB, LBU, LH, LHU, SB, SH, JALR, SLTU, 
-        ERET, BLTZ, BGTZ
+        ERET, BLTZ, BGTZ, MTC0
     );
     
     -- Functions used to facilitate the processor description
@@ -99,84 +99,86 @@ package body MIPS_pkg is
 
                 end if;
 
-        when "000001" => --REGIMM GROUP
-            if instruction(20 downto 16) = "00001" then
-                decodedInstruction := BGEZ; 
-            elsif instruction(20 downto 16) = "00000" then
-                decodedInstruction := BLTZ;
-            end if;
+            when "000001" => --REGIMM GROUP
+                if instruction(20 downto 16) = "00001" then
+                    decodedInstruction := BGEZ; 
+                elsif instruction(20 downto 16) = "00000" then
+                    decodedInstruction := BLTZ;
+                end if;
 
-        when "000111" =>
-            decodedInstruction := BGTZ;
+            when "000111" =>
+                decodedInstruction := BGTZ;
 
-        when "101011" =>
-            decodedInstruction := SW;
-        
-        when "000110" =>
-            decodedInstruction := BLEZ;
+            when "101011" =>
+                decodedInstruction := SW;
+            
+            when "000110" =>
+                decodedInstruction := BLEZ;
 
-        when "100011" =>
-            decodedInstruction := LW;
+            when "100011" =>
+                decodedInstruction := LW;
 
-        when "100000" =>
-            decodedInstruction := LB;
+            when "100000" =>
+                decodedInstruction := LB;
 
-        when "100100" =>
-            decodedInstruction := LBU;
-        
-        when "100001" =>
-            decodedInstruction := LH;
+            when "100100" =>
+                decodedInstruction := LBU;
+            
+            when "100001" =>
+                decodedInstruction := LH;
 
-        when "100101" =>
-            decodedInstruction := LHU;
-        
-        when "001001" =>
-            decodedInstruction := ADDIU;
-        
-        when "001101" =>
-            decodedInstruction := ORI;
+            when "100101" =>
+                decodedInstruction := LHU;
+            
+            when "001001" =>
+                decodedInstruction := ADDIU;
+            
+            when "001101" =>
+                decodedInstruction := ORI;
 
-        when "001011" =>
-            decodedInstruction := SLTIU;
+            when "001011" =>
+                decodedInstruction := SLTIU;
 
-        when "001010" =>
-            decodedInstruction := SLTI;
+            when "001010" =>
+                decodedInstruction := SLTI;
 
-        when "001110" =>
-            decodedInstruction := XORI;
+            when "001110" =>
+                decodedInstruction := XORI;
 
-        when "001100" =>
-            decodedInstruction := ANDI;
-        
-        when "000100"  =>
-            decodedInstruction := BEQ;
+            when "001100" =>
+                decodedInstruction := ANDI;
+            
+            when "000100"  =>
+                decodedInstruction := BEQ;
 
-        when "000101" => 
-            decodedInstruction := BNE;
-        
-        when "000010" =>
-            decodedInstruction := J;
-        
-        when "000011" =>
-            decodedInstruction := JAL;
+            when "000101" => 
+                decodedInstruction := BNE;
+            
+            when "000010" =>
+                decodedInstruction := J;
+            
+            when "000011" =>
+                decodedInstruction := JAL;
 
-        when "101000" =>
-            decodedInstruction := SB;
+            when "101000" =>
+                decodedInstruction := SB;
 
-        when "101001" =>
-            decodedInstruction := SH;
-	when "010000" => -- COP0 group
-	    if instruction(25 downto 21) = "10000" and instruction(5 downto 0) = "011000" then
-		decodedInstruction := ERET;
-	    end if;
-        
-        when "001111" => 
-            if instruction(25 downto 21) = "00000" then
-                decodedInstruction := LUI;
-            end if;
-        
-        when others=>    
-            decodedInstruction := UNIMPLEMENTED_INSTRUCTION;
+            when "101001" =>
+                decodedInstruction := SH;
+            when "010000" => -- COP0 group
+                if instruction(25 downto 21) = "10000" and instruction(5 downto 0) = "011000" then
+                    decodedInstruction := ERET;
+                elsif instruction(25 downto 21) = "00100" then
+                    decodedInstruction := MTC0;
+                end if;
+            
+            when "001111" => 
+                if instruction(25 downto 21) = "00000" then
+                    decodedInstruction := LUI;
+                end if;
+            
+            when others=>    
+                decodedInstruction := UNIMPLEMENTED_INSTRUCTION;
         end case;
         
         return decodedInstruction;

@@ -112,7 +112,7 @@ begin
 	end generate;
 
 	-- data out para bus do controlador de perifericos
-	data <= data_out when ((rw = '0') and (ce = '1')) else 'Z';
+	data <= data_out when ((rw = '0') and (ce = '1')) else (others => 'Z');
 
 	-- data in do controlador de perifericos
 	data_in <= data;

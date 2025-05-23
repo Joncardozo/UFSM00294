@@ -42,10 +42,21 @@ InterruptionServiceRoutine:
     lw      $sp, 0($k1)
 
     #### jump table
-    # Carrega endereço do interruptor e salta para InterruptionRequest
-    #li      $t0, 0x80000F00
-    #lw      $a0, 0($t0)
-    #jal     InterruptionRequest
+    ## Carrega endereço do interruptor
+    # carrega endereço dos handlers
+    la      $t0, irq_handlers
+    # carrega endereço do registrador de ID de interrupcao
+    la      $t1, 0x80000200
+    # le o id de interrupcao para indexar os handlers
+    lw      $t2, 0($t1)
+    # multiplica por 4 o id
+    sll     $t2, $t2, 2
+    # indexa o handler correspondente ao periferico que gerou interrupcao
+    addu    $t3, $t0, $t2
+    lw      $t4, 0($t3)
+    # salta para handler
+    jal     $t4
+    nop
 
     # Default
     j RestoreContext     

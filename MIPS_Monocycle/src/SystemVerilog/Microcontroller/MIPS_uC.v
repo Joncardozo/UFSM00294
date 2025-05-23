@@ -1,8 +1,8 @@
 module MIPS_uC(
-	//input wire 			sys_clk,
-	//input wire 			rst_sync,
-	input wire 				clk,
-	input wire 				rst,
+	input wire 			sys_clk,
+	input wire 			rst_sync,
+	// input wire 				clk,
+	// input wire 				rst,
 	inout wire [31:0] 		port_io
 );
 
@@ -23,7 +23,7 @@ module MIPS_uC(
 	parameter MASK_ADDR					= 2'b01;
 	parameter INT_ACK_ADDR				= 2'b10;
 	// endereco dos perifericos
-	parameter PORT_CONFIG_ADDR			= 4'b0000;
+	parameter PORTIO_ADDR				= 4'b0000;
 	parameter TIMER_ADDR				= 4'b0001;
 	parameter INTR_CTRL_ADDR			= 4'b0010;
 	parameter PERIPH_CONTR				= 4'b1111;
@@ -60,10 +60,10 @@ module MIPS_uC(
 	wire [7:0]		irq;
 
 	// clock manager interface
-	wire			sys_clk;
+	// wire			sys_clk;
 
 	// reset synchronyzer interface
-	wire			rst_sync;
+	// wire			rst_sync;
 
 	// negative clock
 	wire 			sys_clk_n;
@@ -72,7 +72,7 @@ module MIPS_uC(
 	//////////////////////////////////////////////////////////////////////
 	// intermediate wire assignments
 	// data in cpu
-	assign data_in = (address[31]) ? data_out_ctrl : data_out_mem;
+	assign data_in = (data_address[31]) ? data_out_ctrl : data_out_mem;
 	// decoder 
 	assign rw_ctrl 		= (|wbe);
 	// data memory
@@ -136,12 +136,11 @@ module MIPS_uC(
 
 	// peripheral controller instance
 	peripheral_controller #(
-		.DATA_WIDTH			(32),
-		.PERIPH_1_ADDR		(PORT_IO_ADDR),
+		.PERIPH_1_ADDR		(PORTIO_ADDR),
 		.PERIPH_2_ADDR		(TIMER_ADDR),
 		.PERIPH_3_ADDR		(INTR_CTRL_ADDR)
 	) peripheral_controller_instance (
-        .address			(address),
+        .address			(data_address),
         .rw					(rw_ctrl),
         .ce					(ce),
 		.data_from_periph	(data_periph),
@@ -162,7 +161,7 @@ module MIPS_uC(
         .PORT_INTERRUPT_ADDR(PORT_INTERRUPT_ADDR),
 		.PORT_COUNTER_ADDR	(PORT_COUNTER_ADDR)
 	) port_io_instance (
-        .clk				(sys_clk),
+        .clk				(sys_clk_n),
         .rst             	(rst_sync),
         .data				(data_periph),
         .address			(address_reg),
@@ -176,7 +175,7 @@ module MIPS_uC(
 	Timer #(
 		.DATA_WIDTH			(32)
 	) timer_instance (
-		.clk				(sys_clk),
+		.clk				(sys_clk_n),
         .rst				(rst_sync),
         .data				(data_periph),
         .rw					(rw_out[1]),
@@ -190,9 +189,9 @@ module MIPS_uC(
 		.MASK_ADDR			(MASK_ADDR),
 		.INT_ACK_ADDR		(INT_ACK_ADDR)
 	) PIC (
-		.clk				(sys_clk),
+		.clk				(sys_clk_n),
 		.rst				(rst_sync),
-		.data				(data_periph),
+		.data				(data_periph[7:0]),
 		.address			(address_reg[1:0]),
 		.rw					(rw_out[2]),
 		.ce					(ce_out[2]),
@@ -200,18 +199,18 @@ module MIPS_uC(
 		.irq				(irq)
 	);
 
-	// clock manager instance
-	ClockManager clk_mgr (
-        .clk_100MHz			(clk),
-        .clk_10MHz			(sys_clk)
-	);
+	// // clock manager instance
+	// ClockManager clk_mgr (
+    //     .clk_100MHz			(clk),
+    //     .clk_10MHz			(sys_clk)
+	// );
 
-	// reset synchronizer instance
-	ResetSynchonizer rst_synchronizer (
-        .clk				(sys_clk),
-        .rst_in				(rst),
-        .rst_out			(rst_sync)
-	);
+	// // reset synchronizer instance
+	// ResetSynchonizer rst_synchronizer (
+    //     .clk				(sys_clk),
+    //     .rst_in				(rst),
+    //     .rst_out			(rst_sync)
+	// );
 	//////////////////////////////////////////////////////////////////////
 
 endmodule

@@ -1,0 +1,176 @@
+
+Discarded input sections
+
+ .reginfo       0x0000000000000000       0x18 kernel.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 kernel.o
+ .reginfo       0x0000000000000000       0x18 display_7_seg.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 display_7_seg.o
+ .reginfo       0x0000000000000000       0x18 interrupt_controller_driver.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 interrupt_controller_driver.o
+ .reginfo       0x0000000000000000       0x18 handlers.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 handlers.o
+ .reginfo       0x0000000000000000       0x18 main.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 main.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+INSTRUCTION_MEMORY 0x0000000000000000 0x0000000000002000
+DATA_MEMORY      0x0000000000000000 0x0000000000002000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+
+.text           0x0000000000000000      0x774
+ boot.o(.text)
+ .text          0x0000000000000000       0xa8 boot.o
+                0x0000000000000000                boot_start
+                0x00000000000000ff                . = 0xff
+ *fill*         0x00000000000000a8       0x57 
+ kernel.o(.text)
+ *fill*         0x00000000000000ff        0x1 
+ .text          0x0000000000000100      0x134 kernel.o
+                0x0000000000000100                InterruptionServiceRoutine
+ *(.text.*)
+ .text.startup  0x0000000000000234       0xb4 main.o
+                0x0000000000000234                main
+ .text          0x00000000000002e8      0x2c0 display_7_seg.o
+                0x00000000000002e8                setup_io_display
+                0x000000000000031c                counter2seg
+                0x0000000000000330                delay
+                0x00000000000003a8                debounce
+                0x0000000000000440                read_button
+                0x0000000000000474                print_display
+                0x0000000000000500                refresh
+ .text          0x00000000000005a8       0x74 interrupt_controller_driver.o
+                0x00000000000005a8                set_mask
+                0x00000000000005e0                unset_mask
+ .text          0x000000000000061c       0xbc handlers.o
+                0x000000000000061c                irq1_handler
+                0x0000000000000624                irq0_handler
+                0x0000000000000684                irq5_handler
+                0x00000000000006b0                irq6_handler
+                0x00000000000006b8                irq7_handler
+                0x00000000000006c0                irq4_handler
+                0x00000000000006c8                irq2_handler
+                0x00000000000006d0                irq3_handler
+ .text          0x00000000000006d8       0x9c main.o
+                0x00000000000006d8                counter2led
+                0x00000000000006fc                delay_led
+
+.MIPS.abiflags  0x0000000000000778       0x18
+ .MIPS.abiflags
+                0x0000000000000778       0x18 boot.o
+
+.rel.dyn        0x0000000000000790        0x0
+ .rel.dyn       0x0000000000000790        0x0 handlers.o
+
+.data           0x0000000000000000      0x334 load address 0x0000000000000790
+ *(.sdata)
+ .sdata         0x0000000000000000       0x28 display_7_seg.o
+                0x0000000000000000                data_en_keep
+                0x0000000000000004                data_disp_mask
+                0x0000000000000008                data_disp_keep
+                0x000000000000000c                disp_en_mask
+                0x0000000000000010                reset_mask
+                0x0000000000000014                down_mask
+                0x0000000000000018                up_mask
+                0x000000000000001c                enable_display
+                0x0000000000000020                config_display
+                0x0000000000000024                data_display
+ .sdata         0x0000000000000028        0x4 interrupt_controller_driver.o
+                0x0000000000000028                mask_reg
+ .sdata         0x000000000000002c        0x1 handlers.o
+                0x000000000000002c                mask_buttons
+ *fill*         0x000000000000002d        0x3 
+ .sdata         0x0000000000000030        0x8 main.o
+                0x0000000000000030                data_led_mask
+                0x0000000000000034                data_keep_mask
+ *(.sdata.*)
+ *(.data)
+ .data          0x0000000000000038      0x208 boot.o
+                0x0000000000000238                kernel_sp
+                0x000000000000023c                user_sp
+ .data          0x0000000000000240       0x74 kernel.o
+ .data          0x00000000000002b4        0xc display_7_seg.o
+ .data          0x00000000000002c0        0x0 interrupt_controller_driver.o
+ .data          0x00000000000002c0       0x24 handlers.o
+                0x00000000000002c4                irq_handlers
+ .data          0x00000000000002e4        0x0 main.o
+ *(.data.*)
+ *(.rdata)
+ *(.rodata)
+ .rodata        0x00000000000002e4       0x10 display_7_seg.o
+                0x00000000000002e4                display_pattern
+ .rodata        0x00000000000002f4       0x40 main.o
+                0x00000000000002f4                led_pattern
+ *(.rodata.*)
+
+.bss            0x0000000000000334        0x0 load address 0x0000000000000ac4
+ *(.sbss)
+ *(.sbss.*)
+ *(.bss)
+ .bss           0x0000000000000334        0x0 boot.o
+ .bss           0x0000000000000334        0x0 kernel.o
+ .bss           0x0000000000000334        0x0 display_7_seg.o
+ .bss           0x0000000000000334        0x0 interrupt_controller_driver.o
+ .bss           0x0000000000000334        0x0 handlers.o
+ .bss           0x0000000000000334        0x0 main.o
+ *(.bss.*)
+ *(.scommon)
+ *(COMMON)
+                0x0000000000001ffc                . = ((ORIGIN (DATA_MEMORY) + LENGTH (DATA_MEMORY)) - 0x4)
+                0x0000000000001ffc                . = ALIGN (0x4)
+                0x0000000000001ffc                _stack_ptr = .
+LOAD boot.o
+LOAD kernel.o
+LOAD display_7_seg.o
+LOAD interrupt_controller_driver.o
+LOAD handlers.o
+LOAD main.o
+OUTPUT(main.elf elf32-tradlittlemips)
+
+.reginfo        0x0000000000000000       0x18
+ .reginfo       0x0000000000000000       0x18 boot.o
+
+.pdr            0x0000000000000000      0x280
+ .pdr           0x0000000000000000        0x0 boot.o
+ .pdr           0x0000000000000000        0x0 kernel.o
+ .pdr           0x0000000000000000       0xe0 display_7_seg.o
+ .pdr           0x00000000000000e0       0x40 interrupt_controller_driver.o
+ .pdr           0x0000000000000120      0x100 handlers.o
+ .pdr           0x0000000000000220       0x60 main.o
+
+.gnu.attributes
+                0x0000000000000000       0x10
+ .gnu.attributes
+                0x0000000000000000       0x10 boot.o
+ .gnu.attributes
+                0x0000000000000010       0x10 kernel.o
+ .gnu.attributes
+                0x0000000000000020       0x10 display_7_seg.o
+ .gnu.attributes
+                0x0000000000000030       0x10 interrupt_controller_driver.o
+ .gnu.attributes
+                0x0000000000000040       0x10 handlers.o
+ .gnu.attributes
+                0x0000000000000050       0x10 main.o
+
+.mdebug.abi32   0x0000000000000000        0x0
+ .mdebug.abi32  0x0000000000000000        0x0 display_7_seg.o
+ .mdebug.abi32  0x0000000000000000        0x0 interrupt_controller_driver.o
+ .mdebug.abi32  0x0000000000000000        0x0 handlers.o
+ .mdebug.abi32  0x0000000000000000        0x0 main.o
+
+.comment        0x0000000000000000       0x44
+ .comment       0x0000000000000000       0x44 display_7_seg.o
+                                         0x45 (size before relaxing)
+ .comment       0x0000000000000044       0x45 interrupt_controller_driver.o
+ .comment       0x0000000000000044       0x45 handlers.o
+ .comment       0x0000000000000044       0x45 main.o

@@ -10,9 +10,8 @@
 #define INTR_CTRL_MASK_ADDR (INTR_CTRL_ADDR + 0b010000)
 #define INTR_CTRL_INT_ACK_ADDR (INTR_CTRL_ADDR + 0b100000)
 
-const char 
 
-void set_mask_irq(char irq_id);
-void unset_mask_id(char irq_id);
+void set_mask(char irq_id);
+void unset_mask(char irq_id);
 
 #endif

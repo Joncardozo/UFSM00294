@@ -47,7 +47,7 @@ architecture behavioral of MIPS_monocycle is
     signal interruptionTreatment : std_logic := '0';
     signal EPC : UNSIGNED(31 downto 0);  -- Exception Program Counter
     -- signal nextPc : UNSIGNED(31 downto 0);
-    constant ISR_ADDR : UNSIGNED(31 downto 0) := x"000000FF";  
+    -- constant ISR_ADDR : UNSIGNED(31 downto 0) := x"000000FF";  
     
     -- Register file
     type RegisterArray is array (natural range <>) of UNSIGNED(31 downto 0);
@@ -65,6 +65,9 @@ architecture behavioral of MIPS_monocycle is
     
     -- Locks the processor until the first clk rising edge
     signal lock: boolean;
+
+    -- Coprocessor exception register
+    signal ISR_AD        : UNSIGNED(31 downto 0) := x"00000000";
     
     signal decodedInstruction: Instruction_type;
        
@@ -108,7 +111,7 @@ end process;
     -- In R-type instructions the destination register is in the 'instruction_rd' field
     -- MUX at the register file input (datapath diagram)
     MUX_RF: writeRegister <= UNSIGNED(instruction_rd) when R_Type(instruction) else -- R-type instructions
-                             "11111" when decodedInstruction = JAL else    -- $ra ($31)
+                             "11111" when (decodedInstruction = JAL or decodedInstruction = JALR) else    -- $ra ($31)
                              UNSIGNED(instruction_rt); -- Load instructions
       
     -- Sign extends the low 16 bits of instruction (I-Type immediate constant)
@@ -136,7 +139,7 @@ end process;
     -- In case of jump/branch, PC must be bypassed due to synchronous memory read
 
 
-    instructionFetchAddress <=      ISR_ADDR when (intr = '1' and interruptionTreatment = '0') else
+    instructionFetchAddress <=      ISR_AD when (intr = '1' and interruptionTreatment = '0') else
                                     EPC when decodedInstruction = ERET else
                                     branchTarget when ((decodedInstruction = BEQ and zero = '1') or (decodedInstruction = BNE and zero = '0')) else 
                                     branchTarget when (decodedInstruction = BGTZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) > 0) else
@@ -144,7 +147,7 @@ end process;
                                     branchTarget when (decodedInstruction = BLTZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) < 0) else
                                     branchTarget when (decodedInstruction = BLEZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) <= 0) else
                                     jumpTarget when decodedInstruction = J or decodedInstruction = JAL else
-                                    ALUoperand1 when decodedInstruction = JR else
+                                    ALUoperand1 when (decodedInstruction = JR or decodedInstruction = JALR) else
                                     pc;
                                
     -- instructionFetchAddress <= ISR_ADDR when (intr = '1' and interruptionTreatment = '0') else
@@ -228,6 +231,18 @@ end process;
         elsif rising_edge(clk) then
             if regWrite = '1' and writeRegister /= 0 then
                 registerFile(TO_INTEGER(writeRegister)) <= writeData;
+            end if;
+        end if;
+    end process;
+
+    -- Coprocessor 0 register file
+    COPR0_REG_FILE: process(clk, rst)
+    begin
+        if rst = '1' then
+            ISR_AD <= (others => '0');
+        elsif rising_edge(clk) then
+            if decodedInstruction = MTC0 and TO_INTEGER(UNSIGNED(instruction_rd)) = 31 then
+                ISR_AD <= readData2;
             end if;
         end if;
     end process;

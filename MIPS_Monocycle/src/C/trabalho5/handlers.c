@@ -10,7 +10,7 @@
 #define PERIPH_BASE 0x80000000
 #define TIMER_ADDR (PERIPH_BASE + 0b000100000000)
 
-const char mask_buttons = 0b111 << 5;
+const char mask_buttons = 0b000 << 5;
 
 
 void irq0_handler();

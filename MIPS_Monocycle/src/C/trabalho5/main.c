@@ -30,7 +30,7 @@ void counter2led(int number, int* leds) {
 }
 
 
-void delay(int delay_1, int delay_2) {
+void delay_led(int delay_1, int delay_2) {
     for (int i = 0; i < delay_1; i++) {
         for (int j = 0; j < delay_2; j++) {
             volatile int x = 1;
@@ -46,8 +46,8 @@ int main() {
 	while(1) {
 		counter2led(counter, &leds);
 		*data = (leds << 15) | (*data & data_keep_mask);
-		delay(0xFFFF, 0x20);
-		// delay(0x1, 0x1);
+		// delay_led(0xFFFF, 0x20);
+		delay(0x1, 0x1);
 		counter++;
 		if (counter == 16) {
 			counter = 0;
