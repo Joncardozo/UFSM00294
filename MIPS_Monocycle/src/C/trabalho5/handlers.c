@@ -26,11 +26,11 @@ void irq7_handler();
 
 void irq0_handler() {
     // unset mask button if 0x6FF timer interruptions have ocurred
-    static int mask_button_counter = 0xF;
+    static int mask_button_counter = 0xFF;
     mask_button_counter--;
     if (mask_button_counter == 0) {
         unset_mask(mask_buttons);
-        mask_button_counter = 0xF;
+        mask_button_counter = 0xFF;
     }
     // refreshes display
     refresh();

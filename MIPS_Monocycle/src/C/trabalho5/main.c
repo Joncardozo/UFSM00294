@@ -46,7 +46,7 @@ int main() {
 	while(1) {
 		counter2led(counter_led, &leds);
 		*data = (leds << 15) | (*data & data_keep_mask);
-		delay_led(0xFF, 0x1);
+		delay_led(0x6FFF, 0xA);
 		// delay_led(0x1, 0x1);
 		counter_led++;
 		if (counter_led == 16) {

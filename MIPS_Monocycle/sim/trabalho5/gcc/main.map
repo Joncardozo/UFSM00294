@@ -27,7 +27,7 @@ DATA_MEMORY      0x0000000000000000 0x0000000000002000
 Linker script and memory map
 
 
-.text           0x0000000000000000      0x7a4
+.text           0x0000000000000000      0x7b4
  boot.o(.text)
  .text          0x0000000000000000       0xa8 boot.o
                 0x0000000000000000                boot_start
@@ -38,38 +38,38 @@ Linker script and memory map
  .text          0x0000000000000100      0x14c kernel.o
                 0x0000000000000100                InterruptionServiceRoutine
  *(.text.*)
- .text.startup  0x000000000000024c       0x90 main.o
+ .text.startup  0x000000000000024c       0xa0 main.o
                 0x000000000000024c                main
- .text          0x00000000000002dc      0x348 display_7_seg.o
-                0x00000000000002dc                setup_io_display
-                0x0000000000000310                counter2seg
-                0x0000000000000354                read_button
-                0x00000000000004e8                print_display
-                0x0000000000000574                refresh
- .text          0x0000000000000624       0x30 interrupt_controller_driver.o
-                0x0000000000000624                set_mask
-                0x000000000000063c                unset_mask
- .text          0x0000000000000654       0xb4 handlers.o
-                0x0000000000000654                irq1_handler
-                0x000000000000065c                irq0_handler
-                0x00000000000006bc                irq5_handler
-                0x00000000000006e0                irq6_handler
-                0x00000000000006e8                irq7_handler
-                0x00000000000006f0                irq4_handler
-                0x00000000000006f8                irq2_handler
-                0x0000000000000700                irq3_handler
- .text          0x0000000000000708       0x9c main.o
-                0x0000000000000708                counter2led
-                0x000000000000072c                delay_led
+ .text          0x00000000000002ec      0x348 display_7_seg.o
+                0x00000000000002ec                setup_io_display
+                0x0000000000000320                counter2seg
+                0x0000000000000364                read_button
+                0x00000000000004f8                print_display
+                0x0000000000000584                refresh
+ .text          0x0000000000000634       0x30 interrupt_controller_driver.o
+                0x0000000000000634                set_mask
+                0x000000000000064c                unset_mask
+ .text          0x0000000000000664       0xb4 handlers.o
+                0x0000000000000664                irq1_handler
+                0x000000000000066c                irq0_handler
+                0x00000000000006cc                irq5_handler
+                0x00000000000006f0                irq6_handler
+                0x00000000000006f8                irq7_handler
+                0x0000000000000700                irq4_handler
+                0x0000000000000708                irq2_handler
+                0x0000000000000710                irq3_handler
+ .text          0x0000000000000718       0x9c main.o
+                0x0000000000000718                counter2led
+                0x000000000000073c                delay_led
 
-.MIPS.abiflags  0x00000000000007a8       0x18
+.MIPS.abiflags  0x00000000000007b8       0x18
  .MIPS.abiflags
-                0x00000000000007a8       0x18 boot.o
+                0x00000000000007b8       0x18 boot.o
 
-.rel.dyn        0x00000000000007c0        0x0
- .rel.dyn       0x00000000000007c0        0x0 handlers.o
+.rel.dyn        0x00000000000007d0        0x0
+ .rel.dyn       0x00000000000007d0        0x0 handlers.o
 
-.data           0x0000000000000000      0x334 load address 0x00000000000007c0
+.data           0x0000000000000000      0x334 load address 0x00000000000007d0
  *(.sdata)
  .sdata         0x0000000000000000       0x2c display_7_seg.o
                 0x0000000000000000                data_en_keep
@@ -112,7 +112,7 @@ Linker script and memory map
                 0x00000000000002f4                led_pattern
  *(.rodata.*)
 
-.bss            0x0000000000000334        0x0 load address 0x0000000000000af4
+.bss            0x0000000000000334        0x0 load address 0x0000000000000b04
  *(.sbss)
  *(.sbss.*)
  *(.bss)
