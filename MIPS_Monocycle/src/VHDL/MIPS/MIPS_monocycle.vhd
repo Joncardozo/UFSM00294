@@ -45,7 +45,7 @@ architecture behavioral of MIPS_monocycle is
     signal selectedHalfWordExtended : UNSIGNED(31 downto 0);
     -- Suporte a interrupção 
     signal interruptionTreatment : std_logic := '0';
-    signal EPC : UNSIGNED(31 downto 0);  -- Exception Program Counter
+
     -- signal nextPc : UNSIGNED(31 downto 0);
     -- constant ISR_ADDR : UNSIGNED(31 downto 0) := x"000000FF";  
     
@@ -67,7 +67,9 @@ architecture behavioral of MIPS_monocycle is
     signal lock: boolean;
 
     -- Coprocessor exception register
-    signal ISR_AD        : UNSIGNED(31 downto 0) := x"00000000";
+    signal ISR_AD        : UNSIGNED(31 downto 0) := x"00000000"; --$31
+    signal EPC : UNSIGNED(31 downto 0);  -- Exception Program Counter --$14
+    signal STATUS : UNSIGNED(31 downto 0) := x"00000000"; --$12
     
     signal decodedInstruction: Instruction_type;
        
@@ -207,11 +209,14 @@ end process;
     -- Selects the data to be written in the register file
     -- In load instructions the data comes from the data memory
     -- MUX at the data memory output
-    MUX_DATA_MEM: writeData <= UNSIGNED(data_in) when decodedInstruction = LW else
+    MUX_DATA_MEM: writeData <=  UNSIGNED(data_in) when decodedInstruction = LW else
                                 selectedByteExtended when decodedInstruction = LB or decodedInstruction = LBU else
                                 selectedHalfWordExtended when decodedInstruction = LH or decodedInstruction = LHU else
-                               pc when decodedInstruction = JAL  or decodedInstruction = JALR else
-                               result;
+                                ECP when decodedInstruction = MFC0 and TO_INTEGER(UNSIGNED(instruction_rd)) = 14 else
+                                STATUS when decodedInstruction = MFC0 and TO_INTEGER(UNSIGNED(instruction_rd)) = 12 else
+                                ISR_AD when decodedInstruction = MFC0 and TO_INTEGER(UNSIGNED(instruction_rd)) = 31 else
+                                pc when decodedInstruction = JAL  or decodedInstruction = JALR else
+                                result;
     
     -- R-type, ADDIU, ORI and load instructions, store the result in the register file
     regWrite <= '1' when WriteRegisterFile(decodedInstruction) else '0';
@@ -240,9 +245,15 @@ end process;
     begin
         if rst = '1' then
             ISR_AD <= (others => '0');
-        elsif rising_edge(clk) then
-            if decodedInstruction = MTC0 and TO_INTEGER(UNSIGNED(instruction_rd)) = 31 then
+            EPC <= (others => '0');
+            STATUS <= (others => '0');
+        elsif rising_edge(clk) and decodedInstruction = MTC0 then
+            if TO_INTEGER(UNSIGNED(instruction_rd)) = 31 then
                 ISR_AD <= readData2;
+            elsif TO_INTEGER(UNSIGNED(instruction_rd)) = 14 then
+                EPC <= readData2;
+            elsif TO_INTEGER(UNSIGNED(instruction_rd)) = 12 then
+                STATUS <= readData2;
             end if;
         end if;
     end process;

@@ -15,7 +15,7 @@ package MIPS_pkg is
         UNIMPLEMENTED_INSTRUCTION, NOP, ADDU, SUBU, AAND, ANDI, OOR, SW, LW, ADDIU, 
         ORI, SLT, BEQ, BNE, J, JR, JAL, LUI, XXOR, XORI, NNOR, SSLL, SSRL, SSRA, SLLV,
         SRLV, SRAV, SLTI, SLTIU, BGEZ, BLEZ, LB, LBU, LH, LHU, SB, SH, JALR, SLTU, 
-        ERET, BLTZ, BGTZ, MTC0
+        ERET, BLTZ, BGTZ, MTC0, MFC0
     );
     
     -- Functions used to facilitate the processor description
@@ -170,6 +170,8 @@ package body MIPS_pkg is
                     decodedInstruction := ERET;
                 elsif instruction(25 downto 21) = "00100" then
                     decodedInstruction := MTC0;
+                elsif instruction(25 downto 21) = "00000" then
+                    decodedInstruction := MFC0;
                 end if;
             
             when "001111" => 
@@ -214,7 +216,7 @@ package body MIPS_pkg is
     begin
         
         case (instruction) is
-            when LW | LB | LBU | LH | LHU => -- LB, LBU, LH, LHU
+            when LW | LB | LBU | LH | LHU | MFC0 => -- LB, LBU, LH, LHU
                 result := true;
             
             when others =>

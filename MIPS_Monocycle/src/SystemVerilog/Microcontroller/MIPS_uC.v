@@ -24,7 +24,7 @@ module MIPS_uC(
 	parameter INT_ACK_ADDR				= 2'b10;
 	// endereco dos perifericos
 	parameter PORTIO_ADDR				= 4'b0000;
-	parameter TIMER_ADDR				= 4'b0001;
+	// parameter TIMER_ADDR				= 4'b0001;
 	parameter INTR_CTRL_ADDR			= 4'b0010;
 	parameter PERIPH_CONTR				= 4'b1111;
 	//////////////////////////////////////////////////////////////////////
@@ -167,21 +167,21 @@ module MIPS_uC(
         .address			(address_reg),
         .rw					(rw_out[0]),
         .ce					(ce_out[0]),
-        .irq				(irq[7:5]),
+        .irq				(irq[7:4]),
         .port_io			(port_io)
     );
 
 	// timer instance
-	Timer #(
-		.DATA_WIDTH			(32)
-	) timer_instance (
-		.clk				(sys_clk_n),
-        .rst				(rst_sync),
-        .data				(data_periph),
-        .rw					(rw_out[1]),
-        .ce					(ce_out[1]),
-        .time_out			(irq[0])
-	);
+	// Timer #(
+	// 	.DATA_WIDTH			(32)
+	// ) timer_instance (
+	// 	.clk				(sys_clk_n),
+    //     .rst				(rst_sync),
+    //     .data				(data_periph),
+    //     .rw					(rw_out[1]),
+    //     .ce					(ce_out[1]),
+    //     .time_out			(irq[0])
+	// );
 
 	// PIC instance
 	InterruptController #(

@@ -5,7 +5,7 @@ module MIPS_uC_tb;
   reg rst;
   reg clk;
   wire [31:0] port_io;
-  reg [2:0] buttons;
+  reg [3:0] buttons;
 
   // instancia microcontrolador
   MIPS_uC uut (
@@ -29,32 +29,24 @@ module MIPS_uC_tb;
 
   // estimulo de botoes
   initial begin
-    buttons = 3'b0;
+    buttons = 4'b0000;
     #4000
-    buttons = 3'b100;
+    buttons = 4'b100;
     #10000
-    buttons = 3'b0;
+    buttons = 4'b0;
     #20000
-    buttons = 3'b100;
+    buttons = 4'b100;
     #10000
-    buttons = 3'b010;
+    buttons = 4'b010;
     #10000
-    buttons = 3'b0;
+    buttons = 4'b0;
     #10000
-    buttons = 3'b1;
+    buttons = 4'b1;
     #10000
-    buttons = 3'b0;
+    buttons = 4'b0;
   end
 
-  assign port_io[2:0] = buttons;
-  assign port_io[31:3] = 29'bz;
-
-  assign port_io = 32'bz;
-
-  // tempo total de simulacao
-  initial begin
-    #10000;
-    //$finish;
-  end
+  assign port_io[3:0] = buttons;
+  assign port_io[31:4] = 29'bz;
 
 endmodule

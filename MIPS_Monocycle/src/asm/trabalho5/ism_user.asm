@@ -2,7 +2,7 @@
 
 .set noreorder
 
-.globl InterruptionServiceRoutine
+.globl InterruptionServiceRoutine_user
 InterruptionServiceRoutine:
 
     # Salva contexto 
