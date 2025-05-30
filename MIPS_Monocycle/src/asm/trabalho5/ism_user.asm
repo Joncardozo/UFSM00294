@@ -36,27 +36,45 @@ InterruptionServiceRoutine:
     sw      $fp, 104($k0)
     sw      $sp, 108($k0)   
     sw      $ra, 112($k0)
-
+	
     # Salta para pilha do kernel
     la      $k1, kernel_sp
     lw      $sp, 0($k1)
 
-    #### jump table
-    ## Carrega endereço do interruptor
-    # carrega endereço dos handlers
-    la      $t0, irq_handlers
-    # carrega endereço do registrador de ID de interrupcao
+    # Lê ID da interrupção
     la      $t1, 0x80000200
-    # le o id de interrupcao para indexar os handlers
-    lw      $t2, 0($t1)
-    # multiplica por 4 o id
+    lw      $t2, 0($t1)          # IRQ atual em $t2
+
+    # Mascara interrupções com prioridade menor ou igual à atual
+    la      $t1, 0x80000210      # Endereço da máscara
+    li      $t3, 0xFF
+    srlv    $t3, $t3, $t2        # shift lógico para mascarar prioridades menores
+    sw      $t3, 0($t1)
+
+    # Define ISR_AD como isr_kernel
+    la      $t0, InterruptionServiceRoutine_kernel
+    mtc0    $t0, $31
+
+    # Reabilita interrupções (STATUS[0] = 1)
+    li      $t0, 0b1
+    mtc0    $t0, $12
+
+    #### jump table
+    la      $t0, irq_handlers
     sll     $t3, $t2, 2
-    # indexa o handler correspondente ao periferico que gerou interrupcao
     addu    $t4, $t0, $t3
     lw      $t5, 0($t4)
-    # salta para handler
-    jalr      $t5
+    jalr    $t5
     nop
+
+    # Desabilita interrupções antes de restaurar (STATUS[0] = 0)
+    li      $t0, 0
+    mtc0    $t0, $12
+
+    # Restaura ISR_AD para isr_user
+    la      $t0, InterruptionServiceRoutine_user
+    mtc0    $t0, $31
+
 
     # Default
     j RestoreContext     
