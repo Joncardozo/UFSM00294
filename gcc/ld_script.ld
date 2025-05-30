@@ -11,7 +11,8 @@ SECTIONS
     .text : {               /* Output elf section */        
         boot.o(.text)           /* The code order depends on the objects order passed to linker */
         . = 0xFF;
-        Kernel.o(.text)
+        ism_user.o(.text)
+        ism_kernel.o(.text)
         *(.text.*)
     } > INSTRUCTION_MEMORY
 

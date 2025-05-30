@@ -1,9 +1,10 @@
 .text
 
 .set noreorder
+.set noat
 
 .globl InterruptionServiceRoutine_kernel
-InterruptionServiceRoutine:
+InterruptionServiceRoutine_kernel:
 
     # Salva contexto 
     la      $k0, PCB

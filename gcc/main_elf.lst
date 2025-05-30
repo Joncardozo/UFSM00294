@@ -1,0 +1,593 @@
+
+main.elf:     file format elf32-tradlittlemips
+
+
+Disassembly of section .text:
+
+00000000 <boot_start>:
+   0:	3c1d0000 	lui	sp,0x0
+   4:	27bd0100 	addiu	sp,sp,256
+   8:	3c080000 	lui	t0,0x0
+   c:	25080200 	addiu	t0,t0,512
+  10:	ad1d0000 	sw	sp,0(t0)
+  14:	3c1d0000 	lui	sp,0x0
+  18:	27bd0200 	addiu	sp,sp,512
+  1c:	3c080000 	lui	t0,0x0
+  20:	25080204 	addiu	t0,t0,516
+  24:	ad1d0000 	sw	sp,0(t0)
+  28:	3c080000 	lui	t0,0x0
+  2c:	25080100 	addiu	t0,t0,256
+  30:	4088f800 	mtc0	t0,c0_desave
+  34:	24080001 	li	t0,1
+  38:	40886000 	mtc0	t0,c0_status
+  3c:	3c088000 	lui	t0,0x8000
+  40:	2409000f 	li	t1,15
+  44:	ad090000 	sw	t1,0(t0)
+  48:	24090001 	li	t1,1
+  4c:	00094900 	sll	t1,t1,0x4
+  50:	01095821 	addu	t3,t0,t1
+  54:	240a000f 	li	t2,15
+  58:	ad6a0000 	sw	t2,0(t3)
+  5c:	240a000f 	li	t2,15
+  60:	24090003 	li	t1,3
+  64:	00094900 	sll	t1,t1,0x4
+  68:	01095821 	addu	t3,t0,t1
+  6c:	ad6a0000 	sw	t2,0(t3)
+  70:	3c088000 	lui	t0,0x8000
+  74:	35080210 	ori	t0,t0,0x210
+  78:	240900f0 	li	t1,240
+  7c:	ad090000 	sw	t1,0(t0)
+  80:	0c0000fe 	jal	3f8 <BubbleSort>
+
+00000084 <end_boot>:
+  84:	08000021 	j	84 <end_boot>
+  88:	00000000 	nop
+	...
+
+00000100 <InterruptionServiceRoutine_user>:
+ 100:	3c1a0000 	lui	k0,0x0
+ 104:	275a0208 	addiu	k0,k0,520
+ 108:	af410000 	sw	at,0(k0)
+ 10c:	af420004 	sw	v0,4(k0)
+ 110:	af430008 	sw	v1,8(k0)
+ 114:	af44000c 	sw	a0,12(k0)
+ 118:	af450010 	sw	a1,16(k0)
+ 11c:	af460014 	sw	a2,20(k0)
+ 120:	af470018 	sw	a3,24(k0)
+ 124:	af48001c 	sw	t0,28(k0)
+ 128:	af490020 	sw	t1,32(k0)
+ 12c:	af4a0024 	sw	t2,36(k0)
+ 130:	af4b0028 	sw	t3,40(k0)
+ 134:	af4c002c 	sw	t4,44(k0)
+ 138:	af4d0030 	sw	t5,48(k0)
+ 13c:	af4e0034 	sw	t6,52(k0)
+ 140:	af4f0038 	sw	t7,56(k0)
+ 144:	af58003c 	sw	t8,60(k0)
+ 148:	af590040 	sw	t9,64(k0)
+ 14c:	af500044 	sw	s0,68(k0)
+ 150:	af510048 	sw	s1,72(k0)
+ 154:	af52004c 	sw	s2,76(k0)
+ 158:	af530050 	sw	s3,80(k0)
+ 15c:	af540054 	sw	s4,84(k0)
+ 160:	af550058 	sw	s5,88(k0)
+ 164:	af56005c 	sw	s6,92(k0)
+ 168:	af570060 	sw	s7,96(k0)
+ 16c:	af5c0064 	sw	gp,100(k0)
+ 170:	af5e0068 	sw	s8,104(k0)
+ 174:	af5d006c 	sw	sp,108(k0)
+ 178:	af5f0070 	sw	ra,112(k0)
+ 17c:	3c1b0000 	lui	k1,0x0
+ 180:	277b0200 	addiu	k1,k1,512
+ 184:	8f7d0000 	lw	sp,0(k1)
+ 188:	3c098000 	lui	t1,0x8000
+ 18c:	35290200 	ori	t1,t1,0x200
+ 190:	8d2a0000 	lw	t2,0(t1)
+ 194:	3c098000 	lui	t1,0x8000
+ 198:	35290210 	ori	t1,t1,0x210
+ 19c:	240b00ff 	li	t3,255
+ 1a0:	014b5806 	srlv	t3,t3,t2
+ 1a4:	ad2b0000 	sw	t3,0(t1)
+ 1a8:	3c080000 	lui	t0,0x0
+ 1ac:	25080288 	addiu	t0,t0,648
+ 1b0:	4088f800 	mtc0	t0,c0_desave
+ 1b4:	24080001 	li	t0,1
+ 1b8:	40886000 	mtc0	t0,c0_status
+ 1bc:	3c080000 	lui	t0,0x0
+ 1c0:	2508049c 	addiu	t0,t0,1180
+ 1c4:	000a5880 	sll	t3,t2,0x2
+ 1c8:	010b6021 	addu	t4,t0,t3
+ 1cc:	8d8d0000 	lw	t5,0(t4)
+ 1d0:	01a0f809 	jalr	t5
+ 1d4:	00000000 	nop
+ 1d8:	24080000 	li	t0,0
+ 1dc:	40886000 	mtc0	t0,c0_status
+ 1e0:	3c080000 	lui	t0,0x0
+ 1e4:	25080100 	addiu	t0,t0,256
+ 1e8:	4088f800 	mtc0	t0,c0_desave
+ 1ec:	0800007c 	j	1f0 <RestoreContext>
+
+000001f0 <RestoreContext>:
+ 1f0:	3c088000 	lui	t0,0x8000
+ 1f4:	35080220 	ori	t0,t0,0x220
+ 1f8:	3c098000 	lui	t1,0x8000
+ 1fc:	35290200 	ori	t1,t1,0x200
+ 200:	8d2a0000 	lw	t2,0(t1)
+ 204:	ad0a0000 	sw	t2,0(t0)
+ 208:	3c1a0000 	lui	k0,0x0
+ 20c:	275a0208 	addiu	k0,k0,520
+ 210:	8f410000 	lw	at,0(k0)
+ 214:	8f420004 	lw	v0,4(k0)
+ 218:	8f430008 	lw	v1,8(k0)
+ 21c:	8f44000c 	lw	a0,12(k0)
+ 220:	8f450010 	lw	a1,16(k0)
+ 224:	8f460014 	lw	a2,20(k0)
+ 228:	8f470018 	lw	a3,24(k0)
+ 22c:	8f48001c 	lw	t0,28(k0)
+ 230:	8f490020 	lw	t1,32(k0)
+ 234:	8f4a0024 	lw	t2,36(k0)
+ 238:	8f4b0028 	lw	t3,40(k0)
+ 23c:	8f4c002c 	lw	t4,44(k0)
+ 240:	8f4d0030 	lw	t5,48(k0)
+ 244:	8f4e0034 	lw	t6,52(k0)
+ 248:	8f4f0038 	lw	t7,56(k0)
+ 24c:	8f58003c 	lw	t8,60(k0)
+ 250:	8f590040 	lw	t9,64(k0)
+ 254:	8f500044 	lw	s0,68(k0)
+ 258:	8f510048 	lw	s1,72(k0)
+ 25c:	8f52004c 	lw	s2,76(k0)
+ 260:	8f530050 	lw	s3,80(k0)
+ 264:	8f540054 	lw	s4,84(k0)
+ 268:	8f550058 	lw	s5,88(k0)
+ 26c:	8f56005c 	lw	s6,92(k0)
+ 270:	8f570060 	lw	s7,96(k0)
+ 274:	8f5c0064 	lw	gp,100(k0)
+ 278:	8f5e0068 	lw	s8,104(k0)
+ 27c:	8f5d006c 	lw	sp,108(k0)
+ 280:	8f5f0070 	lw	ra,112(k0)
+ 284:	42000018 	eret
+
+00000288 <InterruptionServiceRoutine_kernel>:
+ 288:	3c1a0000 	lui	k0,0x0
+ 28c:	275a027c 	addiu	k0,k0,636
+ 290:	af410000 	sw	at,0(k0)
+ 294:	af420004 	sw	v0,4(k0)
+ 298:	af430008 	sw	v1,8(k0)
+ 29c:	af44000c 	sw	a0,12(k0)
+ 2a0:	af450010 	sw	a1,16(k0)
+ 2a4:	af460014 	sw	a2,20(k0)
+ 2a8:	af470018 	sw	a3,24(k0)
+ 2ac:	af48001c 	sw	t0,28(k0)
+ 2b0:	af490020 	sw	t1,32(k0)
+ 2b4:	af4a0024 	sw	t2,36(k0)
+ 2b8:	af4b0028 	sw	t3,40(k0)
+ 2bc:	af4c002c 	sw	t4,44(k0)
+ 2c0:	af4d0030 	sw	t5,48(k0)
+ 2c4:	af4e0034 	sw	t6,52(k0)
+ 2c8:	af4f0038 	sw	t7,56(k0)
+ 2cc:	af58003c 	sw	t8,60(k0)
+ 2d0:	af590040 	sw	t9,64(k0)
+ 2d4:	af500044 	sw	s0,68(k0)
+ 2d8:	af510048 	sw	s1,72(k0)
+ 2dc:	af52004c 	sw	s2,76(k0)
+ 2e0:	af530050 	sw	s3,80(k0)
+ 2e4:	af540054 	sw	s4,84(k0)
+ 2e8:	af550058 	sw	s5,88(k0)
+ 2ec:	af56005c 	sw	s6,92(k0)
+ 2f0:	af570060 	sw	s7,96(k0)
+ 2f4:	af5c0064 	sw	gp,100(k0)
+ 2f8:	af5e0068 	sw	s8,104(k0)
+ 2fc:	af5d006c 	sw	sp,108(k0)
+ 300:	af5f0070 	sw	ra,112(k0)
+ 304:	3c1b0000 	lui	k1,0x0
+ 308:	277b0200 	addiu	k1,k1,512
+ 30c:	8f7d0000 	lw	sp,0(k1)
+ 310:	3c098000 	lui	t1,0x8000
+ 314:	35290200 	ori	t1,t1,0x200
+ 318:	8d2a0000 	lw	t2,0(t1)
+ 31c:	3c098000 	lui	t1,0x8000
+ 320:	35290210 	ori	t1,t1,0x210
+ 324:	240b00ff 	li	t3,255
+ 328:	014b5806 	srlv	t3,t3,t2
+ 32c:	ad2b0000 	sw	t3,0(t1)
+ 330:	24080001 	li	t0,1
+ 334:	40886000 	mtc0	t0,c0_status
+ 338:	3c080000 	lui	t0,0x0
+ 33c:	2508049c 	addiu	t0,t0,1180
+ 340:	000a5880 	sll	t3,t2,0x2
+ 344:	010b6021 	addu	t4,t0,t3
+ 348:	8d8d0000 	lw	t5,0(t4)
+ 34c:	01a0f809 	jalr	t5
+ 350:	00000000 	nop
+ 354:	24080000 	li	t0,0
+ 358:	40886000 	mtc0	t0,c0_status
+ 35c:	080000d8 	j	360 <RestoreContext>
+
+00000360 <RestoreContext>:
+ 360:	3c088000 	lui	t0,0x8000
+ 364:	35080220 	ori	t0,t0,0x220
+ 368:	3c098000 	lui	t1,0x8000
+ 36c:	35290200 	ori	t1,t1,0x200
+ 370:	8d2a0000 	lw	t2,0(t1)
+ 374:	ad0a0000 	sw	t2,0(t0)
+ 378:	3c1a0000 	lui	k0,0x0
+ 37c:	275a027c 	addiu	k0,k0,636
+ 380:	8f410000 	lw	at,0(k0)
+ 384:	8f420004 	lw	v0,4(k0)
+ 388:	8f430008 	lw	v1,8(k0)
+ 38c:	8f44000c 	lw	a0,12(k0)
+ 390:	8f450010 	lw	a1,16(k0)
+ 394:	8f460014 	lw	a2,20(k0)
+ 398:	8f470018 	lw	a3,24(k0)
+ 39c:	8f48001c 	lw	t0,28(k0)
+ 3a0:	8f490020 	lw	t1,32(k0)
+ 3a4:	8f4a0024 	lw	t2,36(k0)
+ 3a8:	8f4b0028 	lw	t3,40(k0)
+ 3ac:	8f4c002c 	lw	t4,44(k0)
+ 3b0:	8f4d0030 	lw	t5,48(k0)
+ 3b4:	8f4e0034 	lw	t6,52(k0)
+ 3b8:	8f4f0038 	lw	t7,56(k0)
+ 3bc:	8f58003c 	lw	t8,60(k0)
+ 3c0:	8f590040 	lw	t9,64(k0)
+ 3c4:	8f500044 	lw	s0,68(k0)
+ 3c8:	8f510048 	lw	s1,72(k0)
+ 3cc:	8f52004c 	lw	s2,76(k0)
+ 3d0:	8f530050 	lw	s3,80(k0)
+ 3d4:	8f540054 	lw	s4,84(k0)
+ 3d8:	8f550058 	lw	s5,88(k0)
+ 3dc:	8f56005c 	lw	s6,92(k0)
+ 3e0:	8f570060 	lw	s7,96(k0)
+ 3e4:	8f5c0064 	lw	gp,100(k0)
+ 3e8:	8f5e0068 	lw	s8,104(k0)
+ 3ec:	8f5d006c 	lw	sp,108(k0)
+ 3f0:	8f5f0070 	lw	ra,112(k0)
+ 3f4:	42000018 	eret
+
+000003f8 <BubbleSort>:
+ 3f8:	24180001 	li	t8,1
+ 3fc:	3c190000 	lui	t9,0x0
+ 400:	8f390488 	lw	t9,1160(t9)
+ 404:	3c080000 	lui	t0,0x0
+ 408:	250802f0 	addiu	t0,t0,752
+ 40c:	250c0000 	addiu	t4,t0,0
+ 410:	3c0e0000 	lui	t6,0x0
+ 414:	25ce0480 	addiu	t6,t6,1152
+
+00000418 <while>:
+ 418:	13000017 	beqz	t8,478 <outer_loop>
+ 41c:	00000000 	nop
+ 420:	8dcb0000 	lw	t3,0(t6)
+ 424:	250c0000 	addiu	t4,t0,0
+ 428:	24180000 	li	t8,0
+
+0000042c <inner_loop>:
+ 42c:	1160fffa 	beqz	t3,418 <while>
+ 430:	00000000 	nop
+ 434:	8d890000 	lw	t1,0(t4)
+ 438:	8d8a0004 	lw	t2,4(t4)
+ 43c:	0149782a 	slt	t7,t2,t1
+ 440:	11e00005 	beqz	t7,458 <continue>
+ 444:	00000000 	nop
+ 448:	25840000 	addiu	a0,t4,0
+ 44c:	0c000119 	jal	464 <swap>
+ 450:	25850004 	addiu	a1,t4,4
+ 454:	24180001 	li	t8,1
+
+00000458 <continue>:
+ 458:	258c0004 	addiu	t4,t4,4
+ 45c:	0800010b 	j	42c <inner_loop>
+ 460:	256bffff 	addiu	t3,t3,-1
+
+00000464 <swap>:
+ 464:	8c890000 	lw	t1,0(a0)
+ 468:	8caa0000 	lw	t2,0(a1)
+ 46c:	ac8a0000 	sw	t2,0(a0)
+ 470:	03e00008 	jr	ra
+ 474:	aca90000 	sw	t1,0(a1)
+
+00000478 <outer_loop>:
+ 478:	13200006 	beqz	t9,494 <end>
+ 47c:	00000000 	nop
+ 480:	2739ffff 	addiu	t9,t9,-1
+ 484:	21880004 	addi	t0,t4,4
+ 488:	21ce0004 	addi	t6,t6,4
+ 48c:	08000106 	j	418 <while>
+ 490:	24180001 	li	t8,1
+
+00000494 <end>:
+ 494:	08000125 	j	494 <end>
+ 498:	00000000 	nop
+
+0000049c <irq0_handler>:
+ 49c:	03e00008 	jr	ra
+ 4a0:	00000000 	nop
+
+000004a4 <irq4_handler>:
+ 4a4:	24030064 	li	v1,100
+ 4a8:	3c040000 	lui	a0,0x0
+ 4ac:	8c820498 	lw	v0,1176(a0)
+ 4b0:	2463ffff 	addiu	v1,v1,-1
+ 4b4:	24420001 	addiu	v0,v0,1
+ 4b8:	ac820498 	sw	v0,1176(a0)
+ 4bc:	1460fffb 	bnez	v1,4ac <irq4_handler+0x8>
+ 4c0:	00000000 	nop
+ 4c4:	03e00008 	jr	ra
+ 4c8:	00000000 	nop
+
+000004cc <irq5_handler>:
+ 4cc:	24030064 	li	v1,100
+ 4d0:	3c040000 	lui	a0,0x0
+ 4d4:	8c820494 	lw	v0,1172(a0)
+ 4d8:	2463ffff 	addiu	v1,v1,-1
+ 4dc:	24420001 	addiu	v0,v0,1
+ 4e0:	ac820494 	sw	v0,1172(a0)
+ 4e4:	1460fffb 	bnez	v1,4d4 <irq5_handler+0x8>
+ 4e8:	00000000 	nop
+ 4ec:	03e00008 	jr	ra
+ 4f0:	00000000 	nop
+
+000004f4 <irq6_handler>:
+ 4f4:	24030064 	li	v1,100
+ 4f8:	3c040000 	lui	a0,0x0
+ 4fc:	8c820490 	lw	v0,1168(a0)
+ 500:	2463ffff 	addiu	v1,v1,-1
+ 504:	24420001 	addiu	v0,v0,1
+ 508:	ac820490 	sw	v0,1168(a0)
+ 50c:	1460fffb 	bnez	v1,4fc <irq6_handler+0x8>
+ 510:	00000000 	nop
+ 514:	03e00008 	jr	ra
+ 518:	00000000 	nop
+
+0000051c <irq7_handler>:
+ 51c:	24030064 	li	v1,100
+ 520:	3c040000 	lui	a0,0x0
+ 524:	8c82048c 	lw	v0,1164(a0)
+ 528:	2463ffff 	addiu	v1,v1,-1
+ 52c:	24420001 	addiu	v0,v0,1
+ 530:	ac82048c 	sw	v0,1164(a0)
+ 534:	1460fffb 	bnez	v1,524 <irq7_handler+0x8>
+ 538:	00000000 	nop
+ 53c:	03e00008 	jr	ra
+ 540:	00000000 	nop
+
+00000544 <irq3_handler>:
+ 544:	03e00008 	jr	ra
+ 548:	00000000 	nop
+
+0000054c <irq1_handler>:
+ 54c:	03e00008 	jr	ra
+ 550:	00000000 	nop
+
+00000554 <irq2_handler>:
+ 554:	03e00008 	jr	ra
+ 558:	00000000 	nop
+
+Disassembly of section .MIPS.abiflags:
+
+00000560 <.MIPS.abiflags>:
+ 560:	01200000 	0x1200000
+ 564:	03000001 	movf	zero,t8,$fcc0
+	...
+ 570:	00000001 	movf	zero,zero,$fcc0
+ 574:	00000000 	nop
+
+Disassembly of section .data:
+
+00000000 <stack_kernel>:
+	...
+
+00000100 <stack_user>:
+	...
+
+00000200 <kernel_sp>:
+ 200:	00000000 	nop
+
+00000204 <user_sp>:
+ 204:	00000000 	nop
+
+00000208 <PCB>:
+	...
+
+0000027c <PCB>:
+	...
+
+000002f0 <array>:
+ 2f0:	0000000c 	syscall
+ 2f4:	0000001d 	0x1d
+ 2f8:	00000011 	mthi	zero
+ 2fc:	0000002e 	0x2e
+ 300:	00000021 	move	zero,zero
+ 304:	00000017 	0x17
+ 308:	00000015 	0x15
+ 30c:	00000028 	0x28
+ 310:	00000006 	srlv	zero,zero,zero
+ 314:	00000010 	mfhi	zero
+ 318:	00000021 	move	zero,zero
+ 31c:	00000010 	mfhi	zero
+ 320:	00000012 	mflo	zero
+ 324:	0000001e 	0x1e
+ 328:	00000026 	xor	zero,zero,zero
+ 32c:	00000013 	mtlo	zero
+ 330:	0000001e 	0x1e
+ 334:	0000002b 	sltu	zero,zero,zero
+ 338:	00000005 	0x5
+ 33c:	00000020 	add	zero,zero,zero
+ 340:	00000003 	sra	zero,zero,0x0
+ 344:	0000001e 	0x1e
+ 348:	0000001a 	div	zero,zero,zero
+ 34c:	0000001d 	0x1d
+ 350:	00000028 	0x28
+ 354:	00000009 	jalr	zero,zero
+ 358:	00000016 	0x16
+ 35c:	00000019 	multu	zero,zero
+ 360:	00000003 	sra	zero,zero,0x0
+ 364:	00000032 	tlt	zero,zero
+ 368:	0000001b 	divu	zero,zero,zero
+ 36c:	0000002f 	0x2f
+ 370:	00000032 	tlt	zero,zero
+ 374:	00000015 	0x15
+ 378:	00000014 	0x14
+ 37c:	00000000 	nop
+ 380:	0000000a 	movz	zero,zero,zero
+ 384:	00000000 	nop
+ 388:	00000011 	mthi	zero
+ 38c:	00000015 	0x15
+ 390:	00000025 	move	zero,zero
+ 394:	00000005 	0x5
+ 398:	00000003 	sra	zero,zero,0x0
+ 39c:	0000001e 	0x1e
+ 3a0:	00000025 	move	zero,zero
+ 3a4:	0000000d 	break
+ 3a8:	0000000d 	break
+ 3ac:	0000000a 	movz	zero,zero,zero
+ 3b0:	0000001f 	0x1f
+ 3b4:	0000001e 	0x1e
+ 3b8:	00000024 	and	zero,zero,zero
+ 3bc:	00000023 	negu	zero,zero
+ 3c0:	00000017 	0x17
+ 3c4:	00000009 	jalr	zero,zero
+ 3c8:	00000001 	movf	zero,zero,$fcc0
+ 3cc:	0000002d 	0x2d
+ 3d0:	00000014 	0x14
+ 3d4:	0000001e 	0x1e
+ 3d8:	00000025 	move	zero,zero
+ 3dc:	0000000c 	syscall
+ 3e0:	0000000b 	movn	zero,zero,zero
+ 3e4:	00000032 	tlt	zero,zero
+ 3e8:	00000014 	0x14
+ 3ec:	00000014 	0x14
+ 3f0:	0000002c 	0x2c
+ 3f4:	0000002d 	0x2d
+ 3f8:	0000000b 	movn	zero,zero,zero
+ 3fc:	0000000d 	break
+ 400:	00000015 	0x15
+ 404:	00000032 	tlt	zero,zero
+ 408:	00000023 	negu	zero,zero
+ 40c:	00000030 	tge	zero,zero
+ 410:	0000001a 	div	zero,zero,zero
+ 414:	0000001c 	0x1c
+ 418:	0000001f 	0x1f
+ 41c:	00000027 	nor	zero,zero,zero
+ 420:	00000018 	mult	zero,zero
+ 424:	00000002 	srl	zero,zero,0x0
+ 428:	00000002 	srl	zero,zero,0x0
+ 42c:	00000009 	jalr	zero,zero
+ 430:	0000000e 	0xe
+ 434:	0000000d 	break
+ 438:	0000000f 	sync
+ 43c:	0000002a 	slt	zero,zero,zero
+ 440:	00000024 	and	zero,zero,zero
+ 444:	00000010 	mfhi	zero
+ 448:	00000032 	tlt	zero,zero
+ 44c:	00000006 	srlv	zero,zero,zero
+ 450:	0000002b 	sltu	zero,zero,zero
+ 454:	00000001 	movf	zero,zero,$fcc0
+ 458:	00000009 	jalr	zero,zero
+ 45c:	00000000 	nop
+ 460:	0000002c 	0x2c
+ 464:	00000007 	srav	zero,zero,zero
+ 468:	00000014 	0x14
+ 46c:	00000031 	tgeu	zero,zero
+ 470:	00000006 	srlv	zero,zero,zero
+ 474:	00000005 	0x5
+ 478:	00000021 	move	zero,zero
+ 47c:	00000031 	tgeu	zero,zero
+
+00000480 <size>:
+ 480:	00000032 	tlt	zero,zero
+ 484:	00000032 	tlt	zero,zero
+
+00000488 <arrayc>:
+ 488:	00000002 	srl	zero,zero,0x0
+
+0000048c <count7.1298>:
+ 48c:	00007000 	sll	t6,zero,0x0
+
+00000490 <count6.1291>:
+ 490:	00006000 	sll	t4,zero,0x0
+
+00000494 <count5.1284>:
+ 494:	00005000 	sll	t2,zero,0x0
+
+00000498 <count4.1277>:
+ 498:	00004000 	sll	t0,zero,0x0
+
+0000049c <irq_handlers>:
+ 49c:	0000049c 	0x49c
+ 4a0:	0000054c 	syscall	0x15
+ 4a4:	00000554 	0x554
+ 4a8:	00000544 	0x544
+ 4ac:	000004a4 	0x4a4
+ 4b0:	000004cc 	syscall	0x13
+ 4b4:	000004f4 	teq	zero,zero,0x13
+ 4b8:	0000051c 	0x51c
+
+Disassembly of section .reginfo:
+
+00000000 <.reginfo>:
+   0:	b0000f00 	0xb0000f00
+	...
+
+Disassembly of section .pdr:
+
+00000000 <.pdr>:
+   0:	0000049c 	0x49c
+	...
+  18:	0000001d 	0x1d
+  1c:	0000001f 	0x1f
+  20:	000004a4 	0x4a4
+	...
+  38:	0000001d 	0x1d
+  3c:	0000001f 	0x1f
+  40:	000004cc 	syscall	0x13
+	...
+  58:	0000001d 	0x1d
+  5c:	0000001f 	0x1f
+  60:	000004f4 	teq	zero,zero,0x13
+	...
+  78:	0000001d 	0x1d
+  7c:	0000001f 	0x1f
+  80:	0000051c 	0x51c
+	...
+  98:	0000001d 	0x1d
+  9c:	0000001f 	0x1f
+  a0:	00000544 	0x544
+	...
+  b8:	0000001d 	0x1d
+  bc:	0000001f 	0x1f
+  c0:	0000054c 	syscall	0x15
+	...
+  d8:	0000001d 	0x1d
+  dc:	0000001f 	0x1f
+  e0:	00000554 	0x554
+	...
+  f8:	0000001d 	0x1d
+  fc:	0000001f 	0x1f
+
+Disassembly of section .gnu.attributes:
+
+00000000 <.gnu.attributes>:
+   0:	00000f41 	0xf41
+   4:	756e6700 	jalx	5b99c00 <_stack_ptr+0x5b97c04>
+   8:	00070100 	sll	zero,a3,0x4
+   c:	03040000 	0x3040000
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	3a434347 	xori	v1,s2,0x4347
+   4:	6f432820 	0x6f432820
+   8:	63736564 	0x63736564
+   c:	20657061 	addi	a1,v1,28769
+  10:	20554e47 	addi	s5,v0,20039
+  14:	6c6f6f54 	0x6c6f6f54
+  18:	30322073 	andi	s2,at,0x2073
+  1c:	302e3931 	andi	t6,at,0x3931
+  20:	34302d32 	ori	s0,at,0x2d32
+  24:	726f6620 	0x726f6620
+  28:	50494d20 	beql	v0,t1,134ac <_stack_ptr+0x114b0>
+  2c:	4d492053 	0x4d492053
+  30:	61422047 	0x61422047
+  34:	4d206572 	0x4d206572
+  38:	6c617465 	0x6c617465
+  3c:	2e372029 	sltiu	s7,s1,8233
+  40:	00302e34 	teq	at,s0,0xb8

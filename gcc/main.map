@@ -1,0 +1,127 @@
+
+Discarded input sections
+
+ .reginfo       0x0000000000000000       0x18 ism_user.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 ism_user.o
+ .reginfo       0x0000000000000000       0x18 ism_kernel.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 ism_kernel.o
+ .reginfo       0x0000000000000000       0x18 BubbleSort.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 BubbleSort.o
+ .reginfo       0x0000000000000000       0x18 handlers.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 handlers.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+INSTRUCTION_MEMORY 0x0000000000000000 0x0000000000002000
+DATA_MEMORY      0x0000000000000000 0x0000000000002000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+
+.text           0x0000000000000000      0x55c
+ boot.o(.text)
+ .text          0x0000000000000000       0x88 boot.o
+                0x0000000000000000                boot_start
+                0x00000000000000ff                . = 0xff
+ *fill*         0x0000000000000088       0x77 
+ ism_user.o(.text)
+ *fill*         0x00000000000000ff        0x1 
+ .text          0x0000000000000100      0x188 ism_user.o
+                0x0000000000000100                InterruptionServiceRoutine_user
+ ism_kernel.o(.text)
+ .text          0x0000000000000288      0x170 ism_kernel.o
+                0x0000000000000288                InterruptionServiceRoutine_kernel
+ *(.text.*)
+ .text          0x00000000000003f8       0xa4 BubbleSort.o
+                0x00000000000003f8                BubbleSort
+ .text          0x000000000000049c       0xc0 handlers.o
+                0x000000000000049c                irq0_handler
+                0x00000000000004a4                irq4_handler
+                0x00000000000004cc                irq5_handler
+                0x00000000000004f4                irq6_handler
+                0x000000000000051c                irq7_handler
+                0x0000000000000544                irq3_handler
+                0x000000000000054c                irq1_handler
+                0x0000000000000554                irq2_handler
+
+.MIPS.abiflags  0x0000000000000560       0x18
+ .MIPS.abiflags
+                0x0000000000000560       0x18 boot.o
+
+.rel.dyn        0x0000000000000578        0x0
+ .rel.dyn       0x0000000000000578        0x0 handlers.o
+
+.data           0x0000000000000000      0x4bc load address 0x0000000000000578
+ *(.sdata)
+ *(.sdata.*)
+ *(.data)
+ .data          0x0000000000000000      0x208 boot.o
+                0x0000000000000200                kernel_sp
+                0x0000000000000204                user_sp
+ .data          0x0000000000000208       0x74 ism_user.o
+ .data          0x000000000000027c       0x74 ism_kernel.o
+ .data          0x00000000000002f0      0x19c BubbleSort.o
+ .data          0x000000000000048c       0x30 handlers.o
+                0x000000000000049c                irq_handlers
+ *(.data.*)
+ *(.rdata)
+ *(.rodata)
+ *(.rodata.*)
+
+.bss            0x00000000000004bc        0x0 load address 0x0000000000000a34
+ *(.sbss)
+ *(.sbss.*)
+ *(.bss)
+ .bss           0x00000000000004bc        0x0 boot.o
+ .bss           0x00000000000004bc        0x0 ism_user.o
+ .bss           0x00000000000004bc        0x0 ism_kernel.o
+ .bss           0x00000000000004bc        0x0 BubbleSort.o
+ .bss           0x00000000000004bc        0x0 handlers.o
+ *(.bss.*)
+ *(.scommon)
+ *(COMMON)
+                0x0000000000001ffc                . = ((ORIGIN (DATA_MEMORY) + LENGTH (DATA_MEMORY)) - 0x4)
+                0x0000000000001ffc                . = ALIGN (0x4)
+                0x0000000000001ffc                _stack_ptr = .
+LOAD boot.o
+LOAD ism_user.o
+LOAD ism_kernel.o
+LOAD BubbleSort.o
+LOAD handlers.o
+OUTPUT(main.elf elf32-tradlittlemips)
+
+.reginfo        0x0000000000000000       0x18
+ .reginfo       0x0000000000000000       0x18 boot.o
+
+.pdr            0x0000000000000000      0x100
+ .pdr           0x0000000000000000        0x0 boot.o
+ .pdr           0x0000000000000000        0x0 ism_user.o
+ .pdr           0x0000000000000000        0x0 ism_kernel.o
+ .pdr           0x0000000000000000        0x0 BubbleSort.o
+ .pdr           0x0000000000000000      0x100 handlers.o
+
+.gnu.attributes
+                0x0000000000000000       0x10
+ .gnu.attributes
+                0x0000000000000000       0x10 boot.o
+ .gnu.attributes
+                0x0000000000000010       0x10 ism_user.o
+ .gnu.attributes
+                0x0000000000000020       0x10 ism_kernel.o
+ .gnu.attributes
+                0x0000000000000030       0x10 BubbleSort.o
+ .gnu.attributes
+                0x0000000000000040       0x10 handlers.o
+
+.mdebug.abi32   0x0000000000000000        0x0
+ .mdebug.abi32  0x0000000000000000        0x0 handlers.o
+
+.comment        0x0000000000000000       0x44
+ .comment       0x0000000000000000       0x44 handlers.o
+                                         0x45 (size before relaxing)
