@@ -24,7 +24,7 @@ module MIPS_uC(
 	parameter INT_ACK_ADDR				= 2'b10;
 	// endereco dos perifericos
 	parameter PORTIO_ADDR				= 4'b0000;
-	// parameter TIMER_ADDR				= 4'b0001;
+	parameter TIMER_ADDR				= 4'b0001;
 	parameter INTR_CTRL_ADDR			= 4'b0010;
 	parameter PERIPH_CONTR				= 4'b1111;
 	//////////////////////////////////////////////////////////////////////

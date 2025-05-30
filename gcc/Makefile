@@ -1,4 +1,6 @@
 TOOLCHAIN = /home/jon/code/trabalho4/mips-img-elf/2019.02-04/bin
+ASM_SRC = /home/jon/code/trabalho5parte2/UFSM00294/MIPS_Monocycle/src/asm/trabalho5
+C_SRC = /home/jon/code/trabalho5parte2/UFSM00294/MIPS_Monocycle/src/C/trabalho5
 
 CC_MIPS         = $(TOOLCHAIN)/mips-img-elf-gcc
 CPP_MIPS        = $(TOOLCHAIN)/mips-img-elf-g++
@@ -38,57 +40,51 @@ ASMFLAGS = -EL -msoft-float -mips32
 	@echo
 	@echo "******************************************************************************"
 	@echo Assembling boot.asm...
-	$(AS_MIPS) $(ASMFLAGS) ../Kernel/Boot.asm -o boot.o
+	$(AS_MIPS) $(ASMFLAGS) $(ASM_SRC)/boot.asm -o boot.o
 	@echo "******************************************************************************"
 
 	@echo
 	@echo "******************************************************************************"
-	@echo Assembling Kernel.asm...
-	$(AS_MIPS) $(ASMFLAGS) ../Kernel/Kernel.asm -o Kernel.o
+	@echo Assembling ism_user.asm...
+	$(AS_MIPS) $(ASMFLAGS) $(ASM_SRC)/ism_user.asm -o ism_user.o
 	@echo "******************************************************************************"
 
 	@echo
 	@echo "******************************************************************************"
-	@echo Compiling Handler1.c...
-	$(CC_MIPS) $(CFLAGS) -c ../Kernel/Handler1.c -o Handler1.o
+	@echo Assembling ism_kernel.asm...
+	$(AS_MIPS) $(ASMFLAGS) $(ASM_SRC)/ism_kernel.asm -o ism_kernel.o
 	@echo "******************************************************************************"
 
 	@echo
 	@echo "******************************************************************************"
-	@echo Compiling Handler2.c...
-	$(CC_MIPS) $(CFLAGS) -c ../Kernel/Handler2.c -o Handler2.o
+	@echo Assembling BubbleSort.asm...
+	$(AS_MIPS) $(ASMFLAGS) $(ASM_SRC)/BubbleSort.asm -o BubbleSort.o
 	@echo "******************************************************************************"
 
 	@echo
 	@echo "******************************************************************************"
-	@echo Compiling InterruptionRequest.c...
-	$(CC_MIPS) $(CFLAGS) -c ../Kernel/InterruptionRequest.c -o InterruptionRequest.o
-	@echo "******************************************************************************"
-
-	@echo
-	@echo "******************************************************************************"
-	@echo Compiling $(addsuffix .c, $@)...
-	$(CC_MIPS) $(CFLAGS) -c ../Kernel/$(addsuffix .c, $@) -o $(addsuffix .o, $@)
+	@echo Compiling handlers.c...
+	$(CC_MIPS) $(CFLAGS) -c $(C_SRC)/handlers.c -o handlers.o
 	@echo "******************************************************************************"
 
 	@echo
 	@echo "******************************************************************************"
 	@echo Linking executable...
-	$(LD_MIPS) -e entry_point -EL -T ld_script.ld -o $(addsuffix .elf, $@) boot.o Kernel.o Handler1.o Handler2.o InterruptionRequest.o $(addsuffix .o, $@) -M > $(addsuffix .map, $@)
-	$(SIZE_MIPS) -A -x $(addsuffix .elf, $@)
-	$(NM_MIPS) -t x -S --size-sort $(addsuffix .elf, $@)
+	$(LD_MIPS) -e entry_point -EL -T ld_script.ld -o main.elf boot.o ism_user.o ism_kernel.o BubbleSort.o handlers.o -M > main.map
+	$(SIZE_MIPS) -A -x main.elf
+	$(NM_MIPS) -t x -S --size-sort main.elf
 	@echo "******************************************************************************"
 
 	@echo
 	@echo "******************************************************************************"
-	@echo Generating $(addsuffix _elf.lst, $@)...
-	$(DUMP_MIPS) --disassemble-all $(addsuffix .elf, $@) > $(addsuffix _elf.lst, $@)
+	@echo Generating main_elf.lst
+	$(DUMP_MIPS) --disassemble-all main.elf > main_elf.lst
 	@echo "******************************************************************************"
 
 	@echo
 	@echo "******************************************************************************"
 	@echo Generating instruction memory image...
-	$(OBJCOPY_MIPS) --dump-section .text=code.bin $(addsuffix .elf, $@)
+	$(OBJCOPY_MIPS) --dump-section .text=code.bin main.elf
     # The following backslashes (\) may need to be replaced by backslashes depending in the OS
 	./tools/bin2hex code.bin > code.txt
 #	copy code.txt ../../../sim
@@ -97,7 +93,7 @@ ASMFLAGS = -EL -msoft-float -mips32
 	@echo
 	@echo "******************************************************************************"
 	@echo Generating data memory image...
-	$(OBJCOPY_MIPS) --dump-section .data=data.bin $(addsuffix .elf, $@)
+	$(OBJCOPY_MIPS) --dump-section .data=data.bin main.elf
 	./tools/bin2hex data.bin > data.txt
 #	copy data.txt ../../../sim
 	@echo "******************************************************************************"

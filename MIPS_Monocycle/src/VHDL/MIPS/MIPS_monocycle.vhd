@@ -212,7 +212,7 @@ end process;
     MUX_DATA_MEM: writeData <=  UNSIGNED(data_in) when decodedInstruction = LW else
                                 selectedByteExtended when decodedInstruction = LB or decodedInstruction = LBU else
                                 selectedHalfWordExtended when decodedInstruction = LH or decodedInstruction = LHU else
-                                ECP when decodedInstruction = MFC0 and TO_INTEGER(UNSIGNED(instruction_rd)) = 14 else
+                                EPC when decodedInstruction = MFC0 and TO_INTEGER(UNSIGNED(instruction_rd)) = 14 else
                                 STATUS when decodedInstruction = MFC0 and TO_INTEGER(UNSIGNED(instruction_rd)) = 12 else
                                 ISR_AD when decodedInstruction = MFC0 and TO_INTEGER(UNSIGNED(instruction_rd)) = 31 else
                                 pc when decodedInstruction = JAL  or decodedInstruction = JALR else
