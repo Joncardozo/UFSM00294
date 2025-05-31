@@ -35,22 +35,36 @@ InterruptionServiceRoutine_user:
     sw      $s7,  96($k0)
     sw      $gp, 100($k0)
     sw      $fp, 104($k0)
-    sw      $sp, 108($k0)   
+    sw      $sp, 108($k0)
     sw      $ra, 112($k0)
-	
+
+    # Salva EPC
+    mfc0    $t0, $14
+    sw      $t0, 116($k0)
+
+    # Salva máscara de IRQs (PIC)
+    la      $t1, 0x80000210
+    lw      $t2, 0($t1)
+    sw      $t2, 120($k0)
+
+
     # Salta para pilha do kernel
     la      $k1, kernel_sp
     lw      $sp, 0($k1)
 
     # Lê ID da interrupção
     la      $t1, 0x80000200
-    lw      $t2, 0($t1)          # IRQ atual em $t2
+    lw      $t2, 0($t1)
 
-    # Mascara interrupções com prioridade menor ou igual à atual
-    la      $t1, 0x80000210      # Endereço da máscara
+    # Mascara interrupções com prioridade menor ou igual a atual
+    la      $t1, 0x80000210
     li      $t3, 0xFF
-    srlv    $t3, $t3, $t2        # shift lógico para mascarar prioridades menores
-    sw      $t3, 0($t1)
+    li      $t4, 0x8
+    subu    $t4, $t4, $t2
+    srlv    $t3, $t3, $t4
+    lw      $t5, 0($t1)
+    and     $t5, $t5, $t3
+    sw      $t5, 0($t1)
 
     # Define ISR_AD como isr_kernel
     la      $t0, InterruptionServiceRoutine_kernel
@@ -76,18 +90,17 @@ InterruptionServiceRoutine_user:
     la      $t0, InterruptionServiceRoutine_user
     mtc0    $t0, $31
 
-
     # Default
-    j RestoreContext     
+    j RestoreContext
 
-
-# Restauração do contexto
 RestoreContext:
     # ACK para o PIC
     la      $t0, 0x80000220
     la      $t1, 0x80000200
     lw      $t2, 0($t1)
     sw      $t2, 0($t0)
+
+    # Restaura contexto
     la      $k0, PCB
     lw      $at,   0($k0)
     lw      $v0,   4($k0)
@@ -119,8 +132,17 @@ RestoreContext:
     lw      $sp, 108($k0)
     lw      $ra, 112($k0)
 
+    # Restaura EPC
+    lw      $t0, 116($k0)
+    mtc0    $t0, $14
+
+    # Restaura máscara de IRQs
+    lw      $t2, 120($k0)
+    la      $t1, 0x80000210
+    sw      $t2, 0($t1)
+
+
     eret                       # Retorna da interrupção
 
-
 .data
-    PCB:    .space 116
+    PCB: .space 124   

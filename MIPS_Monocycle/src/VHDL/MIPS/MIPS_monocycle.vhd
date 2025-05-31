@@ -67,9 +67,9 @@ architecture behavioral of MIPS_monocycle is
     signal lock: boolean;
 
     -- Coprocessor exception register
-    signal ISR_AD        : UNSIGNED(31 downto 0) := x"00000000"; --$31
-    signal EPC : UNSIGNED(31 downto 0);  -- Exception Program Counter --$14
-    signal STATUS : UNSIGNED(31 downto 0) := x"00000000"; --$12
+    signal ISR_AD           :   std_logic_vector(31 downto 0); --$31
+    signal EPC              :   std_logic_vector(31 downto 0);  -- Exception Program Counter --$14
+    signal STATUS           :   std_logic_vector(31 downto 0); --$12
     
     signal decodedInstruction: Instruction_type;
        
@@ -86,26 +86,17 @@ begin
     
     -- Register PC and adder --
 	REG_PC: process(clk, rst)
-begin
-    if rst = '1' then
-        pc                    <= PC_START_ADDRESS;
-        lock                  <= true;
-        interruptionTreatment <= '0';
-        EPC                   <= (others=>'0');
-    elsif rising_edge(clk) then
-        pc <= instructionFetchAddress + 4;
-        if lock = true then
-            lock <= false;
-        else
-            if intr = '1' and interruptionTreatment = '0' then
-                EPC <= pc;                       -- salva PC atual
-                interruptionTreatment <= '1';    -- marca tratamento em andamento
-            elsif decodedInstruction = ERET then
-                interruptionTreatment <= '0';    -- libera tratamento ao ERET
+    begin
+        if rst = '1' then
+            pc                    <= PC_START_ADDRESS;
+            lock                  <= true;
+        elsif rising_edge(clk) then
+            pc <= instructionFetchAddress + 4;
+            if lock = true then
+                lock <= false;
             end if;
         end if;
-    end if;
-end process;
+    end process;
 
 
         
@@ -141,8 +132,8 @@ end process;
     -- In case of jump/branch, PC must be bypassed due to synchronous memory read
 
 
-    instructionFetchAddress <=      ISR_AD when (intr = '1' and interruptionTreatment = '0') else
-                                    EPC when decodedInstruction = ERET else
+    instructionFetchAddress <=      UNSIGNED(ISR_AD) when (intr = '1' and STATUS(0) = '1') else
+                                    UNSIGNED(EPC) when decodedInstruction = ERET else
                                     branchTarget when ((decodedInstruction = BEQ and zero = '1') or (decodedInstruction = BNE and zero = '0')) else 
                                     branchTarget when (decodedInstruction = BGTZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) > 0) else
                                     branchTarget when (decodedInstruction = BGEZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) >= 0) else
@@ -212,9 +203,9 @@ end process;
     MUX_DATA_MEM: writeData <=  UNSIGNED(data_in) when decodedInstruction = LW else
                                 selectedByteExtended when decodedInstruction = LB or decodedInstruction = LBU else
                                 selectedHalfWordExtended when decodedInstruction = LH or decodedInstruction = LHU else
-                                EPC when decodedInstruction = MFC0 and TO_INTEGER(UNSIGNED(instruction_rd)) = 14 else
-                                STATUS when decodedInstruction = MFC0 and TO_INTEGER(UNSIGNED(instruction_rd)) = 12 else
-                                ISR_AD when decodedInstruction = MFC0 and TO_INTEGER(UNSIGNED(instruction_rd)) = 31 else
+                                UNSIGNED(EPC) when decodedInstruction = MFC0 and TO_INTEGER(UNSIGNED(instruction_rd)) = 14 else
+                                UNSIGNED(STATUS) when decodedInstruction = MFC0 and TO_INTEGER(UNSIGNED(instruction_rd)) = 12 else
+                                UNSIGNED(ISR_AD) when decodedInstruction = MFC0 and TO_INTEGER(UNSIGNED(instruction_rd)) = 31 else
                                 pc when decodedInstruction = JAL  or decodedInstruction = JALR else
                                 result;
     
@@ -243,19 +234,26 @@ end process;
     -- Coprocessor 0 register file
     COPR0_REG_FILE: process(clk, rst)
     begin
-        if rst = '1' then
-            ISR_AD <= (others => '0');
-            EPC <= (others => '0');
-            STATUS <= (others => '0');
-        elsif rising_edge(clk) and decodedInstruction = MTC0 then
+    if rst = '1' then
+        STATUS  <= x"00000001";
+        EPC     <= x"00000000";
+        ISR_AD  <= x"00000000";
+    elsif rising_edge(clk) then
+        if decodedInstruction = MTC0 then
             if TO_INTEGER(UNSIGNED(instruction_rd)) = 31 then
-                ISR_AD <= readData2;
+                ISR_AD <= STD_LOGIC_VECTOR(readData2);
             elsif TO_INTEGER(UNSIGNED(instruction_rd)) = 14 then
-                EPC <= readData2;
+                EPC <= STD_LOGIC_VECTOR(readData2);
             elsif TO_INTEGER(UNSIGNED(instruction_rd)) = 12 then
-                STATUS <= readData2;
+                STATUS <= std_logic_vector(readData2);
             end if;
+        elsif intr = '1' and STATUS = x"00000001" then
+            EPC <= std_logic_vector(pc);                       -- salva PC atual
+            STATUS <= x"00000000";
+        elsif decodedInstruction = ERET then
+            STATUS <= x"00000001";    -- libera tratamento ao ERET
         end if;
+    end if;
     end process;
 
     -- The first ALU operand always comes from the register file

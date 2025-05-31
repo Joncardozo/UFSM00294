@@ -119,7 +119,7 @@ module MIPS_uC(
 
 	// data memory instance
 	Memory #(
-		.SIZE				(2048),
+		.SIZE				(8192),
 		.ADDR_WIDTH			(30),
 		.COL_WIDTH			(8),
 		.NB_COL				(4),

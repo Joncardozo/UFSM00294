@@ -18,13 +18,13 @@ Memory Configuration
 
 Name             Origin             Length             Attributes
 INSTRUCTION_MEMORY 0x0000000000000000 0x0000000000002000
-DATA_MEMORY      0x0000000000000000 0x0000000000002000
+DATA_MEMORY      0x0000000000000000 0x0000000000008000
 *default*        0x0000000000000000 0xffffffffffffffff
 
 Linker script and memory map
 
 
-.text           0x0000000000000000      0x55c
+.text           0x0000000000000000      0x5dc
  boot.o(.text)
  .text          0x0000000000000000       0x88 boot.o
                 0x0000000000000000                boot_start
@@ -32,63 +32,63 @@ Linker script and memory map
  *fill*         0x0000000000000088       0x77 
  ism_user.o(.text)
  *fill*         0x00000000000000ff        0x1 
- .text          0x0000000000000100      0x188 ism_user.o
+ .text          0x0000000000000100      0x1c8 ism_user.o
                 0x0000000000000100                InterruptionServiceRoutine_user
  ism_kernel.o(.text)
- .text          0x0000000000000288      0x170 ism_kernel.o
-                0x0000000000000288                InterruptionServiceRoutine_kernel
+ .text          0x00000000000002c8      0x1b0 ism_kernel.o
+                0x00000000000002c8                InterruptionServiceRoutine_kernel
  *(.text.*)
- .text          0x00000000000003f8       0xa4 BubbleSort.o
-                0x00000000000003f8                BubbleSort
- .text          0x000000000000049c       0xc0 handlers.o
-                0x000000000000049c                irq0_handler
-                0x00000000000004a4                irq4_handler
-                0x00000000000004cc                irq5_handler
-                0x00000000000004f4                irq6_handler
-                0x000000000000051c                irq7_handler
-                0x0000000000000544                irq3_handler
-                0x000000000000054c                irq1_handler
-                0x0000000000000554                irq2_handler
+ .text          0x0000000000000478       0xa4 BubbleSort.o
+                0x0000000000000478                BubbleSort
+ .text          0x000000000000051c       0xc0 handlers.o
+                0x000000000000051c                irq0_handler
+                0x0000000000000524                irq4_handler
+                0x000000000000054c                irq5_handler
+                0x0000000000000574                irq6_handler
+                0x000000000000059c                irq7_handler
+                0x00000000000005c4                irq3_handler
+                0x00000000000005cc                irq1_handler
+                0x00000000000005d4                irq2_handler
 
-.MIPS.abiflags  0x0000000000000560       0x18
+.MIPS.abiflags  0x00000000000005e0       0x18
  .MIPS.abiflags
-                0x0000000000000560       0x18 boot.o
+                0x00000000000005e0       0x18 boot.o
 
-.rel.dyn        0x0000000000000578        0x0
- .rel.dyn       0x0000000000000578        0x0 handlers.o
+.rel.dyn        0x00000000000005f8        0x0
+ .rel.dyn       0x00000000000005f8        0x0 handlers.o
 
-.data           0x0000000000000000      0x4bc load address 0x0000000000000578
+.data           0x0000000000000000      0x4cc load address 0x00000000000005f8
  *(.sdata)
  *(.sdata.*)
  *(.data)
  .data          0x0000000000000000      0x208 boot.o
                 0x0000000000000200                kernel_sp
                 0x0000000000000204                user_sp
- .data          0x0000000000000208       0x74 ism_user.o
- .data          0x000000000000027c       0x74 ism_kernel.o
- .data          0x00000000000002f0      0x19c BubbleSort.o
- .data          0x000000000000048c       0x30 handlers.o
-                0x000000000000049c                irq_handlers
+ .data          0x0000000000000208       0x7c ism_user.o
+ .data          0x0000000000000284       0x7c ism_kernel.o
+ .data          0x0000000000000300      0x19c BubbleSort.o
+ .data          0x000000000000049c       0x30 handlers.o
+                0x00000000000004ac                irq_handlers
  *(.data.*)
  *(.rdata)
  *(.rodata)
  *(.rodata.*)
 
-.bss            0x00000000000004bc        0x0 load address 0x0000000000000a34
+.bss            0x00000000000004cc        0x0 load address 0x0000000000000ac4
  *(.sbss)
  *(.sbss.*)
  *(.bss)
- .bss           0x00000000000004bc        0x0 boot.o
- .bss           0x00000000000004bc        0x0 ism_user.o
- .bss           0x00000000000004bc        0x0 ism_kernel.o
- .bss           0x00000000000004bc        0x0 BubbleSort.o
- .bss           0x00000000000004bc        0x0 handlers.o
+ .bss           0x00000000000004cc        0x0 boot.o
+ .bss           0x00000000000004cc        0x0 ism_user.o
+ .bss           0x00000000000004cc        0x0 ism_kernel.o
+ .bss           0x00000000000004cc        0x0 BubbleSort.o
+ .bss           0x00000000000004cc        0x0 handlers.o
  *(.bss.*)
  *(.scommon)
  *(COMMON)
-                0x0000000000001ffc                . = ((ORIGIN (DATA_MEMORY) + LENGTH (DATA_MEMORY)) - 0x4)
-                0x0000000000001ffc                . = ALIGN (0x4)
-                0x0000000000001ffc                _stack_ptr = .
+                0x0000000000007ffc                . = ((ORIGIN (DATA_MEMORY) + LENGTH (DATA_MEMORY)) - 0x4)
+                0x0000000000007ffc                . = ALIGN (0x4)
+                0x0000000000007ffc                _stack_ptr = .
 LOAD boot.o
 LOAD ism_user.o
 LOAD ism_kernel.o

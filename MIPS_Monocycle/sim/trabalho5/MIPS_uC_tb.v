@@ -30,20 +30,22 @@ module MIPS_uC_tb;
   // estimulo de botoes
   initial begin
     buttons = 4'b0000;
-    #4000
-    buttons = 4'b100;
-    #10000
-    buttons = 4'b0;
-    #20000
-    buttons = 4'b100;
-    #10000
-    buttons = 4'b010;
-    #10000
-    buttons = 4'b0;
-    #10000
-    buttons = 4'b1;
-    #10000
-    buttons = 4'b0;
+    #1000
+    buttons = 4'b1000;
+    #100
+    buttons = 4'b0000;
+    //#1000
+    // buttons = 4'b0100;
+    // #100
+    // buttons = 4'b0000;
+    // #1000
+    // buttons = 4'b0010;
+    // #100
+    // buttons = 4'b0000;
+    // #1000
+    // buttons = 4'b0001;
+    // #100
+    // buttons = 4'b0000;
   end
 
   assign port_io[3:0] = buttons;
