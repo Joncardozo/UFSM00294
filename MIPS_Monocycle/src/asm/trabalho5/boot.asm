@@ -3,8 +3,8 @@
     .globl kernel_sp
     .globl user_sp
 
-    stack_kernel:    .space 256
-    stack_user:      .space 256
+    stack_kernel:    .space 1024
+    stack_user:      .space 1024
 
     kernel_sp:       .word 0
     user_sp:         .word 0
@@ -14,17 +14,17 @@
 .globl boot_start
 boot_start:
     # $sp do kernel 
-    la      $sp, stack_kernel + 256
+    la      $sp, stack_kernel + 1024
     la      $t0, kernel_sp
     sw      $sp, 0($t0)
 
     #  $sp do usuário
-    la      $sp, stack_user + 256
+    la      $sp, stack_user + 1024
     la      $t0, user_sp
     sw      $sp, 0($t0)
 
     # configura ISR_AD do usuario
-    la      $t0, InterruptionServiceRoutine_user
+    la      $t0, InterruptionServiceRoutine_kernel
     mtc0    $t0, $31
 
 
@@ -54,6 +54,7 @@ boot_start:
 
     # Salta para o programa do usuário (BubbleSort)
     jal     BubbleSort
+    nop
 
 end_boot:
     j end_boot     # Loop 

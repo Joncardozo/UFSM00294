@@ -94,7 +94,7 @@ begin
             pc <= instructionFetchAddress + 4;
             if lock = true then
                 lock <= false;
-            elsif decodedInstruction = ERET then
+            elsif decodedInstruction = eret then
                 pc <= instructionFetchAddress;
             end if;
         end if;
@@ -144,6 +144,12 @@ begin
                                     jumpTarget when decodedInstruction = J or decodedInstruction = JAL else
                                     ALUoperand1 when (decodedInstruction = JR or decodedInstruction = JALR) else
                                     pc;
+                               
+    -- instructionFetchAddress <= ISR_ADDR when (intr = '1' and interruptionTreatment = '0') else
+    --                        EPC when decodedInstruction = ERET else
+    --                        nextPc;
+
+    
 
     -- Instruction memory addressing
     instructionAddress <= STD_LOGIC_VECTOR(instructionFetchAddress);
@@ -237,14 +243,14 @@ begin
     elsif rising_edge(clk) then
         if decodedInstruction = MTC0 then
             if TO_INTEGER(UNSIGNED(instruction_rd)) = 31 then
-                ISR_AD <=   STD_LOGIC_VECTOR(readData2);
+                ISR_AD <= STD_LOGIC_VECTOR(readData2);
             elsif TO_INTEGER(UNSIGNED(instruction_rd)) = 14 then
-                EPC <=      STD_LOGIC_VECTOR(readData2);
+                EPC <= STD_LOGIC_VECTOR(readData2);
             elsif TO_INTEGER(UNSIGNED(instruction_rd)) = 12 then
-                STATUS <=   std_logic_vector(readData2);
+                STATUS <= std_logic_vector(readData2);
             end if;
         elsif intr = '1' and STATUS = x"00000001" then
-            EPC <= std_logic_vector(pc);                       -- salva PC atualS
+            EPC <= std_logic_vector(pc);                       -- salva PC atual
             STATUS <= x"00000000";
         elsif decodedInstruction = ERET then
             STATUS <= x"00000001";    -- libera tratamento ao ERET

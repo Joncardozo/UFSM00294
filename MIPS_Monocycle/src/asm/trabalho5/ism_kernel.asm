@@ -6,50 +6,46 @@
 .globl InterruptionServiceRoutine_kernel
 InterruptionServiceRoutine_kernel:
 
-    # Salva contexto na pilha (PCB reutilizado para simplificação)
-    la      $k0, PCB
-    sw      $at,   0($k0)
-    sw      $v0,   4($k0)
-    sw      $v1,   8($k0)
-    sw      $a0,  12($k0)
-    sw      $a1,  16($k0)
-    sw      $a2,  20($k0)
-    sw      $a3,  24($k0)
-    sw      $t0,  28($k0)
-    sw      $t1,  32($k0)
-    sw      $t2,  36($k0)
-    sw      $t3,  40($k0)
-    sw      $t4,  44($k0)
-    sw      $t5,  48($k0)
-    sw      $t6,  52($k0)
-    sw      $t7,  56($k0)
-    sw      $t8,  60($k0)
-    sw      $t9,  64($k0)
-    sw      $s0,  68($k0)
-    sw      $s1,  72($k0)
-    sw      $s2,  76($k0)
-    sw      $s3,  80($k0)
-    sw      $s4,  84($k0)
-    sw      $s5,  88($k0)
-    sw      $s6,  92($k0)
-    sw      $s7,  96($k0)
-    sw      $gp, 100($k0)
-    sw      $fp, 104($k0)
-    sw      $sp, 108($k0)
-    sw      $ra, 112($k0)
+    # salva epc 
+    addiu   $sp, $sp, -128   # aumenta pilha
+    
+    # salva contexto
+    sw      $at,   0($sp)
+    sw      $v0,   4($sp)
+    sw      $v1,   8($sp)
+    sw      $a0,  12($sp)
+    sw      $a1,  16($sp)
+    sw      $a2,  20($sp)
+    sw      $a3,  24($sp)
+    sw      $t0,  28($sp)
+    sw      $t1,  32($sp)
+    sw      $t2,  36($sp)
+    sw      $t3,  40($sp)
+    sw      $t4,  44($sp)
+    sw      $t5,  48($sp)
+    sw      $t6,  52($sp)
+    sw      $t7,  56($sp)
+    sw      $t8,  60($sp)
+    sw      $t9,  64($sp)
+    sw      $s0,  68($sp)
+    sw      $s1,  72($sp)
+    sw      $s2,  76($sp)
+    sw      $s3,  80($sp)
+    sw      $s4,  84($sp)
+    sw      $s5,  88($sp)
+    sw      $s6,  92($sp)
+    sw      $s7,  96($sp)
+    sw      $gp, 100($sp)
+    sw      $fp, 104($sp)
+    sw      $ra, 112($sp)
 
-    # Salva EPC
-    mfc0    $t0, $14
-    sw      $t0, 116($k0)
-
-    # Salva máscara de IRQs
+    mfc0    $t0, $14  
+    sw      $t0, 124($sp)  
+    
+    # salva mascara de interrupcoes
     la      $t1, 0x80000210
     lw      $t2, 0($t1)
-    sw      $t2, 120($k0)
-
-    # Salta para pilha do kernel
-    la      $k1, kernel_sp
-    lw      $sp, 0($k1)
+    sw      $t2, 120($sp)
 
     # Lê ID da interrupção
     la      $t1, 0x80000200
@@ -84,55 +80,51 @@ InterruptionServiceRoutine_kernel:
     j RestoreContext
 
 RestoreContext:
+    # restaura mascara de interrupcoes
+    lw      $t2, 120($sp)
+    la      $t1, 0x80000210
+    sw      $t2, 0($t1)
+
     # ACK para o PIC
     la      $t0, 0x80000220
     la      $t1, 0x80000200
     lw      $t2, 0($t1)
     sw      $t2, 0($t0)
 
-    # Restaura contexto da pilha
-    la      $k0, PCB
-    lw      $at,   0($k0)
-    lw      $v0,   4($k0)
-    lw      $v1,   8($k0)
-    lw      $a0,  12($k0)
-    lw      $a1,  16($k0)
-    lw      $a2,  20($k0)
-    lw      $a3,  24($k0)
-    lw      $t0,  28($k0)
-    lw      $t1,  32($k0)
-    lw      $t2,  36($k0)
-    lw      $t3,  40($k0)
-    lw      $t4,  44($k0)
-    lw      $t5,  48($k0)
-    lw      $t6,  52($k0)
-    lw      $t7,  56($k0)
-    lw      $t8,  60($k0)
-    lw      $t9,  64($k0)
-    lw      $s0,  68($k0)
-    lw      $s1,  72($k0)
-    lw      $s2,  76($k0)
-    lw      $s3,  80($k0)
-    lw      $s4,  84($k0)
-    lw      $s5,  88($k0)
-    lw      $s6,  92($k0)
-    lw      $s7,  96($k0)
-    lw      $gp, 100($k0)
-    lw      $fp, 104($k0)
-    lw      $sp, 108($k0)
-    lw      $ra, 112($k0)
-
-    # Restaura EPC
-    lw      $t0, 116($k0)
+    # restaura epc da stack
+    lw      $t0, 124($sp)
     mtc0    $t0, $14
 
-    # Restaura máscara de IRQs
-    lw      $t2, 120($k0)
-    la      $t1, 0x80000210
-    sw      $t2, 0($t1)
-
-    eret
-
-.data
-    PCB:    .space 124   # Aumentado para incluir EPC e máscara do PIC
+    # restaura registradores
+    lw      $at,   0($sp)
+    lw      $v0,   4($sp)
+    lw      $v1,   8($sp)
+    lw      $a0,  12($sp)
+    lw      $a1,  16($sp)
+    lw      $a2,  20($sp)
+    lw      $a3,  24($sp)
+    lw      $t0,  28($sp)
+    lw      $t1,  32($sp)
+    lw      $t2,  36($sp)
+    lw      $t3,  40($sp)
+    lw      $t4,  44($sp)
+    lw      $t5,  48($sp)
+    lw      $t6,  52($sp)
+    lw      $t7,  56($sp)
+    lw      $t8,  60($sp)
+    lw      $t9,  64($sp)
+    lw      $s0,  68($sp)
+    lw      $s1,  72($sp)
+    lw      $s2,  76($sp)
+    lw      $s3,  80($sp)
+    lw      $s4,  84($sp)
+    lw      $s5,  88($sp)
+    lw      $s6,  92($sp)
+    lw      $s7,  96($sp)
+    lw      $gp, 100($sp)
+    lw      $fp, 104($sp)
+    lw      $ra, 112($sp)
+    
+    addiu   $sp, $sp, 128    # desaloca stack
+    eret                     
 

@@ -6,7 +6,7 @@
 .globl InterruptionServiceRoutine_user
 InterruptionServiceRoutine_user:
 
-    # Salva contexto
+    # Salva contexto 
     la      $k0, PCB
     sw      $at,   0($k0)
     sw      $v0,   4($k0)
@@ -94,8 +94,6 @@ InterruptionServiceRoutine_user:
     j RestoreContext
 
 RestoreContext:
-    la      $k0, PCB
-
     # Restaura máscara de IRQs
     lw      $t2, 120($k0)
     la      $t1, 0x80000210
@@ -152,4 +150,4 @@ RestoreContext:
     eret                       # Retorna da interrupção
 
 .data
-    PCB: .space 128
+    PCB: .space 124   

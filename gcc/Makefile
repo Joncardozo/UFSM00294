@@ -1,6 +1,6 @@
-TOOLCHAIN = /home/jon/code/trabalho4/mips-img-elf/2019.02-04/bin
-ASM_SRC = /home/jon/code/trabalho5parte2/UFSM00294/MIPS_Monocycle/src/asm/trabalho5
-C_SRC = /home/jon/code/trabalho5parte2/UFSM00294/MIPS_Monocycle/src/C/trabalho5
+TOOLCHAIN = /home/jon/code/mips-img-elf/2024.10-03/bin
+ASM_SRC = /home/jon/code/t5p2/UFSM00294/MIPS_Monocycle/src/asm/trabalho5
+C_SRC = /home/jon/code/t5p2/UFSM00294/MIPS_Monocycle/src/C/trabalho5
 
 CC_MIPS         = $(TOOLCHAIN)/mips-img-elf-gcc
 CPP_MIPS        = $(TOOLCHAIN)/mips-img-elf-g++

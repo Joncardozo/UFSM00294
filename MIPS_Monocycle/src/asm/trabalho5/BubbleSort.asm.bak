@@ -1,10 +1,9 @@
 # Programa: BubbleSort
 # Descri��o: Ordena��o crescente
 
+.globl BubbleSort
+
 .text
-    .p2align    2
-    .globl      BubbleSort
-    .type       BubbleSort, @function
 BubbleSort:
     addiu   $t8, $zero, 1           # t8 = 1: swap performed
     
@@ -22,11 +21,10 @@ inner_loop:
     lw      $s2, 4($s0)             # s2 <- array[i + 1]
     slt     $t7, $s2, $s1           # array[i+1] < array[i] ?
     beq     $t7, $zero, continue    # if (array[i + 1] < array[i])
-    addiu   $a0, $s0, 0         #     swap(&array[i], &array[i + 1])
-    addiu   $a1, $s0, 4         #
-    j       swap                #
-inner_continue:
-    addiu   $t8, $zero, 1       # Indicates a swap performed
+        addiu   $a0, $s0, 0         #     swap(&array[i], &array[i + 1])
+        addiu   $a1, $s0, 4         #
+        jal     swap                #
+        addiu   $t8, $zero, 1       # Indicates a swap performed
 
 continue:
     addiu   $s0, $s0, 4             # s0 points the next element
@@ -47,16 +45,11 @@ swap:
     lw      $s0, 0($sp)             # Restore used registers
     lw      $s1, 4($sp)             # 
     addiu   $sp, $sp, 8             # Release stack space
-    j inner_continue
+    jr $ra                          # return 1
     
 end: 
-    jr      $ra
-    nop
-    .size   BubbleSort, .-BubbleSort
+    j       end 
 
-    .data
-    .p2align    2
-array:
-    .word 4,2,1,5,4,9,3
-size:
-    .word 7
+.data 
+    array:      .word 4, 2, 1, 5, 4, 9, 3
+    size:       .word 7
