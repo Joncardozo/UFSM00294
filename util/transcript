@@ -1,0 +1,181 @@
+ls
+# BidirectionalPort.vhd
+# code.txt
+# compile.tcl
+# data.txt
+# InterruptController.vhd
+# Memory.vhd
+# MIPS_monocycle.vhd
+# MIPS_pkg.vhd
+# MIPS_uC_tb.v
+# MIPS_uC.v
+# peripheral_controller.v
+# PriorityEncoder.vhd
+# Timer.vhd
+# transcript
+# UART_RX.vhd
+# UART_TX.vhd
+# Util_pkg.vhd
+# work
+do compile.tcl
+# 
+#     MIPS_pkg.vhd
+#     Util_pkg.vhd
+#     Memory.vhd
+#     Timer.vhd
+#     BidirectionalPort.vhd
+#     PriorityEncoder.vhd
+#     InterruptController.vhd
+#     UART_RX.vhd
+#     UART_TX.vhd
+#     peripheral_controller.v
+#     MIPS_monocycle.vhd
+#     MIPS_uC.v
+#     MIPS_uC_tb.v
+# 
+# MIPS_uC_tb.v
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:09:10 on Jun 06,2025
+# vcom -reportprogress 300 MIPS_pkg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package MIPS_pkg
+# -- Compiling package body MIPS_pkg
+# -- Loading package MIPS_pkg
+# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:09:11 on Jun 06,2025
+# vcom -reportprogress 300 Util_pkg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package Util_pkg
+# -- Compiling package body Util_pkg
+# -- Loading package Util_pkg
+# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:09:11 on Jun 06,2025
+# vcom -reportprogress 300 Memory.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Util_pkg
+# -- Compiling entity Memory
+# -- Compiling architecture behavioral of Memory
+# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:09:11 on Jun 06,2025
+# vcom -reportprogress 300 Timer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Timer
+# -- Compiling architecture Behavioral of Timer
+# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:09:11 on Jun 06,2025
+# vcom -reportprogress 300 BidirectionalPort.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BidirectionalPort
+# -- Compiling architecture Behavioral of BidirectionalPort
+# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:09:11 on Jun 06,2025
+# vcom -reportprogress 300 PriorityEncoder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity PriorityEncoder
+# -- Compiling architecture behavioural of PriorityEncoder
+# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:09:11 on Jun 06,2025
+# vcom -reportprogress 300 InterruptController.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity InterruptController
+# -- Compiling architecture Behavioral of InterruptController
+# -- Loading entity PriorityEncoder
+# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:09:11 on Jun 06,2025
+# vcom -reportprogress 300 UART_RX.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity UART_RX
+# -- Compiling architecture behavioral of UART_RX
+# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:09:11 on Jun 06,2025
+# vcom -reportprogress 300 UART_TX.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity UART_TX
+# -- Compiling architecture behavioral of UART_TX
+# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:09:11 on Jun 06,2025
+# vlog -reportprogress 300 peripheral_controller.v 
+# -- Compiling module peripheral_controller
+# 
+# Top level modules:
+# 	peripheral_controller
+# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:09:11 on Jun 06,2025
+# vcom -reportprogress 300 MIPS_monocycle.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MIPS_pkg
+# -- Compiling entity MIPS_monocycle
+# -- Compiling architecture behavioral of MIPS_monocycle
+# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:09:11 on Jun 06,2025
+# vlog -reportprogress 300 MIPS_uC.v 
+# -- Compiling module MIPS_uC
+# 
+# Top level modules:
+# 	MIPS_uC
+# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:09:11 on Jun 06,2025
+# vlog -reportprogress 300 MIPS_uC_tb.v 
+# -- Compiling module MIPS_uC_tb
+# 
+# Top level modules:
+# 	MIPS_uC_tb
+# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# MIPS_uC_tb

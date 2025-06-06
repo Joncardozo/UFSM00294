@@ -1,0 +1,501 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/dede/Downloads/UFSM00294-trabalho5/modelsim/util
+Ebidirectionalport
+Z1 w1748944802
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 54
+R0
+Z5 8BidirectionalPort.vhd
+Z6 FBidirectionalPort.vhd
+l0
+L5 1
+VcTL9:>PEbMn@4eKMmi@D>0
+!s100 B[WRAEA>z:31`U]014N2Y0
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1749182951
+!i10b 1
+Z9 !s108 1749182951.000000
+Z10 !s90 -reportprogress|300|BidirectionalPort.vhd|
+Z11 !s107 BidirectionalPort.vhd|
+!i113 1
+Z12 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+R4
+DEx4 work 17 bidirectionalport 0 22 cTL9:>PEbMn@4eKMmi@D>0
+!i122 54
+l43
+L31 90
+V^zjb^5=9gL<O1[D`MN<6O1
+!s100 S4fVa_C55CIDdjmN<LHB11
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Einterruptcontroller
+R1
+R2
+Z13 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z14 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R3
+R4
+!i122 56
+R0
+Z15 8InterruptController.vhd
+Z16 FInterruptController.vhd
+l0
+Z17 L19 1
+VzXSNAzUiB;=9DbD@A_<j?1
+!s100 W;jOeS8I6F>VQP[Nmh9?<0
+R7
+32
+R8
+!i10b 1
+R9
+Z18 !s90 -reportprogress|300|InterruptController.vhd|
+Z19 !s107 InterruptController.vhd|
+!i113 1
+R12
+Abehavioral
+Z20 DEx4 work 15 priorityencoder 0 22 BBC<^kk[9gWHLD5RbOcTc1
+R2
+R13
+R14
+R3
+R4
+DEx4 work 19 interruptcontroller 0 22 zXSNAzUiB;=9DbD@A_<j?1
+!i122 56
+l46
+L38 63
+VRP>O[GDd_aGHch7?;cjXh1
+!s100 zXSX6bQ8^OA:N=aZVDo]?2
+R7
+32
+R8
+!i10b 1
+R9
+R18
+R19
+!i113 1
+R12
+Ememory
+R1
+Z21 DPx4 work 8 util_pkg 0 22 :_9Z0OS_9hSb02edAI2cO0
+R2
+R3
+R4
+!i122 52
+R0
+Z22 8Memory.vhd
+Z23 FMemory.vhd
+l0
+R17
+V0kOEE3jOK0QHVPegSK9T?1
+!s100 _ZQ]zZSA^aBIk76_W@7la2
+R7
+32
+R8
+!i10b 1
+R9
+Z24 !s90 -reportprogress|300|Memory.vhd|
+Z25 !s107 Memory.vhd|
+!i113 1
+R12
+Abehavioral
+R21
+R2
+R3
+R4
+DEx4 work 6 memory 0 22 0kOEE3jOK0QHVPegSK9T?1
+!i122 52
+l69
+L38 49
+V8zekXIzc5@;KkOP:i^]?42
+!s100 ce0TP;Z]5ohnW5z3hAn9@3
+R7
+32
+R8
+!i10b 1
+R9
+R24
+R25
+!i113 1
+R12
+Emips_monocycle
+R1
+Z26 DPx4 work 8 mips_pkg 0 22 JmM6Pi6[DR[B4B>nXj?M13
+R2
+R3
+R4
+!i122 60
+R0
+Z27 8MIPS_monocycle.vhd
+Z28 FMIPS_monocycle.vhd
+l0
+Z29 L11 1
+VA<VQZP7O`l4B?4`R3MAP[0
+!s100 M[YfYQeDlb^iUQZJAaKK33
+R7
+32
+R8
+!i10b 1
+R9
+Z30 !s90 -reportprogress|300|MIPS_monocycle.vhd|
+Z31 !s107 MIPS_monocycle.vhd|
+!i113 1
+R12
+Abehavioral
+R26
+R2
+R3
+R4
+DEx4 work 14 mips_monocycle 0 22 A<VQZP7O`l4B?4`R3MAP[0
+!i122 60
+l76
+L34 287
+VMkaoin;8E;TUdRUj`CQHG0
+!s100 lENPPB0do[=F24]iXkL<G3
+R7
+32
+R8
+!i10b 1
+R9
+R30
+R31
+!i113 1
+R12
+Pmips_pkg
+R2
+R3
+R4
+!i122 50
+R1
+R0
+Z32 8MIPS_pkg.vhd
+Z33 FMIPS_pkg.vhd
+l0
+R29
+VJmM6Pi6[DR[B4B>nXj?M13
+!s100 KO=nA^_a4LELCI2GJ5R=90
+R7
+32
+b1
+R8
+!i10b 1
+Z34 !s108 1749182950.000000
+Z35 !s90 -reportprogress|300|MIPS_pkg.vhd|
+Z36 !s107 MIPS_pkg.vhd|
+!i113 1
+R12
+Bbody
+R26
+R2
+R3
+R4
+!i122 50
+l0
+L31 1
+VBY5]Lh80FCBARmd1;<=`I0
+!s100 Xn^9QTeZWc[^hVaSBhBz_3
+R7
+32
+R8
+!i10b 1
+R34
+R35
+R36
+!i113 1
+R12
+vMIPS_uC
+R8
+!i10b 1
+!s100 z@3_inB@ohVGG_Oc8ciJE0
+Z37 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I;6QE5HCa13Q]FC17HF3Cl3
+Z38 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1749182800
+8MIPS_uC.v
+FMIPS_uC.v
+!i122 61
+L0 1 211
+Z39 OV;L;2020.1;71
+r1
+!s85 0
+31
+R9
+!s107 MIPS_uC.v|
+!s90 -reportprogress|300|MIPS_uC.v|
+!i113 1
+Z40 tCvgOpt 0
+n@m@i@p@s_u@c
+vMIPS_uC_tb
+R8
+!i10b 1
+!s100 9S=8PEiV7>K[nYC006==52
+R37
+I9m4CYhkMh68MlcKCV=oL?3
+R38
+R0
+w1749182790
+8MIPS_uC_tb.v
+FMIPS_uC_tb.v
+!i122 62
+L0 3 56
+R39
+r1
+!s85 0
+31
+R9
+!s107 MIPS_uC_tb.v|
+!s90 -reportprogress|300|MIPS_uC_tb.v|
+!i113 1
+R40
+n@m@i@p@s_u@c_tb
+vperipheral_controller
+R8
+!i10b 1
+!s100 <kP1KmaEA1^X_?J@6@_7I2
+R37
+I4b8iY3SE;8KQ7lVQCG@L52
+R38
+R0
+R1
+8peripheral_controller.v
+Fperipheral_controller.v
+!i122 59
+L0 1 60
+R39
+r1
+!s85 0
+31
+R9
+!s107 peripheral_controller.v|
+!s90 -reportprogress|300|peripheral_controller.v|
+!i113 1
+R40
+Epriorityencoder
+R1
+R13
+R14
+R3
+R4
+!i122 55
+R0
+Z41 8PriorityEncoder.vhd
+Z42 FPriorityEncoder.vhd
+l0
+L16 1
+VBBC<^kk[9gWHLD5RbOcTc1
+!s100 kC?NX[VW>X9LbfSnY^>Dk2
+R7
+32
+R8
+!i10b 1
+R9
+Z43 !s90 -reportprogress|300|PriorityEncoder.vhd|
+Z44 !s107 PriorityEncoder.vhd|
+!i113 1
+R12
+Abehavioural
+R13
+R14
+R3
+R4
+R20
+!i122 55
+l26
+L25 16
+VYcb:9<2=PTVhNLJS9oHbz0
+!s100 kK112OG318l3bI@CXZ=[<2
+R7
+32
+R8
+!i10b 1
+R9
+R43
+R44
+!i113 1
+R12
+Etimer
+R1
+R2
+R3
+R4
+!i122 53
+R0
+Z45 8Timer.vhd
+Z46 FTimer.vhd
+l0
+L18 1
+VOf08dXVHUU[LzY`Wm1Via1
+!s100 zQCiH>I9DgeVG8@FA8P5z0
+R7
+32
+R8
+!i10b 1
+R9
+Z47 !s90 -reportprogress|300|Timer.vhd|
+Z48 !s107 Timer.vhd|
+!i113 1
+R12
+Abehavioral
+R2
+R3
+R4
+DEx4 work 5 timer 0 22 Of08dXVHUU[LzY`Wm1Via1
+!i122 53
+l38
+L33 31
+VkI?4KdQbGDz8=5LajB]NG1
+!s100 ?OTjM>l13VbLUOH6CNlY71
+R7
+32
+R8
+!i10b 1
+R9
+R47
+R48
+!i113 1
+R12
+Euart_rx
+Z49 w1749182440
+R2
+R3
+R4
+!i122 57
+R0
+Z50 8UART_RX.vhd
+Z51 FUART_RX.vhd
+l0
+Z52 L15 1
+VOeXN>Wg?OW:<W`kMFB?7`0
+!s100 Q`1h8P1W3gZ5@^^Mh9I_S0
+R7
+32
+R8
+!i10b 1
+R9
+Z53 !s90 -reportprogress|300|UART_RX.vhd|
+Z54 !s107 UART_RX.vhd|
+!i113 1
+R12
+Abehavioral
+R2
+R3
+R4
+DEx4 work 7 uart_rx 0 22 OeXN>Wg?OW:<W`kMFB?7`0
+!i122 57
+l47
+L36 83
+VRL1CzBZkmGCEDcEoJ47BG3
+!s100 Z32<U[z^l;FaA3WRZE9k?1
+R7
+32
+R8
+!i10b 1
+R9
+R53
+R54
+!i113 1
+R12
+Euart_tx
+Z55 w1749182474
+R2
+R3
+R4
+!i122 58
+R0
+Z56 8UART_TX.vhd
+Z57 FUART_TX.vhd
+l0
+R52
+VZ3BVFlMR5@>gbfML:aAW>1
+!s100 JE@W4946`3IM>UHC[O1N02
+R7
+32
+R8
+!i10b 1
+R9
+Z58 !s90 -reportprogress|300|UART_TX.vhd|
+Z59 !s107 UART_TX.vhd|
+!i113 1
+R12
+Abehavioral
+R2
+R3
+R4
+DEx4 work 7 uart_tx 0 22 Z3BVFlMR5@>gbfML:aAW>1
+!i122 58
+l47
+L37 85
+VH9TAfJ@?oOjjL><E7<G7X0
+!s100 50g@k_bZCX62=VFzXCV4k3
+R7
+32
+R8
+!i10b 1
+R9
+R58
+R59
+!i113 1
+R12
+Putil_pkg
+R3
+R4
+!i122 51
+R1
+R0
+Z60 8Util_pkg.vhd
+Z61 FUtil_pkg.vhd
+l0
+L9 1
+V:_9Z0OS_9hSb02edAI2cO0
+!s100 Ade5EQLCc<_<QgP7N:P8c3
+R7
+32
+b1
+R8
+!i10b 1
+R9
+Z62 !s90 -reportprogress|300|Util_pkg.vhd|
+Z63 !s107 Util_pkg.vhd|
+!i113 1
+R12
+Bbody
+R21
+R3
+R4
+!i122 51
+l0
+L26 1
+VA^IRioT::nHO0Y68oiccl1
+!s100 a_aWB]U9aKjMF1O75Ahcf3
+R7
+32
+R8
+!i10b 1
+R9
+R62
+R63
+!i113 1
+R12
