@@ -1,0 +1,82 @@
+
+Discarded input sections
+
+ .reginfo       0x0000000000000000       0x18 BubbleSort.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 BubbleSort.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+INSTRUCTION_MEMORY 0x0000000000000000 0x0000000000002000
+DATA_MEMORY      0x0000000000000000 0x0000000000008000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+
+.text           0x0000000000000000      0x2b4
+ *(.text.*)
+ .text          0x0000000000000000      0x130 uart_utils.o
+                0x0000000000000000                IntegerToString
+                0x00000000000000ec                PrintString
+ .text          0x0000000000000130      0x184 BubbleSort.o
+                0x0000000000000130                BubbleSort
+                0x00000000000001ac                main
+
+.MIPS.abiflags  0x00000000000002b8       0x18
+ .MIPS.abiflags
+                0x00000000000002b8       0x18 uart_utils.o
+
+.data           0x0000000000000000       0x28 load address 0x00000000000002d0
+ *(.sdata)
+ *(.sdata.*)
+ *(.data)
+ .data          0x0000000000000000        0x0 uart_utils.o
+ .data          0x0000000000000000        0x0 BubbleSort.o
+ *(.data.*)
+ *(.rdata)
+ *(.rodata)
+ *(.rodata.*)
+ .rodata.str1.4
+                0x0000000000000000       0x28 BubbleSort.o
+                                         0x26 (size before relaxing)
+
+.bss            0x0000000000000028        0x0 load address 0x00000000000002f8
+ *(.sbss)
+ *(.sbss.*)
+ *(.bss)
+ .bss           0x0000000000000028        0x0 uart_utils.o
+ .bss           0x0000000000000028        0x0 BubbleSort.o
+ *(.bss.*)
+ *(.scommon)
+ *(COMMON)
+                0x0000000000007ffc                . = ((ORIGIN (DATA_MEMORY) + LENGTH (DATA_MEMORY)) - 0x4)
+                0x0000000000007ffc                . = ALIGN (0x4)
+                0x0000000000007ffc                _stack_ptr = .
+LOAD uart_utils.o
+LOAD BubbleSort.o
+OUTPUT(main.elf elf32-tradlittlemips)
+
+.reginfo        0x0000000000000000       0x18
+ .reginfo       0x0000000000000000       0x18 uart_utils.o
+
+.pdr            0x0000000000000000       0x80
+ .pdr           0x0000000000000000       0x40 uart_utils.o
+ .pdr           0x0000000000000040       0x40 BubbleSort.o
+
+.mdebug.abi32   0x0000000000000000        0x0
+ .mdebug.abi32  0x0000000000000000        0x0 uart_utils.o
+ .mdebug.abi32  0x0000000000000000        0x0 BubbleSort.o
+
+.comment        0x0000000000000000       0x45
+ .comment       0x0000000000000000       0x45 uart_utils.o
+                                         0x46 (size before relaxing)
+ .comment       0x0000000000000045       0x46 BubbleSort.o
+
+.gnu.attributes
+                0x0000000000000000       0x10
+ .gnu.attributes
+                0x0000000000000000       0x10 uart_utils.o
+ .gnu.attributes
+                0x0000000000000010       0x10 BubbleSort.o

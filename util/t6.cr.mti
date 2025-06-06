@@ -1,0 +1,119 @@
+/home/jon/code/t6/UFSM00294/util/PriorityEncoder.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jon/code/t6/UFSM00294/util/PriorityEncoder.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity PriorityEncoder
+-- Compiling architecture behavioural of PriorityEncoder
+
+} {} {}} /home/jon/code/t6/UFSM00294/util/MIPS_uC.v {1 {vlog -work work -vopt -stats=none /home/jon/code/t6/UFSM00294/util/MIPS_uC.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module MIPS_uC
+
+Top level modules:
+	MIPS_uC
+
+} {} {}} /home/jon/code/t6/UFSM00294/util/UART_RX.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jon/code/t6/UFSM00294/util/UART_RX.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity UART_RX
+-- Compiling architecture behavioral of UART_RX
+
+} {} {}} /home/jon/code/t6/UFSM00294/util/Util_pkg.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jon/code/t6/UFSM00294/util/Util_pkg.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package Util_pkg
+-- Compiling package body Util_pkg
+-- Loading package Util_pkg
+
+} {} {}} /home/jon/code/t6/UFSM00294/util/UART_TX.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jon/code/t6/UFSM00294/util/UART_TX.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity UART_TX
+-- Compiling architecture behavioral of UART_TX
+
+} {} {}} /home/jon/code/t6/UFSM00294/util/MIPS_uC_tb.v {1 {vlog -work work -vopt -stats=none /home/jon/code/t6/UFSM00294/util/MIPS_uC_tb.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module MIPS_uC_tb
+
+Top level modules:
+	MIPS_uC_tb
+
+} {} {}} /home/jon/code/t6/UFSM00294/util/Timer.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jon/code/t6/UFSM00294/util/Timer.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Timer
+-- Compiling architecture Behavioral of Timer
+
+} {} {}} /home/jon/code/t6/UFSM00294/util/MIPS_pkg.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jon/code/t6/UFSM00294/util/MIPS_pkg.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package MIPS_pkg
+-- Compiling package body MIPS_pkg
+-- Loading package MIPS_pkg
+
+} {} {}} /home/jon/code/t6/UFSM00294/util/peripheral_controller.v {1 {vlog -work work -vopt -stats=none /home/jon/code/t6/UFSM00294/util/peripheral_controller.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module peripheral_controller
+
+Top level modules:
+	peripheral_controller
+
+} {} {}} /home/jon/code/t6/UFSM00294/util/BidirectionalPort.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jon/code/t6/UFSM00294/util/BidirectionalPort.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity BidirectionalPort
+-- Compiling architecture Behavioral of BidirectionalPort
+
+} {} {}} /home/jon/code/t6/UFSM00294/util/MIPS_monocycle.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jon/code/t6/UFSM00294/util/MIPS_monocycle.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package MIPS_pkg
+-- Compiling entity MIPS_monocycle
+-- Compiling architecture behavioral of MIPS_monocycle
+
+} {} {}} /home/jon/code/t6/UFSM00294/util/Memory.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jon/code/t6/UFSM00294/util/Memory.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package Util_pkg
+-- Compiling entity Memory
+-- Compiling architecture behavioral of Memory
+
+} {} {}} /home/jon/code/t6/UFSM00294/util/InterruptController.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jon/code/t6/UFSM00294/util/InterruptController.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Compiling entity InterruptController
+-- Compiling architecture Behavioral of InterruptController
+-- Loading entity PriorityEncoder
+
+} {} {}}

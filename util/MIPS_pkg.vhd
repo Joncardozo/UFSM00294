@@ -15,7 +15,7 @@ package MIPS_pkg is
         UNIMPLEMENTED_INSTRUCTION, NOP, ADDU, SUBU, AAND, ANDI, OOR, SW, LW, ADDIU, 
         ORI, SLT, BEQ, BNE, J, JR, JAL, LUI, XXOR, XORI, NNOR, SSLL, SSRL, SSRA, SLLV,
         SRLV, SRAV, SLTI, SLTIU, BGEZ, BLEZ, LB, LBU, LH, LHU, SB, SH, JALR, SLTU, 
-        ERET, BLTZ, BGTZ, MTC0, MFC0
+        ERET, BLTZ, BGTZ, MTC0, MFC0, MULT, MFHI, MFLO
     );
     
     -- Functions used to facilitate the processor description
@@ -96,6 +96,15 @@ package body MIPS_pkg is
 
                 elsif instruction(5 downto 0) = "101011" then
                     decodedInstruction := SLTU;
+
+                elsif instruction(5 downto 0) = "011000" then
+                    decodedInstruction := MULT;
+
+                elsif instruction(5 downto 0) = "010000" then
+                    decodedInstruction := MFHI;
+
+                elsif instruction(5 downto 0) = "010010" then
+                    decodedInstruction := MFLO;
 
                 end if;
 
@@ -197,7 +206,7 @@ package body MIPS_pkg is
         case (instruction) is
             when ADDU | SUBU | AAND | OOR | SLT | LW | ADDIU | ORI | LUI | JAL | XXOR
                 | XORI | ANDI | NNOR | SSLL | SSRL | SSRA | SLLV | SRLV | SRAV | SLTI 
-                | SLTIU | LB  | LBU | LH | LHU | SLTU | JALR | MFC0 =>
+                | SLTIU | LB  | LBU | LH | LHU | SLTU | JALR | MFC0 | MFHI | MFLO =>
                 result := true;
             
             when others =>

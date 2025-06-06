@@ -36,6 +36,8 @@ architecture behavioral of MIPS_monocycle is
     signal pc, readData2, writeData, instructionFetchAddress: UNSIGNED(31 downto 0);
     signal signExtended, zeroExtended : UNSIGNED(31 downto 0);
     signal ALUoperand1, ALUoperand2, result: UNSIGNED(31 downto 0);
+    signal result64b : UNSIGNED(63 downto 0);
+    signal HI, LO : UNSIGNED(31 downto 0);
     signal branchOffset, branchTarget, jumpTarget: UNSIGNED(31 downto 0);
     signal writeRegister   : UNSIGNED(4 downto 0);
     signal regWrite : std_logic;
@@ -203,6 +205,8 @@ begin
                                 UNSIGNED(STATUS) when decodedInstruction = MFC0 and TO_INTEGER(UNSIGNED(instruction_rd)) = 12 else
                                 UNSIGNED(ISR_AD) when decodedInstruction = MFC0 and TO_INTEGER(UNSIGNED(instruction_rd)) = 31 else
                                 pc when decodedInstruction = JAL  or decodedInstruction = JALR else
+                                HI when decodedInstruction = MFHI else
+                                LO when decodedInstruction = MFLO else
                                 result;
     
     -- R-type, ADDIU, ORI and load instructions, store the result in the register file
@@ -289,6 +293,19 @@ begin
                 (others=>'0') when decodedInstruction = SLTU and not (ALUoperand1 < ALUoperand2) else
                 ALUoperand2(15 downto 0) & x"0000" when decodedInstruction = LUI else --LUI
                 ALUoperand1 + ALUoperand2;    -- default for ADDU, ADDIU, SW, LW, LB   
+
+    result64b <= UNSIGNED(SIGNED(ALUoperand1) * SIGNED(ALUoperand2)) when decodedInstruction = MULT else
+                (others => '0');
+
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            if decodedInstruction = MULT then
+                HI <= result64b(63 downto 32);
+                LO <= result64b(31 downto 0);
+            end if;
+        end if;
+    end process;
 
     -- Generates the zero flag
     zero <= '1' when result = 0 else '0';
