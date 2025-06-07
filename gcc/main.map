@@ -24,7 +24,7 @@ DATA_MEMORY      0x0000000000000000 0x0000000000008000
 Linker script and memory map
 
 
-.text           0x0000000000000000      0x5cc
+.text           0x0000000000000000      0x5c0
  boot.o(.text)
  .text          0x0000000000000000       0x8c boot.o
                 0x0000000000000000                boot_start
@@ -32,57 +32,57 @@ Linker script and memory map
  *fill*         0x000000000000008c       0x73 
  ism_user.o(.text)
  *fill*         0x00000000000000ff        0x1 
- .text          0x0000000000000100      0x1e0 ism_user.o
+ .text          0x0000000000000100      0x1d0 ism_user.o
                 0x0000000000000100                InterruptionServiceRoutine_user
  ism_kernel.o(.text)
- .text          0x00000000000002e0      0x194 ism_kernel.o
-                0x00000000000002e0                InterruptionServiceRoutine_kernel
+ .text          0x00000000000002d0      0x190 ism_kernel.o
+                0x00000000000002d0                InterruptionServiceRoutine_kernel
  *(.text.*)
- .text          0x0000000000000474       0x98 BubbleSort.o
-                0x0000000000000474                BubbleSort
- .text          0x000000000000050c       0xc0 handlers.o
-                0x000000000000050c                irq0_handler
-                0x0000000000000514                irq4_handler
-                0x000000000000053c                irq5_handler
-                0x0000000000000564                irq6_handler
-                0x000000000000058c                irq7_handler
-                0x00000000000005b4                irq3_handler
-                0x00000000000005bc                irq1_handler
-                0x00000000000005c4                irq2_handler
+ .text          0x0000000000000460       0xa0 BubbleSort.o
+                0x0000000000000460                BubbleSort
+ .text          0x0000000000000500       0xc0 handlers.o
+                0x0000000000000500                irq0_handler
+                0x0000000000000508                irq4_handler
+                0x0000000000000530                irq5_handler
+                0x0000000000000558                irq6_handler
+                0x0000000000000580                irq7_handler
+                0x00000000000005a8                irq3_handler
+                0x00000000000005b0                irq1_handler
+                0x00000000000005b8                irq2_handler
 
-.MIPS.abiflags  0x00000000000005d0       0x18
+.MIPS.abiflags  0x00000000000005c0       0x18
  .MIPS.abiflags
-                0x00000000000005d0       0x18 boot.o
+                0x00000000000005c0       0x18 boot.o
 
-.rel.dyn        0x00000000000005e8        0x0
- .rel.dyn       0x00000000000005e8        0x0 handlers.o
+.rel.dyn        0x00000000000005d8        0x0
+ .rel.dyn       0x00000000000005d8        0x0 handlers.o
 
-.data           0x0000000000000000      0x8d8 load address 0x00000000000005e8
+.data           0x0000000000000000      0x4d4 load address 0x00000000000005d8
  *(.sdata)
  *(.sdata.*)
  *(.data)
- .data          0x0000000000000000      0x808 boot.o
-                0x0000000000000800                kernel_sp
-                0x0000000000000804                user_sp
- .data          0x0000000000000808       0x80 ism_user.o
- .data          0x0000000000000888        0x0 ism_kernel.o
- .data          0x0000000000000888       0x20 BubbleSort.o
- .data          0x00000000000008a8       0x30 handlers.o
-                0x00000000000008b8                irq_handlers
+ .data          0x0000000000000000      0x288 boot.o
+                0x0000000000000280                kernel_sp
+                0x0000000000000284                user_sp
+ .data          0x0000000000000288       0x80 ism_user.o
+ .data          0x0000000000000308        0x0 ism_kernel.o
+ .data          0x0000000000000308      0x19c BubbleSort.o
+ .data          0x00000000000004a4       0x30 handlers.o
+                0x00000000000004b4                irq_handlers
  *(.data.*)
  *(.rdata)
  *(.rodata)
  *(.rodata.*)
 
-.bss            0x00000000000008d8        0x0 load address 0x0000000000000ec0
+.bss            0x00000000000004d4        0x0 load address 0x0000000000000aac
  *(.sbss)
  *(.sbss.*)
  *(.bss)
- .bss           0x00000000000008d8        0x0 boot.o
- .bss           0x00000000000008d8        0x0 ism_user.o
- .bss           0x00000000000008d8        0x0 ism_kernel.o
- .bss           0x00000000000008d8        0x0 BubbleSort.o
- .bss           0x00000000000008d8        0x0 handlers.o
+ .bss           0x00000000000004d4        0x0 boot.o
+ .bss           0x00000000000004d4        0x0 ism_user.o
+ .bss           0x00000000000004d4        0x0 ism_kernel.o
+ .bss           0x00000000000004d4        0x0 BubbleSort.o
+ .bss           0x00000000000004d4        0x0 handlers.o
  *(.bss.*)
  *(.scommon)
  *(COMMON)

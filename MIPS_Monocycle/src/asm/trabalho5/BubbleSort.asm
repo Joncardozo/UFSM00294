@@ -2,61 +2,61 @@
 # Descri��o: Ordena��o crescente
 
 .text
-    .p2align    2
-    .globl      BubbleSort
-    .type       BubbleSort, @function
+.globl BubbleSort
+.set noreorder
 BubbleSort:
-    addiu   $t8, $zero, 1           # t8 = 1: swap performed
+    addiu   $sp, $sp, -4
+    sw      $ra, 0($sp)
+	li	$t8, 1	#t8 = 1 ocorreu swap
+	lw	$t9, arrayc	# carrega numero arrays
+	la	$t0, array	# carrega endereco primeiro elemento array
+	la	$t4, 0($t0) # carrega endereco primeiro elemento array
+	la	$t6, size	# carrega end tamanho primeiro array  
     
 while:
-    beq     $t8, $zero, end         # Verifies if a swap has ocurred
-    la      $s0, array              # s0 points the first array element
-    la      $t6, size               # 
-    lw      $t6, 0($t6)             # t6 <- size    
-    addiu   $t6, $t6, -1            # size-- 
-    addiu   $t8, $zero, 0           # swap <- 0
+	beq	$t8, $zero, outer_loop	# Verifies if a swap has ocurred
+	lw	$t3, 0($t6)
+	la	$t4, 0($t0)
+	li	$t8, 0	# swap <- 0
     
-inner_loop:    
-    beq     $t6, $zero, while       # Verifies if all elements were compared
-    lw      $s1, 0($s0)             # s1 <- array[i]
-    lw      $s2, 4($s0)             # s2 <- array[i + 1]
-    slt     $t7, $s2, $s1           # array[i+1] < array[i] ?
-    beq     $t7, $zero, continue    # if (array[i + 1] < array[i])
-    addiu   $a0, $s0, 0         #     swap(&array[i], &array[i + 1])
-    addiu   $a1, $s0, 4         #
-    j       swap                #
-inner_continue:
-    addiu   $t8, $zero, 1       # Indicates a swap performed
+inner_loop:
+	beq	$t3, $zero, while	# Verifies if all elements were compared
+	lw	$t1, 0($t4)	# t1 <- array[i]
+	lw	$t2, 4($t4)	# t2 <- array[i + 1]
+	slt	$t7, $t2, $t1	# array[i+1] < array[i] ?
+	beq	$t7, $zero, continue	# if (array[i + 1] < array[i])
+	move	$a0, $t4	# swap(&array[i], &array[i + 1])
+	addiu	$a1, $a0, 4
+	jal	swap
+	li	$t8, 1	# Indicates a swap performed
 
 continue:
-    addiu   $s0, $s0, 4             # s0 points the next element
-    addiu   $t6, $t6, -1            # size--
-    j       inner_loop               
+	addiu	$t4, $t4, 4	    # t4 points the next element
+	addiu	$t3, $t3, -1	# size--
+	j	inner_loop               
 
 # Swaps array[i] and array[i + 1]
 swap:
-    addiu   $sp, $sp, -8            # Allocate stack space for registers storing
-    sw      $s0, 0($sp)             # Save used registers
-    sw      $s1, 4($sp)             #
+	lw	$t1, 0($a0)	# t1 <- array[i]
+	lw	$t2, 0($a1)	# t2 <- array[i + 1]
+	sw	$t2, 0($a0)	# array[i] <- t2
+	sw	$t1, 0($a1)	# array[i + 1] <- t1
+	jr	$ra
     
-    lw      $s0, 0($a0)             # s0 <- array[i]
-    lw      $s1, 0($a1)             # s1 <- array[i + 1]
-    sw      $s1, 0($a0)             # array[i] <- s1
-    sw      $s0, 0($a1)             # array[i + 1] <- s0
-    
-    lw      $s0, 0($sp)             # Restore used registers
-    lw      $s1, 4($sp)             # 
-    addiu   $sp, $sp, 8             # Release stack space
-    j inner_continue
+outer_loop:
+	addiu	$t9, $t9, -1	# arrayc--
+	beq	$t9, $zero, end	# verifies if all arrays were sorted    
+	addu	$t0, $t4, 4
+	addu	$t6, $t6, 4
+	addiu	$t8, $zero, 1
+	j	while
     
 end: 
-    jr      $ra
-    nop
-    .size   BubbleSort, .-BubbleSort
+	lw	$ra, 0($sp)	
+	addiu	$sp, $sp, 4
+	jr	$ra
 
-    .data
-    .p2align    2
-array:
-    .word 4,2,1,5,4,9,3
-size:
-    .word 7
+.data 
+    array:      .word 12, 29, 17, 46, 33, 23, 21, 40, 6, 16, 33, 16, 18, 30, 38, 19, 30, 43, 5, 32, 3, 30, 26, 29, 40, 9, 22, 25, 3, 50, 27, 47, 50, 21, 20, 0, 10, 0, 17, 21, 37, 5, 3, 30, 37, 13, 13, 10, 31, 30, 36, 35, 23, 9, 1, 45, 20, 30, 37, 12, 11, 50, 20, 20, 44, 45, 11, 13, 21, 50, 35, 48, 26, 28, 31, 39, 24, 2, 2, 9, 14, 13, 15, 42, 36, 16, 50, 6, 43, 1, 9, 0, 44, 7, 20, 49, 6, 5, 33, 49
+    size:       .word 50, 50
+    arrayc:     .word 2

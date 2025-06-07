@@ -37,6 +37,7 @@ architecture behavioral of MIPS_monocycle is
     signal signExtended, zeroExtended : UNSIGNED(31 downto 0);
     signal ALUoperand1, ALUoperand2, result: UNSIGNED(31 downto 0);
     signal branchOffset, branchTarget, jumpTarget: UNSIGNED(31 downto 0);
+    signal EPC_fetch : UNSIGNED(31 downto 0);
     signal writeRegister   : UNSIGNED(4 downto 0);
     signal regWrite : std_logic;
     signal selectedByte : std_logic_vector(7 downto 0);
@@ -94,8 +95,6 @@ begin
             pc <= instructionFetchAddress + 4;
             if lock = true then
                 lock <= false;
-            elsif decodedInstruction = ERET then
-                pc <= instructionFetchAddress;
             end if;
         end if;
     end process;
@@ -137,6 +136,15 @@ begin
     instructionFetchAddress <=      UNSIGNED(ISR_AD) when (intr = '1' and STATUS(0) = '1') else
                                     UNSIGNED(EPC) when decodedInstruction = ERET else
                                     branchTarget when ((decodedInstruction = BEQ and zero = '1') or (decodedInstruction = BNE and zero = '0')) else 
+                                    branchTarget when (decodedInstruction = BGTZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) > 0) else
+                                    branchTarget when (decodedInstruction = BGEZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) >= 0) else
+                                    branchTarget when (decodedInstruction = BLTZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) < 0) else
+                                    branchTarget when (decodedInstruction = BLEZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) <= 0) else
+                                    jumpTarget when decodedInstruction = J or decodedInstruction = JAL else
+                                    ALUoperand1 when (decodedInstruction = JR or decodedInstruction = JALR) else
+                                    pc;
+
+    EPC_fetch               <=      branchTarget when ((decodedInstruction = BEQ and zero = '1') or (decodedInstruction = BNE and zero = '0')) else 
                                     branchTarget when (decodedInstruction = BGTZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) > 0) else
                                     branchTarget when (decodedInstruction = BGEZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) >= 0) else
                                     branchTarget when (decodedInstruction = BLTZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) < 0) else
@@ -244,7 +252,7 @@ begin
                 STATUS <=   std_logic_vector(readData2);
             end if;
         elsif intr = '1' and STATUS = x"00000001" then
-            EPC <= std_logic_vector(pc);                       -- salva PC atualS
+            EPC <= std_logic_vector(EPC_fetch);
             STATUS <= x"00000000";
         elsif decodedInstruction = ERET then
             STATUS <= x"00000001";    -- libera tratamento ao ERET

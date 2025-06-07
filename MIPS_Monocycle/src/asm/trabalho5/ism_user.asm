@@ -47,7 +47,6 @@ InterruptionServiceRoutine_user:
     lw      $t2, 0($t1)
     sw      $t2, 120($k0)
 
-
     # Salta para pilha do kernel
     la      $k1, kernel_sp
     lw      $sp, 0($k1)
@@ -107,6 +106,10 @@ RestoreContext:
     lw      $t2, 0($t1)
     sw      $t2, 0($t0)
 
+    # Restaura EPC
+    lw      $t0, 116($k0)
+    mtc0    $t0, $14
+
     # Restaura contexto
     la      $k0, PCB
     lw      $at,   0($k0)
@@ -138,16 +141,6 @@ RestoreContext:
     lw      $fp, 104($k0)
     lw      $sp, 108($k0)
     lw      $ra, 112($k0)
-
-    # Restaura EPC
-    lw      $t0, 116($k0)
-    mtc0    $t0, $14
-
-    # Restaura máscara de IRQs
-    lw      $t2, 120($k0)
-    la      $t1, 0x80000210
-    sw      $t2, 0($t1)
-
 
     eret                       # Retorna da interrupção
 

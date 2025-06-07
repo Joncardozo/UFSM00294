@@ -96,7 +96,7 @@ RestoreContext:
     mtc0    $t0, $14
 
     # restaura registradores
-    lw      $at,   0($sp)
+    #lw      $at,   0($sp)
     lw      $v0,   4($sp)
     lw      $v1,   8($sp)
     lw      $a0,  12($sp)
@@ -126,5 +126,6 @@ RestoreContext:
     lw      $ra, 112($sp)
     
     addiu   $sp, $sp, 128    # desaloca stack
-    eret                     
+    
+    eret
 
