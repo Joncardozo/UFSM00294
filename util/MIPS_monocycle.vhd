@@ -36,8 +36,7 @@ architecture behavioral of MIPS_monocycle is
     signal pc, readData2, writeData, instructionFetchAddress: UNSIGNED(31 downto 0);
     signal signExtended, zeroExtended : UNSIGNED(31 downto 0);
     signal ALUoperand1, ALUoperand2, result: UNSIGNED(31 downto 0);
-    signal result64b : UNSIGNED(63 downto 0);
-    signal HI, LO : UNSIGNED(31 downto 0);
+    signal EPC_fetch : UNSIGNED(31 downto 0);
     signal branchOffset, branchTarget, jumpTarget: UNSIGNED(31 downto 0);
     signal writeRegister   : UNSIGNED(4 downto 0);
     signal regWrite : std_logic;
@@ -45,11 +44,6 @@ architecture behavioral of MIPS_monocycle is
     signal selectedByteExtended : UNSIGNED(31 downto 0);
     signal selectedHalfWord : std_logic_vector(15 downto 0);
     signal selectedHalfWordExtended : UNSIGNED(31 downto 0);
-    -- Suporte a interrupção 
-    signal interruptionTreatment : std_logic := '0';
-
-    -- signal nextPc : UNSIGNED(31 downto 0);
-    -- constant ISR_ADDR : UNSIGNED(31 downto 0) := x"000000FF";  
     
     -- Register file
     type RegisterArray is array (natural range <>) of UNSIGNED(31 downto 0);
@@ -61,6 +55,13 @@ architecture behavioral of MIPS_monocycle is
     alias instruction_rd    : std_logic_vector(4 downto 0) is instruction(15 downto 11);
     alias instruction_shamt : std_logic_vector(4 downto 0) is instruction(10 downto 6);
     alias instruction_imm   : std_logic_vector(15 downto 0) is instruction(15 downto 0);
+    
+    -- Multiplication support
+    signal result64b        :   UNSIGNED(63 downto 0);
+
+    -- Alias to HI and LO
+    alias HI_reg            : UNSIGNED(31 downto 0) is result64b(63 downto 32);
+    alias LO_reg            : UNSIGNED(31 downto 0) is result64b(31 downto 0);
        
     -- ALU zero flag
     signal zero : std_logic;
@@ -70,8 +71,9 @@ architecture behavioral of MIPS_monocycle is
 
     -- Coprocessor exception register
     signal ISR_AD           :   std_logic_vector(31 downto 0); --$31
-    signal EPC              :   std_logic_vector(31 downto 0);  -- Exception Program Counter --$14
+    signal EPC              :   std_logic_vector(31 downto 0); --$14
     signal STATUS           :   std_logic_vector(31 downto 0); --$12
+
     
     signal decodedInstruction: Instruction_type;
        
@@ -101,8 +103,6 @@ begin
             end if;
         end if;
     end process;
-
-
         
     -- Selects the instruction field which contains the register to be written
     -- In R-type instructions the destination register is in the 'instruction_rd' field
@@ -135,10 +135,11 @@ begin
     -- Not present in datapath diagram
     -- In case of jump/branch, PC must be bypassed due to synchronous memory read
 
-
     instructionFetchAddress <=      UNSIGNED(ISR_AD) when (intr = '1' and STATUS(0) = '1') else
                                     UNSIGNED(EPC) when decodedInstruction = ERET else
-                                    branchTarget when ((decodedInstruction = BEQ and zero = '1') or (decodedInstruction = BNE and zero = '0')) else 
+                                    EPC_fetch;
+
+    EPC_fetch               <=      branchTarget when ((decodedInstruction = BEQ and zero = '1') or (decodedInstruction = BNE and zero = '0')) else 
                                     branchTarget when (decodedInstruction = BGTZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) > 0) else
                                     branchTarget when (decodedInstruction = BGEZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) >= 0) else
                                     branchTarget when (decodedInstruction = BLTZ and SIGNED(registerFile(TO_INTEGER(UNSIGNED(instruction_rs)))) < 0) else
@@ -205,14 +206,12 @@ begin
                                 UNSIGNED(STATUS) when decodedInstruction = MFC0 and TO_INTEGER(UNSIGNED(instruction_rd)) = 12 else
                                 UNSIGNED(ISR_AD) when decodedInstruction = MFC0 and TO_INTEGER(UNSIGNED(instruction_rd)) = 31 else
                                 pc when decodedInstruction = JAL  or decodedInstruction = JALR else
-                                HI when decodedInstruction = MFHI else
-                                LO when decodedInstruction = MFLO else
+                                HI_reg when decodedInstruction = MFHI else
+                                LO_reg when decodedInstruction = MFLO else
                                 result;
     
     -- R-type, ADDIU, ORI and load instructions, store the result in the register file
     regWrite <= '1' when WriteRegisterFile(decodedInstruction) else '0';
-    
-
     
     -- Register $0 is read-only (constant 0)
     REGISTER_FILE: process(clk, rst)
@@ -248,7 +247,7 @@ begin
                 STATUS <=   std_logic_vector(readData2);
             end if;
         elsif intr = '1' and STATUS = x"00000001" then
-            EPC <= std_logic_vector(pc);                       -- salva PC atualS
+            EPC <= std_logic_vector(EPC_fetch);                       -- salva PC atualS
             STATUS <= x"00000000";
         elsif decodedInstruction = ERET then
             STATUS <= x"00000001";    -- libera tratamento ao ERET
@@ -292,18 +291,16 @@ begin
                 (0=>'1', others=>'0') when decodedInstruction = SLTU and (ALUoperand1 < ALUoperand2) else --SLTU
                 (others=>'0') when decodedInstruction = SLTU and not (ALUoperand1 < ALUoperand2) else
                 ALUoperand2(15 downto 0) & x"0000" when decodedInstruction = LUI else --LUI
-                ALUoperand1 + ALUoperand2;    -- default for ADDU, ADDIU, SW, LW, LB   
+                ALUoperand1 + ALUoperand2;    -- default for ADDU, ADDIU, SW, LW, LB
 
-    result64b <= UNSIGNED(SIGNED(ALUoperand1) * SIGNED(ALUoperand2)) when decodedInstruction = MULT else
-                (others => '0');
-
-    process(clk)
+    process(clk, rst)
     begin
-        if rising_edge(clk) then
-            if decodedInstruction = MULT then
-                HI <= result64b(63 downto 32);
-                LO <= result64b(31 downto 0);
-            end if;
+        if rst = '1' then
+            result64b <= x"0000000000000000";
+        elsif decodedInstruction = MULT then
+            result64b <= UNSIGNED(SIGNED(ALUoperand1) * SIGNED(ALUoperand2));
+        elsif decodedInstruction = MULTU then
+            result64b <= ALUoperand1 * ALUoperand2;
         end if;
     end process;
 

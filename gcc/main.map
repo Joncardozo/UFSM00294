@@ -1,82 +1,88 @@
 
 Discarded input sections
 
- .reginfo       0x0000000000000000       0x18 BubbleSort.o
+ .reginfo       0x0000000000000000       0x18 main.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 BubbleSort.o
+                0x0000000000000000       0x18 main.o
 
 Memory Configuration
 
 Name             Origin             Length             Attributes
-INSTRUCTION_MEMORY 0x0000000000000000 0x0000000000002000
-DATA_MEMORY      0x0000000000000000 0x0000000000008000
+INSTRUCTION_MEMORY 0x0000000000000000 0x0000000000000800
+DATA_MEMORY      0x0000000000000000 0x0000000000000800
 *default*        0x0000000000000000 0xffffffffffffffff
 
 Linker script and memory map
 
 
-.text           0x0000000000000000      0x2b4
+.text           0x0000000000000000      0x540
+ *(.text)
+ .text          0x0000000000000000       0x10 boot.o
+                0x0000000000000000                entry_point
+ .text          0x0000000000000010      0x338 main.o
+                0x0000000000000010                strlen_
+                0x0000000000000050                reverse
+                0x00000000000000d4                abs_
+                0x00000000000000f4                itoa_
+                0x0000000000000214                IntegerToString
+                0x000000000000021c                PrintChar
+                0x000000000000023c                PrintString
+                0x0000000000000280                BubbleSort
  *(.text.*)
- .text          0x0000000000000000      0x130 uart_utils.o
-                0x0000000000000000                IntegerToString
-                0x00000000000000ec                PrintString
- .text          0x0000000000000130      0x184 BubbleSort.o
-                0x0000000000000130                BubbleSort
-                0x00000000000001ac                main
+ .text.startup  0x0000000000000348      0x1f8 main.o
+                0x0000000000000348                main
 
-.MIPS.abiflags  0x00000000000002b8       0x18
+.MIPS.abiflags  0x0000000000000540       0x18
  .MIPS.abiflags
-                0x00000000000002b8       0x18 uart_utils.o
+                0x0000000000000540       0x18 boot.o
 
-.data           0x0000000000000000       0x28 load address 0x00000000000002d0
+.data           0x0000000000000000       0x20 load address 0x0000000000000558
  *(.sdata)
  *(.sdata.*)
  *(.data)
- .data          0x0000000000000000        0x0 uart_utils.o
- .data          0x0000000000000000        0x0 BubbleSort.o
+ .data          0x0000000000000000        0x0 boot.o
+ .data          0x0000000000000000        0x0 main.o
  *(.data.*)
  *(.rdata)
  *(.rodata)
  *(.rodata.*)
  .rodata.str1.4
-                0x0000000000000000       0x28 BubbleSort.o
-                                         0x26 (size before relaxing)
+                0x0000000000000000       0x20 main.o
+                                         0x1e (size before relaxing)
 
-.bss            0x0000000000000028        0x0 load address 0x00000000000002f8
+.bss            0x0000000000000020        0x0 load address 0x0000000000000578
  *(.sbss)
  *(.sbss.*)
  *(.bss)
- .bss           0x0000000000000028        0x0 uart_utils.o
- .bss           0x0000000000000028        0x0 BubbleSort.o
+ .bss           0x0000000000000020        0x0 boot.o
+ .bss           0x0000000000000020        0x0 main.o
  *(.bss.*)
  *(.scommon)
  *(COMMON)
-                0x0000000000007ffc                . = ((ORIGIN (DATA_MEMORY) + LENGTH (DATA_MEMORY)) - 0x4)
-                0x0000000000007ffc                . = ALIGN (0x4)
-                0x0000000000007ffc                _stack_ptr = .
-LOAD uart_utils.o
-LOAD BubbleSort.o
+                0x00000000000007fc                . = ((ORIGIN (DATA_MEMORY) + LENGTH (DATA_MEMORY)) - 0x4)
+                0x00000000000007fc                . = ALIGN (0x4)
+                0x00000000000007fc                _stack_ptr = .
+LOAD boot.o
+LOAD main.o
 OUTPUT(main.elf elf32-tradlittlemips)
 
 .reginfo        0x0000000000000000       0x18
- .reginfo       0x0000000000000000       0x18 uart_utils.o
+ .reginfo       0x0000000000000000       0x18 boot.o
 
-.pdr            0x0000000000000000       0x80
- .pdr           0x0000000000000000       0x40 uart_utils.o
- .pdr           0x0000000000000040       0x40 BubbleSort.o
-
-.mdebug.abi32   0x0000000000000000        0x0
- .mdebug.abi32  0x0000000000000000        0x0 uart_utils.o
- .mdebug.abi32  0x0000000000000000        0x0 BubbleSort.o
-
-.comment        0x0000000000000000       0x45
- .comment       0x0000000000000000       0x45 uart_utils.o
-                                         0x46 (size before relaxing)
- .comment       0x0000000000000045       0x46 BubbleSort.o
+.pdr            0x0000000000000000      0x140
+ .pdr           0x0000000000000000       0x20 boot.o
+ .pdr           0x0000000000000020      0x120 main.o
 
 .gnu.attributes
                 0x0000000000000000       0x10
  .gnu.attributes
-                0x0000000000000000       0x10 uart_utils.o
+                0x0000000000000000       0x10 boot.o
  .gnu.attributes
-                0x0000000000000010       0x10 BubbleSort.o
+                0x0000000000000010       0x10 main.o
+
+.mdebug.abi32   0x0000000000000000        0x0
+ .mdebug.abi32  0x0000000000000000        0x0 main.o
+
+.comment        0x0000000000000000       0x44
+ .comment       0x0000000000000000       0x44 main.o
+                                         0x45 (size before relaxing)

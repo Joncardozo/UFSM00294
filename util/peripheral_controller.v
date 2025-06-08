@@ -1,7 +1,8 @@
 module peripheral_controller #(
 	parameter PERIPH_1_ADDR = 4'h0,
 	parameter PERIPH_2_ADDR = 4'h1,
-	parameter PERIPH_3_ADDR = 4'h2
+	parameter PERIPH_3_ADDR = 4'h2,
+	parameter PERIPH_4_ADDR = 4'h3
 ) (
 	input wire [31:0] address,
 	input wire rw,
@@ -50,8 +51,11 @@ module peripheral_controller #(
 					if (!rw)
 						data_to_mips = {24'b0, data_from_periph[7:0]};
 				end
+				PERIPH_4_ADDR : begin
+					ce_out = 16'b0000_0000_0000_1000;
+					rw_out = (rw) ? 16'b0000_0000_0000_1000 : 16'b0;
+				end
 				default: begin
-					// j\C3\A1 est\C3\A1 inicializado com zeros e high-impedance
 				end
 			endcase
 		end

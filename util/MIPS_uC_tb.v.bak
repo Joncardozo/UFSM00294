@@ -4,44 +4,46 @@ module MIPS_uC_tb;
 
   reg rst;
   reg clk;
-  reg clk_uart; // clock para o microcontrolador (20 MHz)
+  reg clk_uc; // clock para o microcontrolador (20 MHz)
   wire [31:0] port_io;
   reg [3:0] buttons;
 
   // UART RX wires
   wire [7:0] rx_data_out;
   wire       rx_data_av;
-  wire       tx_uc;           // saída do MIPS_uC
+  wire       tx;           // saída do MIPS_uC
+  wire       rx;           // entrada para o UART_RX
+
+  assign rx = tx; // conecta saída do MIPS à entrada do RX
 
   // instancia microcontrolador
   MIPS_uC uut (
     .rst_sync(rst),
-    .sys_clk(clk),
+    .sys_clk(clk_uc),
     .port_io(port_io),
-    .tx(tx_uc)                // saída conectada para UART RX
+    .tx(tx)                // saída conectada para UART RX
   );
 
   // instancia UART RX
   UART_RX #(
-    .RATE_FREQ_BAUD(173)   // para 20MHz e 115200 bps
+    .RATE_FREQ_BAUD(434)   // para 20MHz e 115200 bps
   ) uart_rx_inst (
-    .clk(clk_uart),
+    .clk(clk),
     .rst(rst),
-    .rx(tx_uc),
+    .rx(rx),
     .data_out(rx_data_out),
     .data_av(rx_data_av)
   );
 
-	// gera clock microcontrolador
+	// gera clock
 	initial begin
 	  clk = 0;
 	  forever #10 clk = ~clk; // 50 MHz clock (20ns período)
 	end
-
-	// gera clock uart rx
+	// gera clock
 	initial begin
-	  clk_uart = 0;
-	  forever #25 clk_uart = ~clk_uart; // 20 MHz clock (50ns período)
+	  clk_uc = 0;
+	  forever #25 clkclk_uc = ~clk_uc; // 20 MHz clock (50ns período)
 	end
   // reseta o sistema
   initial begin

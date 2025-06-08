@@ -28,6 +28,7 @@ module MIPS_uC(
     parameter PORTIO_ADDR              = 4'b0000;
     parameter TIMER_ADDR               = 4'b0001;
     parameter INTR_CTRL_ADDR           = 4'b0010;
+    // parameter UART_TX_ADDR             = 4'b0011;
 
     // endereço UART (fora do peripheral_controller)
     parameter UART_TX_ADDR             = 32'hFFFF_FF10;
@@ -72,7 +73,7 @@ module MIPS_uC(
     wire uart_tx_valid = uart_tx_valid_reg;
 
     // Pulso de 1 ciclo em uart_tx_valid_reg
-    always @(posedge sys_clk) begin
+    always @(*) begin
         if (rst_sync)
             uart_tx_valid_reg <= 1'b0;
         else if (ce && rw_ctrl && data_address == UART_TX_ADDR)
@@ -139,7 +140,8 @@ module MIPS_uC(
     peripheral_controller #(
         .PERIPH_1_ADDR (PORTIO_ADDR),
         .PERIPH_2_ADDR (TIMER_ADDR),
-        .PERIPH_3_ADDR (INTR_CTRL_ADDR)
+        .PERIPH_3_ADDR (INTR_CTRL_ADDR),
+        .PERIPH_4_ADDR (UART_TX_ADDR)
     ) peripheral_controller_instance (
         .address          (data_address),
         .rw               (rw_ctrl),
@@ -198,9 +200,9 @@ module MIPS_uC(
     );
 
     UART_TX #(
-        .RATE_FREQ_BAUD(434)
+        .RATE_FREQ_BAUD(434) // 50MHz clock, 115200 bps
     ) uart_tx_instance (
-        .clk      (sys_clk),
+        .clk      (sys_clk_n),
         .rst      (rst_sync),
         .tx       (tx),
         .data_in  (uart_tx_data),
@@ -209,4 +211,5 @@ module MIPS_uC(
     );
 
 endmodule
+
 

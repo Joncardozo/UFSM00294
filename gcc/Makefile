@@ -1,6 +1,4 @@
-TOOLCHAIN = /home/jon/code/mips-img-elf/2024.10-03/bin
-ASM_SRC = /home/jon/code/t6/UFSM00294/util
-C_SRC = /home/jon/code/t6/UFSM00294/util
+TOOLCHAIN = /Users/jonathan/code/linux_share/mips-img-elf/2024.10-03/bin
 
 CC_MIPS         = $(TOOLCHAIN)/mips-img-elf-gcc
 CPP_MIPS        = $(TOOLCHAIN)/mips-img-elf-g++
@@ -33,58 +31,55 @@ NM_MIPS         = $(TOOLCHAIN)/mips-img-elf-nm
 #   --dump-section: Extracts the contents of a section to a file
    
     
-CFLAGS = -EL -msoft-float -Wall -march=mips1  -fno-delayed-branch -mno-gpopt -std=c99 -O1 -fno-zero-initialized-in-bss
+CFLAGS = -EL -msoft-float -Wall -march=mips1  -fno-delayed-branch -mno-gpopt -std=c99 -O2 -fno-zero-initialized-in-bss
 ASMFLAGS = -EL -msoft-float -mips32
 
 %: 
-
+	@echo
+	@echo "******************************************************************************"
+	@echo Assembling boot.asm...
+	$(AS_MIPS) $(ASMFLAGS) boot.asm -o boot.o
+	@echo "******************************************************************************"
 
 	@echo
 	@echo "******************************************************************************"
-	@echo Compiling uart_utils.c...
-	$(CC_MIPS) $(CFLAGS) -c $(C_SRC)/uart_utils.c -o uart_utils.o
+	@echo Compiling $(addsuffix .c, $@)...
+	$(CC_MIPS) $(CFLAGS) -c $(addsuffix .c, $@) -o $(addsuffix .o, $@)
 	@echo "******************************************************************************"
-
-
-	@echo
-	@echo "******************************************************************************"
-	@echo Compiling BubbleSort.c...
-	$(CC_MIPS) $(CFLAGS) -c $(C_SRC)/BubbleSort.c -o BubbleSort.o
-	@echo "******************************************************************************"
-
 
 	@echo
 	@echo "******************************************************************************"
 	@echo Linking executable...
-	$(LD_MIPS) -e entry_point -EL -T ld_script.ld -o main.elf uart_utils.o BubbleSort.o -M > main.map
-	$(SIZE_MIPS) -A -x main.elf
-	$(NM_MIPS) -t x -S --size-sort main.elf
+	$(LD_MIPS) -e entry_point -EL -T ld_script.ld -o $(addsuffix .elf, $@) boot.o $(addsuffix .o, $@) -M > $(addsuffix .map, $@)
+	$(SIZE_MIPS) -A -x $(addsuffix .elf, $@)
+	$(NM_MIPS) -t x -S --size-sort $(addsuffix .elf, $@)
 	@echo "******************************************************************************"
 
 	@echo
 	@echo "******************************************************************************"
-	@echo Generating main_elf.lst
-	$(DUMP_MIPS) --disassemble-all main.elf > main_elf.lst
+	@echo Generating $(addsuffix _elf.lst, $@)...
+	$(DUMP_MIPS) --disassemble-all $(addsuffix .elf, $@) > $(addsuffix _elf.lst, $@)
 	@echo "******************************************************************************"
 
 	@echo
 	@echo "******************************************************************************"
 	@echo Generating instruction memory image...
-	$(OBJCOPY_MIPS) --dump-section .text=code.bin main.elf
+	$(OBJCOPY_MIPS) --dump-section .text=code.bin $(addsuffix .elf, $@)
     # The following backslashes (\) may need to be replaced by backslashes depending in the OS
 	./tools/bin2hex code.bin > code.txt
-#	copy code.txt ../../../sim
+#	copy code.txt ..\..\..\sim
 	@echo "******************************************************************************"
 
 	@echo
 	@echo "******************************************************************************"
 	@echo Generating data memory image...
-	$(OBJCOPY_MIPS) --dump-section .data=data.bin main.elf
+	$(OBJCOPY_MIPS) --dump-section .data=data.bin $(addsuffix .elf, $@)
 	./tools/bin2hex data.bin > data.txt
-#	copy data.txt ../../../sim
+#	copy data.txt ..\..\..\sim
 	@echo "******************************************************************************"
+
 
 
 .PHONY: clean
 clean:
-	rm -f *.elf *.o *.lst *.map *.bin *.txt
+	del -f *.elf *.o *.lst *.map *.bin *.txt

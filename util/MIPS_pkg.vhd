@@ -15,7 +15,7 @@ package MIPS_pkg is
         UNIMPLEMENTED_INSTRUCTION, NOP, ADDU, SUBU, AAND, ANDI, OOR, SW, LW, ADDIU, 
         ORI, SLT, BEQ, BNE, J, JR, JAL, LUI, XXOR, XORI, NNOR, SSLL, SSRL, SSRA, SLLV,
         SRLV, SRAV, SLTI, SLTIU, BGEZ, BLEZ, LB, LBU, LH, LHU, SB, SH, JALR, SLTU, 
-        ERET, BLTZ, BGTZ, MTC0, MFC0, MULT, MFHI, MFLO
+        ERET, BLTZ, BGTZ, MTC0, MFC0, MULT, MFHI, MFLO, MULTU
     );
     
     -- Functions used to facilitate the processor description
@@ -105,6 +105,9 @@ package body MIPS_pkg is
 
                 elsif instruction(5 downto 0) = "010010" then
                     decodedInstruction := MFLO;
+
+                elsif instruction(5 downto 0) = "011001" then
+                    decodedInstruction := MULTU;
 
                 end if;
 

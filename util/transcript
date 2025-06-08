@@ -1,22 +1,5 @@
-ls
-# BidirectionalPort.vhd
-# code.txt
-# compile.tcl
-# data.txt
-# InterruptController.vhd
-# Memory.vhd
-# MIPS_monocycle.vhd
-# MIPS_pkg.vhd
-# MIPS_uC_tb.v
-# MIPS_uC.v
-# peripheral_controller.v
-# PriorityEncoder.vhd
-# Timer.vhd
-# transcript
-# UART_RX.vhd
-# UART_TX.vhd
-# Util_pkg.vhd
-# work
+pwd
+# /home/dede/UFSM00294/util
 do compile.tcl
 # 
 #     MIPS_pkg.vhd
@@ -35,7 +18,7 @@ do compile.tcl
 # 
 # MIPS_uC_tb.v
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:09:10 on Jun 06,2025
+# Start time: 10:24:29 on Jun 06,2025
 # vcom -reportprogress 300 MIPS_pkg.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -44,10 +27,10 @@ do compile.tcl
 # -- Compiling package MIPS_pkg
 # -- Compiling package body MIPS_pkg
 # -- Loading package MIPS_pkg
-# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:01
+# End time: 10:24:29 on Jun 06,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:09:11 on Jun 06,2025
+# Start time: 10:24:29 on Jun 06,2025
 # vcom -reportprogress 300 Util_pkg.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -55,10 +38,10 @@ do compile.tcl
 # -- Compiling package Util_pkg
 # -- Compiling package body Util_pkg
 # -- Loading package Util_pkg
-# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# End time: 10:24:29 on Jun 06,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:09:11 on Jun 06,2025
+# Start time: 10:24:29 on Jun 06,2025
 # vcom -reportprogress 300 Memory.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -67,10 +50,10 @@ do compile.tcl
 # -- Loading package Util_pkg
 # -- Compiling entity Memory
 # -- Compiling architecture behavioral of Memory
-# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# End time: 10:24:30 on Jun 06,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:09:11 on Jun 06,2025
+# Start time: 10:24:30 on Jun 06,2025
 # vcom -reportprogress 300 Timer.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -78,10 +61,10 @@ do compile.tcl
 # -- Loading package NUMERIC_STD
 # -- Compiling entity Timer
 # -- Compiling architecture Behavioral of Timer
-# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# End time: 10:24:30 on Jun 06,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:09:11 on Jun 06,2025
+# Start time: 10:24:30 on Jun 06,2025
 # vcom -reportprogress 300 BidirectionalPort.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -89,10 +72,10 @@ do compile.tcl
 # -- Loading package NUMERIC_STD
 # -- Compiling entity BidirectionalPort
 # -- Compiling architecture Behavioral of BidirectionalPort
-# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# End time: 10:24:30 on Jun 06,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:09:11 on Jun 06,2025
+# Start time: 10:24:30 on Jun 06,2025
 # vcom -reportprogress 300 PriorityEncoder.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -101,10 +84,10 @@ do compile.tcl
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity PriorityEncoder
 # -- Compiling architecture behavioural of PriorityEncoder
-# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# End time: 10:24:30 on Jun 06,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:09:11 on Jun 06,2025
+# Start time: 10:24:30 on Jun 06,2025
 # vcom -reportprogress 300 InterruptController.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -115,10 +98,10 @@ do compile.tcl
 # -- Compiling entity InterruptController
 # -- Compiling architecture Behavioral of InterruptController
 # -- Loading entity PriorityEncoder
-# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# End time: 10:24:30 on Jun 06,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:09:11 on Jun 06,2025
+# Start time: 10:24:30 on Jun 06,2025
 # vcom -reportprogress 300 UART_RX.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -126,10 +109,10 @@ do compile.tcl
 # -- Loading package NUMERIC_STD
 # -- Compiling entity UART_RX
 # -- Compiling architecture behavioral of UART_RX
-# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# End time: 10:24:30 on Jun 06,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:09:11 on Jun 06,2025
+# Start time: 10:24:30 on Jun 06,2025
 # vcom -reportprogress 300 UART_TX.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -137,19 +120,19 @@ do compile.tcl
 # -- Loading package NUMERIC_STD
 # -- Compiling entity UART_TX
 # -- Compiling architecture behavioral of UART_TX
-# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# End time: 10:24:30 on Jun 06,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:09:11 on Jun 06,2025
+# Start time: 10:24:30 on Jun 06,2025
 # vlog -reportprogress 300 peripheral_controller.v 
 # -- Compiling module peripheral_controller
 # 
 # Top level modules:
 # 	peripheral_controller
-# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# End time: 10:24:30 on Jun 06,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:09:11 on Jun 06,2025
+# Start time: 10:24:30 on Jun 06,2025
 # vcom -reportprogress 300 MIPS_monocycle.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -158,24 +141,1901 @@ do compile.tcl
 # -- Loading package MIPS_pkg
 # -- Compiling entity MIPS_monocycle
 # -- Compiling architecture behavioral of MIPS_monocycle
-# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# End time: 10:24:30 on Jun 06,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:09:11 on Jun 06,2025
+# Start time: 10:24:30 on Jun 06,2025
 # vlog -reportprogress 300 MIPS_uC.v 
 # -- Compiling module MIPS_uC
 # 
 # Top level modules:
 # 	MIPS_uC
-# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# End time: 10:24:30 on Jun 06,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 01:09:11 on Jun 06,2025
+# Start time: 10:24:30 on Jun 06,2025
 # vlog -reportprogress 300 MIPS_uC_tb.v 
 # -- Compiling module MIPS_uC_tb
 # 
 # Top level modules:
 # 	MIPS_uC_tb
-# End time: 01:09:11 on Jun 06,2025, Elapsed time: 0:00:00
+# End time: 10:24:30 on Jun 06,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # MIPS_uC_tb
+vsim work.MIPS_uC_tb
+# vsim work.MIPS_uC_tb 
+# Start time: 10:25:13 on Jun 06,2025
+# Loading work.MIPS_uC_tb
+# Loading work.MIPS_uC
+# Loading work.peripheral_controller
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mips_pkg(body)
+# Loading work.mips_monocycle(behavioral)
+# Loading work.util_pkg(body)
+# Loading work.memory(behavioral)
+# Loading work.bidirectionalport(behavioral)
+# Loading work.timer(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.interruptcontroller(behavioral)
+# Loading work.priorityencoder(behavioural)
+# Loading work.uart_tx(behavioral)
+# Loading work.uart_rx(behavioral)
+add wave -position end  sim:/MIPS_uC_tb/clk
+restart -f
+do compile.tcl
+# 
+#     MIPS_pkg.vhd
+#     Util_pkg.vhd
+#     Memory.vhd
+#     Timer.vhd
+#     BidirectionalPort.vhd
+#     PriorityEncoder.vhd
+#     InterruptController.vhd
+#     UART_RX.vhd
+#     UART_TX.vhd
+#     peripheral_controller.v
+#     MIPS_monocycle.vhd
+#     MIPS_uC.v
+#     MIPS_uC_tb.v
+# 
+# MIPS_uC_tb.v
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:27:51 on Jun 06,2025
+# vcom -reportprogress 300 MIPS_pkg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package MIPS_pkg
+# -- Compiling package body MIPS_pkg
+# -- Loading package MIPS_pkg
+# End time: 10:27:51 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:27:51 on Jun 06,2025
+# vcom -reportprogress 300 Util_pkg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package Util_pkg
+# -- Compiling package body Util_pkg
+# -- Loading package Util_pkg
+# End time: 10:27:51 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:27:51 on Jun 06,2025
+# vcom -reportprogress 300 Memory.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Util_pkg
+# -- Compiling entity Memory
+# -- Compiling architecture behavioral of Memory
+# End time: 10:27:51 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:27:51 on Jun 06,2025
+# vcom -reportprogress 300 Timer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Timer
+# -- Compiling architecture Behavioral of Timer
+# End time: 10:27:51 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:27:51 on Jun 06,2025
+# vcom -reportprogress 300 BidirectionalPort.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BidirectionalPort
+# -- Compiling architecture Behavioral of BidirectionalPort
+# End time: 10:27:52 on Jun 06,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:27:52 on Jun 06,2025
+# vcom -reportprogress 300 PriorityEncoder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity PriorityEncoder
+# -- Compiling architecture behavioural of PriorityEncoder
+# End time: 10:27:52 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:27:52 on Jun 06,2025
+# vcom -reportprogress 300 InterruptController.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity InterruptController
+# -- Compiling architecture Behavioral of InterruptController
+# -- Loading entity PriorityEncoder
+# End time: 10:27:52 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:27:52 on Jun 06,2025
+# vcom -reportprogress 300 UART_RX.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity UART_RX
+# -- Compiling architecture behavioral of UART_RX
+# End time: 10:27:52 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:27:52 on Jun 06,2025
+# vcom -reportprogress 300 UART_TX.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity UART_TX
+# -- Compiling architecture behavioral of UART_TX
+# End time: 10:27:52 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:27:52 on Jun 06,2025
+# vlog -reportprogress 300 peripheral_controller.v 
+# -- Compiling module peripheral_controller
+# 
+# Top level modules:
+# 	peripheral_controller
+# End time: 10:27:52 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:27:52 on Jun 06,2025
+# vcom -reportprogress 300 MIPS_monocycle.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MIPS_pkg
+# -- Compiling entity MIPS_monocycle
+# -- Compiling architecture behavioral of MIPS_monocycle
+# End time: 10:27:52 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:27:52 on Jun 06,2025
+# vlog -reportprogress 300 MIPS_uC.v 
+# -- Compiling module MIPS_uC
+# 
+# Top level modules:
+# 	MIPS_uC
+# End time: 10:27:52 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:27:52 on Jun 06,2025
+# vlog -reportprogress 300 MIPS_uC_tb.v 
+# -- Compiling module MIPS_uC_tb
+# ** Error: MIPS_uC_tb.v(46): (vlog-2730) Undefined variable: 'clkclk_uc'.
+# End time: 10:27:52 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+do compile.tcl
+# 
+#     MIPS_pkg.vhd
+#     Util_pkg.vhd
+#     Memory.vhd
+#     Timer.vhd
+#     BidirectionalPort.vhd
+#     PriorityEncoder.vhd
+#     InterruptController.vhd
+#     UART_RX.vhd
+#     UART_TX.vhd
+#     peripheral_controller.v
+#     MIPS_monocycle.vhd
+#     MIPS_uC.v
+#     MIPS_uC_tb.v
+# 
+# MIPS_uC_tb.v
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:28:10 on Jun 06,2025
+# vcom -reportprogress 300 MIPS_pkg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package MIPS_pkg
+# -- Compiling package body MIPS_pkg
+# -- Loading package MIPS_pkg
+# End time: 10:28:10 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:28:10 on Jun 06,2025
+# vcom -reportprogress 300 Util_pkg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package Util_pkg
+# -- Compiling package body Util_pkg
+# -- Loading package Util_pkg
+# End time: 10:28:10 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:28:10 on Jun 06,2025
+# vcom -reportprogress 300 Memory.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Util_pkg
+# -- Compiling entity Memory
+# -- Compiling architecture behavioral of Memory
+# End time: 10:28:10 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:28:10 on Jun 06,2025
+# vcom -reportprogress 300 Timer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Timer
+# -- Compiling architecture Behavioral of Timer
+# End time: 10:28:11 on Jun 06,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:28:11 on Jun 06,2025
+# vcom -reportprogress 300 BidirectionalPort.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BidirectionalPort
+# -- Compiling architecture Behavioral of BidirectionalPort
+# End time: 10:28:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:28:11 on Jun 06,2025
+# vcom -reportprogress 300 PriorityEncoder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity PriorityEncoder
+# -- Compiling architecture behavioural of PriorityEncoder
+# End time: 10:28:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:28:11 on Jun 06,2025
+# vcom -reportprogress 300 InterruptController.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity InterruptController
+# -- Compiling architecture Behavioral of InterruptController
+# -- Loading entity PriorityEncoder
+# End time: 10:28:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:28:11 on Jun 06,2025
+# vcom -reportprogress 300 UART_RX.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity UART_RX
+# -- Compiling architecture behavioral of UART_RX
+# End time: 10:28:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:28:11 on Jun 06,2025
+# vcom -reportprogress 300 UART_TX.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity UART_TX
+# -- Compiling architecture behavioral of UART_TX
+# End time: 10:28:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:28:11 on Jun 06,2025
+# vlog -reportprogress 300 peripheral_controller.v 
+# -- Compiling module peripheral_controller
+# 
+# Top level modules:
+# 	peripheral_controller
+# End time: 10:28:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:28:11 on Jun 06,2025
+# vcom -reportprogress 300 MIPS_monocycle.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MIPS_pkg
+# -- Compiling entity MIPS_monocycle
+# -- Compiling architecture behavioral of MIPS_monocycle
+# End time: 10:28:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:28:11 on Jun 06,2025
+# vlog -reportprogress 300 MIPS_uC.v 
+# -- Compiling module MIPS_uC
+# 
+# Top level modules:
+# 	MIPS_uC
+# End time: 10:28:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:28:11 on Jun 06,2025
+# vlog -reportprogress 300 MIPS_uC_tb.v 
+# -- Compiling module MIPS_uC_tb
+# 
+# Top level modules:
+# 	MIPS_uC_tb
+# End time: 10:28:11 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# MIPS_uC_tb
+vsim work.MIPS_uC_tb
+# End time: 10:28:27 on Jun 06,2025, Elapsed time: 0:03:14
+# Errors: 0, Warnings: 0
+# vsim work.MIPS_uC_tb 
+# Start time: 10:28:27 on Jun 06,2025
+# Loading work.MIPS_uC_tb
+# Loading work.MIPS_uC
+# Loading work.peripheral_controller
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mips_pkg(body)
+# Loading work.mips_monocycle(behavioral)
+# Loading work.util_pkg(body)
+# Loading work.memory(behavioral)
+# Loading work.bidirectionalport(behavioral)
+# Loading work.timer(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.interruptcontroller(behavioral)
+# Loading work.priorityencoder(behavioural)
+# Loading work.uart_tx(behavioral)
+# Loading work.uart_rx(behavioral)
+add wave -position end  sim:/MIPS_uC_tb/clk
+add wave -position end  sim:/MIPS_uC_tb/clk_uc
+run 70000 ns
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC/PRIORITY_ENCODER
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/timer_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/data_memory
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/instruction_memory
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Fatal: (vsim-3734) Index value 1048786 is out of range 0 to 2047.
+#    Time: 225 ns  Iteration: 1  Process: /MIPS_uC_tb/uut/instruction_memory/line__73 File: Memory.vhd
+# Fatal error in Process line__73 at Memory.vhd line 77
+# 
+# HDL call sequence:
+# Stopped at Memory.vhd 77 Process line__73
+# 
+add wave -position end  sim:/MIPS_uC_tb/uut/instruction_memory/data_out
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run 70000 ns
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC/PRIORITY_ENCODER
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/timer_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/data_memory
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/instruction_memory
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Fatal: (vsim-3734) Index value 1048786 is out of range 0 to 2047.
+#    Time: 225 ns  Iteration: 1  Process: /MIPS_uC_tb/uut/instruction_memory/line__73 File: Memory.vhd
+# Fatal error in Process line__73 at Memory.vhd line 77
+# 
+# HDL call sequence:
+# Stopped at Memory.vhd 77 Process line__73
+# 
+add wave -position end  sim:/MIPS_uC_tb/uart_rx_inst/data_out
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run 70000 ns
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC/PRIORITY_ENCODER
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/timer_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/data_memory
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/instruction_memory
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Fatal: (vsim-3734) Index value 1048786 is out of range 0 to 2047.
+#    Time: 225 ns  Iteration: 1  Process: /MIPS_uC_tb/uut/instruction_memory/line__73 File: Memory.vhd
+# Fatal error in Process line__73 at Memory.vhd line 77
+# 
+# HDL call sequence:
+# Stopped at Memory.vhd 77 Process line__73
+# 
+run 700000 ns
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at Memory.vhd 77 Process line__73
+# 
+add wave -position end  sim:/MIPS_uC_tb/uut/instruction_memory/data_in
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC/PRIORITY_ENCODER
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/timer_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/data_memory
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/instruction_memory
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Fatal: (vsim-3734) Index value 1048786 is out of range 0 to 2047.
+#    Time: 225 ns  Iteration: 1  Process: /MIPS_uC_tb/uut/instruction_memory/line__73 File: Memory.vhd
+# Fatal error in Process line__73 at Memory.vhd line 77
+# 
+# HDL call sequence:
+# Stopped at Memory.vhd 77 Process line__73
+# 
+add wave -position end  sim:/MIPS_uC_tb/uut/mips_instance/decodedInstruction
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run 700000 ns
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC/PRIORITY_ENCODER
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/timer_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/data_memory
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/instruction_memory
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Fatal: (vsim-3734) Index value 1048786 is out of range 0 to 2047.
+#    Time: 225 ns  Iteration: 1  Process: /MIPS_uC_tb/uut/instruction_memory/line__73 File: Memory.vhd
+# Fatal error in Process line__73 at Memory.vhd line 77
+# 
+# HDL call sequence:
+# Stopped at Memory.vhd 77 Process line__73
+# 
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run 70000 ns
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC/PRIORITY_ENCODER
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/timer_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/data_memory
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/instruction_memory
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Fatal: (vsim-3734) Index value 1048786 is out of range 0 to 2047.
+#    Time: 225 ns  Iteration: 1  Process: /MIPS_uC_tb/uut/instruction_memory/line__73 File: Memory.vhd
+# Fatal error in Process line__73 at Memory.vhd line 77
+# 
+# HDL call sequence:
+# Stopped at Memory.vhd 77 Process line__73
+# 
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run 7000 ns
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC/PRIORITY_ENCODER
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/timer_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/data_memory
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/instruction_memory
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+add wave -position end  sim:/MIPS_uC_tb/rx_data_out
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run 700000 ns
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC/PRIORITY_ENCODER
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/timer_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/data_memory
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/instruction_memory
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+add wave -position end  sim:/MIPS_uC_tb/uart_rx_inst/currentState
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run 70000 ns
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC/PRIORITY_ENCODER
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/timer_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/data_memory
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/instruction_memory
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+add wave -position end  sim:/MIPS_uC_tb/uut/mips_instance/decodedInstruction
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run 70000 ns
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC/PRIORITY_ENCODER
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/timer_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/data_memory
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/instruction_memory
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+run -all
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218125 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218125 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218125 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218125 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218125 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218125 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218125 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218125 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218125 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218125 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218125 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218125 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218125 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1218125 ns  Iteration: 5  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1218125 ns  Iteration: 5  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1218125 ns  Iteration: 5  Instance: /MIPS_uC_tb/uut/data_memory
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218225 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218225 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218225 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218225 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218225 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218225 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218225 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218225 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218225 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218225 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218225 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218225 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218225 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1218225 ns  Iteration: 5  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1218225 ns  Iteration: 5  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1218225 ns  Iteration: 5  Instance: /MIPS_uC_tb/uut/data_memory
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218575 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218575 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218575 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218575 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218575 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218575 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218575 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218575 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218575 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218575 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218575 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218575 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 1218575 ns  Iteration: 4  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1218575 ns  Iteration: 5  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1218575 ns  Iteration: 5  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1218575 ns  Iteration: 5  Instance: /MIPS_uC_tb/uut/data_memory
+# ** Failure: ******************* UNIMPLEMENTED INSTRUCTION *************
+#    Time: 1218825 ns  Iteration: 3  Process: /MIPS_uC_tb/uut/mips_instance/line__84#0 File: MIPS_monocycle.vhd
+# Break in Architecture behavioral at MIPS_monocycle.vhd line 85
+add wave -position end  sim:/MIPS_uC_tb/uut/data_memory/memoryArray
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/PIC/PRIORITY_ENCODER
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/timer_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/data_memory
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/instruction_memory
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /MIPS_uC_tb/uut/PIC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 3  Instance: /MIPS_uC_tb/uut/mips_instance

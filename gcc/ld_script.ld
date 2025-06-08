@@ -1,7 +1,7 @@
 MEMORY
 {
-  INSTRUCTION_MEMORY : ORIGIN = 0x00000000, LENGTH = 2048 * 4   /* LENGTH in bytes */
-  DATA_MEMORY        : ORIGIN = 0x00000000, LENGTH = 8192 * 4
+  INSTRUCTION_MEMORY : ORIGIN = 0x00000000, LENGTH = 512 * 4   /* LENGTH in bytes */
+  DATA_MEMORY        : ORIGIN = 0x00000000, LENGTH = 512 * 4
 }
 
 
@@ -9,9 +9,10 @@ MEMORY
 SECTIONS 
 {    
     .text : {               /* Output elf section */        
+        *(.text)           /* The code order depends on the objects order passed to linker */
         *(.text.*)
     } > INSTRUCTION_MEMORY
-
+       
     .data : {               /* Output elf section */
         *(.sdata)          /* This section holds initialized small data that contribute to the program memory image */
         *(.sdata.*)
