@@ -1,8 +1,8 @@
 #include "sprintf.h"
 
 // Definições da UART
-#define UART_TX     (*((volatile char *) 0xFFFFFF10))
-#define UART_READY  (*((volatile char *) 0xFFFFFF14))
+#define UART_TX     (*((volatile char *) 0x80000300))
+#define UART_READY  (*((volatile char *) 0x80000310))
 
 // Envia um caractere
 void PrintChar(char c) {
@@ -64,4 +64,3 @@ int main() {
 
     return 0;
 }
-
