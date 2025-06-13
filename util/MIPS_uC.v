@@ -1,6 +1,8 @@
 module MIPS_uC(
-    input wire          sys_clk,
-    input wire          rst_sync,
+    // input wire          sys_clk,
+    // input wire          rst_sync,
+    input wire          clk,
+    input wire          rst,
     inout wire [31:0]   port_io,
     output wire         tx              // Adicionada saída serial TX
 );
@@ -64,6 +66,9 @@ module MIPS_uC(
     wire [7:0]     uart_tx_data;
     reg            uart_tx_valid_reg;
     wire           uart_tx_ready;
+
+    wire sys_clk;
+    wire rst_sync;
 
     assign sys_clk_n = ~sys_clk;
 
@@ -200,7 +205,7 @@ module MIPS_uC(
     );
 
     UART_TX #(
-        .RATE_FREQ_BAUD(434) // 50MHz clock, 115200 bps
+        .RATE_FREQ_BAUD(87) // 50MHz clock, 115200 bps
     ) uart_tx_instance (
         .clk      (sys_clk_n),
         .rst      (rst_sync),
@@ -210,6 +215,17 @@ module MIPS_uC(
         .ready    (uart_tx_ready)
     );
 
+    // clock manager instance
+	ClockManager clk_mgr (
+            .clk_100MHz			(clk),
+            .clk_10MHz			(sys_clk)
+	);
+
+	// reset synchronizer instance
+	ResetSynchonizer rst_synchronizer (
+            .clk				(sys_clk),
+            .rst_in				(rst),
+            .rst_out			(rst_sync)
+	);
+
 endmodule
-
-
