@@ -8,24 +8,24 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-package MIPS_pkg is 
-    
+package MIPS_pkg is
+
     -- Implemented instructions
     type Instruction_type is (
-        UNIMPLEMENTED_INSTRUCTION, NOP, ADDU, SUBU, AAND, ANDI, OOR, SW, LW, ADDIU, 
+        UNIMPLEMENTED_INSTRUCTION, NOP, ADDU, SUBU, AAND, ANDI, OOR, SW, LW, ADDIU,
         ORI, SLT, BEQ, BNE, J, JR, JAL, LUI, XXOR, XORI, NNOR, SSLL, SSRL, SSRA, SLLV,
-        SRLV, SRAV, SLTI, SLTIU, BGEZ, BLEZ, LB, LBU, LH, LHU, SB, SH, JALR, SLTU, 
-        ERET, BLTZ, BGTZ, MTC0, MFC0, MULT, MFHI, MFLO, MULTU
+        SRLV, SRAV, SLTI, SLTIU, BGEZ, BLEZ, LB, LBU, LH, LHU, SB, SH, JALR, SLTU,
+        ERET, BLTZ, BGTZ, MTC0, MFC0, MULT, MFHI, MFLO, MULTU, SYSCALL
     );
-    
+
     -- Functions used to facilitate the processor description
     function Decode(instruction: std_logic_vector(31 downto 0)) return Instruction_type;
     function R_Type(instruction: std_logic_vector(31 downto 0)) return boolean;
     function WriteRegisterFile(instruction: Instruction_type) return boolean;
     function LoadInstruction(instruction: Instruction_type) return boolean;
-    function StoreInstruction(instruction: Instruction_type) return boolean;    
-  
-         
+    function StoreInstruction(instruction: Instruction_type) return boolean;
+
+
 end MIPS_pkg;
 
 package body MIPS_pkg is
@@ -39,31 +39,31 @@ package body MIPS_pkg is
         end if;
     end R_Type;
 
-      
+
     -- Instruction decoding
     function Decode(instruction: std_logic_vector(31 downto 0)) return Instruction_type is
         variable decodedInstruction : Instruction_type;
     begin
-    
+
         decodedInstruction := UNIMPLEMENTED_INSTRUCTION; -- Invalid or not implemented instruction
-    
+
         case(instruction(31 downto 26)) is
-            when "000000" => -- R-Type        
+            when "000000" => -- R-Type
                 if instruction(5 downto 0) = "100001" then
                     decodedInstruction := ADDU;
-                
+
                 elsif instruction(5 downto 0) = "100011" then
                     decodedInstruction := SUBU;
-                
+
                 elsif instruction(5 downto 0) = "100100" then
                     decodedInstruction := AAND;
-                
+
                 elsif instruction(5 downto 0) = "100101" then
                     decodedInstruction := OOR;
-                
+
                 elsif instruction(5 downto 0) = "101010" then
                     decodedInstruction := SLT;
-                
+
                 elsif instruction(5 downto 0) = "100110" then
                     decodedInstruction := XXOR;
 
@@ -109,11 +109,14 @@ package body MIPS_pkg is
                 elsif instruction(5 downto 0) = "011001" then
                     decodedInstruction := MULTU;
 
+                elsif instruction(5 downto 0) = "001100" then
+                    decodedInstruction := SYSCALL;
+
                 end if;
 
             when "000001" => --REGIMM GROUP
                 if instruction(20 downto 16) = "00001" then
-                    decodedInstruction := BGEZ; 
+                    decodedInstruction := BGEZ;
                 elsif instruction(20 downto 16) = "00000" then
                     decodedInstruction := BLTZ;
                 end if;
@@ -123,7 +126,7 @@ package body MIPS_pkg is
 
             when "101011" =>
                 decodedInstruction := SW;
-            
+
             when "000110" =>
                 decodedInstruction := BLEZ;
 
@@ -135,16 +138,16 @@ package body MIPS_pkg is
 
             when "100100" =>
                 decodedInstruction := LBU;
-            
+
             when "100001" =>
                 decodedInstruction := LH;
 
             when "100101" =>
                 decodedInstruction := LHU;
-            
+
             when "001001" =>
                 decodedInstruction := ADDIU;
-            
+
             when "001101" =>
                 decodedInstruction := ORI;
 
@@ -159,16 +162,16 @@ package body MIPS_pkg is
 
             when "001100" =>
                 decodedInstruction := ANDI;
-            
+
             when "000100"  =>
                 decodedInstruction := BEQ;
 
-            when "000101" => 
+            when "000101" =>
                 decodedInstruction := BNE;
-            
+
             when "000010" =>
                 decodedInstruction := J;
-            
+
             when "000011" =>
                 decodedInstruction := JAL;
 
@@ -185,78 +188,78 @@ package body MIPS_pkg is
                 elsif instruction(25 downto 21) = "00000" then
                     decodedInstruction := MFC0;
                 end if;
-            
-            when "001111" => 
+
+            when "001111" =>
                 if instruction(25 downto 21) = "00000" then
                     decodedInstruction := LUI;
                 end if;
-            
-            when others=>    
+
+            when others=>
                 decodedInstruction := UNIMPLEMENTED_INSTRUCTION;
         end case;
-        
+
         return decodedInstruction;
-    
+
     end Decode;
 
-    -- Returns 
+    -- Returns
     --      true, if the instruction writes to the register file
     --      false, otherwise
     function WriteRegisterFile(instruction: Instruction_type) return boolean is
         variable result : boolean;
     begin
-        
+
         case (instruction) is
             when ADDU | SUBU | AAND | OOR | SLT | LW | ADDIU | ORI | LUI | JAL | XXOR
-                | XORI | ANDI | NNOR | SSLL | SSRL | SSRA | SLLV | SRLV | SRAV | SLTI 
+                | XORI | ANDI | NNOR | SSLL | SSRL | SSRA | SLLV | SRLV | SRAV | SLTI
                 | SLTIU | LB  | LBU | LH | LHU | SLTU | JALR | MFC0 | MFHI | MFLO =>
                 result := true;
-            
+
             when others =>
                 result := false;
         end case;
-        
+
         return result;
-    
+
     end WriteRegisterFile;
-    
-    -- Returns 
+
+    -- Returns
     --      true, if the instruction is load
     --      false, otherwise
     function LoadInstruction(instruction: Instruction_type) return boolean is
         variable result : boolean;
     begin
-        
+
         case (instruction) is
             when LW | LB | LBU | LH | LHU => -- LB, LBU, LH, LHU
                 result := true;
-            
+
             when others =>
                 result := false;
         end case;
-        
+
         return result;
-        
+
     end LoadInstruction;
-    
-    -- Returns 
+
+    -- Returns
     --      true, if the instruction is store
-    --      false, otherwise    
+    --      false, otherwise
     function StoreInstruction(instruction: Instruction_type) return boolean is
         variable result : boolean;
     begin
-        
+
         case (instruction) is
             when SW | SB | SH => -- SB, SH
                 result := true;
-            
+
             when others =>
                 result := false;
         end case;
-        
+
         return result;
-    
+
     end StoreInstruction;
-    
-    
+
+
 end MIPS_pkg;

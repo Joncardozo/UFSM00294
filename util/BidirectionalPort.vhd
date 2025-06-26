@@ -8,8 +8,7 @@ entity BidirectionalPort  is
         PORT_DATA_ADDR      : std_logic_vector(3 downto 0);     -- NÃO ALTERAR!
         PORT_CONFIG_ADDR    : std_logic_vector(3 downto 0);     -- NÃO ALTERAR! 
         PORT_ENABLE_ADDR    : std_logic_vector(3 downto 0);     -- NÃO ALTERAR!
-		PORT_INTERRUPT_ADDR	: std_logic_vector(3 downto 0);
-		PORT_COUNTER_ADDR	: std_logic_vector(3 downto 0)
+		PORT_INTERRUPT_ADDR	: std_logic_vector(3 downto 0)
     );
     port (
         clk         : in std_logic;
@@ -36,7 +35,6 @@ architecture Behavioral of BidirectionalPort  is
 	signal io_enable 	: std_logic_vector (DATA_WIDTH-1 downto 0);
 	signal reg_data 	: std_logic_vector (DATA_WIDTH-1 downto 0);
 	signal irq_config 	: std_logic_vector (DATA_WIDTH-1 downto 0);
-	signal counter		: std_logic_vector (DATA_WIDTH-1 downto 0);
 	signal stability_reg_1 : std_logic_vector (DATA_WIDTH-1 downto 0);
 	signal stability_reg_2 : std_logic_vector (DATA_WIDTH-1 downto 0);
  
@@ -49,7 +47,6 @@ begin
 			io_config <= (others => '0');
 			io_enable <= (others => '0');
 			irq_config <= (others => '0');
-			counter   <= (others => '0');
 			elsif rising_edge(clk) then
 				if ce = '1' then
 			  		-- escreve nos registradores
@@ -60,8 +57,6 @@ begin
 							io_enable <= data_in;
 						elsif address = PORT_INTERRUPT_ADDR then
 							irq_config <= data_in;
-						elsif address = PORT_COUNTER_ADDR then
-							counter <= data_in;
 						elsif address = PORT_DATA_ADDR then
 							  for i in 0 to DATA_WIDTH-1 loop
 									if io_enable(i) = '1' and io_config(i) = '0' then
@@ -74,9 +69,10 @@ begin
 				-- recebe sinal da porta para registradores de estabilidade e escreve no registrador de dados
 				for i in 0 to DATA_WIDTH-1 loop
 					if io_enable(i) = '1' and io_config(i) = '1' then
-						stability_reg_1(i) <= port_io(i);
-						stability_reg_2(i) <= stability_reg_1(i);
-						reg_data(i) <= stability_reg_2(i);
+--						stability_reg_1(i) <= port_io(i);
+--						stability_reg_2(i) <= stability_reg_1(i);
+--						reg_data(i) <= stability_reg_2(i);
+                        reg_data(i) <= port_io(i);
 					end if;
 				end loop;
 			end if;
@@ -89,7 +85,7 @@ begin
 	end generate;
 
 	-- registrador data out
-	process(address, reg_data, io_config, io_enable, irq_config, counter)
+	process(address, reg_data, io_config, io_enable, irq_config)
 	begin
 		if address = PORT_DATA_ADDR then
 			data_out <= reg_data;
@@ -99,8 +95,6 @@ begin
 			data_out <= io_enable;
 		elsif address = PORT_INTERRUPT_ADDR then
 			data_out <= irq_config;
-		elsif address = PORT_COUNTER_ADDR then
-			data_out <= counter;
 		else
 			data_out <= (others => '0');
 		end if;

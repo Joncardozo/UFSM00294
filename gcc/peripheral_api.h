@@ -1,0 +1,10 @@
+#ifndef PERIPHERAL_API_H
+#define PERIPHERAL_API_H
+
+extern void PrintString(char *str);
+extern void WriteDataPortIO(int value);
+extern void EnablePortIOBits(int value);
+extern void ConfigPortIOBitsDirection(int value);
+extern void ReadDataPortIO(int* buffer);
+
+#endif
