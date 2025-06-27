@@ -1,4 +1,4 @@
-TOOLCHAIN = /Users/jonathan/code/linux_share/mips-img-elf/2024.10-03/bin
+TOOLCHAIN = /home/jon/code/mips-img-elf/2024.10-03/bin
 
 CC_MIPS         = $(TOOLCHAIN)/mips-img-elf-gcc
 CPP_MIPS        = $(TOOLCHAIN)/mips-img-elf-g++
@@ -27,18 +27,42 @@ NM_MIPS         = $(TOOLCHAIN)/mips-img-elf-nm
 # Object dump options
 #   --disassemble: Display the assembler mnemonics for the machine instructions
 
-# Object copy options 
+# Object copy options
 #   --dump-section: Extracts the contents of a section to a file
-   
-    
-CFLAGS = -EL -msoft-float -Wall -march=mips1  -fno-delayed-branch -mno-gpopt -std=c99 -O2 -fno-zero-initialized-in-bss
+
+
+CFLAGS = -EL -msoft-float -Wall -march=mips1  -fno-delayed-branch -mno-gpopt -std=c99 -O0 -fno-zero-initialized-in-bss
 ASMFLAGS = -EL -msoft-float -mips32
 
-%: 
+%:
 	@echo
 	@echo "******************************************************************************"
 	@echo Assembling boot.asm...
 	$(AS_MIPS) $(ASMFLAGS) boot.asm -o boot.o
+	@echo "******************************************************************************"
+
+	@echo
+	@echo "******************************************************************************"
+	@echo Assembling kernel.asm...
+	$(AS_MIPS) $(ASMFLAGS) kernel.asm -o kernel.o
+	@echo "******************************************************************************"
+
+	@echo
+	@echo "******************************************************************************"
+	@echo Assembling peripheral_api.asm...
+	$(AS_MIPS) $(ASMFLAGS) peripheral_api.asm -o peripheral_api.o
+	@echo "******************************************************************************"
+
+	@echo
+	@echo "******************************************************************************"
+	@echo Compiling exception_handler.c ...
+	$(CC_MIPS) $(CFLAGS) -c exception_handler.c -o exception_handler.o
+	@echo "******************************************************************************"
+
+	@echo
+	@echo "******************************************************************************"
+	@echo Compiling sprintf.c ...
+	$(CC_MIPS) $(CFLAGS) -c sprintf.c -o sprintf.o
 	@echo "******************************************************************************"
 
 	@echo
@@ -50,7 +74,7 @@ ASMFLAGS = -EL -msoft-float -mips32
 	@echo
 	@echo "******************************************************************************"
 	@echo Linking executable...
-	$(LD_MIPS) -e entry_point -EL -T ld_script.ld -o $(addsuffix .elf, $@) boot.o $(addsuffix .o, $@) -M > $(addsuffix .map, $@)
+	$(LD_MIPS) -e entry_point -EL -T ld_script.ld -o $(addsuffix .elf, $@) boot.o kernel.o peripheral_api.o exception_handler.o sprintf.o $(addsuffix .o, $@) -M > $(addsuffix .map, $@)
 	$(SIZE_MIPS) -A -x $(addsuffix .elf, $@)
 	$(NM_MIPS) -t x -S --size-sort $(addsuffix .elf, $@)
 	@echo "******************************************************************************"

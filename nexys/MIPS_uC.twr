@@ -1,0 +1,133 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/XilinxISE/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3
+-n 3 -fastpaths -xml MIPS_uC.twx MIPS_uC.ncd -o MIPS_uC.twr MIPS_uC.pcf
+
+Design file:              MIPS_uC.ncd
+Physical constraint file: MIPS_uC.pcf
+Device,package,speed:     xc6slx16,csg324,C,-3 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clk
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+port_io<0>  |    5.346(F)|      SLOW  |   -3.325(F)|      FAST  |sys_clk           |   0.000|
+port_io<1>  |    5.439(F)|      SLOW  |   -3.428(F)|      FAST  |sys_clk           |   0.000|
+port_io<2>  |    4.972(F)|      SLOW  |   -3.095(F)|      FAST  |sys_clk           |   0.000|
+port_io<3>  |    3.488(F)|      SLOW  |   -2.161(F)|      FAST  |sys_clk           |   0.000|
+port_io<4>  |    3.068(F)|      SLOW  |   -1.866(F)|      FAST  |sys_clk           |   0.000|
+port_io<5>  |    4.077(F)|      SLOW  |   -2.529(F)|      FAST  |sys_clk           |   0.000|
+port_io<6>  |    3.890(F)|      SLOW  |   -2.402(F)|      FAST  |sys_clk           |   0.000|
+port_io<7>  |    3.396(F)|      SLOW  |   -2.095(F)|      FAST  |sys_clk           |   0.000|
+port_io<8>  |    2.829(F)|      SLOW  |   -1.739(F)|      FAST  |sys_clk           |   0.000|
+port_io<9>  |    2.926(F)|      SLOW  |   -1.785(F)|      FAST  |sys_clk           |   0.000|
+port_io<10> |    3.434(F)|      SLOW  |   -2.152(F)|      FAST  |sys_clk           |   0.000|
+port_io<11> |    3.965(F)|      SLOW  |   -2.451(F)|      FAST  |sys_clk           |   0.000|
+port_io<12> |    4.607(F)|      SLOW  |   -2.854(F)|      FAST  |sys_clk           |   0.000|
+port_io<13> |    4.051(F)|      SLOW  |   -2.519(F)|      FAST  |sys_clk           |   0.000|
+port_io<14> |    3.251(F)|      SLOW  |   -1.997(F)|      FAST  |sys_clk           |   0.000|
+port_io<15> |    3.989(F)|      SLOW  |   -2.460(F)|      FAST  |sys_clk           |   0.000|
+port_io<16> |    3.790(F)|      SLOW  |   -2.349(F)|      FAST  |sys_clk           |   0.000|
+port_io<17> |    4.168(F)|      SLOW  |   -2.618(F)|      FAST  |sys_clk           |   0.000|
+port_io<18> |    3.754(F)|      SLOW  |   -2.335(F)|      FAST  |sys_clk           |   0.000|
+port_io<19> |    3.553(F)|      SLOW  |   -2.148(F)|      FAST  |sys_clk           |   0.000|
+port_io<20> |    3.755(F)|      SLOW  |   -2.348(F)|      FAST  |sys_clk           |   0.000|
+port_io<21> |    3.708(F)|      SLOW  |   -2.291(F)|      FAST  |sys_clk           |   0.000|
+port_io<22> |    3.451(F)|      SLOW  |   -2.076(F)|      FAST  |sys_clk           |   0.000|
+port_io<23> |    3.542(F)|      SLOW  |   -2.141(F)|      FAST  |sys_clk           |   0.000|
+port_io<24> |    3.571(F)|      SLOW  |   -2.173(F)|      FAST  |sys_clk           |   0.000|
+port_io<25> |    2.636(F)|      SLOW  |   -1.533(F)|      FAST  |sys_clk           |   0.000|
+port_io<26> |    2.446(F)|      SLOW  |   -1.395(F)|      FAST  |sys_clk           |   0.000|
+port_io<27> |    2.231(F)|      SLOW  |   -1.249(F)|      FAST  |sys_clk           |   0.000|
+port_io<28> |    2.225(F)|      SLOW  |   -1.279(F)|      FAST  |sys_clk           |   0.000|
+port_io<29> |    2.238(F)|      SLOW  |   -1.328(F)|      FAST  |sys_clk           |   0.000|
+port_io<30> |    2.645(F)|      SLOW  |   -1.567(F)|      FAST  |sys_clk           |   0.000|
+port_io<31> |    2.204(F)|      SLOW  |   -1.316(F)|      FAST  |sys_clk           |   0.000|
+rst         |    2.009(R)|      SLOW  |   -1.163(R)|      FAST  |sys_clk           |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock clk to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+RsTx        |         8.689(R)|      SLOW  |         4.952(R)|      FAST  |sys_clk           |   0.000|
+port_io<0>  |         9.134(F)|      SLOW  |         5.209(F)|      FAST  |sys_clk           |   0.000|
+port_io<1>  |         8.883(F)|      SLOW  |         4.938(F)|      FAST  |sys_clk           |   0.000|
+port_io<2>  |         9.616(F)|      SLOW  |         5.775(F)|      FAST  |sys_clk           |   0.000|
+port_io<3>  |         8.301(F)|      SLOW  |         4.278(F)|      FAST  |sys_clk           |   0.000|
+port_io<4>  |         8.079(F)|      SLOW  |         4.361(F)|      FAST  |sys_clk           |   0.000|
+port_io<5>  |         7.873(F)|      SLOW  |         4.269(F)|      FAST  |sys_clk           |   0.000|
+port_io<6>  |         7.860(F)|      SLOW  |         4.259(F)|      FAST  |sys_clk           |   0.000|
+port_io<7>  |         8.043(F)|      SLOW  |         4.252(F)|      FAST  |sys_clk           |   0.000|
+port_io<8>  |         8.033(F)|      SLOW  |         4.423(F)|      FAST  |sys_clk           |   0.000|
+port_io<9>  |         7.710(F)|      SLOW  |         4.097(F)|      FAST  |sys_clk           |   0.000|
+port_io<10> |         7.985(F)|      SLOW  |         4.373(F)|      FAST  |sys_clk           |   0.000|
+port_io<11> |         7.958(F)|      SLOW  |         4.106(F)|      FAST  |sys_clk           |   0.000|
+port_io<12> |         8.132(F)|      SLOW  |         4.490(F)|      FAST  |sys_clk           |   0.000|
+port_io<13> |         7.796(F)|      SLOW  |         4.529(F)|      FAST  |sys_clk           |   0.000|
+port_io<14> |         7.540(F)|      SLOW  |         4.243(F)|      FAST  |sys_clk           |   0.000|
+port_io<15> |         8.525(F)|      SLOW  |         4.562(F)|      FAST  |sys_clk           |   0.000|
+port_io<16> |         8.900(F)|      SLOW  |         4.568(F)|      FAST  |sys_clk           |   0.000|
+port_io<17> |         8.535(F)|      SLOW  |         4.920(F)|      FAST  |sys_clk           |   0.000|
+port_io<18> |         8.793(F)|      SLOW  |         4.669(F)|      FAST  |sys_clk           |   0.000|
+port_io<19> |         7.794(F)|      SLOW  |         4.308(F)|      FAST  |sys_clk           |   0.000|
+port_io<20> |         8.235(F)|      SLOW  |         4.392(F)|      FAST  |sys_clk           |   0.000|
+port_io<21> |         8.008(F)|      SLOW  |         4.424(F)|      FAST  |sys_clk           |   0.000|
+port_io<22> |         7.834(F)|      SLOW  |         4.422(F)|      FAST  |sys_clk           |   0.000|
+port_io<23> |         8.139(F)|      SLOW  |         4.312(F)|      FAST  |sys_clk           |   0.000|
+port_io<24> |         7.584(F)|      SLOW  |         4.173(F)|      FAST  |sys_clk           |   0.000|
+port_io<25> |         7.201(F)|      SLOW  |         3.560(F)|      FAST  |sys_clk           |   0.000|
+port_io<26> |         7.895(F)|      SLOW  |         3.515(F)|      FAST  |sys_clk           |   0.000|
+port_io<27> |         6.940(F)|      SLOW  |         3.515(F)|      FAST  |sys_clk           |   0.000|
+port_io<28> |         7.221(F)|      SLOW  |         3.401(F)|      FAST  |sys_clk           |   0.000|
+port_io<29> |         6.624(F)|      SLOW  |         3.662(F)|      FAST  |sys_clk           |   0.000|
+port_io<30> |         6.579(F)|      SLOW  |         3.447(F)|      FAST  |sys_clk           |   0.000|
+port_io<31> |         7.071(F)|      SLOW  |         3.462(F)|      FAST  |sys_clk           |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   58.186|   42.002|   57.435|   42.038|
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Thu Jun 26 19:45:37 2025 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 461 MB
+
+
+

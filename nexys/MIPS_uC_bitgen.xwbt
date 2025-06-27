@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/jon/code/UFSM00294/nexys/MIPS_uC.ncd
+OUTFILE=/home/jon/code/UFSM00294/nexys/MIPS_uC.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=/home/jon/code/UFSM00294/nexys
+LICENSE=WebPack
+USER_INFO=212544372_0_0_676

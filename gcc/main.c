@@ -3,20 +3,20 @@
 
 
 // INICIO DEBUG - ACESSO DIRETO A MEMORIA DA PORTIO
-volatile char* send_uart_ptr_debug = (volatile char*) 0x80000300;
-volatile char* check_uart_ptr_debug = (volatile char*) 0x80000310;
+// volatile char* send_uart_ptr_debug = (volatile char*) 0x80000300;
+// volatile char* check_uart_ptr_debug = (volatile char*) 0x80000310;
 
-int* portio_en = (int*) 0x80000000;
-int* portio_cfg = (int*) 0x80000010;
-int* portio_data = (int*) 0x80000020;
+// int* portio_en = (int*) 0x80000000;
+// int* portio_cfg = (int*) 0x80000010;
+// int* portio_data = (int*) 0x80000020;
 
-void PrintUART_debug(char *string) {
-    while (*string) {
-        while (*check_uart_ptr_debug == 0);
-        *send_uart_ptr_debug = *string++;
-    }
-    return;
-}
+// void PrintUART_debug(char *string) {
+//     while (*string) {
+//         while (*check_uart_ptr_debug == 0);
+//         *send_uart_ptr_debug = *string++;
+//     }
+//     return;
+// }
 // FIM DEBUG
 
 // Definição de valores padrão para habilitação, configuração e dados da porta E/S
@@ -24,11 +24,11 @@ void PrintUART_debug(char *string) {
 // #define PORTIO_CONFIG 0x00000003    // pinos configurados saída = 0, entrada = 1
 #define PORTIO_CONFIG 0x00000007
 #define PORTIO_BUTTON 0x00000007    // identifica os pinos dos botões
-#define PORTIO_EN_SEG 0x00007800    // identifica os pinos de habilitação dos displays
+#define PORTIO_EN_SEG 0x00001800    // identifica os pinos de habilitação dos displays
 #define PORTIO_EN_MSK 0x00001800    // máscara com os pinos do display a receberem refresh
 #define PORTIO_DISP_M 0x000007F8
-#define PORTIO_SEG_DF 0x00007000    // valor padrão de habilitação dos displays (display 0 ligado, valor 0)
-#define PORTIO_OVERWR 0xFFFF8007
+#define PORTIO_SEG_DF 0x00006800    // valor padrão de habilitação dos displays (display 0 ligado, valor 0)
+#define PORTIO_OVERWR 0xFFFF6007
 
 // Padrão de bits para o display de 7 segmentos
 #define DISP_0 ~0b00111111
@@ -50,12 +50,11 @@ void PrintUART_debug(char *string) {
 
 char display_out[] = {DISP_0, DISP_1, DISP_2, DISP_3, DISP_4, DISP_5, DISP_6, DISP_7, DISP_8, DISP_9, DISP_A, DISP_B, DISP_C, DISP_D, DISP_E, DISP_F};
 
-
 // configura a porta de e/s
 void portio_setup(){
     EnablePortIOBits(PORTIO_ENABLE);
     ConfigPortIOBitsDirection(PORTIO_CONFIG);
-    int data_out = display_out[1] << 3 | PORTIO_SEG_DF;
+    int data_out = (display_out[0] << 3) | PORTIO_SEG_DF;
     WriteDataPortIO(data_out);
     return;
 }
@@ -65,14 +64,14 @@ void portio_setup(){
 void debounce(int* button_value){
     int portio_data;
     ReadDataPortIO(&portio_data);
-    int button_zero = ~portio_data & 0b1;
-    int button_down = ~portio_data >> 1 & 0b1;
-    int button_up = ~portio_data >> 2 & 0b1;
+    int button_zero = (portio_data & 0b1);
+    int button_down = (portio_data >> 1) & 0b1;
+    int button_up = (portio_data >> 2) & 0b1;
     for (int i = 0; i < 16; i++){
        ReadDataPortIO(&portio_data);
-       button_zero = (~portio_data & 0b1) & button_zero;
-       button_down = ((~portio_data >> 1) & 0b1) & button_zero;
-       button_up = ((~portio_data >> 2) & 0b1) & button_up;
+       button_zero = (portio_data & 0b1) & button_zero;
+       button_down = ((portio_data >> 1) & 0b1) & button_down;
+       button_up = ((portio_data >> 2) & 0b1) & button_up;
     }
     if (button_zero == 1) {
         *button_value = 0;
@@ -104,6 +103,9 @@ void refresh(int counter){
     char display_num[] = {0, 0};
     // converte o valor do contador para 2 caracteres hexadecimais ASCII
     integer_to_hex(counter, display_num);
+    char temp = display_num[0];
+    display_num[0] = display_out[display_num[1]];
+    display_num[1] = display_out[temp];
     int display_index = 0;
     enabled_display ^= 0b11;
     if (enabled_display == 1)
@@ -122,7 +124,7 @@ int main() {
     portio_setup();
 
     int button_value = 0;
-    int refresh_timeout = 1000;
+    int refresh_timeout = 5000;
     int disp_counter = 0;           // contador do display
     int refresh_flag = 1;
 
@@ -136,14 +138,14 @@ int main() {
             char display_hex[2] = {'\0', '\0'};
             integer_to_hex(disp_counter, display_hex);
             hex_to_ascii(display_hex, buffer);
-            PrintUART_debug("contador: ");
-            PrintUART_debug(buffer);
-            PrintUART_debug("\r\n");
-            for (int i = 0; i < 1000000; i++){
+            PrintString("contador: ");
+            PrintString(buffer);
+            PrintString("\r\n");
+            for (int i = 0; i < 500000; i++){
                 refresh_timeout--;
                 if (refresh_timeout == 0){
                     refresh(disp_counter);
-                    refresh_timeout = 1000;
+                    refresh_timeout = 5000;
                 }
             }
             refresh_flag = 0;
@@ -156,26 +158,26 @@ int main() {
             refresh_timeout--;
             if (refresh_timeout == 0){
                 refresh(disp_counter);
-                refresh_timeout = 1000;
+                refresh_timeout = 500;
             }
+            refresh_flag = 1;
         }
+
 
         // incrementar/decrementar o display se botoes forem apertados
         debounce(&button_value);
 
         switch (button_value) {
             case 1 : {
-                if (disp_counter > 0) {
-                    disp_counter--;
-                    refresh_flag = 1;
-                } else {
+                if (disp_counter == 0) {
                     disp_counter = 0;
+                } else {
+                    disp_counter--;
                 }
                 break;
             }
             case 0 : {
                 disp_counter = 0;
-                refresh_flag = 1;
                 break;
             }
             case 2 : {
@@ -183,7 +185,6 @@ int main() {
                     disp_counter = 0xFF;
                 } else {
                     disp_counter++;
-                    refresh_flag = 1;
                 }
                 break;
             }
