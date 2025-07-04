@@ -1,0 +1,152 @@
+
+Discarded input sections
+
+ .reginfo       0x0000000000000000       0x18 kernel.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 kernel.o
+ .reginfo       0x0000000000000000       0x18 peripheral_api.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 peripheral_api.o
+ .reginfo       0x0000000000000000       0x18 exception_handler.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 exception_handler.o
+ .reginfo       0x0000000000000000       0x18 sprintf.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 sprintf.o
+ .reginfo       0x0000000000000000       0x18 main.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 main.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+INSTRUCTION_MEMORY 0x0000000000000000 0x0000000000001000
+DATA_MEMORY      0x0000000000000000 0x0000000000001000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+
+.text           0x0000000000000000      0xe90
+ *(.text)
+ .text          0x0000000000000000       0x24 boot.o
+                0x0000000000000000                entry_point
+ .text          0x0000000000000024      0x108 kernel.o
+                0x0000000000000024                ExceptionServiceRoutine
+ .text          0x000000000000012c       0x5c peripheral_api.o
+                0x000000000000012c                PrintString
+                0x0000000000000138                WriteDataPortIO
+                0x000000000000014c                EnablePortIOBits
+                0x0000000000000160                ConfigPortIOBitsDirection
+                0x0000000000000174                ReadDataPortIO
+ .text          0x0000000000000188      0x20c exception_handler.o
+                0x0000000000000188                PrintUART
+                0x000000000000021c                WriteDeviceRegister
+                0x00000000000002cc                ReadDeviceRegister
+ .text          0x0000000000000394      0x524 sprintf.o
+                0x0000000000000394                strlen_
+                0x00000000000003f8                reverse
+                0x00000000000004ec                abs_
+                0x000000000000052c                itoa_
+                0x0000000000000688                IntegerToString
+                0x00000000000006cc                integer_to_hex
+                0x000000000000076c                delay
+                0x00000000000007cc                hex_to_ascii
+ .text          0x00000000000008b8      0x5d8 main.o
+                0x00000000000008b8                portio_setup
+                0x0000000000000920                debounce
+                0x0000000000000ae0                refresh
+                0x0000000000000c3c                main
+ *(.text.*)
+
+.MIPS.abiflags  0x0000000000000e90       0x18
+ .MIPS.abiflags
+                0x0000000000000e90       0x18 boot.o
+
+.rel.dyn        0x0000000000000ea8        0x0
+ .rel.dyn       0x0000000000000ea8        0x0 exception_handler.o
+
+.data           0x0000000000000000       0x3f load address 0x0000000000000ea8
+ *(.sdata)
+ .sdata         0x0000000000000000       0x14 exception_handler.o
+                0x0000000000000000                send_uart_ptr
+                0x0000000000000004                check_uart_ptr
+                0x0000000000000008                portio_data_ptr
+                0x000000000000000c                portio_en_ptr
+                0x0000000000000010                portio_config_ptr
+ *(.sdata.*)
+ *(.data)
+ .data          0x0000000000000014        0x0 boot.o
+ .data          0x0000000000000014        0x0 kernel.o
+ .data          0x0000000000000014        0x0 peripheral_api.o
+ .data          0x0000000000000014        0xc exception_handler.o
+                0x0000000000000014                system_calls
+ .data          0x0000000000000020        0x0 sprintf.o
+ .data          0x0000000000000020       0x10 main.o
+                0x0000000000000020                display_out
+ *(.data.*)
+ *(.rdata)
+ *(.rodata)
+ .rodata        0x0000000000000030        0xf main.o
+ *(.rodata.*)
+
+.bss            0x000000000000003f        0x0 load address 0x0000000000000ee7
+ *(.sbss)
+ *(.sbss.*)
+ *(.bss)
+ .bss           0x000000000000003f        0x0 boot.o
+ .bss           0x000000000000003f        0x0 kernel.o
+ .bss           0x000000000000003f        0x0 peripheral_api.o
+ .bss           0x000000000000003f        0x0 exception_handler.o
+ .bss           0x000000000000003f        0x0 sprintf.o
+ .bss           0x000000000000003f        0x0 main.o
+ *(.bss.*)
+ *(.scommon)
+ *(COMMON)
+                0x0000000000000ffc                . = ((ORIGIN (DATA_MEMORY) + LENGTH (DATA_MEMORY)) - 0x4)
+                0x0000000000000ffc                . = ALIGN (0x4)
+                0x0000000000000ffc                _stack_ptr = .
+LOAD boot.o
+LOAD kernel.o
+LOAD peripheral_api.o
+LOAD exception_handler.o
+LOAD sprintf.o
+LOAD main.o
+OUTPUT(main.elf elf32-tradlittlemips)
+
+.reginfo        0x0000000000000000       0x18
+ .reginfo       0x0000000000000000       0x18 boot.o
+
+.pdr            0x0000000000000000      0x200
+ .pdr           0x0000000000000000       0x20 boot.o
+ .pdr           0x0000000000000020        0x0 kernel.o
+ .pdr           0x0000000000000020        0x0 peripheral_api.o
+ .pdr           0x0000000000000020       0x60 exception_handler.o
+ .pdr           0x0000000000000080      0x100 sprintf.o
+ .pdr           0x0000000000000180       0x80 main.o
+
+.gnu.attributes
+                0x0000000000000000       0x10
+ .gnu.attributes
+                0x0000000000000000       0x10 boot.o
+ .gnu.attributes
+                0x0000000000000010       0x10 kernel.o
+ .gnu.attributes
+                0x0000000000000020       0x10 peripheral_api.o
+ .gnu.attributes
+                0x0000000000000030       0x10 exception_handler.o
+ .gnu.attributes
+                0x0000000000000040       0x10 sprintf.o
+ .gnu.attributes
+                0x0000000000000050       0x10 main.o
+
+.mdebug.abi32   0x0000000000000000        0x0
+ .mdebug.abi32  0x0000000000000000        0x0 exception_handler.o
+ .mdebug.abi32  0x0000000000000000        0x0 sprintf.o
+ .mdebug.abi32  0x0000000000000000        0x0 main.o
+
+.comment        0x0000000000000000       0x45
+ .comment       0x0000000000000000       0x45 exception_handler.o
+                                         0x46 (size before relaxing)
+ .comment       0x0000000000000045       0x46 sprintf.o
+ .comment       0x0000000000000045       0x46 main.o
