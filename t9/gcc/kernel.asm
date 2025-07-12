@@ -38,6 +38,9 @@ ExceptionServiceRoutine:
     sw      $fp, 104($sp)
     sw      $ra, 112($sp)
 
+    mfc0    $t0, $14
+    sw      $t0, 124($sp)
+
     #### jump table
     la      $t0, system_calls
     sll     $t3, $v0, 2
@@ -79,6 +82,10 @@ RestoreContext:
     lw      $gp, 100($sp)
     lw      $fp, 104($sp)
     lw      $ra, 112($sp)
+
+    # restaura epc da stack
+    lw      $t0, 124($sp)
+    mtc0    $t0, $14
 
     addiu   $sp, $sp, 128    # desaloca stack
 

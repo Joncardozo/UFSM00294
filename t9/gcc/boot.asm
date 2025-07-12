@@ -37,12 +37,7 @@ boot_start:
     li      $t0, 0b1
     mtc0    $t0, $12
 
-    # configura mascara de interrupcoes
-    la      $t0, 0x80000210
-    li      $t1, 0x01
-    sw      $t1, 0($t0)
-
-    # Salta para o programa do usuário (BubbleSort)
+    # Salta para o programa do usuário
     jal     main
     nop
 

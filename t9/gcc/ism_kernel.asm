@@ -66,7 +66,7 @@ InterruptionServiceRoutine_kernel:
     mtc0    $t0, $12
 
     #### jump table
-    la      $t0, system_calls
+    la      $t0, user_handlers
     sll     $t3, $t2, 2
     addu    $t4, $t0, $t3
     lw      $t5, 0($t4)
@@ -80,6 +80,7 @@ InterruptionServiceRoutine_kernel:
     j RestoreContext
 
 RestoreContext:
+
     # restaura mascara de interrupcoes
     lw      $t2, 120($sp)
     la      $t1, 0x80000210

@@ -74,7 +74,7 @@ InterruptionServiceRoutine_user:
     mtc0    $t0, $12
 
     #### jump table
-    la      $t0, system_calls
+    la      $t0, user_handlers
     sll     $t3, $t2, 2
     addu    $t4, $t0, $t3
     lw      $t5, 0($t4)

@@ -7,7 +7,8 @@
 .globl ConfigPortIOBitsDirection
 .globl ReadDataPortIO
 .globl SetTimerCounter
-.globl SetHandler
+.globl SetPortIOInterrupt
+.globl SetPICMask
 
 PrintString:
     addiu $v0, $zero, 0
@@ -49,5 +50,16 @@ SetTimerCounter:
     syscall
     jr $ra
 
-SetHandler:
-    addiu $v0, $zero, 3
+SetPortIOInterrupt:
+    addiu $v0, $zero, 1
+    lui $a1, 0x8000
+    ori $a1, 0x0030
+    syscall
+    jr $ra
+
+SetPICMask:
+    addiu $v0, $zero, 1
+    lui $a1, 0x8000
+    ori $a1, 0x0210
+    syscall
+    jr $ra
